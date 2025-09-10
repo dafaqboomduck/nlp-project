@@ -18,7 +18,7 @@ def split_into_sentences(text):
     cleaned_sentences = []
     for sentence in sentences:
         sentence = sentence.strip()
-        if len(sentence) > 5:  # Filter very short sentences
+        if len(sentence) > 0:  # Filter very short sentences
             cleaned_sentences.append(sentence)
 
     return cleaned_sentences
