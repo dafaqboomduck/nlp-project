@@ -66,7 +66,7 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) != 2:
-        print("Usage: python speech_to_text_assemblyAI.py <mp3_file>")
+        print("Usage: python speech_to_text_whisper.py <mp3_file>")
         sys.exit(1)
 
     mp3_file = sys.argv[1]

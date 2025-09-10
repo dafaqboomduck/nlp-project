@@ -9,12 +9,37 @@ import time
 import csv
 import re
 from pathlib import Path
+import assemblyai as aai
+
 
 # AssemblyAI configuration
 BASE_URL = "https://api.assemblyai.com"
 HEADERS = {
     "authorization": "REDACTED"  #  API key
 }
+
+
+def create_transcription_config():
+    """Create transcription configuration with optimal settings"""
+    config = aai.TranscriptionConfig(
+        speaker_labels=True,
+        format_text=True,
+        punctuate=True,
+        speech_model=aai.SpeechModel.slam_1,
+        language_code="en_us",
+    )
+
+    config.keyterms_prompt = [
+        "Restaurant",
+        "Cooking",
+        "Chef",
+        "Cook",
+        "Food",
+        "British",
+        "Bad",
+        "Decisions",
+    ]
+    return config
 
 
 def upload_audio(file_path):
@@ -28,31 +53,15 @@ def upload_audio(file_path):
     return response.json()["upload_url"]
 
 
-def transcribe_audio(audio_url):
-    """Start transcription and wait for completion"""
-    data = {"audio_url": audio_url, "speech_model": "universal"}
+def transcribe_audio(file_path, config):
+    """Transcribe audio file using AssemblyAI SDK"""
+    transcriber = aai.Transcriber(config=config)
+    transcript = transcriber.transcribe(file_path)
 
-    # Start transcription
-    response = requests.post(BASE_URL + "/v2/transcript", json=data, headers=HEADERS)
+    if transcript.status == aai.TranscriptStatus.error:
+        raise RuntimeError(f"Transcription failed: {transcript.error}")
 
-    if response.status_code != 200:
-        raise RuntimeError(f"Transcription request failed: {response.text}")
-
-    transcript_id = response.json()["id"]
-    polling_endpoint = BASE_URL + "/v2/transcript/" + transcript_id
-
-    # Poll for completion
-    while True:
-        transcription_result = requests.get(polling_endpoint, headers=HEADERS).json()
-
-        if transcription_result["status"] == "completed":
-            return transcription_result["text"]
-
-        elif transcription_result["status"] == "error":
-            raise RuntimeError(f"Transcription failed: {transcription_result['error']}")
-
-        else:
-            time.sleep(3)
+    return transcript.text
 
 
 def split_into_sentences(text):
@@ -64,7 +73,7 @@ def split_into_sentences(text):
     cleaned_sentences = []
     for sentence in sentences:
         sentence = sentence.strip()
-        if len(sentence) > 5:  # Filter very short sentences
+        if len(sentence) > 0:  # Filter very short sentences
             cleaned_sentences.append(sentence)
 
     return cleaned_sentences
@@ -94,11 +103,15 @@ def main(mp3_file):
     if not HEADERS["authorization"]:
         raise ValueError("Please set your AssemblyAI API key in the HEADERS variable")
 
+    aai.settings.api_key = HEADERS["authorization"]
+
+    config = create_transcription_config()
+
     print(f"Uploading {mp3_file}...")
     audio_url = upload_audio(mp3_file)
 
     print("Starting transcription...")
-    transcript_text = transcribe_audio(audio_url)
+    transcript_text = transcribe_audio(audio_url, config)
 
     # Split transcription into sentences
     sentences = split_into_sentences(transcript_text)
@@ -112,3 +125,14 @@ def main(mp3_file):
 
     print(f"Transcribed {len(sentences)} sentences to {output_path}")
     return str(output_path)
+
+
+if __name__ == "__main__":
+    import sys
+
+    if len(sys.argv) != 2:
+        print("Usage: python speech_to_text_assemblyAI.py <mp3_file>")
+        sys.exit(1)
+
+    mp3_file = sys.argv[1]
+    main(mp3_file)
