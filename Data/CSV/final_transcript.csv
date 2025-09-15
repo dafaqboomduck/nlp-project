@@ -1,0 +1,1228 @@
+Start Time,End Time,Sentence,Translation,Emotion_fine,Emotion_core,Intensity
+1900-01-01 00:00:00,1900-01-01 00:00:04,"La Verne, California, just 30 miles from Los Angeles,","La Verne, California, just 30 miles from Los Angeles,",neutrality,neutral,neutral
+1900-01-01 00:00:04,1900-01-01 00:00:07,this suburb is home to a neighborhood Italian bistro,this suburb is home to a neighborhood Italian bistro,pride,happiness,mild
+1900-01-01 00:00:07,1900-01-01 00:00:09,called Charlie's.,called Charlie's.,neutrality,neutral,neutral
+1900-01-01 00:00:09,1900-01-01 00:00:13,"And in 2010, it was bought by the Leyva family.","And in 2010, it was bought by the Leyva family.",matter-of-factness,neutral,neutral
+1900-01-01 00:00:13,1900-01-01 00:00:14,Would you like a booth?,Would you like a booth?,politeness,neutral,neutral
+1900-01-01 00:00:14,1900-01-01 00:00:16,I started working here 10 years ago.,I started working here 10 years ago.,reflection,neutral,neutral
+1900-01-01 00:00:16,1900-01-01 00:00:17,I was a waitress here.,I was a waitress here.,nostalgia,neutral,neutral
+1900-01-01 00:00:17,1900-01-01 00:00:20,"And then I had the opportunity to take it over,","And then I had the opportunity to take it over,",anticipation,happiness,mild
+1900-01-01 00:00:20,1900-01-01 00:00:23,"but I didn't have the money or the collateral,","but I didn't have the money or the collateral,",frustration,sadness,moderate
+1900-01-01 00:00:23,1900-01-01 00:00:26,so I had to go to my mom and my sister.,so I had to go to my mom and my sister.,resignation,sadness,mild
+1900-01-01 00:00:26,1900-01-01 00:00:28,Pat and Val both full-time school teachers,Pat and Val both full-time school teachers,neutrality,neutral,neutral
+1900-01-01 00:00:28,1900-01-01 00:00:32,finance the restaurant and put their houses up as collateral,finance the restaurant and put their houses up as collateral,apprehension,fear,moderate
+1900-01-01 00:00:32,1900-01-01 00:00:35,to help Tatiana fulfill her dream.,to help Tatiana fulfill her dream.,hope,happiness,mild
+1900-01-01 00:00:35,1900-01-01 00:00:38,"My mom and I don't know about the restaurant business,","My mom and I don't know about the restaurant business,",uncertainty,fear,mild
+1900-01-01 00:00:38,1900-01-01 00:00:42,and so we put a lot of trust in my sister's experience,and so we put a lot of trust in my sister's experience,confidence,happiness,moderate
+1900-01-01 00:00:42,1900-01-01 00:00:44,to run the restaurant.,to run the restaurant.,determination,neutral,neutral
+1900-01-01 00:00:44,1900-01-01 00:00:46,Are we going to have enough bread for tonight?,Are we going to have enough bread for tonight?,concern,fear,mild
+1900-01-01 00:00:46,1900-01-01 00:00:47,Of course.,Of course.,assent,neutral,neutral
+1900-01-01 00:00:47,1900-01-01 00:00:49,"When I took over the restaurant,","When I took over the restaurant,",anticipation,happiness,mild
+1900-01-01 00:00:49,1900-01-01 00:00:52,I didn't want to change the menu or the chef.,I didn't want to change the menu or the chef.,reluctance,sadness,mild
+1900-01-01 00:00:52,1900-01-01 00:00:54,I just wanted to keep it as is,I just wanted to keep it as is,preference,neutral,mild
+1900-01-01 00:00:54,1900-01-01 00:00:56,because I love this restaurant.,because I love this restaurant.,affection,happiness,moderate
+1900-01-01 00:00:56,1900-01-01 00:00:58,How are we doing?,How are we doing?,curiosity,neutral,neutral
+1900-01-01 00:00:58,1900-01-01 00:00:59,That's not good.,That's not good.,disappointment,sadness,mild
+1900-01-01 00:00:59,1900-01-01 00:01:02,But it didn't pan out the way I wanted it to.,But it didn't pan out the way I wanted it to.,disappointment,sadness,moderate
+1900-01-01 00:01:05,1900-01-01 00:01:07,"I mean, I could sit here all day","I mean, I could sit here all day",boredom,neutral,mild
+1900-01-01 00:01:07,1900-01-01 00:01:09,and have maybe 4 tables at the most.,and have maybe 4 tables at the most.,limitation,neutral,neutral
+1900-01-01 00:01:09,1900-01-01 00:01:11,"How many tables did you have, Jen?","How many tables did you have, Jen?",curiosity,neutral,neutral
+1900-01-01 00:01:11,1900-01-01 00:01:12,I only had one.,I only had one.,regret,sadness,mild
+1900-01-01 00:01:12,1900-01-01 00:01:15,That doesn't even pay for the costs,That doesn't even pay for the costs,frustration,anger,moderate
+1900-01-01 00:01:15,1900-01-01 00:01:17,of just running electricity.,of just running electricity.,boredom,neutral,neutral
+1900-01-01 00:01:17,1900-01-01 00:01:19,Who's going to bring the people in?,Who's going to bring the people in?,concern,fear,mild
+1900-01-01 00:01:19,1900-01-01 00:01:20,I don't know.,I don't know.,uncertainty,neutral,neutral
+1900-01-01 00:01:20,1900-01-01 00:01:24,The problem with the restaurant is Tatiana.,The problem with the restaurant is Tatiana.,blame,anger,moderate
+1900-01-01 00:01:24,1900-01-01 00:01:26,Tatiana.,Tatiana.,neutrality,neutral,neutral
+1900-01-01 00:01:28,1900-01-01 00:01:29,The fact that she feels like,The fact that she feels like,uncertainty,neutral,neutral
+1900-01-01 00:01:29,1900-01-01 00:01:31,"she doesn't have to change things,","she doesn't have to change things,",acceptance,neutral,neutral
+1900-01-01 00:01:31,1900-01-01 00:01:32,it's ridiculous.,it's ridiculous.,frustration,anger,moderate
+1900-01-01 00:01:32,1900-01-01 00:01:33,They don't like this tiramisu?,They don't like this tiramisu?,doubt,surprise,mild
+1900-01-01 00:01:33,1900-01-01 00:01:35,"No, they're crazy.","No, they're crazy.",dismissal,disgust,moderate
+1900-01-01 00:01:35,1900-01-01 00:01:38,It's the best tiramisu I've ever had in my life.,It's the best tiramisu I've ever had in my life.,delight,happiness,intense
+1900-01-01 00:01:38,1900-01-01 00:01:43,"The food, um, oh, it's disgusting.","The food, um, oh, it's disgusting.",revulsion,disgust,intense
+1900-01-01 00:01:43,1900-01-01 00:01:45,Casamero is our head chef.,Casamero is our head chef.,pride,happiness,mild
+1900-01-01 00:01:45,1900-01-01 00:01:48,"He's been here for 14 years,","He's been here for 14 years,",reflection,neutral,neutral
+1900-01-01 00:01:48,1900-01-01 00:01:51,and he's pretty awful.,and he's pretty awful.,contempt,disgust,moderate
+1900-01-01 00:01:52,1900-01-01 00:01:54,"It's a little chewier, actually.","It's a little chewier, actually.",observation,neutral,neutral
+1900-01-01 00:01:54,1900-01-01 00:01:56,"Basically, the restaurant's suffering for it.","Basically, the restaurant's suffering for it.",concern,sadness,moderate
+1900-01-01 00:01:56,1900-01-01 00:01:58,Do we have any tables that are happy?,Do we have any tables that are happy?,curiosity,neutral,neutral
+1900-01-01 00:02:00,1900-01-01 00:02:03,"When Tatiana manages the restaurant,","When Tatiana manages the restaurant,",anticipation,neutral,neutral
+1900-01-01 00:02:03,1900-01-01 00:02:05,usually that consists of standing around,usually that consists of standing around,boredom,neutral,mild
+1900-01-01 00:02:05,1900-01-01 00:02:07,with a glass of wine in her hand.,with a glass of wine in her hand.,contentment,happiness,mild
+1900-01-01 00:02:07,1900-01-01 00:02:08,All right.,All right.,acceptance,neutral,neutral
+1900-01-01 00:02:08,1900-01-01 00:02:09,She's very disrespectful.,She's very disrespectful.,contempt,disgust,moderate
+1900-01-01 00:02:09,1900-01-01 00:02:11,You're talking out of your ass.,You're talking out of your ass.,contempt,disgust,moderate
+1900-01-01 00:02:11,1900-01-01 00:02:12,Rude.,Rude.,offense,anger,mild
+1900-01-01 00:02:12,1900-01-01 00:02:13,Stop it.,Stop it.,irritation,anger,mild
+1900-01-01 00:02:13,1900-01-01 00:02:14,I told you.,I told you.,assertion,neutral,neutral
+1900-01-01 00:02:14,1900-01-01 00:02:15,Most people end up crying.,Most people end up crying.,sorrow,sadness,moderate
+1900-01-01 00:02:15,1900-01-01 00:02:17,Don't you dare.,Don't you dare.,warning,anger,moderate
+1900-01-01 00:02:18,1900-01-01 00:02:20,I need a drink.,I need a drink.,craving,neutral,mild
+1900-01-01 00:02:20,1900-01-01 00:02:23,Tatiana doesn't know how to handle being an owner.,Tatiana doesn't know how to handle being an owner.,insecurity,fear,moderate
+1900-01-01 00:02:23,1900-01-01 00:02:25,"Don't drink so much, okay?","Don't drink so much, okay?",concern,fear,mild
+1900-01-01 00:02:25,1900-01-01 00:02:27,My mom and my sister already resent me,My mom and my sister already resent me,rejection,sadness,moderate
+1900-01-01 00:02:27,1900-01-01 00:02:29,for asking them to put their houses on the line.,for asking them to put their houses on the line.,guilt,sadness,moderate
+1900-01-01 00:02:29,1900-01-01 00:02:31,I don't know how we're gonna make it this month.,I don't know how we're gonna make it this month.,anxiety,fear,moderate
+1900-01-01 00:02:31,1900-01-01 00:02:33,They play the blame game.,They play the blame game.,resentment,anger,moderate
+1900-01-01 00:02:33,1900-01-01 00:02:34,This is Tatiana's fault.,This is Tatiana's fault.,blame,anger,moderate
+1900-01-01 00:02:34,1900-01-01 00:02:37,We wouldn't be in this mess if it wasn't for Tatiana.,We wouldn't be in this mess if it wasn't for Tatiana.,blame,anger,moderate
+1900-01-01 00:02:37,1900-01-01 00:02:39,But they didn't put a gun to their head.,But they didn't put a gun to their head.,defensiveness,neutral,mild
+1900-01-01 00:02:39,1900-01-01 00:02:41,What are we going to do now?,What are we going to do now?,uncertainty,fear,moderate
+1900-01-01 00:02:41,1900-01-01 00:02:43,"If we don't get more customers,","If we don't get more customers,",worry,fear,moderate
+1900-01-01 00:02:43,1900-01-01 00:02:45,we will lose our houses.,we will lose our houses.,dread,fear,intense
+1900-01-01 00:02:45,1900-01-01 00:02:47,It is very serious.,It is very serious.,concern,fear,moderate
+1900-01-01 00:02:48,1900-01-01 00:02:51,I really need Chef Ramsay's help.,I really need Chef Ramsay's help.,yearning,sadness,moderate
+1900-01-01 00:02:51,1900-01-01 00:02:53,"Oh, I'm scared what's going to happen.","Oh, I'm scared what's going to happen.",apprehension,fear,moderate
+1900-01-01 00:02:53,1900-01-01 00:02:56,"I just don't understand, like, what else I can do.","I just don't understand, like, what else I can do.",confusion,sadness,moderate
+1900-01-01 00:03:04,1900-01-01 00:03:07,A rare rainy day in California.,A rare rainy day in California.,nostalgia,happiness,mild
+1900-01-01 00:03:07,1900-01-01 00:03:10,What better way to pick you up than a nice lunch?,What better way to pick you up than a nice lunch?,encouragement,happiness,mild
+1900-01-01 00:03:10,1900-01-01 00:03:12,"Right, Charlie's Italian food.","Right, Charlie's Italian food.",recognition,neutral,neutral
+1900-01-01 00:03:13,1900-01-01 00:03:15,Hi.,Hi.,greeting,neutral,neutral
+1900-01-01 00:03:15,1900-01-01 00:03:19,"When Chef walked in, I just laughed.","When Chef walked in, I just laughed.",amusement,happiness,mild
+1900-01-01 00:03:19,1900-01-01 00:03:21,"Because that's what, I don't know what to do","Because that's what, I don't know what to do",confusion,sadness,moderate
+1900-01-01 00:03:21,1900-01-01 00:03:23,with this nervous energy and this anxiety.,with this nervous energy and this anxiety.,anxiety,fear,moderate
+1900-01-01 00:03:23,1900-01-01 00:03:24,How are you?,How are you?,curiosity,neutral,neutral
+1900-01-01 00:03:24,1900-01-01 00:03:26,"Oh, my gosh.","Oh, my gosh.",astonishment,surprise,moderate
+1900-01-01 00:03:26,1900-01-01 00:03:27,And this is?,And this is?,curiosity,surprise,mild
+1900-01-01 00:03:27,1900-01-01 00:03:28,Tatiana.,Tatiana.,neutrality,neutral,neutral
+1900-01-01 00:03:28,1900-01-01 00:03:29,Tatiana.,Tatiana.,neutrality,neutral,neutral
+1900-01-01 00:03:29,1900-01-01 00:03:30,Yeah.,Yeah.,agreement,neutral,neutral
+1900-01-01 00:03:30,1900-01-01 00:03:31,Is Charlie in?,Is Charlie in?,curiosity,neutral,neutral
+1900-01-01 00:03:31,1900-01-01 00:03:32,"No, he's not.","No, he's not.",denial,anger,mild
+1900-01-01 00:03:32,1900-01-01 00:03:33,"Okay, the restaurant's called Charlie.","Okay, the restaurant's called Charlie.",calm,neutral,neutral
+1900-01-01 00:03:33,1900-01-01 00:03:34,Who is he?,Who is he?,curiosity,neutral,mild
+1900-01-01 00:03:34,1900-01-01 00:03:35,Charlie was the original owner.,Charlie was the original owner.,neutrality,neutral,neutral
+1900-01-01 00:03:35,1900-01-01 00:03:36,Charlie owned it.,Charlie owned it.,pride,happiness,mild
+1900-01-01 00:03:36,1900-01-01 00:03:37,Charlie owned it.,Charlie owned it.,pride,happiness,mild
+1900-01-01 00:03:37,1900-01-01 00:03:38,So there's no Charlie?,So there's no Charlie?,disappointment,sadness,mild
+1900-01-01 00:03:38,1900-01-01 00:03:39,"No, no.","No, no.",rejection,anger,mild
+1900-01-01 00:03:39,1900-01-01 00:03:40,I used to work here as a waitress.,I used to work here as a waitress.,nostalgia,sadness,mild
+1900-01-01 00:03:40,1900-01-01 00:03:41,"Oh, okay.","Oh, okay.",resignation,neutral,mild
+1900-01-01 00:03:41,1900-01-01 00:03:42,When Charlie owned it.,When Charlie owned it.,nostalgia,sadness,mild
+1900-01-01 00:03:42,1900-01-01 00:03:44,And then he sold it to another person named Simon.,And then he sold it to another person named Simon.,indifference,neutral,neutral
+1900-01-01 00:03:44,1900-01-01 00:03:45,"Okay, great.","Okay, great.",satisfaction,happiness,mild
+1900-01-01 00:03:45,1900-01-01 00:03:47,"And then when Simon ran this into the ground, he dumped it.","And then when Simon ran this into the ground, he dumped it.",resentment,anger,moderate
+1900-01-01 00:03:47,1900-01-01 00:03:48,Simon bought it off Charlie.,Simon bought it off Charlie.,matter-of-factness,neutral,neutral
+1900-01-01 00:03:48,1900-01-01 00:03:49,Mm-hmm.,Mm-hmm.,acknowledgment,neutral,neutral
+1900-01-01 00:03:49,1900-01-01 00:03:51,And then dumped it on you.,And then dumped it on you.,resentment,anger,moderate
+1900-01-01 00:03:51,1900-01-01 00:03:52,Just dumped it in general.,Just dumped it in general.,resignation,sadness,mild
+1900-01-01 00:03:52,1900-01-01 00:03:55,And then I took it over because I love this restaurant.,And then I took it over because I love this restaurant.,affection,happiness,moderate
+1900-01-01 00:03:55,1900-01-01 00:03:57,We took it over.,We took it over.,assertiveness,neutral,neutral
+1900-01-01 00:03:57,1900-01-01 00:03:58,My mom and my sister.,My mom and my sister.,neutrality,neutral,neutral
+1900-01-01 00:03:58,1900-01-01 00:03:59,"Oh, is it?","Oh, is it?",skepticism,surprise,mild
+1900-01-01 00:03:59,1900-01-01 00:04:00,Yeah.,Yeah.,agreement,neutral,neutral
+1900-01-01 00:04:00,1900-01-01 00:04:01,"Caprice, hello.","Caprice, hello.",greeting,neutral,neutral
+1900-01-01 00:04:01,1900-01-01 00:04:02,I'm Val.,I'm Val.,neutrality,neutral,neutral
+1900-01-01 00:04:02,1900-01-01 00:04:03,"Val, nice to see you, darling.","Val, nice to see you, darling.",warmth,happiness,mild
+1900-01-01 00:04:03,1900-01-01 00:04:04,Nice to meet you.,Nice to meet you.,politeness,neutral,neutral
+1900-01-01 00:04:04,1900-01-01 00:04:05,And this is?,And this is?,curiosity,surprise,mild
+1900-01-01 00:04:05,1900-01-01 00:04:06,I'm Pat.,I'm Pat.,neutrality,neutral,neutral
+1900-01-01 00:04:06,1900-01-01 00:04:07,"Pat, nice to see you, my darling.","Pat, nice to see you, my darling.",affection,happiness,mild
+1900-01-01 00:04:07,1900-01-01 00:04:08,"Why don't you come over, Val and Mom.","Why don't you come over, Val and Mom.",invitation,neutral,neutral
+1900-01-01 00:04:08,1900-01-01 00:04:09,Be nice to the kids.,Be nice to the kids.,concern,neutral,mild
+1900-01-01 00:04:09,1900-01-01 00:04:10,"And Mom, it would be nice to catch up","And Mom, it would be nice to catch up",longing,happiness,mild
+1900-01-01 00:04:10,1900-01-01 00:04:11,and get up to speed with what's happening.,and get up to speed with what's happening.,curiosity,neutral,mild
+1900-01-01 00:04:11,1900-01-01 00:04:12,When can we go somewhere quiet?,When can we go somewhere quiet?,yearning,sadness,mild
+1900-01-01 00:04:12,1900-01-01 00:04:13,We can go outside if you'd like.,We can go outside if you'd like.,accommodation,neutral,neutral
+1900-01-01 00:04:13,1900-01-01 00:04:14,Shall we?,Shall we?,anticipation,happiness,mild
+1900-01-01 00:04:14,1900-01-01 00:04:15,Let's go outside.,Let's go outside.,enthusiasm,happiness,mild
+1900-01-01 00:04:15,1900-01-01 00:04:16,Excellent.,Excellent.,satisfaction,happiness,mild
+1900-01-01 00:04:16,1900-01-01 00:04:18,Tatiana needs to learn effective ways,Tatiana needs to learn effective ways,expectation,neutral,neutral
+1900-01-01 00:04:18,1900-01-01 00:04:20,of doing things around here.,of doing things around here.,resignation,sadness,mild
+1900-01-01 00:04:20,1900-01-01 00:04:23,"So, and first of all, it's so important","So, and first of all, it's so important",emphasis,neutral,mild
+1900-01-01 00:04:23,1900-01-01 00:04:26,that I catch up with what's been happening.,that I catch up with what's been happening.,curiosity,neutral,mild
+1900-01-01 00:04:26,1900-01-01 00:04:29,Whose idea was this to run a restaurant?,Whose idea was this to run a restaurant?,curiosity,neutral,neutral
+1900-01-01 00:04:29,1900-01-01 00:04:31,Her dream.,Her dream.,curiosity,neutral,neutral
+1900-01-01 00:04:31,1900-01-01 00:04:33,I've loved this restaurant.,I've loved this restaurant.,affection,happiness,moderate
+1900-01-01 00:04:33,1900-01-01 00:04:35,I've worked here since I was 20 years old.,I've worked here since I was 20 years old.,nostalgia,neutral,neutral
+1900-01-01 00:04:35,1900-01-01 00:04:37,Whenever working in a business to running a business,Whenever working in a business to running a business,contemplation,neutral,neutral
+1900-01-01 00:04:37,1900-01-01 00:04:38,is completely different scenario.,is completely different scenario.,confusion,surprise,mild
+1900-01-01 00:04:38,1900-01-01 00:04:39,"Yeah, it's completely different.","Yeah, it's completely different.",acknowledgment,neutral,neutral
+1900-01-01 00:04:39,1900-01-01 00:04:41,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:04:41,1900-01-01 00:04:43,How much money did you need to get on the table,How much money did you need to get on the table,curiosity,neutral,neutral
+1900-01-01 00:04:43,1900-01-01 00:04:44,before you took over?,before you took over?,suspicion,fear,mild
+1900-01-01 00:04:44,1900-01-01 00:04:47,Mom put all her retirement money into it.,Mom put all her retirement money into it.,concern,fear,moderate
+1900-01-01 00:04:47,1900-01-01 00:04:48,Really?,Really?,skepticism,surprise,mild
+1900-01-01 00:04:48,1900-01-01 00:04:49,I put all that together.,I put all that together.,accomplishment,happiness,mild
+1900-01-01 00:04:49,1900-01-01 00:04:51,"You know, the house and her house.","You know, the house and her house.",confusion,neutral,mild
+1900-01-01 00:04:51,1900-01-01 00:04:52,"My condo, yeah.","My condo, yeah.",affirmation,neutral,neutral
+1900-01-01 00:04:52,1900-01-01 00:04:56,"So as the restaurant goes, your houses go.","So as the restaurant goes, your houses go.",foreboding,fear,moderate
+1900-01-01 00:04:56,1900-01-01 00:04:57,Wow.,Wow.,amazement,surprise,mild
+1900-01-01 00:04:57,1900-01-01 00:04:59,And how much money did you put in?,And how much money did you put in?,curiosity,neutral,mild
+1900-01-01 00:04:59,1900-01-01 00:05:02,"Probably like $1,000.","Probably like $1,000.",uncertainty,neutral,mild
+1900-01-01 00:05:02,1900-01-01 00:05:03,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:05:03,1900-01-01 00:05:04,"Financially, where are we?","Financially, where are we?",uncertainty,fear,mild
+1900-01-01 00:05:04,1900-01-01 00:05:06,The restaurant's in debt at this point.,The restaurant's in debt at this point.,concern,sadness,moderate
+1900-01-01 00:05:06,1900-01-01 00:05:07,That's not good.,That's not good.,disappointment,sadness,mild
+1900-01-01 00:05:07,1900-01-01 00:05:09,And who makes the decisions here?,And who makes the decisions here?,curiosity,neutral,mild
+1900-01-01 00:05:09,1900-01-01 00:05:10,Tatiana.,Tatiana.,neutrality,neutral,neutral
+1900-01-01 00:05:10,1900-01-01 00:05:12,"Well, they have other jobs as well.","Well, they have other jobs as well.",acceptance,neutral,neutral
+1900-01-01 00:05:12,1900-01-01 00:05:13,"So you have a full-time job, and you come","So you have a full-time job, and you come",curiosity,neutral,neutral
+1900-01-01 00:05:13,1900-01-01 00:05:14,in here to run the restaurant?,in here to run the restaurant?,curiosity,neutral,mild
+1900-01-01 00:05:14,1900-01-01 00:05:15,Right.,Right.,agreement,neutral,neutral
+1900-01-01 00:05:15,1900-01-01 00:05:16,Wow.,Wow.,amazement,surprise,mild
+1900-01-01 00:05:16,1900-01-01 00:05:17,So what's gone wrong then?,So what's gone wrong then?,concern,fear,moderate
+1900-01-01 00:05:17,1900-01-01 00:05:18,I don't know.,I don't know.,uncertainty,neutral,neutral
+1900-01-01 00:05:18,1900-01-01 00:05:20,You don't know?,You don't know?,doubt,surprise,mild
+1900-01-01 00:05:20,1900-01-01 00:05:21,Wow.,Wow.,amazement,surprise,mild
+1900-01-01 00:05:21,1900-01-01 00:05:24,So then what's the changes you made when you bought it?,So then what's the changes you made when you bought it?,curiosity,neutral,mild
+1900-01-01 00:05:24,1900-01-01 00:05:26,Nothing changed.,Nothing changed.,resignation,sadness,mild
+1900-01-01 00:05:26,1900-01-01 00:05:27,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:05:27,1900-01-01 00:05:29,"So Simon ran it in a bad way, didn't","So Simon ran it in a bad way, didn't",criticism,disgust,mild
+1900-01-01 00:05:29,1900-01-01 00:05:32,"give a shit about the customers, and it was appallingly led.","give a shit about the customers, and it was appallingly led.",contempt,disgust,intense
+1900-01-01 00:05:32,1900-01-01 00:05:34,But you haven't changed anything.,But you haven't changed anything.,disappointment,sadness,moderate
+1900-01-01 00:05:34,1900-01-01 00:05:35,That's been a major issue.,That's been a major issue.,frustration,anger,moderate
+1900-01-01 00:05:36,1900-01-01 00:05:38,"Help me understand, because I'm confused.","Help me understand, because I'm confused.",confusion,sadness,moderate
+1900-01-01 00:05:38,1900-01-01 00:05:43,"The risk is little on your side, yet mama for you.","The risk is little on your side, yet mama for you.",concern,fear,mild
+1900-01-01 00:05:43,1900-01-01 00:05:45,"And yet, you're not even in control of the business.","And yet, you're not even in control of the business.",contempt,disgust,moderate
+1900-01-01 00:05:45,1900-01-01 00:05:46,Right.,Right.,agreement,neutral,neutral
+1900-01-01 00:05:46,1900-01-01 00:05:47,Wow.,Wow.,amazement,surprise,mild
+1900-01-01 00:05:47,1900-01-01 00:05:49,I just don't know what I've done so wrong.,I just don't know what I've done so wrong.,confusion,sadness,moderate
+1900-01-01 00:05:49,1900-01-01 00:05:51,"Like, I don't know.","Like, I don't know.",uncertainty,neutral,mild
+1900-01-01 00:05:51,1900-01-01 00:05:56,"I think we've seen a much clearer, uglier side of her.","I think we've seen a much clearer, uglier side of her.",disapproval,disgust,moderate
+1900-01-01 00:05:56,1900-01-01 00:05:57,This is the thing.,This is the thing.,uncertainty,neutral,neutral
+1900-01-01 00:05:57,1900-01-01 00:05:58,I don't think they trust me.,I don't think they trust me.,insecurity,sadness,moderate
+1900-01-01 00:05:58,1900-01-01 00:06:00,"Well, you brought them into a mess.","Well, you brought them into a mess.",blame,anger,mild
+1900-01-01 00:06:00,1900-01-01 00:06:02,What it comes down to is that she,What it comes down to is that she,anticipation,neutral,mild
+1900-01-01 00:06:02,1900-01-01 00:06:04,does not treat us as equals.,does not treat us as equals.,resentment,anger,moderate
+1900-01-01 00:06:04,1900-01-01 00:06:06,"You talk down to me, you bulldoze me,","You talk down to me, you bulldoze me,",resentment,anger,moderate
+1900-01-01 00:06:06,1900-01-01 00:06:08,you do not treat me like an equal.,you do not treat me like an equal.,resentment,anger,moderate
+1900-01-01 00:06:08,1900-01-01 00:06:10,You don't treat me like one third of this restaurant.,You don't treat me like one third of this restaurant.,resentment,anger,moderate
+1900-01-01 00:06:10,1900-01-01 00:06:13,"Well, I have the burden of the money,","Well, I have the burden of the money,",worry,sadness,moderate
+1900-01-01 00:06:13,1900-01-01 00:06:15,and I'm making $2 an hour.,and I'm making $2 an hour.,resentment,anger,moderate
+1900-01-01 00:06:15,1900-01-01 00:06:17,"She gets paid that much, but she also gets a car.","She gets paid that much, but she also gets a car.",envy,disgust,mild
+1900-01-01 00:06:17,1900-01-01 00:06:20,"She gets her cell phone paid for, her gas.","She gets her cell phone paid for, her gas.",resentment,anger,mild
+1900-01-01 00:06:20,1900-01-01 00:06:23,Wow.,Wow.,amazement,surprise,mild
+1900-01-01 00:06:23,1900-01-01 00:06:24,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:06:24,1900-01-01 00:06:27,"So if you could get out of this, would you do it?","So if you could get out of this, would you do it?",curiosity,neutral,mild
+1900-01-01 00:06:27,1900-01-01 00:06:30,"Looking back, we did make a very, you know,","Looking back, we did make a very, you know,",reflection,neutral,mild
+1900-01-01 00:06:30,1900-01-01 00:06:32,risky and stupid decision.,risky and stupid decision.,contempt,disgust,moderate
+1900-01-01 00:06:35,1900-01-01 00:06:39,"My sister doesn't have that burden of losing her house,","My sister doesn't have that burden of losing her house,",resentment,sadness,moderate
+1900-01-01 00:06:39,1900-01-01 00:06:42,so she's never been really responsible.,so she's never been really responsible.,disapproval,disgust,mild
+1900-01-01 00:06:42,1900-01-01 00:06:43,"Listen, I'm back to eat.","Listen, I'm back to eat.",assertiveness,neutral,neutral
+1900-01-01 00:06:43,1900-01-01 00:06:44,"Nice to meet you, all three of you.","Nice to meet you, all three of you.",friendliness,happiness,mild
+1900-01-01 00:06:44,1900-01-01 00:06:46,And I'm going to see what I'm going to work with.,And I'm going to see what I'm going to work with.,curiosity,neutral,mild
+1900-01-01 00:06:46,1900-01-01 00:06:47,Thank you.,Thank you.,gratitude,happiness,mild
+1900-01-01 00:06:47,1900-01-01 00:06:48,Thank you.,Thank you.,gratitude,happiness,mild
+1900-01-01 00:06:48,1900-01-01 00:06:52,"It's emotionally draining, and it's a scary situation.","It's emotionally draining, and it's a scary situation.",anxiety,fear,intense
+1900-01-01 00:06:57,1900-01-01 00:06:58,Rice.,Rice.,neutrality,neutral,neutral
+1900-01-01 00:06:58,1900-01-01 00:06:59,Here we go.,Here we go.,anticipation,surprise,mild
+1900-01-01 00:07:00,1900-01-01 00:07:02,"Oh, my word.","Oh, my word.",astonishment,surprise,mild
+1900-01-01 00:07:02,1900-01-01 00:07:04,Here's some water for you.,Here's some water for you.,kindness,happiness,mild
+1900-01-01 00:07:04,1900-01-01 00:07:05,Thank you very much.,Thank you very much.,gratitude,happiness,mild
+1900-01-01 00:07:05,1900-01-01 00:07:07,"My name is Genevieve, and I'm going to be your server.","My name is Genevieve, and I'm going to be your server.",introduction,neutral,neutral
+1900-01-01 00:07:07,1900-01-01 00:07:08,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:07:08,1900-01-01 00:07:09,Can I get you started with anything?,Can I get you started with anything?,helpfulness,neutral,neutral
+1900-01-01 00:07:09,1900-01-01 00:07:10,Let's go.,Let's go.,readiness,happiness,mild
+1900-01-01 00:07:10,1900-01-01 00:07:12,"Right, let's start off with the toasted ravioli.","Right, let's start off with the toasted ravioli.",anticipation,happiness,mild
+1900-01-01 00:07:12,1900-01-01 00:07:13,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:07:13,1900-01-01 00:07:14,The frutta di mame.,The frutta di mame.,neutrality,neutral,neutral
+1900-01-01 00:07:14,1900-01-01 00:07:15,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:07:15,1900-01-01 00:07:16,The lasagna.,The lasagna.,neutrality,neutral,neutral
+1900-01-01 00:07:16,1900-01-01 00:07:18,"It's not your typical lasagna, so be","It's not your typical lasagna, so be",anticipation,surprise,mild
+1900-01-01 00:07:18,1900-01-01 00:07:22,prepared for something different.,prepared for something different.,anticipation,surprise,mild
+1900-01-01 00:07:22,1900-01-01 00:07:24,"What do you mean, something different?","What do you mean, something different?",confusion,surprise,mild
+1900-01-01 00:07:24,1900-01-01 00:07:25,It's kind of like?,It's kind of like?,curiosity,neutral,mild
+1900-01-01 00:07:25,1900-01-01 00:07:26,"Save it, save it, save it.","Save it, save it, save it.",urgency,fear,intense
+1900-01-01 00:07:26,1900-01-01 00:07:27,Are you sure?,Are you sure?,doubt,fear,mild
+1900-01-01 00:07:27,1900-01-01 00:07:28,Absolutely.,Absolutely.,agreement,happiness,mild
+1900-01-01 00:07:28,1900-01-01 00:07:31,"We're in California, so why not chicken pizza?","We're in California, so why not chicken pizza?",curiosity,neutral,mild
+1900-01-01 00:07:31,1900-01-01 00:07:32,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:07:32,1900-01-01 00:07:34,Excellent.,Excellent.,satisfaction,happiness,mild
+1900-01-01 00:07:34,1900-01-01 00:07:35,And who makes the bread?,And who makes the bread?,curiosity,neutral,mild
+1900-01-01 00:07:35,1900-01-01 00:07:37,"Casimiro, our head chef.","Casimiro, our head chef.",neutrality,neutral,neutral
+1900-01-01 00:07:37,1900-01-01 00:07:38,Yes.,Yes.,agreement,neutral,neutral
+1900-01-01 00:07:38,1900-01-01 00:07:39,Ready?,Ready?,anticipation,surprise,mild
+1900-01-01 00:07:39,1900-01-01 00:07:41,Thank you.,Thank you.,gratitude,happiness,mild
+1900-01-01 00:07:41,1900-01-01 00:07:44,Bread's dreadful.,Bread's dreadful.,disappointment,disgust,moderate
+1900-01-01 00:07:44,1900-01-01 00:07:46,The dough ball.,The dough ball.,neutrality,neutral,neutral
+1900-01-01 00:07:46,1900-01-01 00:07:49,"Wet, soggy, horrible dough.","Wet, soggy, horrible dough.",disappointment,disgust,moderate
+1900-01-01 00:07:49,1900-01-01 00:07:50,Damn.,Damn.,frustration,anger,mild
+1900-01-01 00:07:50,1900-01-01 00:07:52,"Do it, Casimiro.","Do it, Casimiro.",encouragement,happiness,moderate
+1900-01-01 00:07:52,1900-01-01 00:07:54,Toasted ravioli for Chef Ramsay.,Toasted ravioli for Chef Ramsay.,anticipation,neutral,neutral
+1900-01-01 00:07:54,1900-01-01 00:07:57,"I don't like any of the food, so I really","I don't like any of the food, so I really",displeasure,disgust,moderate
+1900-01-01 00:07:57,1900-01-01 00:07:59,don't think that he will either.,don't think that he will either.,doubt,sadness,mild
+1900-01-01 00:08:03,1900-01-01 00:08:05,Here's the toasted ravioli.,Here's the toasted ravioli.,contentment,happiness,mild
+1900-01-01 00:08:05,1900-01-01 00:08:07,Thank you very much.,Thank you very much.,gratitude,happiness,mild
+1900-01-01 00:08:07,1900-01-01 00:08:09,"Wow, wow, wow, wow, wow.","Wow, wow, wow, wow, wow.",astonishment,surprise,intense
+1900-01-01 00:08:09,1900-01-01 00:08:10,Which bit's the toasted bit?,Which bit's the toasted bit?,curiosity,neutral,mild
+1900-01-01 00:08:10,1900-01-01 00:08:14,"Yeah, I never have recommended the ravioli.","Yeah, I never have recommended the ravioli.",disapproval,disgust,mild
+1900-01-01 00:08:14,1900-01-01 00:08:16,"I mean, they're raw.","I mean, they're raw.",disapproval,disgust,mild
+1900-01-01 00:08:16,1900-01-01 00:08:19,"Yeah, a lot of people don't like them.","Yeah, a lot of people don't like them.",disapproval,disgust,mild
+1900-01-01 00:08:18.123991,1900-01-01 00:08:21.363991,"They're either really raw, or they're just, like, cardboard.","They're either really raw, or they're just, like, cardboard.",disappointment,disgust,moderate
+1900-01-01 00:08:21.363991,1900-01-01 00:08:23.563991,She doesn't know what stuff she's talking about.,She doesn't know what stuff she's talking about.,dismissiveness,disgust,moderate
+1900-01-01 00:08:23.563991,1900-01-01 00:08:25.563991,"I mean, they're dangerous.","I mean, they're dangerous.",apprehension,fear,moderate
+1900-01-01 00:08:25.563991,1900-01-01 00:08:26.603991,Does she eat them?,Does she eat them?,curiosity,neutral,neutral
+1900-01-01 00:08:26.603991,1900-01-01 00:08:28.303991,"Tatiana, does she eat that dish?","Tatiana, does she eat that dish?",curiosity,neutral,mild
+1900-01-01 00:08:28.303991,1900-01-01 00:08:29.603991,No.,No.,rejection,anger,mild
+1900-01-01 00:08:29.603991,1900-01-01 00:08:30.803991,"No, will you ask her to taste one for me?","No, will you ask her to taste one for me?",request,neutral,neutral
+1900-01-01 00:08:30.803991,1900-01-01 00:08:31.903991,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:08:31.903991,1900-01-01 00:08:32.803991,And then I think she'll 86 them.,And then I think she'll 86 them.,expectation,neutral,mild
+1900-01-01 00:08:32.803991,1900-01-01 00:08:33.703991,All right.,All right.,acceptance,neutral,neutral
+1900-01-01 00:08:33.703991,1900-01-01 00:08:34.803991,Toasted ravioli?,Toasted ravioli?,curiosity,surprise,mild
+1900-01-01 00:08:34.803991,1900-01-01 00:08:35.703991,Really?,Really?,skepticism,surprise,mild
+1900-01-01 00:08:35.703991,1900-01-01 00:08:36.603991,Yeah.,Yeah.,agreement,neutral,neutral
+1900-01-01 00:08:36.603991,1900-01-01 00:08:37.943991,It sounds like the owners are toast.,It sounds like the owners are toast.,resignation,sadness,moderate
+1900-01-01 00:08:37.943991,1900-01-01 00:08:40.243991,He said taste it and agree with him and 86 it.,He said taste it and agree with him and 86 it.,compliance,neutral,neutral
+1900-01-01 00:08:44.123991,1900-01-01 00:08:45.623991,Don't say anything to the chefs.,Don't say anything to the chefs.,wariness,fear,mild
+1900-01-01 00:08:45.623991,1900-01-01 00:08:47.123991,Just let them be calm.,Just let them be calm.,soothing,neutral,mild
+1900-01-01 00:08:47.623991,1900-01-01 00:08:48.523991,Calm a bit.,Calm a bit.,soothing,neutral,mild
+1900-01-01 00:08:48.523991,1900-01-01 00:08:50.422991,"No, it's OK.","No, it's OK.",reassurance,neutral,mild
+1900-01-01 00:08:50.422991,1900-01-01 00:08:52.422991,It's ridiculous.,It's ridiculous.,frustration,anger,moderate
+1900-01-01 00:08:52.422991,1900-01-01 00:08:53.623991,I can't take food back there.,I can't take food back there.,frustration,sadness,mild
+1900-01-01 00:08:53.623991,1900-01-01 00:08:55.163991,None of us can take food back there.,None of us can take food back there.,restriction,neutral,neutral
+1900-01-01 00:08:55.163991,1900-01-01 00:08:56.463991,That's not how it's supposed to go.,That's not how it's supposed to go.,disappointment,sadness,moderate
+1900-01-01 00:08:56.463991,1900-01-01 00:08:57.603991,"You're supposed to go straight to the chef and say,","You're supposed to go straight to the chef and say,",instruction,neutral,neutral
+1900-01-01 00:08:57.603991,1900-01-01 00:08:58.703991,this is wrong.,this is wrong.,disapproval,anger,mild
+1900-01-01 00:08:58.703991,1900-01-01 00:08:59.603991,Wow.,Wow.,amazement,surprise,mild
+1900-01-01 00:08:59.603991,1900-01-01 00:09:00.703991,This is the frutti di mare.,This is the frutti di mare.,neutrality,neutral,neutral
+1900-01-01 00:09:00.703991,1900-01-01 00:09:01.603991,Frutti di mare?,Seafood?,curiosity,neutral,mild
+1900-01-01 00:09:01.603991,1900-01-01 00:09:02.603991,Wow.,Wow.,astonishment,surprise,mild
+1900-01-01 00:09:02.603991,1900-01-01 00:09:04.103991,It's a bizarre looking frutti di mare.,It's a bizarre looking frutti di mare.,curiosity,surprise,mild
+1900-01-01 00:09:04.103991,1900-01-01 00:09:05.003991,It's actually great.,It's actually great.,satisfaction,happiness,moderate
+1900-01-01 00:09:05.003991,1900-01-01 00:09:05.902991,"Thank you, my darling.","Thank you, my darling.",gratitude,happiness,mild
+1900-01-01 00:09:12.582991,1900-01-01 00:09:14.582991,Pasta's mush.,Pasta's mush.,disappointment,sadness,mild
+1900-01-01 00:09:14.582991,1900-01-01 00:09:16.082991,It's way overcooked.,It's way overcooked.,disappointment,sadness,moderate
+1900-01-01 00:09:16.582991,1900-01-01 00:09:19.582991,Oh my god.,Oh my god.,shock,surprise,moderate
+1900-01-01 00:09:19.582991,1900-01-01 00:09:20.582991,Strands of mozzarella.,Strands of mozzarella.,neutrality,neutral,neutral
+1900-01-01 00:09:20.582991,1900-01-01 00:09:22.082991,Is that mozzarella on top of that?,Is that mozzarella on top of that?,curiosity,neutral,mild
+1900-01-01 00:09:22.082991,1900-01-01 00:09:23.082991,"Yes, it is.","Yes, it is.",acceptance,neutral,neutral
+1900-01-01 00:09:23.082991,1900-01-01 00:09:24.582991,On a frutti di mare.,On a frutti di mare.,anticipation,happiness,mild
+1900-01-01 00:09:24.582991,1900-01-01 00:09:26.082991,And then the pasta.,And then the pasta.,anticipation,neutral,neutral
+1900-01-01 00:09:26.082991,1900-01-01 00:09:27.082991,It's just mush.,It's just mush.,disappointment,sadness,mild
+1900-01-01 00:09:27.082991,1900-01-01 00:09:28.582991,It's almost like it's canned.,It's almost like it's canned.,skepticism,disgust,mild
+1900-01-01 00:09:28.582991,1900-01-01 00:09:31.082991,And the mussels taste like old style.,And the mussels taste like old style.,nostalgia,happiness,mild
+1900-01-01 00:09:31.082991,1900-01-01 00:09:32.082991,Are they fresh mussels?,Are they fresh mussels?,curiosity,neutral,neutral
+1900-01-01 00:09:32.082991,1900-01-01 00:09:33.603991,I don't think so.,I don't think so.,doubt,neutral,mild
+1900-01-01 00:09:33.603991,1900-01-01 00:09:35.603991,"And the shrimps, these ones are way overcooked.","And the shrimps, these ones are way overcooked.",disappointment,sadness,moderate
+1900-01-01 00:09:35.603991,1900-01-01 00:09:36.603991,Those ones are gray.,Those ones are gray.,indifference,neutral,neutral
+1900-01-01 00:09:36.603991,1900-01-01 00:09:37.603991,Strange.,Strange.,confusion,surprise,mild
+1900-01-01 00:09:37.603991,1900-01-01 00:09:38.803991,Yeah.,Yeah.,agreement,neutral,neutral
+1900-01-01 00:09:38.803991,1900-01-01 00:09:40.103991,This has been going on for like a month or two now.,This has been going on for like a month or two now.,frustration,sadness,moderate
+1900-01-01 00:09:40.103991,1900-01-01 00:09:42.603991,"He's just been thinning out bad shrimp, and we don't know why.","He's just been thinning out bad shrimp, and we don't know why.",confusion,surprise,moderate
+1900-01-01 00:09:42.603991,1900-01-01 00:09:44.603991,Genevieve doesn't shut up.,Genevieve doesn't shut up.,annoyance,anger,moderate
+1900-01-01 00:09:44.623991,1900-01-01 00:09:46.623991,And do you not tell the chef?,And do you not tell the chef?,suspicion,surprise,mild
+1900-01-01 00:09:46.623991,1900-01-01 00:09:49.123991,"Well, I can't take complaints to the chef.","Well, I can't take complaints to the chef.",resignation,sadness,mild
+1900-01-01 00:09:49.123991,1900-01-01 00:09:51.603991,Seriously?,Seriously?,skepticism,surprise,moderate
+1900-01-01 00:09:51.603991,1900-01-01 00:09:54.603991,Tatiana doesn't really listen to any of us.,Tatiana doesn't really listen to any of us.,frustration,anger,moderate
+1900-01-01 00:09:54.603991,1900-01-01 00:09:55.603991,Wow.,Wow.,amazement,surprise,mild
+1900-01-01 00:09:55.603991,1900-01-01 00:09:58.103991,Not good.,Not good.,disappointment,sadness,mild
+1900-01-01 00:09:58.103991,1900-01-01 00:09:59.103991,What the hell is that?,What the hell is that?,confusion,surprise,intense
+1900-01-01 00:09:59.103991,1900-01-01 00:10:00.603991,It's the lasagna.,It's the lasagna.,certainty,neutral,neutral
+1900-01-01 00:10:00.603991,1900-01-01 00:10:03.103991,That's the lasagna?,That's the lasagna?,doubt,surprise,mild
+1900-01-01 00:10:03.103991,1900-01-01 00:10:05.623991,The lasagna is vile.,The lasagna is vile.,disgust,disgust,moderate
+1900-01-01 00:10:05.623991,1900-01-01 00:10:08.123991,It's embarrassing to serve that to Chef Ramsay.,It's embarrassing to serve that to Chef Ramsay.,shame,sadness,moderate
+1900-01-01 00:10:08.123991,1900-01-01 00:10:09.123991,What's in the sauce?,What's in the sauce?,curiosity,neutral,mild
+1900-01-01 00:10:09.123991,1900-01-01 00:10:10.123991,Why is it that color?,Why is it that color?,curiosity,neutral,mild
+1900-01-01 00:10:10.123991,1900-01-01 00:10:11.123991,It's pink sauce.,It's pink sauce.,neutrality,neutral,neutral
+1900-01-01 00:10:11.123991,1900-01-01 00:10:13.123991,She doesn't know what's in it.,She doesn't know what's in it.,uncertainty,fear,mild
+1900-01-01 00:10:13.142991,1900-01-01 00:10:14.142991,Pink sauce with lasagna.,Pink sauce with lasagna.,anticipation,happiness,mild
+1900-01-01 00:10:14.142991,1900-01-01 00:10:15.142991,Is it his own recipe?,Is it his own recipe?,curiosity,neutral,mild
+1900-01-01 00:10:15.142991,1900-01-01 00:10:16.142991,"Yes, it is.","Yes, it is.",agreement,neutral,neutral
+1900-01-01 00:10:19.142991,1900-01-01 00:10:21.642991,The sauce tastes bizarre.,The sauce tastes bizarre.,confusion,surprise,moderate
+1900-01-01 00:10:21.642991,1900-01-01 00:10:24.623991,And the mouthful I had was stone cold.,And the mouthful I had was stone cold.,disappointment,sadness,moderate
+1900-01-01 00:10:24.623991,1900-01-01 00:10:26.123991,"It's hot one side, cold the other.","It's hot one side, cold the other.",discomfort,disgust,mild
+1900-01-01 00:10:26.123991,1900-01-01 00:10:27.623991,Is that microwaved?,Is that microwaved?,suspicion,surprise,mild
+1900-01-01 00:10:27.623991,1900-01-01 00:10:29.123991,It might be.,It might be.,uncertainty,neutral,mild
+1900-01-01 00:10:29.123991,1900-01-01 00:10:30.623991,Don't answer a question you don't know.,Don't answer a question you don't know.,caution,fear,mild
+1900-01-01 00:10:30.623991,1900-01-01 00:10:32.623991,Oh.,Oh.,disappointment,sadness,mild
+1900-01-01 00:10:32.623991,1900-01-01 00:10:34.123991,Wow.,Wow.,amazement,surprise,mild
+1900-01-01 00:10:34.123991,1900-01-01 00:10:35.123991,Right.,Right.,agreement,neutral,neutral
+1900-01-01 00:10:35.123991,1900-01-01 00:10:36.623991,Is there a problem with his microwave?,Is there a problem with his microwave?,concern,fear,mild
+1900-01-01 00:10:36.623991,1900-01-01 00:10:38.123991,Not that I'm aware of.,Not that I'm aware of.,uncertainty,neutral,neutral
+1900-01-01 00:10:38.123991,1900-01-01 00:10:39.643991,It feels like the microwave's on the blink.,It feels like the microwave's on the blink.,frustration,anger,mild
+1900-01-01 00:10:39.643991,1900-01-01 00:10:40.643991,"Yes, it is.","Yes, it is.",acceptance,neutral,neutral
+1900-01-01 00:10:40.643991,1900-01-01 00:10:41.643991,Wow.,Wow.,amazement,surprise,mild
+1900-01-01 00:10:41.662991,1900-01-01 00:10:44.162991,A restaurant can't get food microwaved properly.,A restaurant can't get food microwaved properly.,frustration,anger,moderate
+1900-01-01 00:10:44.162991,1900-01-01 00:10:45.662991,I don't know.,I don't know.,uncertainty,neutral,neutral
+1900-01-01 00:10:45.662991,1900-01-01 00:10:48.162991,Let me answer these questions.,Let me answer these questions.,readiness,neutral,neutral
+1900-01-01 00:10:48.162991,1900-01-01 00:10:49.662991,"Still, there's always hope for the pizza.","Still, there's always hope for the pizza.",hope,happiness,mild
+1900-01-01 00:10:49.662991,1900-01-01 00:10:51.662991,Especially looking at it like that.,Especially looking at it like that.,reflection,neutral,mild
+1900-01-01 00:10:51.662991,1900-01-01 00:10:52.662991,All right.,All right.,acceptance,neutral,neutral
+1900-01-01 00:10:52.662991,1900-01-01 00:10:54.162991,Maybe we can win him over with the pizza.,Maybe we can win him over with the pizza.,hope,happiness,mild
+1900-01-01 00:10:54.162991,1900-01-01 00:10:55.662991,"It's crispy, right?","It's crispy, right?",curiosity,neutral,mild
+1900-01-01 00:10:55.662991,1900-01-01 00:10:56.662991,No.,No.,rejection,anger,mild
+1900-01-01 00:10:56.662991,1900-01-01 00:10:57.662991,It's like good.,It's like good.,contentment,happiness,mild
+1900-01-01 00:10:57.662991,1900-01-01 00:10:58.662991,It's not pizza.,It's not pizza.,disappointment,sadness,mild
+1900-01-01 00:10:58.662991,1900-01-01 00:10:59.662991,It's good.,It's good.,satisfaction,happiness,mild
+1900-01-01 00:10:59.662991,1900-01-01 00:11:02.162991,"Yes, but it's not less cooked.","Yes, but it's not less cooked.",defensiveness,neutral,mild
+1900-01-01 00:11:02.162991,1900-01-01 00:11:03.162991,What's it?,What's it?,curiosity,neutral,mild
+1900-01-01 00:11:03.162991,1900-01-01 00:11:04.162991,It's like pizza.,It's like pizza.,indifference,neutral,neutral
+1900-01-01 00:11:04.162991,1900-01-01 00:11:07.162991,It's the garlic chicken.,It's the garlic chicken.,neutrality,neutral,neutral
+1900-01-01 00:11:07.162991,1900-01-01 00:11:10.662991,"God, I hope he likes something.","God, I hope he likes something.",anticipation,fear,moderate
+1900-01-01 00:11:10.682991,1900-01-01 00:11:11.682991,Doughy.,Doughy.,neutrality,neutral,neutral
+1900-01-01 00:11:15.182991,1900-01-01 00:11:16.182991,It's so bready.,It's so bready.,amusement,happiness,mild
+1900-01-01 00:11:16.182991,1900-01-01 00:11:17.682991,So doughy.,So doughy.,disappointment,disgust,mild
+1900-01-01 00:11:17.682991,1900-01-01 00:11:20.182991,And look at all this raw pastry underneath there.,And look at all this raw pastry underneath there.,disappointment,disgust,moderate
+1900-01-01 00:11:20.182991,1900-01-01 00:11:21.182991,"Oh, no.","Oh, no.",dismay,sadness,mild
+1900-01-01 00:11:21.182991,1900-01-01 00:11:22.682991,He doesn't like the pizza.,He doesn't like the pizza.,displeasure,disgust,mild
+1900-01-01 00:11:22.682991,1900-01-01 00:11:25.182991,It resembles nothing homemade.,It resembles nothing homemade.,disappointment,disgust,mild
+1900-01-01 00:11:25.182991,1900-01-01 00:11:26.682991,"Oh, my god.","Oh, my god.",astonishment,surprise,moderate
+1900-01-01 00:11:26.682991,1900-01-01 00:11:29.182991,They've got a pizza that's come out of the oven.,They've got a pizza that's come out of the oven.,anticipation,happiness,mild
+1900-01-01 00:11:29.182991,1900-01-01 00:11:31.182991,That feels like something that's been frozen.,That feels like something that's been frozen.,discomfort,disgust,mild
+1900-01-01 00:11:33.682991,1900-01-01 00:11:35.182991,He hates our pizza.,He hates our pizza.,rejection,disgust,moderate
+1900-01-01 00:11:35.182991,1900-01-01 00:11:36.682991,He hates our pizza.,He hates our pizza.,rejection,disgust,moderate
+1900-01-01 00:11:36.682991,1900-01-01 00:11:39.682991,What a shame.,What a shame.,regret,sadness,mild
+1900-01-01 00:11:39.703991,1900-01-01 00:11:40.703991,"Oh, dear.","Oh, dear.",concern,fear,mild
+1900-01-01 00:11:40.703991,1900-01-01 00:11:42.703991,"Is it that bad, Chef?","Is it that bad, Chef?",apprehension,fear,mild
+1900-01-01 00:11:42.703991,1900-01-01 00:11:44.203991,"Yeah, it's not funny.","Yeah, it's not funny.",annoyance,anger,mild
+1900-01-01 00:11:44.203991,1900-01-01 00:11:46.203991,"I don't know what the giggles and the laughing is about,","I don't know what the giggles and the laughing is about,",confusion,surprise,mild
+1900-01-01 00:11:46.203991,1900-01-01 00:11:48.703991,but the dishes have been dreadful.,but the dishes have been dreadful.,disappointment,sadness,moderate
+1900-01-01 00:11:48.703991,1900-01-01 00:11:50.203991,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:11:50.203991,1900-01-01 00:11:52.703991,"I'm trying not to cry, but he's going to come after me.","I'm trying not to cry, but he's going to come after me.",dread,fear,intense
+1900-01-01 00:11:52.703991,1900-01-01 00:11:54.203991,I can feel it.,I can feel it.,anticipation,surprise,mild
+1900-01-01 00:11:54.203991,1900-01-01 00:11:57.203991,"Oh, my god.","Oh, my god.",shock,surprise,moderate
+1900-01-01 00:11:57.203991,1900-01-01 00:12:00.203991,Do you seriously have a kitchen heater?,Do you seriously have a kitchen heater?,incredulity,surprise,moderate
+1900-01-01 00:12:00.203991,1900-01-01 00:12:03.723991,After a lunch in which every dish had a failing grade.,After a lunch in which every dish had a failing grade.,disappointment,sadness,moderate
+1900-01-01 00:12:03.723991,1900-01-01 00:12:05.223991,"It's hot one side, cold the other.","It's hot one side, cold the other.",discomfort,disgust,mild
+1900-01-01 00:12:05.223991,1900-01-01 00:12:06.723991,Dreadful.,Dreadful.,dread,fear,intense
+1900-01-01 00:12:06.762991,1900-01-01 00:12:11.262991,Owner Tatiana refused to pass on any of Chef Ramsay's criticism.,Owner Tatiana refused to pass on any of Chef Ramsay's criticism.,defensiveness,fear,moderate
+1900-01-01 00:12:11.262991,1900-01-01 00:12:12.742991,This is Chef Casimiro.,This is Chef Casimiro.,neutrality,neutral,neutral
+1900-01-01 00:12:12.742991,1900-01-01 00:12:13.742991,"Casimiro, how are you?","Casimiro, how are you?",curiosity,neutral,neutral
+1900-01-01 00:12:13.742991,1900-01-01 00:12:14.742991,The head chef.,The head chef.,neutrality,neutral,neutral
+1900-01-01 00:12:14.742991,1900-01-01 00:12:15.742991,Excellent.,Excellent.,satisfaction,happiness,mild
+1900-01-01 00:12:15.742991,1900-01-01 00:12:16.742991,And first name?,And first name?,curiosity,neutral,neutral
+1900-01-01 00:12:16.742991,1900-01-01 00:12:17.742991,Daniela.,Daniela.,neutrality,neutral,neutral
+1900-01-01 00:12:17.742991,1900-01-01 00:12:18.742991,"Daniela, good to see you.","Daniela, good to see you.",warmth,happiness,mild
+1900-01-01 00:12:18.742991,1900-01-01 00:12:20.742991,But the uninformed kitchen crew is about to be enlightened.,But the uninformed kitchen crew is about to be enlightened.,anticipation,surprise,mild
+1900-01-01 00:12:20.742991,1900-01-01 00:12:23.742991,"So just explain, who's the head chef, please?","So just explain, who's the head chef, please?",curiosity,neutral,mild
+1900-01-01 00:12:23.742991,1900-01-01 00:12:24.742991,Casimiro.,Casimiro.,neutrality,neutral,neutral
+1900-01-01 00:12:24.742991,1900-01-01 00:12:26.742991,"Do you speak a little English, Casimiro?","Do you speak a little English, Casimiro?",curiosity,neutral,mild
+1900-01-01 00:12:26.742991,1900-01-01 00:12:27.742991,No.,No.,rejection,anger,mild
+1900-01-01 00:12:27.742991,1900-01-01 00:12:28.742991,No.,No.,rejection,anger,mild
+1900-01-01 00:12:28.742991,1900-01-01 00:12:30.762991,And I'm upset.,And I'm upset.,frustration,sadness,moderate
+1900-01-01 00:12:30.762991,1900-01-01 00:12:34.263991,"I mean, you have a really bad, depressing restaurant.","I mean, you have a really bad, depressing restaurant.",criticism,disgust,moderate
+1900-01-01 00:12:34.263991,1900-01-01 00:12:35.763991,This place is a mess.,This place is a mess.,annoyance,disgust,moderate
+1900-01-01 00:12:35.802991,1900-01-01 00:12:36.802991,And you know what?,And you know what?,curiosity,neutral,neutral
+1900-01-01 00:12:36.802991,1900-01-01 00:12:38.802991,It's not even mediocre.,It's not even mediocre.,disappointment,sadness,moderate
+1900-01-01 00:12:38.802991,1900-01-01 00:12:39.802991,The food is hideous.,The food is hideous.,revulsion,disgust,intense
+1900-01-01 00:12:39.802991,1900-01-01 00:12:42.783991,And you don't need me to tell you that.,And you don't need me to tell you that.,resignation,neutral,mild
+1900-01-01 00:12:42.783991,1900-01-01 00:12:46.783991,"The bread, that's the kind of bread that you're serving.","The bread, that's the kind of bread that you're serving.",judgment,disgust,mild
+1900-01-01 00:12:46.783991,1900-01-01 00:12:47.783991,Touch it.,Touch it.,curiosity,neutral,neutral
+1900-01-01 00:12:47.783991,1900-01-01 00:12:50.783991,"It's soaking wet, it's bland, and it's","It's soaking wet, it's bland, and it's",disappointment,sadness,moderate
+1900-01-01 00:12:50.783991,1900-01-01 00:12:52.783991,"1,000 miles away from anything called focaccia,","1,000 miles away from anything called focaccia,",longing,sadness,mild
+1900-01-01 00:12:52.783991,1900-01-01 00:12:54.783991,let me tell you.,let me tell you.,anticipation,neutral,neutral
+1900-01-01 00:12:54.783991,1900-01-01 00:12:55.783991,It's embarrassing.,It's embarrassing.,embarrassment,sadness,moderate
+1900-01-01 00:12:55.783991,1900-01-01 00:12:58.783991,"Pink lasagna, stone cold in the center, piping","Pink lasagna, stone cold in the center, piping",disappointment,disgust,moderate
+1900-01-01 00:12:58.783991,1900-01-01 00:12:59.783991,hot on the right hand side.,hot on the right hand side.,observation,neutral,neutral
+1900-01-01 00:12:59.783991,1900-01-01 00:13:00.783991,Disgusting.,Disgusting.,revulsion,disgust,intense
+1900-01-01 00:13:00.783991,1900-01-01 00:13:02.802991,"I just, I trust him so much.","I just, I trust him so much.",confidence,happiness,moderate
+1900-01-01 00:13:02.802991,1900-01-01 00:13:04.802991,I trust him.,I trust him.,trust,happiness,mild
+1900-01-01 00:13:04.843991,1900-01-01 00:13:05.843991,You're full of shit.,You're full of shit.,contempt,anger,intense
+1900-01-01 00:13:05.843991,1900-01-01 00:13:06.843991,I let him do it.,I let him do it.,resignation,neutral,neutral
+1900-01-01 00:13:06.843991,1900-01-01 00:13:07.843991,I just let him do it.,I just let him do it.,resignation,sadness,mild
+1900-01-01 00:13:07.843991,1900-01-01 00:13:08.843991,You trust them?,You trust them?,doubt,fear,mild
+1900-01-01 00:13:08.843991,1900-01-01 00:13:10.843991,"I just trusted him to know what he was doing,","I just trusted him to know what he was doing,",trust,neutral,mild
+1900-01-01 00:13:10.843991,1900-01-01 00:13:12.843991,because he's been doing it for so long.,because he's been doing it for so long.,resignation,sadness,mild
+1900-01-01 00:13:12.843991,1900-01-01 00:13:15.823991,"No, the problem is, he's got away with it for so long.","No, the problem is, he's got away with it for so long.",resentment,anger,moderate
+1900-01-01 00:13:15.823991,1900-01-01 00:13:18.823991,Frittata Mare with the overcooked linguine,Frittata Mare with the overcooked linguine,disappointment,sadness,mild
+1900-01-01 00:13:18.823991,1900-01-01 00:13:19.823991,in a seafood dish.,in a seafood dish.,neutrality,neutral,neutral
+1900-01-01 00:13:19.823991,1900-01-01 00:13:23.823991,"No salt, the shrimps solid like a bullet,","No salt, the shrimps solid like a bullet,",disappointment,disgust,moderate
+1900-01-01 00:13:23.823991,1900-01-01 00:13:25.823991,and mussels that didn't even taste fresh.,and mussels that didn't even taste fresh.,disappointment,disgust,moderate
+1900-01-01 00:13:25.823991,1900-01-01 00:13:26.823991,Where are the mussels from?,Where are the mussels from?,curiosity,neutral,neutral
+1900-01-01 00:13:26.823991,1900-01-01 00:13:28.823991,The store.,The store.,neutrality,neutral,neutral
+1900-01-01 00:13:28.823991,1900-01-01 00:13:29.823991,Show me.,Show me.,curiosity,neutral,neutral
+1900-01-01 00:13:32.843991,1900-01-01 00:13:33.843991,"I mean, come on.","I mean, come on.",exasperation,anger,mild
+1900-01-01 00:13:33.883991,1900-01-01 00:13:36.883991,What a mess.,What a mess.,frustration,disgust,moderate
+1900-01-01 00:13:36.883991,1900-01-01 00:13:39.883991,"I mean, wow.","I mean, wow.",astonishment,surprise,moderate
+1900-01-01 00:13:39.883991,1900-01-01 00:13:40.883991,What?,What?,confusion,surprise,mild
+1900-01-01 00:13:40.883991,1900-01-01 00:13:42.883991,What else do you freeze?,What else do you freeze?,curiosity,neutral,mild
+1900-01-01 00:13:42.883991,1900-01-01 00:13:45.862991,I don't know.,I don't know.,uncertainty,neutral,neutral
+1900-01-01 00:13:45.862991,1900-01-01 00:13:46.862991,You want to come and see?,You want to come and see?,invitation,neutral,mild
+1900-01-01 00:13:46.862991,1900-01-01 00:13:47.862991,Yeah.,Yeah.,agreement,neutral,neutral
+1900-01-01 00:13:47.862991,1900-01-01 00:13:48.862991,Yeah.,Yeah.,agreement,neutral,neutral
+1900-01-01 00:13:48.862991,1900-01-01 00:13:50.862991,"Well, if you don't know, let's find out.","Well, if you don't know, let's find out.",curiosity,surprise,mild
+1900-01-01 00:13:50.862991,1900-01-01 00:13:53.862991,What is it that?,What is it that?,confusion,surprise,mild
+1900-01-01 00:13:53.862991,1900-01-01 00:13:55.862991,You freeze meatballs?,You freeze meatballs?,curiosity,neutral,mild
+1900-01-01 00:13:55.862991,1900-01-01 00:13:57.862991,When were these made?,When were these made?,curiosity,neutral,neutral
+1900-01-01 00:13:57.862991,1900-01-01 00:13:58.862991,We buy them.,We buy them.,acceptance,neutral,neutral
+1900-01-01 00:13:58.862991,1900-01-01 00:13:59.862991,You buy him meatballs?,You buy him meatballs?,curiosity,neutral,mild
+1900-01-01 00:13:59.862991,1900-01-01 00:14:00.862991,He can't make a meatball?,He can't make a meatball?,incredulity,surprise,moderate
+1900-01-01 00:14:01.862991,1900-01-01 00:14:04.862991,"He said, yeah.","He said, yeah.",acceptance,neutral,neutral
+1900-01-01 00:14:04.862991,1900-01-01 00:14:05.862991,He can't make a meatball?,He can't make a meatball?,incredulity,surprise,moderate
+1900-01-01 00:14:05.862991,1900-01-01 00:14:06.862991,He doesn't want to?,He doesn't want to?,uncertainty,surprise,mild
+1900-01-01 00:14:09.862991,1900-01-01 00:14:10.862991,"Oh, wow.","Oh, wow.",amazement,surprise,mild
+1900-01-01 00:14:10.862991,1900-01-01 00:14:11.862991,Can you make a meatball?,Can you make a meatball?,curiosity,neutral,neutral
+1900-01-01 00:14:11.862991,1900-01-01 00:14:12.862991,Yeah.,Yeah.,agreement,neutral,neutral
+1900-01-01 00:14:12.862991,1900-01-01 00:14:14.883991,My hands are tied in this kitchen.,My hands are tied in this kitchen.,frustration,sadness,moderate
+1900-01-01 00:14:14.883991,1900-01-01 00:14:17.883991,I don't have any input on what goes on.,I don't have any input on what goes on.,powerlessness,sadness,moderate
+1900-01-01 00:14:17.883991,1900-01-01 00:14:19.883991,"Tatiana should step up to the plate,","Tatiana should step up to the plate,",expectation,neutral,mild
+1900-01-01 00:14:19.883991,1900-01-01 00:14:22.883991,and she should know what's going on in the kitchen.,and she should know what's going on in the kitchen.,expectation,neutral,mild
+1900-01-01 00:14:22.883991,1900-01-01 00:14:23.883991,That's her job.,That's her job.,indifference,neutral,neutral
+1900-01-01 00:14:23.883991,1900-01-01 00:14:25.883991,What is that?,What is that?,curiosity,surprise,mild
+1900-01-01 00:14:25.883991,1900-01-01 00:14:26.883991,Noodles.,Noodles.,neutrality,neutral,neutral
+1900-01-01 00:14:26.883991,1900-01-01 00:14:27.883991,Noodles?,Noodles?,curiosity,neutral,mild
+1900-01-01 00:14:27.883991,1900-01-01 00:14:28.883991,What's the chef expecting?,What's the chef expecting?,curiosity,neutral,mild
+1900-01-01 00:14:28.902991,1900-01-01 00:14:30.902991,A rush on pasta?,A rush on pasta?,curiosity,surprise,mild
+1900-01-01 00:14:30.902991,1900-01-01 00:14:31.902991,Wow.,Wow.,amazement,surprise,mild
+1900-01-01 00:14:31.902991,1900-01-01 00:14:34.883991,How much pasta does one chef need?,How much pasta does one chef need?,curiosity,neutral,neutral
+1900-01-01 00:14:34.883991,1900-01-01 00:14:36.883991,He's obsessed with it.,He's obsessed with it.,fixation,happiness,moderate
+1900-01-01 00:14:36.883991,1900-01-01 00:14:39.883991,It's all overcooked.,It's all overcooked.,disappointment,sadness,moderate
+1900-01-01 00:14:39.883991,1900-01-01 00:14:40.883991,What's in this one?,What's in this one?,curiosity,neutral,mild
+1900-01-01 00:14:40.883991,1900-01-01 00:14:41.883991,Pizza dough.,Pizza dough.,neutrality,neutral,neutral
+1900-01-01 00:14:41.883991,1900-01-01 00:14:42.883991,Holy crap.,Holy crap.,shock,surprise,moderate
+1900-01-01 00:14:42.883991,1900-01-01 00:14:44.883991,"This is just for the pizza, not the bread?","This is just for the pizza, not the bread?",confusion,surprise,mild
+1900-01-01 00:14:44.883991,1900-01-01 00:14:46.883991,Not the bread.,Not the bread.,dismay,sadness,mild
+1900-01-01 00:14:46.883991,1900-01-01 00:14:47.902991,And this dough here?,And this dough here?,curiosity,surprise,mild
+1900-01-01 00:14:47.902991,1900-01-01 00:14:48.902991,Same thing.,Same thing.,indifference,neutral,neutral
+1900-01-01 00:14:48.902991,1900-01-01 00:14:49.902991,Small and large.,Small and large.,neutrality,neutral,neutral
+1900-01-01 00:14:49.902991,1900-01-01 00:14:50.902991,Small and large.,Small and large.,neutrality,neutral,neutral
+1900-01-01 00:14:50.902991,1900-01-01 00:14:52.902991,Small and large.,Small and large.,neutrality,neutral,neutral
+1900-01-01 00:14:52.902991,1900-01-01 00:14:53.902991,"Look at this one, then.","Look at this one, then.",expectation,neutral,mild
+1900-01-01 00:14:53.902991,1900-01-01 00:14:55.902991,My god.,My god.,shock,surprise,moderate
+1900-01-01 00:14:55.902991,1900-01-01 00:14:57.902991,What the fuck?,What the fuck?,confusion,surprise,intense
+1900-01-01 00:14:57.922991,1900-01-01 00:14:59.922991,This is what goes on daily.,This is what goes on daily.,resignation,sadness,mild
+1900-01-01 00:14:59.922991,1900-01-01 00:15:02.922991,"All that bread like this, and all that pasta.","All that bread like this, and all that pasta.",craving,happiness,mild
+1900-01-01 00:15:02.922991,1900-01-01 00:15:03.922991,Wow.,Wow.,amazement,surprise,mild
+1900-01-01 00:15:05.922991,1900-01-01 00:15:07.902991,What's he doing with all this stuff?,What's he doing with all this stuff?,curiosity,surprise,mild
+1900-01-01 00:15:12.902991,1900-01-01 00:15:14.902991,There's not enough time to prepare everything,There's not enough time to prepare everything,anxiety,fear,moderate
+1900-01-01 00:15:14.902991,1900-01-01 00:15:16.902991,with everything he has to prepare in the day.,with everything he has to prepare in the day.,burden,sadness,mild
+1900-01-01 00:15:16.902991,1900-01-01 00:15:18.902991,Then what happens when he doesn't sell this?,Then what happens when he doesn't sell this?,uncertainty,fear,moderate
+1900-01-01 00:15:18.902991,1900-01-01 00:15:19.902991,Where does it go?,Where does it go?,confusion,surprise,mild
+1900-01-01 00:15:19.902991,1900-01-01 00:15:20.902991,Throw it away.,Throw it away.,dismissiveness,disgust,mild
+1900-01-01 00:15:20.902991,1900-01-01 00:15:22.902991,He throws it away.,He throws it away.,dismissal,disgust,mild
+1900-01-01 00:15:22.902991,1900-01-01 00:15:23.902991,How much do we throw away?,How much do we throw away?,curiosity,neutral,neutral
+1900-01-01 00:15:23.902991,1900-01-01 00:15:25.922991,"There are times where we've thrown away a lot of pasta,","There are times where we've thrown away a lot of pasta,",regret,sadness,mild
+1900-01-01 00:15:25.943991,1900-01-01 00:15:27.943991,because people aren't ordering it.,because people aren't ordering it.,resignation,sadness,mild
+1900-01-01 00:15:27.943991,1900-01-01 00:15:30.943991,"Patty and Val, this is your house.","Patty and Val, this is your house.",acknowledgment,neutral,neutral
+1900-01-01 00:15:30.943991,1900-01-01 00:15:31.943991,This is you.,This is you.,neutrality,neutral,neutral
+1900-01-01 00:15:31.943991,1900-01-01 00:15:33.943991,This is your life right here in the trash.,This is your life right here in the trash.,contempt,disgust,intense
+1900-01-01 00:15:33.943991,1900-01-01 00:15:36.943991,"Tatiana, what I'm more concerned about","Tatiana, what I'm more concerned about",worry,fear,mild
+1900-01-01 00:15:36.943991,1900-01-01 00:15:38.943991,is the fact that you're oblivious.,is the fact that you're oblivious.,frustration,anger,moderate
+1900-01-01 00:15:38.943991,1900-01-01 00:15:41.943991,You're like an airhead that's got her head in the clouds.,You're like an airhead that's got her head in the clouds.,condescension,disgust,moderate
+1900-01-01 00:15:43.943991,1900-01-01 00:15:45.943991,This is business.,This is business.,detachment,neutral,neutral
+1900-01-01 00:15:45.943991,1900-01-01 00:15:48.943991,It was a unsuccessful business before.,It was a unsuccessful business before.,regret,sadness,mild
+1900-01-01 00:15:48.943991,1900-01-01 00:15:53.943991,You picked it up and maintained that unsuccessful menu,You picked it up and maintained that unsuccessful menu,disappointment,sadness,moderate
+1900-01-01 00:15:53.962991,1900-01-01 00:15:55.962991,in an unsuccessful business.,in an unsuccessful business.,disappointment,sadness,moderate
+1900-01-01 00:15:55.962991,1900-01-01 00:15:57.962991,"You come in, change nothing.","You come in, change nothing.",resentment,anger,moderate
+1900-01-01 00:15:57.962991,1900-01-01 00:15:59.962991,You can't direct any form of criticism,You can't direct any form of criticism,frustration,anger,moderate
+1900-01-01 00:15:59.962991,1900-01-01 00:16:00.962991,or standards to your chefs.,or standards to your chefs.,confusion,neutral,neutral
+1900-01-01 00:16:00.962991,1900-01-01 00:16:03.962991,I don't even know why you bought the place.,I don't even know why you bought the place.,confusion,sadness,moderate
+1900-01-01 00:16:03.962991,1900-01-01 00:16:05.962991,And I certainly wouldn't pull my sister down,And I certainly wouldn't pull my sister down,defensiveness,anger,moderate
+1900-01-01 00:16:05.962991,1900-01-01 00:16:09.962991,and bring my parents into it to facilitate your ego dream.,and bring my parents into it to facilitate your ego dream.,resentment,anger,moderate
+1900-01-01 00:16:11.962991,1900-01-01 00:16:12.962991,Don't you understand?,Don't you understand?,frustration,anger,moderate
+1900-01-01 00:16:12.962991,1900-01-01 00:16:15.962991,"Like, I look at my mother, and I feel horrible.","Like, I look at my mother, and I feel horrible.",guilt,sadness,intense
+1900-01-01 00:16:15.962991,1900-01-01 00:16:17.962991,I feel horrible.,I feel horrible.,misery,sadness,intense
+1900-01-01 00:16:17.962991,1900-01-01 00:16:18.962991,Excuse me.,Excuse me.,politeness,neutral,neutral
+1900-01-01 00:16:18.962991,1900-01-01 00:16:20.962991,Don't start looking for sympathy now.,Don't start looking for sympathy now.,dismissiveness,disgust,moderate
+1900-01-01 00:16:20.962991,1900-01-01 00:16:21.962991,Who wanted this place?,Who wanted this place?,curiosity,neutral,neutral
+1900-01-01 00:16:21.982991,1900-01-01 00:16:22.982991,I'm sorry.,I'm sorry.,remorse,sadness,mild
+1900-01-01 00:16:22.982991,1900-01-01 00:16:23.982991,"It wasn't your mother's dream,","It wasn't your mother's dream,",regret,sadness,mild
+1900-01-01 00:16:23.982991,1900-01-01 00:16:26.982991,and it certainly wasn't Val's dream.,and it certainly wasn't Val's dream.,disappointment,sadness,mild
+1900-01-01 00:16:26.982991,1900-01-01 00:16:27.982991,Or am I wrong?,Or am I wrong?,uncertainty,fear,mild
+1900-01-01 00:16:27.982991,1900-01-01 00:16:29.982991,"No, it was Tati's dream.","No, it was Tati's dream.",correction,neutral,neutral
+1900-01-01 00:16:29.982991,1900-01-01 00:16:33.982991,"Tati's dream, which has now come back to bite you on the ass.","Tati's dream, which has now come back to bite you on the ass.",resentment,anger,moderate
+1900-01-01 00:16:36.247982,1900-01-01 00:16:39.047982,What hurts me is not how you feel.,What hurts me is not how you feel.,resentment,sadness,moderate
+1900-01-01 00:16:39.047982,1900-01-01 00:16:41.287982,It's what's going to happen to them if this doesn't work.,It's what's going to happen to them if this doesn't work.,apprehension,fear,moderate
+1900-01-01 00:16:41.287982,1900-01-01 00:16:42.187982,How's gone?,How's gone?,curiosity,neutral,neutral
+1900-01-01 00:16:42.187982,1900-01-01 00:16:43.087982,How's gone?,How's gone?,curiosity,neutral,neutral
+1900-01-01 00:16:43.087982,1900-01-01 00:16:43.987982,What are you going to do?,What are you going to do?,curiosity,neutral,mild
+1900-01-01 00:16:43.987982,1900-01-01 00:16:45.487982,"I don't know, Gordon.","I don't know, Gordon.",uncertainty,neutral,mild
+1900-01-01 00:16:45.487982,1900-01-01 00:16:46.627982,I don't know.,I don't know.,uncertainty,neutral,neutral
+1900-01-01 00:16:46.627982,1900-01-01 00:16:49.187982,But why did you do it?,But why did you do it?,confusion,surprise,moderate
+1900-01-01 00:16:49.187982,1900-01-01 00:16:51.727982,Because I thought I could make it successful,Because I thought I could make it successful,hope,happiness,mild
+1900-01-01 00:16:51.727982,1900-01-01 00:16:53.167982,because I believed in myself.,because I believed in myself.,confidence,happiness,moderate
+1900-01-01 00:16:53.167982,1900-01-01 00:16:56.527982,"What, and not make changes?","What, and not make changes?",confusion,surprise,moderate
+1900-01-01 00:16:56.527982,1900-01-01 00:17:00.367982,What the hell were you thinking?,What the hell were you thinking?,frustration,anger,intense
+1900-01-01 00:17:00.367982,1900-01-01 00:17:03.567982,Where are you going?,Where are you going?,curiosity,neutral,mild
+1900-01-01 00:17:03.567982,1900-01-01 00:17:08.267982,"Wow, what a joke.","Wow, what a joke.",sarcasm,disgust,moderate
+1900-01-01 00:17:08.267982,1900-01-01 00:17:11.166982,I resent my sister for putting me in this position.,I resent my sister for putting me in this position.,resentment,anger,moderate
+1900-01-01 00:17:11.166982,1900-01-01 00:17:15.366982,She needs to be knocked off her high horse.,She needs to be knocked off her high horse.,resentment,anger,moderate
+1900-01-01 00:17:15.366982,1900-01-01 00:17:18.006982,And now Chef Ramsay's making her really see,And now Chef Ramsay's making her really see,realization,surprise,moderate
+1900-01-01 00:17:18.006982,1900-01-01 00:17:19.407982,that she does not know it all.,that she does not know it all.,uncertainty,neutral,mild
+1900-01-01 00:17:24.787982,1900-01-01 00:17:31.927982,"Like, I just feel completely alone and worthless.","Like, I just feel completely alone and worthless.",despair,sadness,intense
+1900-01-01 00:17:31.927982,1900-01-01 00:17:32.827982,And I don't know what to do.,And I don't know what to do.,confusion,fear,moderate
+1900-01-01 00:17:42.526982,1900-01-01 00:17:44.706982,Night one is usually an observation,Night one is usually an observation,expectation,neutral,neutral
+1900-01-01 00:17:44.706982,1900-01-01 00:17:46.126982,night for Chef Ramsay.,night for Chef Ramsay.,anticipation,neutral,neutral
+1900-01-01 00:17:46.126982,1900-01-01 00:17:48.607982,But things are so bad here at Charlie's.,But things are so bad here at Charlie's.,despair,sadness,moderate
+1900-01-01 00:17:48.607982,1900-01-01 00:17:49.507982,Chef.,Chef.,neutrality,neutral,neutral
+1900-01-01 00:17:49.507982,1900-01-01 00:17:50.706982,"I'll be two seconds, OK?","I'll be two seconds, OK?",reassurance,neutral,mild
+1900-01-01 00:17:50.706982,1900-01-01 00:17:53.166982,He decides to make one change right away.,He decides to make one change right away.,determination,neutral,mild
+1900-01-01 00:17:53.166982,1900-01-01 00:17:54.067982,Casamiro.,Casamiro.,neutrality,neutral,neutral
+1900-01-01 00:17:54.067982,1900-01-01 00:17:54.967982,Daniela.,Daniela.,neutrality,neutral,neutral
+1900-01-01 00:17:54.967982,1900-01-01 00:17:57.147982,"OK, we're going to make homemade meatballs.","OK, we're going to make homemade meatballs.",anticipation,happiness,mild
+1900-01-01 00:17:57.147982,1900-01-01 00:17:58.886982,"I want you to make me a meatball,","I want you to make me a meatball,",desire,neutral,mild
+1900-01-01 00:17:58.886982,1900-01-01 00:18:00.946982,and I want you to make me a meatball.,and I want you to make me a meatball.,desire,neutral,mild
+1900-01-01 00:18:00.967982,1900-01-01 00:18:02.107982,I'd like to taste yours.,I'd like to taste yours.,curiosity,happiness,mild
+1900-01-01 00:18:02.107982,1900-01-01 00:18:03.206982,I'd like to taste yours.,I'd like to taste yours.,curiosity,happiness,mild
+1900-01-01 00:18:03.206982,1900-01-01 00:18:04.007982,"I'll be back later, yeah?","I'll be back later, yeah?",expectation,neutral,neutral
+1900-01-01 00:18:09.946982,1900-01-01 00:18:11.547982,Casamiro shouldn't have a problem,Casamiro shouldn't have a problem,confidence,happiness,mild
+1900-01-01 00:18:11.547982,1900-01-01 00:18:13.486982,with it since he's worked in an Italian restaurant,with it since he's worked in an Italian restaurant,confidence,happiness,mild
+1900-01-01 00:18:13.486982,1900-01-01 00:18:14.287982,for 15 years.,for 15 years.,resignation,sadness,mild
+1900-01-01 00:18:20.626982,1900-01-01 00:18:23.827982,"I'm watching Casamiro, and like, I cringe because he","I'm watching Casamiro, and like, I cringe because he",embarrassment,disgust,moderate
+1900-01-01 00:18:23.827982,1900-01-01 00:18:26.227982,doesn't know what he's doing.,doesn't know what he's doing.,confusion,sadness,mild
+1900-01-01 00:18:26.227982,1900-01-01 00:18:27.126982,How are they?,How are they?,curiosity,neutral,neutral
+1900-01-01 00:18:27.386982,1900-01-01 00:18:30.187982,So what did you do?,So what did you do?,curiosity,neutral,mild
+1900-01-01 00:18:30.187982,1900-01-01 00:18:32.227982,You didn't fry them off?,You didn't fry them off?,confusion,surprise,mild
+1900-01-01 00:18:32.227982,1900-01-01 00:18:33.327982,He's not even frying them off.,He's not even frying them off.,disapproval,disgust,moderate
+1900-01-01 00:18:33.327982,1900-01-01 00:18:34.427982,He's just boiling them in sauce.,He's just boiling them in sauce.,disapproval,disgust,mild
+1900-01-01 00:18:37.026982,1900-01-01 00:18:40.967982,"Tatiana, when you make a meatball,","Tatiana, when you make a meatball,",curiosity,neutral,mild
+1900-01-01 00:18:40.967982,1900-01-01 00:18:42.467982,"you have a pan, a frying pan.","you have a pan, a frying pan.",matter-of-factness,neutral,neutral
+1900-01-01 00:18:42.467982,1900-01-01 00:18:47.006982,"You saute the meat, and you finish it off in sauce.","You saute the meat, and you finish it off in sauce.",instruction,neutral,neutral
+1900-01-01 00:18:47.006982,1900-01-01 00:18:47.907982,You don't know that?,You don't know that?,doubt,surprise,moderate
+1900-01-01 00:18:47.907982,1900-01-01 00:18:48.707982,No.,No.,rejection,anger,mild
+1900-01-01 00:18:48.707982,1900-01-01 00:18:49.506982,No.,No.,rejection,anger,mild
+1900-01-01 00:18:49.506982,1900-01-01 00:18:50.907982,No.,No.,rejection,anger,mild
+1900-01-01 00:18:50.907982,1900-01-01 00:18:52.907982,What season you put in there?,What season you put in there?,curiosity,neutral,mild
+1900-01-01 00:18:52.907982,1900-01-01 00:18:53.907982,There's just nothing in there.,There's just nothing in there.,emptiness,sadness,moderate
+1900-01-01 00:18:53.907982,1900-01-01 00:18:55.407982,"It's just like, oh, I don't know.","It's just like, oh, I don't know.",uncertainty,neutral,mild
+1900-01-01 00:18:55.666982,1900-01-01 00:18:56.666982,There's just nothing in there.,There's just nothing in there.,emptiness,sadness,moderate
+1900-01-01 00:18:56.666982,1900-01-01 00:18:58.067982,It's just like boiled meatballs.,It's just like boiled meatballs.,indifference,neutral,neutral
+1900-01-01 00:18:58.067982,1900-01-01 00:18:58.967982,Look at them.,Look at them.,curiosity,neutral,neutral
+1900-01-01 00:18:58.967982,1900-01-01 00:19:00.806982,They're like cat food.,They're like cat food.,disdain,disgust,mild
+1900-01-01 00:19:00.806982,1900-01-01 00:19:02.006982,How are you cooking yours?,How are you cooking yours?,curiosity,neutral,neutral
+1900-01-01 00:19:02.006982,1900-01-01 00:19:02.907982,I was searching.,I was searching.,curiosity,neutral,neutral
+1900-01-01 00:19:02.907982,1900-01-01 00:19:04.107982,"OK, good.","OK, good.",satisfaction,happiness,mild
+1900-01-01 00:19:04.107982,1900-01-01 00:19:05.006982,"Let me have a little taste of that, bring it out.","Let me have a little taste of that, bring it out.",curiosity,happiness,mild
+1900-01-01 00:19:10.707982,1900-01-01 00:19:12.586982,"Oh, that's nice.","Oh, that's nice.",appreciation,happiness,mild
+1900-01-01 00:19:12.586982,1900-01-01 00:19:13.487982,Nothing.,Nothing.,emptiness,neutral,neutral
+1900-01-01 00:19:13.487982,1900-01-01 00:19:14.386982,Soft?,Soft?,curiosity,neutral,neutral
+1900-01-01 00:19:14.386982,1900-01-01 00:19:15.586982,"Yeah, crumbly, delicious.","Yeah, crumbly, delicious.",satisfaction,happiness,mild
+1900-01-01 00:19:15.586982,1900-01-01 00:19:16.687982,I'm going to use them tonight.,I'm going to use them tonight.,anticipation,happiness,mild
+1900-01-01 00:19:16.687982,1900-01-01 00:19:17.687982,They're going on the menu tonight.,They're going on the menu tonight.,anticipation,happiness,mild
+1900-01-01 00:19:22.286982,1900-01-01 00:19:23.187982,You're the sous chef.,You're the sous chef.,acknowledgment,neutral,neutral
+1900-01-01 00:19:23.187982,1900-01-01 00:19:24.767982,Just be the fucking head chef.,Just be the fucking head chef.,frustration,anger,intense
+1900-01-01 00:19:25.627982,1900-01-01 00:19:27.487982,I get nervous when a chef can't even make a meatball.,I get nervous when a chef can't even make a meatball.,anxiety,fear,mild
+1900-01-01 00:19:27.487982,1900-01-01 00:19:28.786982,"I mean, honestly.","I mean, honestly.",frustration,anger,mild
+1900-01-01 00:19:28.786982,1900-01-01 00:19:30.067982,And this young lady's flavor of her meatball,And this young lady's flavor of her meatball,curiosity,neutral,neutral
+1900-01-01 00:19:30.067982,1900-01-01 00:19:31.526982,is 10 times greater.,is 10 times greater.,assertiveness,neutral,neutral
+1900-01-01 00:19:31.526982,1900-01-01 00:19:33.707982,Kasimiro couldn't make a meatball correctly.,Kasimiro couldn't make a meatball correctly.,frustration,sadness,mild
+1900-01-01 00:19:33.707982,1900-01-01 00:19:36.006982,But I don't think he's a bad cook.,But I don't think he's a bad cook.,defensiveness,neutral,mild
+1900-01-01 00:19:36.006982,1900-01-01 00:19:37.806982,Necesitamos enseñarlo en este.,We need to teach it in this one.,determination,neutral,neutral
+1900-01-01 00:19:37.806982,1900-01-01 00:19:39.107982,"Tu eres bueno, Kasimiro.","You are good, Kasimiro.",appreciation,happiness,mild
+1900-01-01 00:19:39.107982,1900-01-01 00:19:41.006982,You're bueno.,You're good.,appreciation,happiness,mild
+1900-01-01 00:19:41.006982,1900-01-01 00:19:41.907982,Be strong.,Be strong.,encouragement,happiness,mild
+1900-01-01 00:19:47.907982,1900-01-01 00:19:49.547982,As dinner service begins.,As dinner service begins.,anticipation,neutral,neutral
+1900-01-01 00:19:49.547982,1900-01-01 00:19:50.687982,"Hi, guys, welcome to Charlie's.","Hi, guys, welcome to Charlie's.",friendliness,happiness,mild
+1900-01-01 00:19:50.687982,1900-01-01 00:19:52.146982,Table for six.,Table for six.,expectation,neutral,neutral
+1900-01-01 00:19:52.146982,1900-01-01 00:19:54.226982,Our specialty tonight is spaghetti meatballs.,Our specialty tonight is spaghetti meatballs.,pride,happiness,mild
+1900-01-01 00:19:55.187982,1900-01-01 00:19:57.187982,Chef Ramsay is giving a tutorial on meatballs,Chef Ramsay is giving a tutorial on meatballs,interest,neutral,neutral
+1900-01-01 00:19:57.187982,1900-01-01 00:19:58.687982,in an Italian restaurant.,in an Italian restaurant.,neutrality,neutral,neutral
+1900-01-01 00:19:58.687982,1900-01-01 00:20:01.127982,We've got to have a color on there that adds,We've got to have a color on there that adds,anticipation,neutral,mild
+1900-01-01 00:20:01.127982,1900-01-01 00:20:02.886982,"richness and a nice, deep flavor.","richness and a nice, deep flavor.",appreciation,happiness,mild
+1900-01-01 00:20:02.886982,1900-01-01 00:20:03.786982,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:20:03.786982,1900-01-01 00:20:04.886982,And are we ready to order?,And are we ready to order?,expectation,neutral,neutral
+1900-01-01 00:20:04.886982,1900-01-01 00:20:06.187982,Or do we need a minute?,Or do we need a minute?,uncertainty,neutral,mild
+1900-01-01 00:20:06.187982,1900-01-01 00:20:07.086982,Shrimp pilaf.,Shrimp pilaf.,neutrality,neutral,neutral
+1900-01-01 00:20:07.086982,1900-01-01 00:20:07.987982,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:20:07.987982,1900-01-01 00:20:09.067982,Shrimp pilaf.,Shrimp pilaf.,neutrality,neutral,neutral
+1900-01-01 00:20:09.067982,1900-01-01 00:20:09.967982,Shrimp pilaf.,Shrimp pilaf.,neutrality,neutral,neutral
+1900-01-01 00:20:18.907982,1900-01-01 00:20:19.806982,"Oh, god.","Oh, god.",dread,fear,mild
+1900-01-01 00:20:19.806982,1900-01-01 00:20:21.407982,"OK, we have three spaghetti meatballs,","OK, we have three spaghetti meatballs,",anticipation,neutral,mild
+1900-01-01 00:20:21.407982,1900-01-01 00:20:22.306982,spinach ravioli.,spinach ravioli.,neutrality,neutral,neutral
+1900-01-01 00:20:25.146982,1900-01-01 00:20:27.547982,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:20:27.547982,1900-01-01 00:20:28.646982,"You all right, darling?","You all right, darling?",concern,fear,mild
+1900-01-01 00:20:28.646982,1900-01-01 00:20:31.146982,"Yeah, he just says he wants to work slowly.","Yeah, he just says he wants to work slowly.",resignation,neutral,mild
+1900-01-01 00:20:31.146982,1900-01-01 00:20:32.286982,He wants to work slowly?,He wants to work slowly?,curiosity,neutral,mild
+1900-01-01 00:20:32.286982,1900-01-01 00:20:33.886982,Why?,Why?,confusion,surprise,mild
+1900-01-01 00:20:33.886982,1900-01-01 00:20:37.487982,I think he just wants to focus on one ticket at a time.,I think he just wants to focus on one ticket at a time.,understanding,neutral,mild
+1900-01-01 00:20:37.487982,1900-01-01 00:20:39.366982,I don't think the customers want to hear the chef,I don't think the customers want to hear the chef,doubt,neutral,mild
+1900-01-01 00:20:39.366982,1900-01-01 00:20:40.426982,say I want to work slowly.,say I want to work slowly.,calmness,neutral,neutral
+1900-01-01 00:20:44.707982,1900-01-01 00:20:47.806982,I try to say something to Kasimiro about ticket time.,I try to say something to Kasimiro about ticket time.,uncertainty,neutral,mild
+1900-01-01 00:20:47.806982,1900-01-01 00:20:49.467982,He will just ignore me.,He will just ignore me.,rejection,sadness,moderate
+1900-01-01 00:20:49.467982,1900-01-01 00:20:50.366982,Kasimiro?,Kasimiro?,curiosity,neutral,neutral
+1900-01-01 00:20:50.366982,1900-01-01 00:20:51.267982,"Yeah, yeah, yeah.","Yeah, yeah, yeah.",dismissiveness,disgust,mild
+1900-01-01 00:20:51.267982,1900-01-01 00:20:52.447982,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:20:52.447982,1900-01-01 00:20:53.407982,"What ticket is he working on now, darling?","What ticket is he working on now, darling?",curiosity,neutral,mild
+1900-01-01 00:20:53.426982,1900-01-01 00:20:54.387982,He's working on the what?,He's working on the what?,confusion,surprise,moderate
+1900-01-01 00:20:54.387982,1900-01-01 00:20:55.287982,He's working on this one.,He's working on this one.,focus,neutral,neutral
+1900-01-01 00:20:55.287982,1900-01-01 00:20:56.187982,"Oh, OK.","Oh, OK.",acceptance,neutral,neutral
+1900-01-01 00:20:56.187982,1900-01-01 00:20:57.727982,I haven't even gotten to those.,I haven't even gotten to those.,frustration,sadness,mild
+1900-01-01 00:20:57.727982,1900-01-01 00:20:58.727982,Are you kidding me?,Are you kidding me?,incredulity,surprise,moderate
+1900-01-01 00:20:58.727982,1900-01-01 00:20:59.627982,"No, no, no.","No, no, no.",rejection,anger,moderate
+1900-01-01 00:21:02.627982,1900-01-01 00:21:06.606982,"With Kasimiro working at his own pace,","With Kasimiro working at his own pace,",acceptance,neutral,neutral
+1900-01-01 00:21:06.606982,1900-01-01 00:21:09.806982,the dining room's patience is being tested.,the dining room's patience is being tested.,frustration,anger,moderate
+1900-01-01 00:21:15.146982,1900-01-01 00:21:16.646982,"OK, I'm sorry.","OK, I'm sorry.",remorse,sadness,mild
+1900-01-01 00:21:16.646982,1900-01-01 00:21:17.546982,"Oh, my god.","Oh, my god.",astonishment,surprise,moderate
+1900-01-01 00:21:17.546982,1900-01-01 00:21:19.646982,Necesitamos platos.,We need plates.,need,neutral,neutral
+1900-01-01 00:21:19.646982,1900-01-01 00:21:22.387982,As food finally makes its way into the dining room.,As food finally makes its way into the dining room.,relief,happiness,mild
+1900-01-01 00:21:22.426982,1900-01-01 00:21:23.426982,"I am sorry, guys.","I am sorry, guys.",remorse,sadness,mild
+1900-01-01 00:21:23.426982,1900-01-01 00:21:24.426982,Spaghetti with meatball.,Spaghetti with meatball.,neutrality,neutral,neutral
+1900-01-01 00:21:24.426982,1900-01-01 00:21:25.426982,Finally.,Finally.,relief,happiness,mild
+1900-01-01 00:21:25.426982,1900-01-01 00:21:26.526982,Customers find out.,Customers find out.,apprehension,fear,mild
+1900-01-01 00:21:26.526982,1900-01-01 00:21:28.967982,I think the pasta's a little overcooked.,I think the pasta's a little overcooked.,disappointment,sadness,mild
+1900-01-01 00:21:28.967982,1900-01-01 00:21:31.106982,It was definitely not worth the wait.,It was definitely not worth the wait.,disappointment,sadness,moderate
+1900-01-01 00:21:41.106982,1900-01-01 00:21:43.187982,What have you done?,What have you done?,accusation,anger,moderate
+1900-01-01 00:21:43.187982,1900-01-01 00:21:44.887982,What the fuck have you done?,What the fuck have you done?,accusation,anger,intense
+1900-01-01 00:21:44.887982,1900-01-01 00:21:45.787982,Stop.,Stop.,command,anger,mild
+1900-01-01 00:21:45.787982,1900-01-01 00:21:46.687982,"No, no, no.","No, no, no.",rejection,anger,moderate
+1900-01-01 00:21:46.687982,1900-01-01 00:21:47.947982,"Listen, fucking donkey.","Listen, fucking donkey.",contempt,anger,intense
+1900-01-01 00:21:47.947982,1900-01-01 00:21:48.847982,"Danielle, come here.","Danielle, come here.",command,neutral,neutral
+1900-01-01 00:21:48.847982,1900-01-01 00:21:50.287982,I want you to stop.,I want you to stop.,frustration,anger,moderate
+1900-01-01 00:21:50.287982,1900-01-01 00:21:50.986982,What are you doing?,What are you doing?,curiosity,neutral,mild
+1900-01-01 00:21:53.387982,1900-01-01 00:21:54.787982,"Oh, come on.","Oh, come on.",frustration,anger,mild
+1900-01-01 00:21:54.787982,1900-01-01 00:21:57.586982,"He said he was working, and he couldn't watch him.","He said he was working, and he couldn't watch him.",detachment,neutral,neutral
+1900-01-01 00:21:57.586982,1900-01-01 00:21:58.486982,"Oh, come on.","Oh, come on.",frustration,anger,mild
+1900-01-01 00:21:58.486982,1900-01-01 00:21:59.387982,I know.,I know.,certainty,neutral,neutral
+1900-01-01 00:21:59.387982,1900-01-01 00:22:00.326982,"Get me Tatiana, please.","Get me Tatiana, please.",request,neutral,neutral
+1900-01-01 00:22:00.326982,1900-01-01 00:22:01.227982,"Please, darling.","Please, darling.",pleading,sadness,moderate
+1900-01-01 00:22:01.227982,1900-01-01 00:22:02.127982,Is it not cooked?,Is it not cooked?,doubt,surprise,mild
+1900-01-01 00:22:02.127982,1900-01-01 00:22:04.167982,They're all kind of burnt on one side.,They're all kind of burnt on one side.,disappointment,sadness,mild
+1900-01-01 00:22:04.167982,1900-01-01 00:22:05.067982,Where's Tatiana?,Where's Tatiana?,curiosity,neutral,mild
+1900-01-01 00:22:05.067982,1900-01-01 00:22:06.167982,She's dealing.,She's dealing.,resilience,neutral,mild
+1900-01-01 00:22:06.167982,1900-01-01 00:22:07.067982,They're complaining about the meatballs.,They're complaining about the meatballs.,annoyance,anger,mild
+1900-01-01 00:22:07.067982,1900-01-01 00:22:07.967982,"No, we need her now.","No, we need her now.",urgency,fear,moderate
+1900-01-01 00:22:07.967982,1900-01-01 00:22:08.866982,We need her now.,We need her now.,urgency,fear,moderate
+1900-01-01 00:22:08.866982,1900-01-01 00:22:09.766982,No.,No.,rejection,anger,mild
+1900-01-01 00:22:09.766982,1900-01-01 00:22:11.106982,Chef needs you now.,Chef needs you now.,urgency,fear,moderate
+1900-01-01 00:22:11.106982,1900-01-01 00:22:12.706982,"Chef, I'm having complaints about the meatballs.","Chef, I'm having complaints about the meatballs.",concern,fear,moderate
+1900-01-01 00:22:12.706982,1900-01-01 00:22:13.606982,"Yeah, yeah.","Yeah, yeah.",dismissiveness,neutral,mild
+1900-01-01 00:22:13.606982,1900-01-01 00:22:14.507982,"Listen, listen.","Listen, listen.",insistence,neutral,mild
+1900-01-01 00:22:14.507982,1900-01-01 00:22:15.407982,But put that down.,But put that down.,command,anger,mild
+1900-01-01 00:22:15.407982,1900-01-01 00:22:16.306982,I've got a fucking bigger.,I've got a fucking bigger.,boastfulness,happiness,moderate
+1900-01-01 00:22:16.306982,1900-01-01 00:22:17.806982,"No, I didn't say throw it away.","No, I didn't say throw it away.",denial,anger,mild
+1900-01-01 00:22:17.806982,1900-01-01 00:22:19.507982,"Come on, sweetheart.","Come on, sweetheart.",encouragement,happiness,mild
+1900-01-01 00:22:19.507982,1900-01-01 00:22:21.447982,I showed him how to cook one off.,I showed him how to cook one off.,pride,happiness,mild
+1900-01-01 00:22:21.467982,1900-01-01 00:22:23.347982,"My back's turned to two minutes,","My back's turned to two minutes,",anticipation,neutral,mild
+1900-01-01 00:22:23.347982,1900-01-01 00:22:27.146982,"and that's what I've got, burnt shit stuck to a pan.","and that's what I've got, burnt shit stuck to a pan.",frustration,anger,moderate
+1900-01-01 00:22:27.146982,1900-01-01 00:22:30.887982,"He turned around to Danielle, hold on, and said to Danielle,","He turned around to Danielle, hold on, and said to Danielle,",expectation,neutral,neutral
+1900-01-01 00:22:30.887982,1900-01-01 00:22:33.146982,"I've got, uh, I'm busy.","I've got, uh, I'm busy.",distraction,neutral,mild
+1900-01-01 00:22:33.146982,1900-01-01 00:22:34.326982,I can't watch my meatballs.,I can't watch my meatballs.,frustration,sadness,mild
+1900-01-01 00:22:34.326982,1900-01-01 00:22:35.646982,That's what I'm going to work for.,That's what I'm going to work for.,determination,happiness,moderate
+1900-01-01 00:22:35.646982,1900-01-01 00:22:37.026982,What's your complaint on the meatball?,What's your complaint on the meatball?,curiosity,neutral,neutral
+1900-01-01 00:22:37.026982,1900-01-01 00:22:38.627982,"They said it was, like, toasted on one side,","They said it was, like, toasted on one side,",curiosity,neutral,mild
+1900-01-01 00:22:38.627982,1900-01-01 00:22:39.526982,but not toasted on the other.,but not toasted on the other.,disappointment,sadness,mild
+1900-01-01 00:22:39.526982,1900-01-01 00:22:40.586982,Really?,Really?,skepticism,surprise,mild
+1900-01-01 00:22:40.586982,1900-01-01 00:22:42.787982,How about telling your fucking chef?,How about telling your fucking chef?,irritation,anger,moderate
+1900-01-01 00:22:42.787982,1900-01-01 00:22:44.507982,"OK, you cook it.","OK, you cook it.",resignation,neutral,neutral
+1900-01-01 00:22:44.507982,1900-01-01 00:22:47.426982,Now he's getting upset with me because I've caught him out.,Now he's getting upset with me because I've caught him out.,resentment,anger,moderate
+1900-01-01 00:22:47.426982,1900-01-01 00:22:50.026982,"When a guy can't make a meatball or even season one,","When a guy can't make a meatball or even season one,",disappointment,sadness,mild
+1900-01-01 00:22:50.046982,1900-01-01 00:22:51.486982,I'm sorry.,I'm sorry.,remorse,sadness,mild
+1900-01-01 00:22:51.486982,1900-01-01 00:22:52.986982,I'm really sorry.,I'm really sorry.,remorse,sadness,moderate
+1900-01-01 00:22:52.986982,1900-01-01 00:22:55.727982,And then when I watch a chef that cooks and sticks food,And then when I watch a chef that cooks and sticks food,curiosity,neutral,mild
+1900-01-01 00:22:55.727982,1900-01-01 00:22:59.486982,"up there, holds it, and we're not even talking homemade food.","up there, holds it, and we're not even talking homemade food.",dismissiveness,disgust,mild
+1900-01-01 00:22:59.486982,1900-01-01 00:23:01.967982,"We're talking bought in, store bought.","We're talking bought in, store bought.",clarification,neutral,neutral
+1900-01-01 00:23:01.967982,1900-01-01 00:23:03.667982,"My god, it hurts.","My god, it hurts.",pain,sadness,intense
+1900-01-01 00:23:03.667982,1900-01-01 00:23:05.407982,"OK, you cook it.","OK, you cook it.",resignation,neutral,neutral
+1900-01-01 00:23:05.407982,1900-01-01 00:23:08.206982,And look at that for a stinking attitude.,And look at that for a stinking attitude.,contempt,disgust,moderate
+1900-01-01 00:23:08.206982,1900-01-01 00:23:11.347982,"Look at that, a disgusting attitude.","Look at that, a disgusting attitude.",contempt,disgust,moderate
+1900-01-01 00:23:11.347982,1900-01-01 00:23:13.706982,Ask him to put his house in the fucking mix.,Ask him to put his house in the fucking mix.,frustration,anger,moderate
+1900-01-01 00:23:13.706982,1900-01-01 00:23:15.247982,"If his house was on the line, he wouldn't be","If his house was on the line, he wouldn't be",doubt,fear,mild
+1900-01-01 00:23:15.247982,1900-01-01 00:23:16.546982,cooking like a fucking idiot.,cooking like a fucking idiot.,self-deprecation,anger,moderate
+1900-01-01 00:23:20.646982,1900-01-01 00:23:23.187982,Now he thinks it's funny.,Now he thinks it's funny.,amusement,happiness,mild
+1900-01-01 00:23:23.187982,1900-01-01 00:23:25.787982,You think it's funny?,You think it's funny?,confrontation,anger,moderate
+1900-01-01 00:23:25.787982,1900-01-01 00:23:27.026982,Yeah.,Yeah.,agreement,neutral,neutral
+1900-01-01 00:23:27.026982,1900-01-01 00:23:27.926982,It's a joke.,It's a joke.,playfulness,happiness,mild
+1900-01-01 00:23:27.926982,1900-01-01 00:23:30.467982,Vas a cocinar?,Are you going to cook?,curiosity,neutral,neutral
+1900-01-01 00:23:30.467982,1900-01-01 00:23:31.627982,What does he want to do?,What does he want to do?,curiosity,neutral,mild
+1900-01-01 00:23:31.627982,1900-01-01 00:23:32.866982,He doesn't want to cook.,He doesn't want to cook.,reluctance,disgust,mild
+1900-01-01 00:23:32.866982,1900-01-01 00:23:35.467982,He doesn't want to cook?,He doesn't want to cook?,reluctance,disgust,mild
+1900-01-01 00:23:35.467982,1900-01-01 00:23:38.806982,Get your head out of your ass.,Get your head out of your ass.,contempt,anger,intense
+1900-01-01 00:23:38.806982,1900-01-01 00:23:41.967982,Do we have any more spaghetti and meatballs?,Do we have any more spaghetti and meatballs?,curiosity,neutral,neutral
+1900-01-01 00:23:41.967982,1900-01-01 00:23:43.167982,Do we have any more meatballs?,Do we have any more meatballs?,curiosity,neutral,neutral
+1900-01-01 00:23:43.167982,1900-01-01 00:23:46.007982,Do we have any more spaghetti and meatballs?,Do we have any more spaghetti and meatballs?,curiosity,neutral,neutral
+1900-01-01 00:23:46.007982,1900-01-01 00:23:48.646982,I feel like I don't know what I'm doing here.,I feel like I don't know what I'm doing here.,confusion,fear,moderate
+1900-01-01 00:23:48.667982,1900-01-01 00:23:52.306982,Maybe I have no idea how to run a restaurant.,Maybe I have no idea how to run a restaurant.,self-doubt,sadness,moderate
+1900-01-01 00:23:52.306982,1900-01-01 00:23:53.206982,Maybe I don't.,Maybe I don't.,uncertainty,neutral,mild
+1900-01-01 00:23:57.206982,1900-01-01 00:24:01.007982,"Tatiana, you're not just responsible for the dining.","Tatiana, you're not just responsible for the dining.",assertion,neutral,neutral
+1900-01-01 00:24:01.007982,1900-01-01 00:24:02.347982,I'm so responsible.,I'm so responsible.,pride,happiness,mild
+1900-01-01 00:24:02.347982,1900-01-01 00:24:04.546982,You're responsible for the whole thing.,You're responsible for the whole thing.,accusation,anger,moderate
+1900-01-01 00:24:04.546982,1900-01-01 00:24:06.046982,"I'm sorry, but the whole thing.","I'm sorry, but the whole thing.",regret,sadness,mild
+1900-01-01 00:24:06.046982,1900-01-01 00:24:07.627982,I guess I had him on a pedestal.,I guess I had him on a pedestal.,admiration,happiness,mild
+1900-01-01 00:24:07.627982,1900-01-01 00:24:08.426982,Come outside.,Come outside.,command,neutral,neutral
+1900-01-01 00:24:14.687982,1900-01-01 00:24:16.366982,What are you doing?,What are you doing?,curiosity,neutral,mild
+1900-01-01 00:24:16.366982,1900-01-01 00:24:17.567982,I don't know.,I don't know.,uncertainty,neutral,neutral
+1900-01-01 00:24:17.627982,1900-01-01 00:24:19.627982,I just thought he was something better than what you're showing.,I just thought he was something better than what you're showing.,disappointment,sadness,moderate
+1900-01-01 00:24:19.627982,1900-01-01 00:24:21.127982,Open your eyes.,Open your eyes.,command,neutral,neutral
+1900-01-01 00:24:21.127982,1900-01-01 00:24:23.526982,I've never seen anything so ridiculous.,I've never seen anything so ridiculous.,contempt,disgust,moderate
+1900-01-01 00:24:23.526982,1900-01-01 00:24:26.426982,And to stand there with his arms folded and give me shit,And to stand there with his arms folded and give me shit,resentment,anger,moderate
+1900-01-01 00:24:26.426982,1900-01-01 00:24:27.627982,on the back of screwing up something,on the back of screwing up something,regret,sadness,moderate
+1900-01-01 00:24:27.627982,1900-01-01 00:24:30.127982,that I went out and bought half an hour before we opened.,that I went out and bought half an hour before we opened.,recollection,neutral,neutral
+1900-01-01 00:24:30.127982,1900-01-01 00:24:31.967982,He's trying to install a little bit of passion.,He's trying to install a little bit of passion.,hopefulness,happiness,mild
+1900-01-01 00:24:31.967982,1900-01-01 00:24:33.766982,"He's just telling me, like, I just don't have enough time.","He's just telling me, like, I just don't have enough time.",frustration,sadness,moderate
+1900-01-01 00:24:33.766982,1900-01-01 00:24:35.806982,He cooks one dish at a time.,He cooks one dish at a time.,focus,neutral,neutral
+1900-01-01 00:24:35.806982,1900-01-01 00:24:37.947982,"A six top and the other dish, you just sit there.","A six top and the other dish, you just sit there.",frustration,anger,moderate
+1900-01-01 00:24:37.947982,1900-01-01 00:24:39.646982,And you're scared of that?,And you're scared of that?,doubt,fear,mild
+1900-01-01 00:24:39.646982,1900-01-01 00:24:41.106982,Where the fuck do we go?,Where the fuck do we go?,confusion,fear,intense
+1900-01-01 00:24:41.106982,1900-01-01 00:24:42.706982,I've been his friend for 10 years.,I've been his friend for 10 years.,nostalgia,happiness,mild
+1900-01-01 00:24:42.706982,1900-01-01 00:24:43.606982,I know his family.,I know his family.,familiarity,neutral,neutral
+1900-01-01 00:24:43.606982,1900-01-01 00:24:44.606982,"OK, great.","OK, great.",satisfaction,happiness,mild
+1900-01-01 00:24:44.606982,1900-01-01 00:24:45.507982,He's got kids.,He's got kids.,acknowledgment,neutral,neutral
+1900-01-01 00:24:45.507982,1900-01-01 00:24:46.787982,So does your sister.,So does your sister.,defensiveness,anger,mild
+1900-01-01 00:24:46.866982,1900-01-01 00:24:49.067982,It's your fucking business.,It's your fucking business.,defensiveness,anger,intense
+1900-01-01 00:24:49.067982,1900-01-01 00:24:50.847982,Come on.,Come on.,impatience,anger,mild
+1900-01-01 00:24:50.847982,1900-01-01 00:24:52.247982,Honestly.,Honestly.,candor,neutral,neutral
+1900-01-01 00:24:52.247982,1900-01-01 00:24:54.146982,Italian cafe.,Italian cafe.,neutrality,neutral,neutral
+1900-01-01 00:24:54.146982,1900-01-01 00:24:55.706982,Wow.,Wow.,amazement,surprise,mild
+1900-01-01 00:24:54.371995,1900-01-01 00:24:55.631995,what's going on now?,what's going on now?,confusion,surprise,mild
+1900-01-01 00:24:55.631995,1900-01-01 00:24:56.471995,I don't know.,I don't know.,uncertainty,neutral,neutral
+1900-01-01 00:25:02.111995,1900-01-01 00:25:04.511995,"After Casimiro ruined the meatballs,","After Casimiro ruined the meatballs,",disappointment,sadness,mild
+1900-01-01 00:25:04.511995,1900-01-01 00:25:05.951995,What the fuck have you done?,What the fuck have you done?,accusation,anger,intense
+1900-01-01 00:25:05.951995,1900-01-01 00:25:07.751995,and has now refused to cook.,and has now refused to cook.,defiance,anger,moderate
+1900-01-01 00:25:07.751995,1900-01-01 00:25:08.651995,Pasta cocinar?,Cook pasta?,curiosity,neutral,mild
+1900-01-01 00:25:08.651995,1900-01-01 00:25:10.191995,No.,No.,rejection,anger,mild
+1900-01-01 00:25:10.191995,1900-01-01 00:25:13.911995,"Chef Ramsay is frustrated, not only by the chef,","Chef Ramsay is frustrated, not only by the chef,",frustration,anger,moderate
+1900-01-01 00:25:13.911995,1900-01-01 00:25:16.551995,but also by Tatiana's lack of management.,but also by Tatiana's lack of management.,frustration,anger,moderate
+1900-01-01 00:25:16.551995,1900-01-01 00:25:18.250995,I've been his friend for 10 years.,I've been his friend for 10 years.,nostalgia,happiness,mild
+1900-01-01 00:25:18.250995,1900-01-01 00:25:19.151995,I know he's family.,I know he's family.,resignation,neutral,neutral
+1900-01-01 00:25:19.151995,1900-01-01 00:25:20.090995,I'm sorry.,I'm sorry.,remorse,sadness,mild
+1900-01-01 00:25:20.090995,1900-01-01 00:25:20.891995,"OK, great. He's got kids.","OK, great. He's got kids.",approval,happiness,mild
+1900-01-01 00:25:20.891995,1900-01-01 00:25:21.791995,I'm sorry.,I'm sorry.,remorse,sadness,mild
+1900-01-01 00:25:21.791995,1900-01-01 00:25:22.631995,He's your sister.,He's your sister.,confusion,surprise,moderate
+1900-01-01 00:25:22.631995,1900-01-01 00:25:23.631995,It's none of my business.,It's none of my business.,detachment,neutral,neutral
+1900-01-01 00:25:23.631995,1900-01-01 00:25:25.430995,Come on.,Come on.,impatience,anger,mild
+1900-01-01 00:25:25.430995,1900-01-01 00:25:26.790995,Honestly.,Honestly.,candor,neutral,neutral
+1900-01-01 00:25:26.790995,1900-01-01 00:25:28.490995,Italian cafe?,Italian cafe?,curiosity,surprise,mild
+1900-01-01 00:25:28.490995,1900-01-01 00:25:29.391995,Wow.,Wow.,amazement,surprise,mild
+1900-01-01 00:25:29.391995,1900-01-01 00:25:30.290995,What a joke.,What a joke.,contempt,disgust,moderate
+1900-01-01 00:25:30.290995,1900-01-01 00:25:33.271995,Ha ha ha.,Ha ha ha.,amusement,happiness,mild
+1900-01-01 00:25:33.271995,1900-01-01 00:25:34.170995,"OK, one more time.","OK, one more time.",determination,neutral,mild
+1900-01-01 00:25:34.170995,1900-01-01 00:25:35.071995,That's it.,That's it.,finality,neutral,neutral
+1900-01-01 00:25:35.071995,1900-01-01 00:25:35.970995,Is that all right?,Is that all right?,uncertainty,fear,mild
+1900-01-01 00:25:35.970995,1900-01-01 00:25:36.871995,Yeah.,Yeah.,agreement,neutral,neutral
+1900-01-01 00:25:36.871995,1900-01-01 00:25:37.871995,Is that all right?,Is that all right?,uncertainty,fear,mild
+1900-01-01 00:25:37.871995,1900-01-01 00:25:40.871995,"Oh, gosh.","Oh, gosh.",surprise,surprise,mild
+1900-01-01 00:25:40.871995,1900-01-01 00:25:43.251995,"Chef, don't leave.","Chef, don't leave.",pleading,sadness,moderate
+1900-01-01 00:25:43.251995,1900-01-01 00:25:46.251995,Please don't leave.,Please don't leave.,pleading,sadness,moderate
+1900-01-01 00:25:46.251995,1900-01-01 00:25:47.251995,I don't know what to do.,I don't know what to do.,confusion,fear,moderate
+1900-01-01 00:25:47.251995,1900-01-01 00:25:48.251995,It's my fault.,It's my fault.,guilt,sadness,moderate
+1900-01-01 00:25:48.251995,1900-01-01 00:25:50.650995,"I just, I, I, I, it's just insane.","I just, I, I, I, it's just insane.",bewilderment,surprise,intense
+1900-01-01 00:25:50.650995,1900-01-01 00:25:53.751995,No restaurant anywhere in this country functions like that.,No restaurant anywhere in this country functions like that.,disbelief,surprise,moderate
+1900-01-01 00:25:53.751995,1900-01-01 00:25:57.351995,"Just help us because I can't, I can't have it fail.","Just help us because I can't, I can't have it fail.",desperation,fear,intense
+1900-01-01 00:25:57.351995,1900-01-01 00:25:58.811995,No pasta are you ready?,No pasta are you ready?,curiosity,neutral,neutral
+1900-01-01 00:25:58.811995,1900-01-01 00:26:00.051995,What's it?,What's it?,curiosity,neutral,neutral
+1900-01-01 00:26:00.051995,1900-01-01 00:26:03.290995,"When a chef outlasts two owners already,","When a chef outlasts two owners already,",pride,happiness,mild
+1900-01-01 00:26:03.290995,1900-01-01 00:26:04.991995,"trust me, there's something not quite right.","trust me, there's something not quite right.",suspicion,fear,moderate
+1900-01-01 00:26:04.991995,1900-01-01 00:26:07.650995,"Because if the owner previously, i.e.","Because if the owner previously, i.e.",uncertainty,neutral,neutral
+1900-01-01 00:26:07.650995,1900-01-01 00:26:11.531995,"Charlie, was that fucking invested in his chef, trust me,","Charlie, was that fucking invested in his chef, trust me,",conviction,anger,moderate
+1900-01-01 00:26:11.531995,1900-01-01 00:26:12.631995,he would have gone with him.,he would have gone with him.,regret,sadness,mild
+1900-01-01 00:26:12.631995,1900-01-01 00:26:13.771995,He would have gone with him.,He would have gone with him.,regret,sadness,mild
+1900-01-01 00:26:13.771995,1900-01-01 00:26:15.731995,"It's not rocket science, Tatiana.","It's not rocket science, Tatiana.",condescension,disgust,mild
+1900-01-01 00:26:15.731995,1900-01-01 00:26:17.131995,And you're a smart girl.,And you're a smart girl.,admiration,happiness,mild
+1900-01-01 00:26:17.131995,1900-01-01 00:26:18.371995,How could I have not have seen this?,How could I have not have seen this?,regret,sadness,moderate
+1900-01-01 00:26:18.390995,1900-01-01 00:26:20.731995,"Well, you're scared to upset somebody.","Well, you're scared to upset somebody.",apprehension,fear,moderate
+1900-01-01 00:26:20.731995,1900-01-01 00:26:24.091995,Yet you're happy to see all three family members homeless.,Yet you're happy to see all three family members homeless.,accusation,anger,moderate
+1900-01-01 00:26:24.091995,1900-01-01 00:26:26.731995,But they rely on you to manage the restaurant.,But they rely on you to manage the restaurant.,expectation,neutral,mild
+1900-01-01 00:26:26.731995,1900-01-01 00:26:28.430995,They depend on you to give them that security.,They depend on you to give them that security.,responsibility,neutral,mild
+1900-01-01 00:26:28.430995,1900-01-01 00:26:29.330995,I failed.,I failed.,disappointment,sadness,moderate
+1900-01-01 00:26:29.330995,1900-01-01 00:26:31.330995,Not some chef that won't even take on board,Not some chef that won't even take on board,dismissal,disgust,moderate
+1900-01-01 00:26:31.330995,1900-01-01 00:26:33.570995,what you're trying to say.,what you're trying to say.,confusion,neutral,mild
+1900-01-01 00:26:33.570995,1900-01-01 00:26:34.811995,Stand in there for five minutes.,Stand in there for five minutes.,command,neutral,neutral
+1900-01-01 00:26:34.811995,1900-01-01 00:26:36.010995,Just watch what they do.,Just watch what they do.,suspicion,fear,mild
+1900-01-01 00:26:36.010995,1900-01-01 00:26:38.371995,"That's if he's, you know, happy to cook again.","That's if he's, you know, happy to cook again.",uncertainty,neutral,mild
+1900-01-01 00:26:42.150995,1900-01-01 00:26:43.491995,So I need to fire him.,So I need to fire him.,resignation,sadness,moderate
+1900-01-01 00:26:43.491995,1900-01-01 00:26:44.851995,I'm not asking you to fire him.,I'm not asking you to fire him.,defensiveness,neutral,mild
+1900-01-01 00:26:44.851995,1900-01-01 00:26:47.390995,I'm asking you to take responsibility.,I'm asking you to take responsibility.,expectation,neutral,moderate
+1900-01-01 00:26:47.411995,1900-01-01 00:26:53.710995,I'm so embarrassed by the restaurant in general.,I'm so embarrassed by the restaurant in general.,embarrassment,sadness,moderate
+1900-01-01 00:26:53.710995,1900-01-01 00:26:56.311995,And it's all my fault. And I'm the only one to blame,And it's all my fault. And I'm the only one to blame,guilt,sadness,intense
+1900-01-01 00:26:56.311995,1900-01-01 00:26:58.051995,because I'm the owner.,because I'm the owner.,assertiveness,neutral,mild
+1900-01-01 00:26:58.051995,1900-01-01 00:27:00.991995,And I'm doing such a horrible job.,And I'm doing such a horrible job.,self-doubt,sadness,intense
+1900-01-01 00:27:05.790995,1900-01-01 00:27:06.691995,Put all your orders in.,Put all your orders in.,command,neutral,neutral
+1900-01-01 00:27:06.691995,1900-01-01 00:27:07.591995,We're closed.,We're closed.,finality,neutral,neutral
+1900-01-01 00:27:07.591995,1900-01-01 00:27:08.490995,Put them in.,Put them in.,impatience,anger,mild
+1900-01-01 00:27:08.490995,1900-01-01 00:27:09.790995,I want to close.,I want to close.,resignation,sadness,mild
+1900-01-01 00:27:09.790995,1900-01-01 00:27:11.130995,I guess I just have been walking around,I guess I just have been walking around,aimlessness,neutral,mild
+1900-01-01 00:27:11.130995,1900-01-01 00:27:13.671995,"with, like, a sheet over my face.","with, like, a sheet over my face.",discomfort,fear,mild
+1900-01-01 00:27:13.671995,1900-01-01 00:27:15.171995,And not seeing these little things,And not seeing these little things,regret,sadness,mild
+1900-01-01 00:27:15.171995,1900-01-01 00:27:16.570995,that are so easy to see.,that are so easy to see.,certainty,neutral,neutral
+1900-01-01 00:27:16.611995,1900-01-01 00:27:18.350995,"Val, Mom, I need to talk to you now.","Val, Mom, I need to talk to you now.",urgency,fear,moderate
+1900-01-01 00:27:18.350995,1900-01-01 00:27:19.251995,You need to go outside.,You need to go outside.,insistence,neutral,mild
+1900-01-01 00:27:19.251995,1900-01-01 00:27:20.050995,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:27:20.050995,1900-01-01 00:27:21.290995,I'm mad at myself.,I'm mad at myself.,self-reproach,anger,moderate
+1900-01-01 00:27:21.290995,1900-01-01 00:27:25.290995,I need to be the owner of this restaurant.,I need to be the owner of this restaurant.,ambition,happiness,moderate
+1900-01-01 00:27:25.290995,1900-01-01 00:27:27.691995,We have to fire Casimir.,We have to fire Casimir.,resignation,sadness,moderate
+1900-01-01 00:27:27.691995,1900-01-01 00:27:29.630995,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:27:29.630995,1900-01-01 00:27:32.130995,"All the mistakes that he's made tonight,","All the mistakes that he's made tonight,",disappointment,sadness,moderate
+1900-01-01 00:27:32.130995,1900-01-01 00:27:33.531995,he doesn't take any direction.,he doesn't take any direction.,frustration,anger,moderate
+1900-01-01 00:27:33.531995,1900-01-01 00:27:34.831995,He's giving chef attitude.,He's giving chef attitude.,defiance,anger,mild
+1900-01-01 00:27:34.831995,1900-01-01 00:27:36.331995,He's the problem.,He's the problem.,blame,anger,moderate
+1900-01-01 00:27:38.971995,1900-01-01 00:27:40.210995,Can't even make a meatball.,Can't even make a meatball.,frustration,sadness,moderate
+1900-01-01 00:27:41.210995,1900-01-01 00:27:45.451995,That's the only thing that I think is right.,That's the only thing that I think is right.,conviction,neutral,mild
+1900-01-01 00:27:45.451995,1900-01-01 00:27:46.350995,This hot.,This hot.,discomfort,disgust,mild
+1900-01-01 00:27:46.350995,1900-01-01 00:27:47.251995,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:27:47.251995,1900-01-01 00:27:49.091995,"And I need time, too.","And I need time, too.",yearning,sadness,mild
+1900-01-01 00:27:49.091995,1900-01-01 00:27:50.591995,"Oh, then you need time.","Oh, then you need time.",understanding,neutral,mild
+1900-01-01 00:27:50.591995,1900-01-01 00:27:51.391995,I need to do it.,I need to do it.,determination,neutral,moderate
+1900-01-01 00:28:00.270995,1900-01-01 00:28:01.070995,"Hi, everyone.","Hi, everyone.",greeting,neutral,neutral
+1900-01-01 00:28:01.070995,1900-01-01 00:28:01.871995,Have a good night.,Have a good night.,warmth,happiness,mild
+1900-01-01 00:28:04.671995,1900-01-01 00:28:05.671995,"Amber, get out of the kitchen.","Amber, get out of the kitchen.",command,anger,moderate
+1900-01-01 00:28:11.210995,1900-01-01 00:28:12.111995,Casimiro.,Casimiro.,neutrality,neutral,neutral
+1900-01-01 00:28:12.111995,1900-01-01 00:28:12.910995,Marvel.,Marvel.,admiration,happiness,mild
+1900-01-01 00:28:31.231995,1900-01-01 00:28:32.930995,"Este me duele mucho, OK?","This one hurts me a lot, OK?",pain,sadness,intense
+1900-01-01 00:28:37.731995,1900-01-01 00:28:39.010995,Lo siento mucho.,I'm very sorry.,remorse,sadness,moderate
+1900-01-01 00:28:39.010995,1900-01-01 00:28:40.210995,"Lo siento mucho, Casimiro.","I'm very sorry, Casimiro.",remorse,sadness,moderate
+1900-01-01 00:28:44.111995,1900-01-01 00:28:45.010995,Sorry.,Sorry.,regret,sadness,mild
+1900-01-01 00:28:45.010995,1900-01-01 00:28:45.910995,Sorry.,Sorry.,remorse,sadness,mild
+1900-01-01 00:28:45.910995,1900-01-01 00:28:46.811995,"No, yo sabía.","No, I knew.",certainty,neutral,neutral
+1900-01-01 00:28:46.811995,1900-01-01 00:28:47.710995,Yo sabía yo.,"I knew it, I did.",certainty,neutral,neutral
+1900-01-01 00:29:09.010995,1900-01-01 00:29:09.910995,"Oh, my god.","Oh, my god.",shock,surprise,moderate
+1900-01-01 00:29:15.450995,1900-01-01 00:29:17.811995,After finally understanding what her chef was,After finally understanding what her chef was,realization,surprise,mild
+1900-01-01 00:29:17.811995,1900-01-01 00:29:19.390995,really doing to her restaurant.,really doing to her restaurant.,concern,fear,mild
+1900-01-01 00:29:26.631995,1900-01-01 00:29:30.031995,Tatiana makes her first big change since becoming an owner.,Tatiana makes her first big change since becoming an owner.,anticipation,happiness,moderate
+1900-01-01 00:29:32.531995,1900-01-01 00:29:33.330995,Sorry.,Sorry.,remorse,sadness,mild
+1900-01-01 00:29:33.330995,1900-01-01 00:29:34.131995,Sorry.,Sorry.,regret,sadness,mild
+1900-01-01 00:29:39.011995,1900-01-01 00:29:39.911995,"Oh, my god.","Oh, my god.",astonishment,surprise,moderate
+1900-01-01 00:29:57.390995,1900-01-01 00:29:58.930995,Where's Tatiana?,Where's Tatiana?,curiosity,neutral,mild
+1900-01-01 00:29:58.930995,1900-01-01 00:30:00.730995,I think she's crying in the bathroom.,I think she's crying in the bathroom.,concern,sadness,moderate
+1900-01-01 00:30:00.730995,1900-01-01 00:30:03.031995,Tatiana let Casimiro go.,Tatiana let Casimiro go.,resignation,sadness,mild
+1900-01-01 00:30:03.031995,1900-01-01 00:30:03.830995,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:30:03.830995,1900-01-01 00:30:04.631995,I'm sorry.,I'm sorry.,remorse,sadness,mild
+1900-01-01 00:30:09.131995,1900-01-01 00:30:10.131995,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:30:10.131995,1900-01-01 00:30:12.031995,"Listen, I know it's hard.","Listen, I know it's hard.",empathy,sadness,mild
+1900-01-01 00:30:12.031995,1900-01-01 00:30:15.110995,"Yeah, but I'm here.","Yeah, but I'm here.",reassurance,happiness,mild
+1900-01-01 00:30:15.110995,1900-01-01 00:30:17.110995,I'm here to support you.,I'm here to support you.,reassurance,happiness,mild
+1900-01-01 00:30:17.110995,1900-01-01 00:30:17.911995,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:30:19.911995,1900-01-01 00:30:20.911995,Good night.,Good night.,calm,neutral,neutral
+1900-01-01 00:30:20.911995,1900-01-01 00:30:21.911995,"OK, we've got two seconds.","OK, we've got two seconds.",urgency,fear,moderate
+1900-01-01 00:30:21.911995,1900-01-01 00:30:22.911995,Let's have a quick word.,Let's have a quick word.,anticipation,neutral,mild
+1900-01-01 00:30:22.911995,1900-01-01 00:30:23.811995,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:30:23.811995,1900-01-01 00:30:24.811995,Please.,Please.,pleading,sadness,mild
+1900-01-01 00:30:24.811995,1900-01-01 00:30:25.710995,Val.,Val.,neutrality,neutral,neutral
+1900-01-01 00:30:25.710995,1900-01-01 00:30:26.610995,"Thanks, Chef.","Thanks, Chef.",gratitude,happiness,mild
+1900-01-01 00:30:32.031995,1900-01-01 00:30:33.730995,"Honestly, I think the light went on for you.","Honestly, I think the light went on for you.",realization,happiness,mild
+1900-01-01 00:30:34.330995,1900-01-01 00:30:37.131995,Woke up and started making some tough decisions.,Woke up and started making some tough decisions.,determination,neutral,moderate
+1900-01-01 00:30:37.131995,1900-01-01 00:30:38.230995,I don't think you've ever done that since you,I don't think you've ever done that since you,doubt,neutral,mild
+1900-01-01 00:30:38.230995,1900-01-01 00:30:39.691995,bought this place.,bought this place.,acquisition,neutral,neutral
+1900-01-01 00:30:39.691995,1900-01-01 00:30:40.730995,Tomorrow's a new day.,Tomorrow's a new day.,hope,happiness,mild
+1900-01-01 00:30:40.730995,1900-01-01 00:30:43.371995,"And I've got ideas, let me tell you.","And I've got ideas, let me tell you.",anticipation,happiness,mild
+1900-01-01 00:30:43.371995,1900-01-01 00:30:44.270995,"OK, good night.","OK, good night.",calm,neutral,neutral
+1900-01-01 00:30:49.270995,1900-01-01 00:30:51.251995,After one of the most difficult days,After one of the most difficult days,exhaustion,sadness,moderate
+1900-01-01 00:30:51.251995,1900-01-01 00:30:53.710995,"he has ever had on Kitchen Nightmares,","he has ever had on Kitchen Nightmares,",reflection,neutral,neutral
+1900-01-01 00:30:53.710995,1900-01-01 00:30:57.851995,Chef Ramsay is now completely focused on rebuilding Charlie's.,Chef Ramsay is now completely focused on rebuilding Charlie's.,determination,neutral,moderate
+1900-01-01 00:30:57.851995,1900-01-01 00:30:59.191995,Today's about moving forward.,Today's about moving forward.,determination,happiness,mild
+1900-01-01 00:30:59.191995,1900-01-01 00:31:01.210995,What we haven't got is somebody at the helm.,What we haven't got is somebody at the helm.,frustration,sadness,moderate
+1900-01-01 00:31:01.230995,1900-01-01 00:31:04.871995,"We need a leader, like any good kitchen.","We need a leader, like any good kitchen.",yearning,neutral,mild
+1900-01-01 00:31:04.871995,1900-01-01 00:31:07.371995,I'd like to introduce you to someone who's pretty unique.,I'd like to introduce you to someone who's pretty unique.,curiosity,neutral,mild
+1900-01-01 00:31:07.371995,1900-01-01 00:31:08.471995,"Jonathan, come through, please.","Jonathan, come through, please.",request,neutral,neutral
+1900-01-01 00:31:08.471995,1900-01-01 00:31:09.371995,Oh my god.,Oh my god.,shock,surprise,moderate
+1900-01-01 00:31:09.371995,1900-01-01 00:31:10.270995,"Good to see you, bud.","Good to see you, bud.",warmth,happiness,mild
+1900-01-01 00:31:10.270995,1900-01-01 00:31:11.170995,"Chef, how you doing?","Chef, how you doing?",curiosity,neutral,mild
+1900-01-01 00:31:11.170995,1900-01-01 00:31:12.411995,"Very well indeed, thank you.","Very well indeed, thank you.",contentment,happiness,mild
+1900-01-01 00:31:12.411995,1900-01-01 00:31:14.110995,"Now, this man knows how to put restaurants on the map.","Now, this man knows how to put restaurants on the map.",admiration,happiness,mild
+1900-01-01 00:31:14.110995,1900-01-01 00:31:15.411995,"More importantly, he's been working with me","More importantly, he's been working with me",appreciation,happiness,mild
+1900-01-01 00:31:15.411995,1900-01-01 00:31:16.710995,for the last three years.,for the last three years.,reflection,neutral,neutral
+1900-01-01 00:31:16.710995,1900-01-01 00:31:19.351995,He's opened four restaurants in the last five years.,He's opened four restaurants in the last five years.,admiration,happiness,mild
+1900-01-01 00:31:19.351995,1900-01-01 00:31:21.490995,You've got him for the month.,You've got him for the month.,resignation,neutral,neutral
+1900-01-01 00:31:21.490995,1900-01-01 00:31:23.851995,I am thrilled.,I am thrilled.,excitement,happiness,intense
+1900-01-01 00:31:23.851995,1900-01-01 00:31:25.390995,We have a chef.,We have a chef.,statement,neutral,neutral
+1900-01-01 00:31:25.390995,1900-01-01 00:31:27.330995,It's like Christmas morning.,It's like Christmas morning.,excitement,happiness,moderate
+1900-01-01 00:31:27.330995,1900-01-01 00:31:28.531995,I'm so excited.,I'm so excited.,anticipation,happiness,intense
+1900-01-01 00:31:28.531995,1900-01-01 00:31:30.270995,Jonathan also comes with an assistant,Jonathan also comes with an assistant,expectation,neutral,neutral
+1900-01-01 00:31:30.330995,1900-01-01 00:31:31.830995,to make sure that we get this going.,to make sure that we get this going.,determination,neutral,mild
+1900-01-01 00:31:31.830995,1900-01-01 00:31:33.330995,Oh my god.,Oh my god.,shock,surprise,moderate
+1900-01-01 00:31:33.330995,1900-01-01 00:31:35.571995,"Not only will he get this place consistent,","Not only will he get this place consistent,",expectation,happiness,mild
+1900-01-01 00:31:35.571995,1900-01-01 00:31:39.270995,"he'll help find a young chef, train a young chef,","he'll help find a young chef, train a young chef,",support,happiness,mild
+1900-01-01 00:31:39.270995,1900-01-01 00:31:40.911995,"and Tatiana, if there's one person","and Tatiana, if there's one person",anticipation,neutral,mild
+1900-01-01 00:31:40.911995,1900-01-01 00:31:43.871995,"you need to get close to, right now, is this man.","you need to get close to, right now, is this man.",urgency,fear,moderate
+1900-01-01 00:31:43.871995,1900-01-01 00:31:44.770995,"Come here, come here.","Come here, come here.",urgency,neutral,mild
+1900-01-01 00:31:49.770995,1900-01-01 00:31:50.911995,I'm really happy.,I'm really happy.,contentment,happiness,intense
+1900-01-01 00:31:50.911995,1900-01-01 00:31:52.011995,Get everything set up for you guys,Get everything set up for you guys,helpfulness,happiness,mild
+1900-01-01 00:31:52.011995,1900-01-01 00:31:53.210995,"and get you guys off to the races, huh?","and get you guys off to the races, huh?",encouragement,happiness,mild
+1900-01-01 00:31:53.210995,1900-01-01 00:31:56.890995,This is definitely the beginning of a new Charlie's.,This is definitely the beginning of a new Charlie's.,anticipation,happiness,moderate
+1900-01-01 00:31:56.890995,1900-01-01 00:31:58.890995,"Hair up, grab an apron, let's go.","Hair up, grab an apron, let's go.",readiness,neutral,mild
+1900-01-01 00:31:58.911995,1900-01-01 00:32:00.571995,Now with the new chefs in place.,Now with the new chefs in place.,anticipation,happiness,mild
+1900-01-01 00:32:00.571995,1900-01-01 00:32:02.110995,"Let's go, Tatiana.","Let's go, Tatiana.",encouragement,happiness,mild
+1900-01-01 00:32:02.110995,1900-01-01 00:32:05.291995,Gordon knows it's critical that Tatiana is familiar with,Gordon knows it's critical that Tatiana is familiar with,concern,fear,moderate
+1900-01-01 00:32:05.291995,1900-01-01 00:32:07.490995,the inner workings of the kitchen.,the inner workings of the kitchen.,curiosity,neutral,neutral
+1900-01-01 00:32:07.490995,1900-01-01 00:32:09.950995,"So just go maybe right to the, just to the right of it,","So just go maybe right to the, just to the right of it,",uncertainty,neutral,mild
+1900-01-01 00:32:09.950995,1900-01-01 00:32:10.950995,right in the middle there.,right in the middle there.,uncertainty,neutral,neutral
+1900-01-01 00:32:10.950995,1900-01-01 00:32:12.050995,Perfect.,Perfect.,satisfaction,happiness,mild
+1900-01-01 00:32:12.050995,1900-01-01 00:32:13.591995,When was the last time you made a lasagna?,When was the last time you made a lasagna?,curiosity,neutral,neutral
+1900-01-01 00:32:13.591995,1900-01-01 00:32:14.490995,I've never made a lasagna.,I've never made a lasagna.,inexperience,neutral,neutral
+1900-01-01 00:32:14.490995,1900-01-01 00:32:16.230995,"You've never made a lasagna, ever?","You've never made a lasagna, ever?",incredulity,surprise,moderate
+1900-01-01 00:32:16.230995,1900-01-01 00:32:17.230995,That's crazy.,That's crazy.,astonishment,surprise,moderate
+1900-01-01 00:32:17.230995,1900-01-01 00:32:18.131995,Let's start off with mixing.,Let's start off with mixing.,anticipation,happiness,mild
+1900-01-01 00:32:18.131995,1900-01-01 00:32:19.631995,Take your white sauce.,Take your white sauce.,instruction,neutral,neutral
+1900-01-01 00:32:19.631995,1900-01-01 00:32:21.930995,Nice and clean with your plastic scraper.,Nice and clean with your plastic scraper.,satisfaction,happiness,mild
+1900-01-01 00:32:21.930995,1900-01-01 00:32:23.571995,Good.,Good.,satisfaction,happiness,mild
+1900-01-01 00:32:23.571995,1900-01-01 00:32:24.670995,Get close to it.,Get close to it.,anticipation,neutral,mild
+1900-01-01 00:32:24.670995,1900-01-01 00:32:26.011995,You've got nothing to be intimidated by.,You've got nothing to be intimidated by.,reassurance,happiness,mild
+1900-01-01 00:32:26.011995,1900-01-01 00:32:27.311995,Absolutely.,Absolutely.,agreement,happiness,mild
+1900-01-01 00:32:27.390995,1900-01-01 00:32:29.330995,I'm excited to learn what needs to happen in a kitchen,I'm excited to learn what needs to happen in a kitchen,anticipation,happiness,moderate
+1900-01-01 00:32:29.330995,1900-01-01 00:32:30.230995,and how it functions.,and how it functions.,curiosity,neutral,neutral
+1900-01-01 00:32:30.230995,1900-01-01 00:32:31.131995,That's it.,That's it.,finality,neutral,neutral
+1900-01-01 00:32:31.131995,1900-01-01 00:32:32.031995,Good.,Good.,satisfaction,happiness,mild
+1900-01-01 00:32:32.031995,1900-01-01 00:32:33.531995,"Again, take your time.","Again, take your time.",patience,neutral,mild
+1900-01-01 00:32:33.531995,1900-01-01 00:32:34.430995,More.,More.,desire,neutral,neutral
+1900-01-01 00:32:34.430995,1900-01-01 00:32:35.670995,Faster.,Faster.,impatience,anger,mild
+1900-01-01 00:32:35.670995,1900-01-01 00:32:37.270995,There's nothing complicated.,There's nothing complicated.,assurance,neutral,neutral
+1900-01-01 00:32:37.270995,1900-01-01 00:32:39.871995,I'm going to learn this restaurant from scratch.,I'm going to learn this restaurant from scratch.,determination,happiness,moderate
+1900-01-01 00:32:39.871995,1900-01-01 00:32:43.311995,I want to take the baby steps and get better.,I want to take the baby steps and get better.,hope,happiness,mild
+1900-01-01 00:32:43.311995,1900-01-01 00:32:44.210995,Pretty much neck and neck.,Pretty much neck and neck.,anticipation,neutral,mild
+1900-01-01 00:32:44.210995,1900-01-01 00:32:45.110995,Well done.,Well done.,appreciation,happiness,mild
+1900-01-01 00:32:45.110995,1900-01-01 00:32:46.011995,OK.,OK.,acceptance,neutral,neutral
+1900-01-01 00:32:46.011995,1900-01-01 00:32:47.210995,"In the oven, 25 minutes.","In the oven, 25 minutes.",anticipation,neutral,neutral
+1900-01-01 00:32:47.210995,1900-01-01 00:32:48.650995,I don't know why I thought I couldn't do it.,I don't know why I thought I couldn't do it.,self-doubt,sadness,mild
+1900-01-01 00:32:48.650995,1900-01-01 00:32:50.490995,"It is not difficult, I'm telling you.","It is not difficult, I'm telling you.",reassurance,neutral,mild
+1900-01-01 00:32:50.490995,1900-01-01 00:32:52.050995,So you guys just made pizzas.,So you guys just made pizzas.,curiosity,neutral,neutral
+1900-01-01 00:32:52.050995,1900-01-01 00:32:53.351995,Doesn't that look amazing?,Doesn't that look amazing?,admiration,happiness,moderate
+1900-01-01 00:32:53.351995,1900-01-01 00:32:54.251995,Yeah.,Yeah.,agreement,neutral,neutral
+1900-01-01 00:32:54.251995,1900-01-01 00:32:55.150995,"Give me, give me.","Give me, give me.",demand,anger,moderate
+1900-01-01 00:32:55.150995,1900-01-01 00:32:56.430995,I feel like I can do anything.,I feel like I can do anything.,empowerment,happiness,moderate
+1900-01-01 00:32:56.450995,1900-01-01 00:32:57.751995,Dig in.,Dig in.,encouragement,happiness,mild
+1900-01-01 00:32:57.751995,1900-01-01 00:32:59.550995,I just can't wait to get to work and prove to my mom,I just can't wait to get to work and prove to my mom,anticipation,happiness,moderate
+1900-01-01 00:32:59.550995,1900-01-01 00:33:01.950995,and my sister that I can do this.,and my sister that I can do this.,determination,happiness,mild
+1900-01-01 00:33:01.950995,1900-01-01 00:33:03.351995,I think the message is clear.,I think the message is clear.,certainty,neutral,neutral
+1900-01-01 00:33:03.351995,1900-01-01 00:33:06.351995,Nobody's scared to walk through that door,Nobody's scared to walk through that door,confidence,happiness,mild
+1900-01-01 00:33:06.351995,1900-01-01 00:33:09.631995,and get their hands dirty in that kitchen.,and get their hands dirty in that kitchen.,enthusiasm,happiness,mild
+1900-01-01 00:33:09.631995,1900-01-01 00:33:10.890995,"Tomorrow's a big day, let me tell you.","Tomorrow's a big day, let me tell you.",anticipation,happiness,moderate
+1900-01-01 00:33:10.890995,1900-01-01 00:33:13.390995,I need everyone on their game.,I need everyone on their game.,determination,neutral,moderate
+1900-01-01 00:33:12.495986,1900-01-01 00:33:13.395986,"Good night, guys.","Good night, guys.",warmth,happiness,mild
+1900-01-01 00:33:13.395986,1900-01-01 00:33:14.295986,Get some sleep.,Get some sleep.,concern,neutral,mild
+1900-01-01 00:33:14.295986,1900-01-01 00:33:15.195986,Thank you.,Thank you.,gratitude,happiness,mild
+1900-01-01 00:33:15.195986,1900-01-01 00:33:16.695986,"Thank you very much, chefs.","Thank you very much, chefs.",gratitude,happiness,mild
+1900-01-01 00:33:16.695986,1900-01-01 00:33:17.595986,"Oh, my god.","Oh, my god.",astonishment,surprise,moderate
+1900-01-01 00:33:17.595986,1900-01-01 00:33:19.495986,Woo!,Woo!,excitement,happiness,intense
+1900-01-01 00:33:19.495986,1900-01-01 00:33:20.895986,This is amazing!,This is amazing!,excitement,happiness,intense
+1900-01-01 00:33:26.675986,1900-01-01 00:33:29.315986,"Last night, Tatiana and her team eagerly learned","Last night, Tatiana and her team eagerly learned",anticipation,happiness,moderate
+1900-01-01 00:33:29.315986,1900-01-01 00:33:30.815986,a few of the new recipes.,a few of the new recipes.,curiosity,neutral,neutral
+1900-01-01 00:33:30.815986,1900-01-01 00:33:32.015986,Good morning.,Good morning.,politeness,neutral,neutral
+1900-01-01 00:33:32.015986,1900-01-01 00:33:33.775986,Now Chef Ramsay is ready to unveil,Now Chef Ramsay is ready to unveil,anticipation,surprise,mild
+1900-01-01 00:33:33.775986,1900-01-01 00:33:35.554986,an entirely revamped menu.,an entirely revamped menu.,anticipation,happiness,mild
+1900-01-01 00:33:35.554986,1900-01-01 00:33:36.454986,Here we are.,Here we are.,anticipation,neutral,neutral
+1900-01-01 00:33:36.454986,1900-01-01 00:33:37.755986,"Oh, this looks so delicious.","Oh, this looks so delicious.",desire,happiness,moderate
+1900-01-01 00:33:37.755986,1900-01-01 00:33:40.755986,"Please, take a copy of the menu and pass it along, please.","Please, take a copy of the menu and pass it along, please.",politeness,neutral,neutral
+1900-01-01 00:33:40.755986,1900-01-01 00:33:41.895986,"Oh, my god.","Oh, my god.",astonishment,surprise,moderate
+1900-01-01 00:33:42.355986,1900-01-01 00:33:46.895986,"First of all, we have a dynamic, simple, clean menu, right?","First of all, we have a dynamic, simple, clean menu, right?",expectation,neutral,mild
+1900-01-01 00:33:46.895986,1900-01-01 00:33:49.535986,"Now, let's start off with a homemade focaccia bread, yeah?","Now, let's start off with a homemade focaccia bread, yeah?",enthusiasm,happiness,mild
+1900-01-01 00:33:49.535986,1900-01-01 00:33:52.175986,"Seasoned with rosemary and garlic, drizzled in olive oil.","Seasoned with rosemary and garlic, drizzled in olive oil.",appetite,happiness,mild
+1900-01-01 00:33:52.175986,1900-01-01 00:33:54.035986,"Salads, we have the chopped salad.","Salads, we have the chopped salad.",informing,neutral,neutral
+1900-01-01 00:33:54.035986,1900-01-01 00:33:55.375986,"In there, we've got garbanzo beans,","In there, we've got garbanzo beans,",neutrality,neutral,neutral
+1900-01-01 00:33:55.375986,1900-01-01 00:33:56.675986,"provolone cheese, salami, finishing","provolone cheese, salami, finishing",anticipation,neutral,neutral
+1900-01-01 00:33:56.675986,1900-01-01 00:33:58.375986,with some fresh and mouthy lemon.,with some fresh and mouthy lemon.,desire,happiness,mild
+1900-01-01 00:33:58.375986,1900-01-01 00:34:00.715986,So it's got that really nice oomph to it as well.,So it's got that really nice oomph to it as well.,appreciation,happiness,mild
+1900-01-01 00:34:00.715986,1900-01-01 00:34:03.655986,"Entrees, pan-seared salmon served with a white bean ragout.","Entrees, pan-seared salmon served with a white bean ragout.",anticipation,neutral,neutral
+1900-01-01 00:34:03.655986,1900-01-01 00:34:04.614986,Phenomenal.,Phenomenal.,admiration,happiness,moderate
+1900-01-01 00:34:04.614986,1900-01-01 00:34:05.815986,Absolutely delicious.,Absolutely delicious.,satisfaction,happiness,moderate
+1900-01-01 00:34:05.815986,1900-01-01 00:34:07.675986,"Next to that, we've got something that's a staple.","Next to that, we've got something that's a staple.",expectation,neutral,neutral
+1900-01-01 00:34:07.675986,1900-01-01 00:34:09.614986,"Spaghetti meatballs, absolutely delicious.","Spaghetti meatballs, absolutely delicious.",satisfaction,happiness,moderate
+1900-01-01 00:34:09.634986,1900-01-01 00:34:11.634986,"And then finally, pizzas, four of them.","And then finally, pizzas, four of them.",anticipation,happiness,mild
+1900-01-01 00:34:11.634986,1900-01-01 00:34:14.815986,"Margherita, prosciutto, zucchini, done with a shrimp,","Margherita, prosciutto, zucchini, done with a shrimp,",anticipation,neutral,mild
+1900-01-01 00:34:14.815986,1900-01-01 00:34:16.055986,and the meat lovers.,and the meat lovers.,anticipation,happiness,mild
+1900-01-01 00:34:16.055986,1900-01-01 00:34:17.855986,"And again, we have a massive asset there","And again, we have a massive asset there",confidence,happiness,moderate
+1900-01-01 00:34:17.855986,1900-01-01 00:34:19.014986,"in that pizza oven, and we're going","in that pizza oven, and we're going",anticipation,happiness,mild
+1900-01-01 00:34:19.014986,1900-01-01 00:34:19.914986,to take advantage of that.,to take advantage of that.,opportunism,neutral,neutral
+1900-01-01 00:34:19.914986,1900-01-01 00:34:20.815986,"Right, right.","Right, right.",agreement,neutral,neutral
+1900-01-01 00:34:20.815986,1900-01-01 00:34:21.715986,Dig in.,Dig in.,encouragement,happiness,mild
+1900-01-01 00:34:21.715986,1900-01-01 00:34:22.615986,Let's go.,Let's go.,readiness,happiness,mild
+1900-01-01 00:34:22.615986,1900-01-01 00:34:23.514986,"Oh, my gosh.","Oh, my gosh.",astonishment,surprise,moderate
+1900-01-01 00:34:23.514986,1900-01-01 00:34:26.054986,This is so beautiful.,This is so beautiful.,admiration,happiness,moderate
+1900-01-01 00:34:26.054986,1900-01-01 00:34:27.094986,"Oh, my god.","Oh, my god.",shock,surprise,moderate
+1900-01-01 00:34:27.094986,1900-01-01 00:34:28.435986,I am thrilled.,I am thrilled.,excitement,happiness,intense
+1900-01-01 00:34:28.435986,1900-01-01 00:34:29.655986,This is amazing.,This is amazing.,admiration,happiness,moderate
+1900-01-01 00:34:29.655986,1900-01-01 00:34:31.795986,This is like the menu of my dreams.,This is like the menu of my dreams.,admiration,happiness,moderate
+1900-01-01 00:34:31.795986,1900-01-01 00:34:33.334986,"Oh, my god.","Oh, my god.",shock,surprise,moderate
+1900-01-01 00:34:33.334986,1900-01-01 00:34:35.395986,The pizza's incredible.,The pizza's incredible.,admiration,happiness,moderate
+1900-01-01 00:34:35.395986,1900-01-01 00:34:36.495986,"Oh, my god, I love that.","Oh, my god, I love that.",adoration,happiness,intense
+1900-01-01 00:34:36.495986,1900-01-01 00:34:37.395986,I know.,I know.,certainty,neutral,neutral
+1900-01-01 00:34:37.414986,1900-01-01 00:34:39.655986,I'm excited for the new menu.,I'm excited for the new menu.,anticipation,happiness,moderate
+1900-01-01 00:34:39.655986,1900-01-01 00:34:40.995986,"I mean, it's beautiful.","I mean, it's beautiful.",admiration,happiness,mild
+1900-01-01 00:34:40.995986,1900-01-01 00:34:41.895986,It's delicious.,It's delicious.,satisfaction,happiness,mild
+1900-01-01 00:34:41.895986,1900-01-01 00:34:44.395986,"Chef Ramsay, you're my boy, dude.","Chef Ramsay, you're my boy, dude.",affection,happiness,mild
+1900-01-01 00:34:47.594986,1900-01-01 00:34:49.234986,It's re-lunch night as Charlie's,It's re-lunch night as Charlie's,anticipation,happiness,mild
+1900-01-01 00:34:49.234986,1900-01-01 00:34:50.834986,opens its doors for dinner.,opens its doors for dinner.,anticipation,happiness,mild
+1900-01-01 00:34:50.834986,1900-01-01 00:34:52.035986,Welcome to Charlie's.,Welcome to Charlie's.,warmth,happiness,mild
+1900-01-01 00:34:52.035986,1900-01-01 00:34:53.675986,And the town of La Verne is anxious,And the town of La Verne is anxious,anxiety,fear,moderate
+1900-01-01 00:34:53.675986,1900-01-01 00:34:54.834986,to give it another try.,to give it another try.,hope,happiness,mild
+1900-01-01 00:34:54.834986,1900-01-01 00:34:56.234986,We'll go with the zucchini pizza.,We'll go with the zucchini pizza.,decision,neutral,neutral
+1900-01-01 00:34:56.234986,1900-01-01 00:34:57.715986,I'm going to have the panini.,I'm going to have the panini.,decision,neutral,neutral
+1900-01-01 00:34:57.715986,1900-01-01 00:34:58.975986,I'll put that right in.,I'll put that right in.,willingness,neutral,neutral
+1900-01-01 00:34:58.975986,1900-01-01 00:35:01.575986,And with Chef Jonathan and Chef Peter running the kitchen.,And with Chef Jonathan and Chef Peter running the kitchen.,expectation,neutral,neutral
+1900-01-01 00:35:01.575986,1900-01-01 00:35:04.075986,We got two fried calamari coming right now.,We got two fried calamari coming right now.,anticipation,happiness,mild
+1900-01-01 00:35:04.075986,1900-01-01 00:35:07.274986,It's up to Tatiana to make sure the rest of the team,It's up to Tatiana to make sure the rest of the team,responsibility,neutral,neutral
+1900-01-01 00:35:07.295986,1900-01-01 00:35:08.295986,are up to the task.,are up to the task.,confidence,happiness,mild
+1900-01-01 00:35:08.295986,1900-01-01 00:35:09.334986,My name is Tatiana.,My name is Tatiana.,self-introduction,neutral,neutral
+1900-01-01 00:35:09.334986,1900-01-01 00:35:10.535986,I'm the owner.,I'm the owner.,assertion,neutral,neutral
+1900-01-01 00:35:10.535986,1900-01-01 00:35:11.495986,"If you need anything, please let me know.","If you need anything, please let me know.",helpfulness,happiness,mild
+1900-01-01 00:35:11.495986,1900-01-01 00:35:12.895986,"Calamari, go out on P1.","Calamari, go out on P1.",command,neutral,neutral
+1900-01-01 00:35:12.895986,1900-01-01 00:35:15.575986,The calamari is in there right now.,The calamari is in there right now.,expectation,neutral,neutral
+1900-01-01 00:35:15.575986,1900-01-01 00:35:17.675986,"Val, this order's up.","Val, this order's up.",alertness,neutral,neutral
+1900-01-01 00:35:17.675986,1900-01-01 00:35:19.535986,"It's a tomato soup, a Caesar salad.","It's a tomato soup, a Caesar salad.",description,neutral,neutral
+1900-01-01 00:35:19.535986,1900-01-01 00:35:21.474986,"Order up, fried calamari.","Order up, fried calamari.",neutrality,neutral,neutral
+1900-01-01 00:35:21.474986,1900-01-01 00:35:23.375986,"With the kitchen staff working together,","With the kitchen staff working together,",cooperation,happiness,mild
+1900-01-01 00:35:23.375986,1900-01-01 00:35:25.674986,food quickly makes its way to the diners.,food quickly makes its way to the diners.,efficiency,neutral,neutral
+1900-01-01 00:35:25.674986,1900-01-01 00:35:26.575986,Tomato soup?,Tomato soup?,curiosity,neutral,mild
+1900-01-01 00:35:26.575986,1900-01-01 00:35:28.054986,Did you guys order some calamari?,Did you guys order some calamari?,curiosity,neutral,neutral
+1900-01-01 00:35:28.054986,1900-01-01 00:35:29.215986,Yes.,Yes.,agreement,neutral,neutral
+1900-01-01 00:35:29.215986,1900-01-01 00:35:31.554986,But not all the customers are receiving their meals.,But not all the customers are receiving their meals.,frustration,sadness,moderate
+1900-01-01 00:35:31.554986,1900-01-01 00:35:32.894986,"You guys, your food's not even here yet.","You guys, your food's not even here yet.",impatience,anger,mild
+1900-01-01 00:35:32.894986,1900-01-01 00:35:34.155986,"I mean, it's gone.","I mean, it's gone.",loss,sadness,moderate
+1900-01-01 00:35:34.155986,1900-01-01 00:35:35.655986,I was kind of hoping to show up at the same time.,I was kind of hoping to show up at the same time.,disappointment,sadness,mild
+1900-01-01 00:35:35.655986,1900-01-01 00:35:36.554986,I have a question.,I have a question.,curiosity,neutral,neutral
+1900-01-01 00:35:37.515986,1900-01-01 00:35:38.914986,That was my entree at my dinner?,That was my entree at my dinner?,confusion,surprise,mild
+1900-01-01 00:35:38.914986,1900-01-01 00:35:40.315986,Yes.,Yes.,agreement,neutral,neutral
+1900-01-01 00:35:40.315986,1900-01-01 00:35:41.215986,I know.,I know.,certainty,neutral,neutral
+1900-01-01 00:35:41.215986,1900-01-01 00:35:42.215986,"It tasted great, but.","It tasted great, but.",hesitation,neutral,mild
+1900-01-01 00:35:42.215986,1900-01-01 00:35:43.215986,It's the only thing that's out here.,It's the only thing that's out here.,isolation,sadness,mild
+1900-01-01 00:35:43.215986,1900-01-01 00:35:44.114986,I know.,I know.,certainty,neutral,neutral
+1900-01-01 00:35:44.114986,1900-01-01 00:35:45.815986,"I'm done eating, and they don't have no food.","I'm done eating, and they don't have no food.",disappointment,sadness,mild
+1900-01-01 00:35:45.815986,1900-01-01 00:35:47.254986,I'm going to go ask the kitchen right now?,I'm going to go ask the kitchen right now?,uncertainty,surprise,mild
+1900-01-01 00:35:47.254986,1900-01-01 00:35:48.155986,All right.,All right.,acceptance,neutral,neutral
+1900-01-01 00:35:48.155986,1900-01-01 00:35:49.995986,Thank you.,Thank you.,gratitude,happiness,mild
+1900-01-01 00:35:49.995986,1900-01-01 00:35:51.295986,Pizza came out.,Pizza came out.,anticipation,happiness,mild
+1900-01-01 00:35:51.295986,1900-01-01 00:35:53.894986,The entrees haven't come out.,The entrees haven't come out.,impatience,anger,mild
+1900-01-01 00:35:53.894986,1900-01-01 00:35:55.334986,Did they come all in as entrees?,Did they come all in as entrees?,curiosity,neutral,neutral
+1900-01-01 00:35:55.334986,1900-01-01 00:35:56.435986,Yes.,Yes.,agreement,neutral,neutral
+1900-01-01 00:35:56.435986,1900-01-01 00:35:58.095986,"I'm trying not to cry, but this is really bad.","I'm trying not to cry, but this is really bad.",distress,sadness,intense
+1900-01-01 00:35:58.095986,1900-01-01 00:36:00.274986,Why are you guys not talking to each other?,Why are you guys not talking to each other?,confusion,sadness,moderate
+1900-01-01 00:36:00.274986,1900-01-01 00:36:02.134986,"Why are you not talking to the chef, you guys?","Why are you not talking to the chef, you guys?",confusion,surprise,moderate
+1900-01-01 00:36:02.134986,1900-01-01 00:36:03.134986,It's a nightmare.,It's a nightmare.,dread,fear,intense
+1900-01-01 00:36:03.134986,1900-01-01 00:36:04.034986,Tatiana?,Tatiana?,curiosity,neutral,mild
+1900-01-01 00:36:04.034986,1900-01-01 00:36:05.134986,"Yes, Chef?","Yes, Chef?",attentiveness,neutral,neutral
+1900-01-01 00:36:05.134986,1900-01-01 00:36:06.134986,How many pizzas we got on there?,How many pizzas we got on there?,curiosity,neutral,neutral
+1900-01-01 00:36:07.095986,1900-01-01 00:36:08.795986,"Two margaritas and a meat lover, Chef.","Two margaritas and a meat lover, Chef.",request,neutral,neutral
+1900-01-01 00:36:08.795986,1900-01-01 00:36:10.894986,So you've got two margaritas and meat lovers on there.,So you've got two margaritas and meat lovers on there.,confirmation,neutral,neutral
+1900-01-01 00:36:10.894986,1900-01-01 00:36:12.194986,You've got three pizzas on there?,You've got three pizzas on there?,curiosity,surprise,mild
+1900-01-01 00:36:12.194986,1900-01-01 00:36:13.435986,"Yeah, I already did that, yes.","Yeah, I already did that, yes.",confirmation,neutral,neutral
+1900-01-01 00:36:13.435986,1900-01-01 00:36:14.435986,"Yeah, they're already gone.","Yeah, they're already gone.",resignation,sadness,mild
+1900-01-01 00:36:14.435986,1900-01-01 00:36:15.735986,Fuck me.,Fuck me.,frustration,anger,moderate
+1900-01-01 00:36:15.735986,1900-01-01 00:36:17.534986,And it soon becomes apparent that there's,And it soon becomes apparent that there's,anticipation,surprise,mild
+1900-01-01 00:36:17.534986,1900-01-01 00:36:19.774986,a detrimental lack of communication,a detrimental lack of communication,frustration,sadness,moderate
+1900-01-01 00:36:19.774986,1900-01-01 00:36:22.114986,between the wait staff and the pizza station.,between the wait staff and the pizza station.,neutrality,neutral,neutral
+1900-01-01 00:36:22.114986,1900-01-01 00:36:24.715986,I don't know if the meal has come out for this yet.,I don't know if the meal has come out for this yet.,uncertainty,neutral,mild
+1900-01-01 00:36:24.715986,1900-01-01 00:36:26.375986,"Before you send a pizza, you've got","Before you send a pizza, you've got",anticipation,neutral,mild
+1900-01-01 00:36:26.375986,1900-01-01 00:36:27.715986,to check in with Jonathan.,to check in with Jonathan.,concern,neutral,mild
+1900-01-01 00:36:27.715986,1900-01-01 00:36:30.054986,You're sending your pizzas in your own little world.,You're sending your pizzas in your own little world.,disconnection,neutral,mild
+1900-01-01 00:36:30.054986,1900-01-01 00:36:31.914986,"We've got to stick together, guys.","We've got to stick together, guys.",solidarity,happiness,moderate
+1900-01-01 00:36:31.914986,1900-01-01 00:36:33.054986,You have to talk to him.,You have to talk to him.,insistence,neutral,moderate
+1900-01-01 00:36:33.054986,1900-01-01 00:36:33.955986,"Yes, Chef.","Yes, Chef.",respect,neutral,neutral
+1900-01-01 00:36:33.955986,1900-01-01 00:36:35.315986,They need to communicate.,They need to communicate.,concern,neutral,mild
+1900-01-01 00:36:36.274986,1900-01-01 00:36:37.575986,I don't know what to do now.,I don't know what to do now.,confusion,fear,moderate
+1900-01-01 00:36:42.215986,1900-01-01 00:36:44.274986,It's relaunch night at Charlie's.,It's relaunch night at Charlie's.,anticipation,happiness,mild
+1900-01-01 00:36:44.274986,1900-01-01 00:36:47.254986,And with some of the tables receiving incomplete orders.,And with some of the tables receiving incomplete orders.,frustration,anger,mild
+1900-01-01 00:36:47.254986,1900-01-01 00:36:48.155986,I'm done eating.,I'm done eating.,contentment,neutral,neutral
+1900-01-01 00:36:48.155986,1900-01-01 00:36:49.515986,They don't have no food.,They don't have no food.,desperation,sadness,moderate
+1900-01-01 00:36:49.515986,1900-01-01 00:36:52.114986,A night that started off with so much promise,A night that started off with so much promise,nostalgia,sadness,mild
+1900-01-01 00:36:52.114986,1900-01-01 00:36:54.155986,is on the brink of disaster.,is on the brink of disaster.,dread,fear,intense
+1900-01-01 00:36:54.155986,1900-01-01 00:36:55.455986,They need to communicate.,They need to communicate.,expectation,neutral,neutral
+1900-01-01 00:36:55.455986,1900-01-01 00:36:56.355986,"I'm telling them, Chef.","I'm telling them, Chef.",defiance,anger,mild
+1900-01-01 00:36:56.355986,1900-01-01 00:36:57.995986,They need to communicate.,They need to communicate.,expectation,neutral,neutral
+1900-01-01 00:36:57.995986,1900-01-01 00:36:59.254986,I don't know what to do now.,I don't know what to do now.,confusion,sadness,moderate
+1900-01-01 00:36:59.254986,1900-01-01 00:37:00.735986,I feel overwhelmed.,I feel overwhelmed.,overwhelm,sadness,intense
+1900-01-01 00:37:00.735986,1900-01-01 00:37:02.194986,"I'm having a moment of, like, maybe","I'm having a moment of, like, maybe",uncertainty,neutral,mild
+1900-01-01 00:37:02.194986,1900-01-01 00:37:03.394986,I'm not cut out for this.,I'm not cut out for this.,inadequacy,sadness,moderate
+1900-01-01 00:37:03.394986,1900-01-01 00:37:04.295986,Come here a minute.,Come here a minute.,command,neutral,neutral
+1900-01-01 00:37:05.274986,1900-01-01 00:37:08.155986,We're going to go down in history as the biggest,We're going to go down in history as the biggest,anticipation,surprise,moderate
+1900-01-01 00:37:08.155986,1900-01-01 00:37:09.655986,fucking shithole in the Verne.,fucking shithole in the Verne.,contempt,disgust,intense
+1900-01-01 00:37:09.655986,1900-01-01 00:37:11.054986,You need to step up.,You need to step up.,expectation,anger,moderate
+1900-01-01 00:37:11.054986,1900-01-01 00:37:12.054986,"I am stepping up, Chef.","I am stepping up, Chef.",determination,happiness,moderate
+1900-01-01 00:37:12.054986,1900-01-01 00:37:12.955986,And I'm only one person.,And I'm only one person.,limitation,sadness,mild
+1900-01-01 00:37:12.955986,1900-01-01 00:37:14.095986,Nobody listens to me.,Nobody listens to me.,rejection,sadness,moderate
+1900-01-01 00:37:14.095986,1900-01-01 00:37:15.754986,"Tomorrow, we're going to be fucking","Tomorrow, we're going to be fucking",anticipation,happiness,intense
+1900-01-01 00:37:15.754986,1900-01-01 00:37:17.355986,closed at this rate.,closed at this rate.,resignation,sadness,mild
+1900-01-01 00:37:17.355986,1900-01-01 00:37:19.435986,Get them together and wake them up.,Get them together and wake them up.,determination,neutral,moderate
+1900-01-01 00:37:19.435986,1900-01-01 00:37:21.674986,"Come on, please.","Come on, please.",pleading,sadness,mild
+1900-01-01 00:37:21.674986,1900-01-01 00:37:23.334986,This is ultimately my restaurant.,This is ultimately my restaurant.,pride,happiness,moderate
+1900-01-01 00:37:23.334986,1900-01-01 00:37:24.534986,I'm the captain of the ship.,I'm the captain of the ship.,confidence,happiness,mild
+1900-01-01 00:37:24.534986,1900-01-01 00:37:25.735986,Just come over here now.,Just come over here now.,impatience,anger,moderate
+1900-01-01 00:37:25.735986,1900-01-01 00:37:27.534986,And I'm not going to give up.,And I'm not going to give up.,determination,happiness,moderate
+1900-01-01 00:37:27.534986,1900-01-01 00:37:29.215986,"Audrey, over here now.","Audrey, over here now.",urgency,anger,moderate
+1900-01-01 00:37:29.215986,1900-01-01 00:37:30.514986,Come here.,Come here.,command,neutral,neutral
+1900-01-01 00:37:30.514986,1900-01-01 00:37:32.014986,Why are you guys not talking to each other?,Why are you guys not talking to each other?,confusion,sadness,moderate
+1900-01-01 00:37:32.014986,1900-01-01 00:37:33.715986,"Why are you not talking to the Chef, you guys?","Why are you not talking to the Chef, you guys?",confusion,surprise,mild
+1900-01-01 00:37:34.135986,1900-01-01 00:37:35.274986,He talks. He's not Castamaro.,He talks. He's not Castamaro.,doubt,neutral,mild
+1900-01-01 00:37:35.274986,1900-01-01 00:37:36.574986,Talk to him.,Talk to him.,encouragement,neutral,mild
+1900-01-01 00:37:36.574986,1900-01-01 00:37:38.035986,"If you don't know what's going on, talk to me.","If you don't know what's going on, talk to me.",concern,happiness,mild
+1900-01-01 00:37:38.035986,1900-01-01 00:37:39.975986,"If you need help, ask somebody.","If you need help, ask somebody.",encouragement,neutral,mild
+1900-01-01 00:37:39.975986,1900-01-01 00:37:40.975986,OK? All right?,OK? All right?,uncertainty,neutral,mild
+1900-01-01 00:37:40.975986,1900-01-01 00:37:41.875986,Get it?,Get it?,curiosity,neutral,neutral
+1900-01-01 00:37:41.875986,1900-01-01 00:37:42.975986,Get back to your tables.,Get back to your tables.,command,anger,moderate
+1900-01-01 00:37:42.975986,1900-01-01 00:37:45.054986,I can't do this alone.,I can't do this alone.,helplessness,sadness,moderate
+1900-01-01 00:37:45.054986,1900-01-01 00:37:48.054986,"OK, the prosciutto pizza for Audrey on caveo seven.","OK, the prosciutto pizza for Audrey on caveo seven.",neutrality,neutral,neutral
+1900-01-01 00:37:48.054986,1900-01-01 00:37:49.815986,"Yes, I'm going to cook it right now.","Yes, I'm going to cook it right now.",readiness,neutral,neutral
+1900-01-01 00:37:49.815986,1900-01-01 00:37:51.495986,"OK, I'm leaving them here.","OK, I'm leaving them here.",resignation,neutral,neutral
+1900-01-01 00:37:51.495986,1900-01-01 00:37:52.794986,Leaving them here.,Leaving them here.,resignation,sadness,mild
+1900-01-01 00:37:52.794986,1900-01-01 00:37:55.294986,With Tatiana stepping up and organizing her staff.,With Tatiana stepping up and organizing her staff.,admiration,happiness,mild
+1900-01-01 00:37:55.294986,1900-01-01 00:37:56.195986,Talk to each other.,Talk to each other.,encouragement,neutral,neutral
+1900-01-01 00:37:56.195986,1900-01-01 00:37:57.794986,"Jen, you're walking around.","Jen, you're walking around.",observation,neutral,neutral
+1900-01-01 00:37:57.794986,1900-01-01 00:37:59.334986,Everyone is now in sync.,Everyone is now in sync.,contentment,happiness,mild
+1900-01-01 00:37:59.334986,1900-01-01 00:38:00.794986,Is it almost ready for the prosciutto?,Is it almost ready for the prosciutto?,anticipation,happiness,mild
+1900-01-01 00:38:00.794986,1900-01-01 00:38:01.794986,The prosciutto is ready.,The prosciutto is ready.,satisfaction,happiness,mild
+1900-01-01 00:38:01.794986,1900-01-01 00:38:03.095986,Let's do this.,Let's do this.,determination,happiness,moderate
+1900-01-01 00:38:03.875986,1900-01-01 00:38:05.915986,And entrees are quickly making their way,And entrees are quickly making their way,anticipation,happiness,mild
+1900-01-01 00:38:05.915986,1900-01-01 00:38:07.514986,out to the tables together.,out to the tables together.,companionship,happiness,mild
+1900-01-01 00:38:07.514986,1900-01-01 00:38:09.255986,And here's pizza.,And here's pizza.,contentment,happiness,mild
+1900-01-01 00:38:09.255986,1900-01-01 00:38:10.155986,Oh my god.,Oh my god.,shock,surprise,moderate
+1900-01-01 00:38:10.155986,1900-01-01 00:38:11.054986,I can't cook through this.,I can't cook through this.,frustration,sadness,moderate
+1900-01-01 00:38:11.054986,1900-01-01 00:38:12.054986,I need to get a knife.,I need to get a knife.,determination,neutral,neutral
+1900-01-01 00:38:12.054986,1900-01-01 00:38:13.354986,This is the best lasagna I've ever had.,This is the best lasagna I've ever had.,delight,happiness,intense
+1900-01-01 00:38:13.354986,1900-01-01 00:38:14.255986,Doing OK?,Doing OK?,concern,neutral,mild
+1900-01-01 00:38:14.255986,1900-01-01 00:38:15.255986,I love your prosciutto.,I love your prosciutto.,affection,happiness,moderate
+1900-01-01 00:38:15.255986,1900-01-01 00:38:16.595986,It's so good.,It's so good.,satisfaction,happiness,moderate
+1900-01-01 00:38:16.595986,1900-01-01 00:38:17.495986,I know.,I know.,certainty,neutral,neutral
+1900-01-01 00:38:17.495986,1900-01-01 00:38:18.695986,So good.,So good.,satisfaction,happiness,mild
+1900-01-01 00:38:18.695986,1900-01-01 00:38:20.875986,The customers are totally loving everything.,The customers are totally loving everything.,enthusiasm,happiness,intense
+1900-01-01 00:38:20.875986,1900-01-01 00:38:21.774986,They're happy.,They're happy.,contentment,happiness,mild
+1900-01-01 00:38:21.774986,1900-01-01 00:38:23.135986,They're enjoying it.,They're enjoying it.,enjoyment,happiness,moderate
+1900-01-01 00:38:23.135986,1900-01-01 00:38:24.975986,And I'm proud of this restaurant now.,And I'm proud of this restaurant now.,pride,happiness,moderate
+1900-01-01 00:38:24.975986,1900-01-01 00:38:27.014986,I'm proud of it.,I'm proud of it.,pride,happiness,moderate
+1900-01-01 00:38:27.014986,1900-01-01 00:38:28.815986,Thank you so much.,Thank you so much.,gratitude,happiness,mild
+1900-01-01 00:38:28.815986,1900-01-01 00:38:29.715986,You're very welcome.,You're very welcome.,warmth,happiness,mild
+1900-01-01 00:38:29.715986,1900-01-01 00:38:31.574986,All tickets are gone.,All tickets are gone.,disappointment,sadness,moderate
+1900-01-01 00:38:31.655986,1900-01-01 00:38:33.354986,Tatiana has finally stepped up.,Tatiana has finally stepped up.,admiration,happiness,mild
+1900-01-01 00:38:33.354986,1900-01-01 00:38:37.394986,And I'm so proud to say that she's my boss.,And I'm so proud to say that she's my boss.,pride,happiness,moderate
+1900-01-01 00:38:37.394986,1900-01-01 00:38:39.535986,Give me five.,Give me five.,encouragement,happiness,mild
+1900-01-01 00:38:39.535986,1900-01-01 00:38:41.035986,Thank you for coming.,Thank you for coming.,gratitude,happiness,mild
+1900-01-01 00:38:41.035986,1900-01-01 00:38:41.935986,Come back and see us.,Come back and see us.,invitation,happiness,mild
+1900-01-01 00:38:41.935986,1900-01-01 00:38:45.435986,"Oh gosh, thank you.","Oh gosh, thank you.",gratitude,happiness,mild
+1900-01-01 00:38:45.435986,1900-01-01 00:38:47.475986,"Listen, tough night.","Listen, tough night.",weariness,sadness,mild
+1900-01-01 00:38:47.475986,1900-01-01 00:38:50.035986,"It wasn't expecting to be a perfect night, let me tell you.","It wasn't expecting to be a perfect night, let me tell you.",resignation,sadness,mild
+1900-01-01 00:38:50.035986,1900-01-01 00:38:52.274986,"But trust me, overall, it was successful.","But trust me, overall, it was successful.",confidence,happiness,mild
+1900-01-01 00:38:52.274986,1900-01-01 00:38:53.475986,Customers loved the food.,Customers loved the food.,satisfaction,happiness,moderate
+1900-01-01 00:38:53.475986,1900-01-01 00:38:55.454986,"And what you did get an insight tonight, too,","And what you did get an insight tonight, too,",curiosity,surprise,mild
+1900-01-01 00:38:55.454986,1900-01-01 00:38:57.975986,was the potential of this place.,was the potential of this place.,curiosity,neutral,neutral
+1900-01-01 00:38:57.975986,1900-01-01 00:38:59.174986,We can't give up.,We can't give up.,determination,happiness,moderate
+1900-01-01 00:38:59.174986,1900-01-01 00:39:00.415986,The foundation's here.,The foundation's here.,anticipation,happiness,mild
+1900-01-01 00:39:00.415986,1900-01-01 00:39:01.315986,Run with it.,Run with it.,encouragement,happiness,mild
+1900-01-01 00:39:02.095986,1900-01-01 00:39:02.995986,Good.,Good.,approval,happiness,mild
+1900-01-01 00:39:02.995986,1900-01-01 00:39:03.894986,Well done to you all.,Well done to you all.,pride,happiness,mild
+1900-01-01 00:39:03.894986,1900-01-01 00:39:05.695986,"Can I have a little word with you, please?","Can I have a little word with you, please?",politeness,neutral,mild
+1900-01-01 00:39:05.695986,1900-01-01 00:39:06.595986,"Good night, ladies.","Good night, ladies.",politeness,neutral,neutral
+1900-01-01 00:39:06.595986,1900-01-01 00:39:07.995986,Good job.,Good job.,appreciation,happiness,mild
+1900-01-01 00:39:07.995986,1900-01-01 00:39:09.834986,I definitely believe in my sister.,I definitely believe in my sister.,confidence,happiness,moderate
+1900-01-01 00:39:09.834986,1900-01-01 00:39:12.334986,She's learned what it takes to run a restaurant.,She's learned what it takes to run a restaurant.,pride,happiness,mild
+1900-01-01 00:39:12.334986,1900-01-01 00:39:16.535986,And she's got the tools to bring this restaurant to greatness.,And she's got the tools to bring this restaurant to greatness.,confidence,happiness,moderate
+1900-01-01 00:39:16.535986,1900-01-01 00:39:17.674986,"Well done, well done, well done.","Well done, well done, well done.",praise,happiness,moderate
+1900-01-01 00:39:17.674986,1900-01-01 00:39:18.875986,You're courageous.,You're courageous.,admiration,happiness,mild
+1900-01-01 00:39:18.875986,1900-01-01 00:39:20.734986,"You're bloody hardworking, and you're young.","You're bloody hardworking, and you're young.",admiration,happiness,moderate
+1900-01-01 00:39:20.734986,1900-01-01 00:39:23.975986,So you've got the energy now to take this place even further.,So you've got the energy now to take this place even further.,encouragement,happiness,mild
+1900-01-01 00:39:23.975986,1900-01-01 00:39:25.655986,I know what needs to change.,I know what needs to change.,determination,neutral,mild
+1900-01-01 00:39:25.655986,1900-01-01 00:39:27.174986,I know I have a lot of work to do.,I know I have a lot of work to do.,resignation,neutral,mild
+1900-01-01 00:39:27.174986,1900-01-01 00:39:29.655986,But mark this as a significant day.,But mark this as a significant day.,anticipation,surprise,moderate
+1900-01-01 00:39:29.655986,1900-01-01 00:39:31.354986,"This is no longer Charlie's restaurant,","This is no longer Charlie's restaurant,",resignation,sadness,moderate
+1900-01-01 00:39:31.354986,1900-01-01 00:39:32.595986,no longer Simon's.,no longer Simon's.,loss,sadness,mild
+1900-01-01 00:39:32.595986,1900-01-01 00:39:34.394986,It's yours.,It's yours.,generosity,happiness,mild
+1900-01-01 00:39:34.394986,1900-01-01 00:39:38.375986,This restaurant now is Tatiana's restaurant.,This restaurant now is Tatiana's restaurant.,acceptance,neutral,neutral
+1900-01-01 00:39:38.375986,1900-01-01 00:39:39.274986,Continue it.,Continue it.,expectation,neutral,neutral
+1900-01-01 00:39:39.274986,1900-01-01 00:39:40.174986,I will.,I will.,determination,neutral,mild
+1900-01-01 00:39:40.174986,1900-01-01 00:39:41.635986,I'm going to make you so proud.,I'm going to make you so proud.,determination,happiness,moderate
+1900-01-01 00:39:41.635986,1900-01-01 00:39:43.234986,I can't wait to come back here.,I can't wait to come back here.,anticipation,happiness,moderate
+1900-01-01 00:39:43.234986,1900-01-01 00:39:44.135986,Yeah?,Yeah?,curiosity,surprise,mild
+1900-01-01 00:39:44.135986,1900-01-01 00:39:45.234986,"You change lives, Gordon Ramsay.","You change lives, Gordon Ramsay.",admiration,happiness,moderate
+1900-01-01 00:39:45.234986,1900-01-01 00:39:46.135986,Hello.,Hello.,greeting,neutral,neutral
+1900-01-01 00:39:46.135986,1900-01-01 00:39:47.035986,I really do.,I really do.,affirmation,neutral,mild
+1900-01-01 00:39:47.035986,1900-01-01 00:39:48.074986,You saved my life.,You saved my life.,gratitude,happiness,intense
+1900-01-01 00:39:48.074986,1900-01-01 00:39:50.614986,This has not just been about the restaurant.,This has not just been about the restaurant.,reflection,neutral,mild
+1900-01-01 00:39:50.614986,1900-01-01 00:39:54.354986,This has been about everything in my life.,This has been about everything in my life.,resignation,sadness,moderate
+1900-01-01 00:39:54.354986,1900-01-01 00:39:55.255986,You are like an angel.,You are like an angel.,admiration,happiness,mild
+1900-01-01 00:39:55.255986,1900-01-01 00:39:56.495986,You have no idea.,You have no idea.,frustration,anger,mild
+1900-01-01 00:39:56.495986,1900-01-01 00:39:57.394986,I love him.,I love him.,affection,happiness,moderate
+1900-01-01 00:39:57.394986,1900-01-01 00:39:58.834986,You've literally saved me.,You've literally saved me.,gratitude,happiness,intense
+1900-01-01 00:39:58.834986,1900-01-01 00:40:03.234986,And it's like a dream come true.,And it's like a dream come true.,fulfillment,happiness,moderate
+1900-01-01 00:40:09.174986,1900-01-01 00:40:11.435986,"Wow, when I first arrived here, Tatiana's priorities","Wow, when I first arrived here, Tatiana's priorities",reminiscence,surprise,mild
+1900-01-01 00:40:11.435986,1900-01-01 00:40:12.774986,were all in the wrong order.,were all in the wrong order.,frustration,anger,mild
+1900-01-01 00:40:12.774986,1900-01-01 00:40:15.755986,"She was fighting with her family, arguing with the staff,","She was fighting with her family, arguing with the staff,",conflict,anger,moderate
+1900-01-01 00:40:15.755986,1900-01-01 00:40:18.554986,"and more importantly, paid no attention to her kitchen.","and more importantly, paid no attention to her kitchen.",neglect,sadness,mild
+1900-01-01 00:40:18.554986,1900-01-01 00:40:20.954986,We made a massive turnaround here.,We made a massive turnaround here.,pride,happiness,moderate
+1900-01-01 00:40:20.954986,1900-01-01 00:40:23.554986,And now Tatiana has her priorities,And now Tatiana has her priorities,acknowledgment,neutral,neutral
+1900-01-01 00:40:23.554986,1900-01-01 00:40:24.755986,all in the right place.,all in the right place.,contentment,happiness,mild
+1900-01-01 00:40:24.755986,1900-01-01 00:40:27.695986,"But more importantly, she's in control of her business.","But more importantly, she's in control of her business.",pride,happiness,mild
+1900-01-01 00:40:27.695986,1900-01-01 00:40:30.794986,I've got every confidence that this little bistro,I've got every confidence that this little bistro,optimism,happiness,moderate
+1900-01-01 00:40:30.794986,1900-01-01 00:40:31.695986,will be a huge success.,will be a huge success.,optimism,happiness,moderate
+1900-01-01 00:40:37.035986,1900-01-01 00:40:39.794986,"After Gordon left, I've got the two steaks going.","After Gordon left, I've got the two steaks going.",determination,neutral,mild
+1900-01-01 00:40:39.794986,1900-01-01 00:40:41.635986,"OK, so I'm working the salad.","OK, so I'm working the salad.",focus,neutral,neutral
+1900-01-01 00:40:41.635986,1900-01-01 00:40:44.574986,Chef Jonathan maintained the high standards in the kitchen.,Chef Jonathan maintained the high standards in the kitchen.,pride,happiness,mild
+1900-01-01 00:40:44.574986,1900-01-01 00:40:45.834986,Is there anything you want me to have,Is there anything you want me to have,curiosity,neutral,mild
+1900-01-01 00:40:45.834986,1900-01-01 00:40:48.215986,the girls push right now?,the girls push right now?,curiosity,neutral,mild
+1900-01-01 00:40:48.215986,1900-01-01 00:40:50.274986,And immediately helped Tatiana launch,And immediately helped Tatiana launch,support,happiness,mild
+1900-01-01 00:40:50.274986,1900-01-01 00:40:51.614986,the search for a new chef.,the search for a new chef.,anticipation,neutral,neutral
+1900-01-01 00:40:51.614986,1900-01-01 00:40:53.514986,"Hi, how are you?","Hi, how are you?",curiosity,neutral,neutral
+1900-01-01 00:40:53.574986,1900-01-01 00:40:55.614986,"And thanks to her transformation,","And thanks to her transformation,",gratitude,happiness,mild
+1900-01-01 00:40:55.614986,1900-01-01 00:40:57.774986,not only is her business back on track.,not only is her business back on track.,relief,happiness,mild
+1900-01-01 00:40:57.774986,1900-01-01 00:41:02.114986,It's the first Charlie's staff meeting.,It's the first Charlie's staff meeting.,anticipation,neutral,mild
+1900-01-01 00:41:02.114986,1900-01-01 00:41:04.655986,But so is her relationship with her family.,But so is her relationship with her family.,concern,sadness,mild
+1900-01-01 00:41:04.655986,1900-01-01 00:41:07.454986,"I owe Chef Ramsay, like, everything.","I owe Chef Ramsay, like, everything.",gratitude,happiness,moderate
+1900-01-01 00:41:07.454986,1900-01-01 00:41:10.135986,He has molded me into the business owner I need to be.,He has molded me into the business owner I need to be.,gratitude,happiness,moderate
+1900-01-01 00:41:10.135986,1900-01-01 00:41:11.635986,"When he comes back, he's going to be like,","When he comes back, he's going to be like,",anticipation,surprise,mild
+1900-01-01 00:41:11.635986,1900-01-01 00:41:14.035986,"you've got it, Tatiana, yes.","you've got it, Tatiana, yes.",encouragement,happiness,mild
