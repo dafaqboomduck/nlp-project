@@ -18,7 +18,7 @@ class TranscriptEngine:
         self.headers = headers
         
 
-    def _create_transcription_config():
+    def _create_transcription_config(self):
         """Create transcription configuration with optimal settings"""
         config = aai.TranscriptionConfig(
             speaker_labels=True,
@@ -40,7 +40,7 @@ class TranscriptEngine:
         return config
 
 
-    def _upload_audio(file_path):
+    def _upload_audio(self, file_path):
         """Upload audio file to AssemblyAI and return the upload URL"""
         with open(file_path, "rb") as f:
             response = requests.post(BASE_URL + "/v2/upload", headers=HEADERS, data=f)
@@ -51,7 +51,7 @@ class TranscriptEngine:
         return response.json()["upload_url"]
 
 
-    def _transcribe_audio(file_path, config):
+    def _transcribe_audio(self, file_path, config):
         """Transcribe audio file using AssemblyAI SDK"""
         transcriber = aai.Transcriber(config=config)
         transcript = transcriber.transcribe(file_path)
@@ -62,7 +62,7 @@ class TranscriptEngine:
         return transcript.text
 
 
-    def _split_into_sentences(text):
+    def _split_into_sentences(self, text):
         """Split text into sentences using simple regex"""
         # Split on sentence-ending punctuation followed by space and capital letter
         sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z])", text.strip())
@@ -77,7 +77,7 @@ class TranscriptEngine:
         return cleaned_sentences
 
 
-    def _save_to_csv(sentences, output_path):
+    def _save_to_csv(self, sentences, output_path):
         """Save sentences to CSV file"""
         with open(output_path, "w", newline="", encoding="utf-8") as csvfile:
             writer = csv.writer(csvfile)
@@ -121,10 +121,3 @@ class TranscriptEngine:
         return str(output_path)
 
 
-if __name__ == "__main__":
-
-    # Create an instance of the class
-    engine = TranscriptEngine()
-
-    # Call the transcribe method on the instance
-    engine.transcribe(mp3_file=AUDIO_PATH, output_path=TRANSRIPT_PATH)
