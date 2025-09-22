@@ -10,7 +10,6 @@ import requests
 import assemblyai as aai
 
 from transcript.config import BASE_URL, HEADERS
-from config import AUDIO_PATH, TRANSRIPT_PATH
 
 class TranscriptEngine:
     def __init__(self, base_url = BASE_URL, headers = HEADERS):
@@ -87,7 +86,7 @@ class TranscriptEngine:
                 writer.writerow([sentence])
 
 
-    def transcribe(self, mp3_file, output_path):
+    def transcribe(self, mp3_file, output_path, post_process=True):
         """
         Main function: convert MP3 to sentences CSV using AssemblyAI
 
@@ -111,8 +110,12 @@ class TranscriptEngine:
         print("Starting transcription...")
         transcript_text = self._transcribe_audio(audio_url, config)
 
-        # Split transcription into sentences
-        sentences = self._split_into_sentences(transcript_text)
+        if post_process:
+            # Split transcription into sentences if post_process parameter is set to True
+            sentences = self._split_into_sentences(transcript_text)
+        else:
+            # Otherwise use the raw transcript text as output 
+            sentences = transcript_text
 
         # Save to CSV
         self._save_to_csv(sentences, output_path)
