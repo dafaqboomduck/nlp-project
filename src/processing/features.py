@@ -1,9 +1,11 @@
 import nltk
-from nltk.tag import pos_tag
-from nltk.tokenize import sent_tokenize, word_tokenize
 nltk.download('universal_tagset')
 nltk.download('punkt')
 nltk.download('stopwords')
+nltk.download('punkt_tab')
+nltk.download('averaged_perceptron_tagger_eng')
+from nltk.tag import pos_tag
+from nltk.tokenize import sent_tokenize, word_tokenize
 
 import re
 import numpy as np
@@ -13,14 +15,16 @@ from textblob import TextBlob
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 from config import TRANSRIPT_PATH
-from processing.config import MODEL, YELP_REVIEWS_PATH
+from processing.config import MODEL, YELP_REVIEWS_PATH, FEATURE_OUTPUT_PATH
 from processing import Word2VecHelper
+from processing import BertEmbeddingsHelper
 
 class FeatureEngine:
 
-    def __init__(self, transcript_path = TRANSRIPT_PATH, custom_embeddings_path = YELP_REVIEWS_PATH):
+    def __init__(self, transcript_path = TRANSRIPT_PATH, custom_embeddings_path = YELP_REVIEWS_PATH, output_path = FEATURE_OUTPUT_PATH):
         self.transcript_path = transcript_path
         self.custom_embeddings_path = custom_embeddings_path
+        self.output_path = output_path
     
     def _read_csv(self, path):
         df = pd.read_csv(path)
@@ -42,7 +46,7 @@ class FeatureEngine:
         
         return text
     
-    def _tokenize_corpus(self, corpus, min_length):
+    def _tokenize_corpus(self, corpus, min_length = 0):
         """
         Tokenizes a corpus of documents into a list of sentences.
         """
@@ -105,34 +109,40 @@ class FeatureEngine:
             vectors.append(sentence_vector)
             all_missing_words.extend(missing_words)
 
-            transcript_df["word2vec_embedding"] = vectors
+        # De-indent this line so it is outside the for loop
+        transcript_df["word2vec_embedding"] = vectors
 
         return transcript_df, all_missing_words
-    
+        
+
     def _get_yelp_corpus(self, reviews):
         reviews = reviews.drop(columns=['Yelp URL','Rating','Date'])
         raw_corpus = reviews['Review Text'].tolist()
         return raw_corpus
     
-    def main(self):
+
+    def create_features(self, output_path = FEATURE_OUTPUT_PATH):
+
+        w2v = Word2VecHelper(vector_size=300, window=5, min_count=5, sg=1, epochs=30, alpha=0.025, negative=20)
+        bert = BertEmbeddingsHelper()
+
         transcript_df = self._read_csv(self.transcript_path)
         transcript_df = self._POS_tagging(transcript_df)
         transcript_df = self._sentiment_score(transcript_df)
         transcript_df = self._tfidf_vectorization(transcript_df)
-        transcript_df, _ = self._word2vec_embedding(MODEL, transcript_df)
+        transcript_df, _ = self._word2vec_embedding(transcript_df, MODEL)
 
         reviews_df = self._read_csv(self.custom_embeddings_path)
         raw_corpus = self._get_yelp_corpus(reviews_df)
-        processed_sentences = self._tokenize_corpus(raw_corpus)
+        processed_sentences = self._tokenize_corpus(raw_corpus, )
 
-        w2v = Word2VecHelper(vector_size=300, window=5, min_count=5, sg=1, epochs=30, alpha=0.025, negative=20)
-        word2vec_model, vector_size = w2v.train_model(processed_sentences)
+        w2v.train_model(processed_sentences)
 
-        transcript_df, _,  = w2v.create_sentence_embeddings(
-        sentences=processed_sentences, 
-        model=word2vec_model, 
-        vector_size=vector_size,
-        text_column="Sentence")
+        transcript_df, _,  = w2v.create_sentence_embeddings(sentences=transcript_df, text_column="Sentence")
+
+        transcript_df = bert.create_bert_embeddings(transcript_df, 'Sentence')
+
+        transcript_df.head(10).to_csv(output_path, index=False, sep= ';')
 
     
 
