@@ -60,6 +60,7 @@ class Word2VecHelper:
             negative=self.negative
         )
         print("Training complete.")
+        # return self.model, self.vector_size 
 
     def create_sentence_embeddings(self, sentences, text_column):
         """
@@ -81,6 +82,8 @@ class Word2VecHelper:
             - pandas.DataFrame: The original DataFrame with an added embedding column.
             - list: A list of words that were not found in the model's vocabulary.
         """
+
+
         if self.model is None:
             raise RuntimeError("Model has not been trained. Please call train_model() first.")
         
