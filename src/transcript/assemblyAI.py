@@ -7,9 +7,13 @@ Converts MP3 audio files to sentences and saves to CSV
 import csv
 import re
 import requests
+import pandas as pd
 import assemblyai as aai
+from typing import Literal
 
 from transcript.config import BASE_URL, HEADERS
+from processing.post_process import TranscriptionPostProcessor
+
 
 class TranscriptEngine:
     def __init__(self, base_url = BASE_URL, headers = HEADERS):
@@ -86,7 +90,7 @@ class TranscriptEngine:
                 writer.writerow([sentence])
 
 
-    def transcribe(self, mp3_file, output_path, post_process=True):
+    def transcribe(self, mp3_file, output_path, post_process: Literal['simple', 'transformer_based', 'none'] = 'simple'):
         """
         Main function: convert MP3 to sentences CSV using AssemblyAI
 
@@ -110,13 +114,14 @@ class TranscriptEngine:
         print("Starting transcription...")
         transcript_text = self._transcribe_audio(audio_url, config)
 
-        if post_process:
-            # Split transcription into sentences if post_process parameter is set to True
+        if post_process == 'simple':
             sentences = self._split_into_sentences(transcript_text)
+        elif post_process == 'transformer_based':
+            processor = TranscriptionPostProcessor(punctuation_model_name='HuggingFaceH4/zephyr-7b-beta')
+            sentences = processor.process(transcript_text)
         else:
             # Otherwise use the raw transcript text as output 
             sentences = transcript_text
-
         # Save to CSV
         self._save_to_csv(sentences, output_path)
 
