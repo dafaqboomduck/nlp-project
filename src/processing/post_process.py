@@ -9,7 +9,7 @@ class TranscriptionPostProcessor:
             punctuation_model_name (str): The name of the model to use from Hugging Face.
         """
         try:
-            self.punc_model = pipeline("text-generation", model=punctuation_model_name, device_map='cpu')
+            self.punc_model = pipeline("text-generation", model=punctuation_model_name, device_map='auto')
         except Exception as e:
             print(f"Error loading model: {e}")
             self.punc_model = None
