@@ -12,7 +12,7 @@ import assemblyai as aai
 from typing import Literal
 
 from transcript.config import BASE_URL, HEADERS
-from processing.post_process import TranscriptionPostProcessor
+from transcript.post_process import TranscriptionPostProcessor
 
 
 class TranscriptEngine:
