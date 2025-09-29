@@ -7,7 +7,6 @@ Converts MP3 audio files to sentences and saves to CSV
 import csv
 import re
 import requests
-import pandas as pd
 import assemblyai as aai
 from typing import Literal
 
@@ -96,6 +95,8 @@ class TranscriptEngine:
 
         Args:
             mp3_file (str): Path to MP3 file
+            output_path (CSV file): An output path where the pipeline will save the 
+            post_process (Literal['simple', 'transformer_based', 'none']): The type of post_processing the pipeline will apply to the raw transcript
 
         Returns:
             str: Path to saved CSV file
