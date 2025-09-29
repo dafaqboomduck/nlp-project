@@ -14,10 +14,10 @@ import pandas as pd
 from textblob import TextBlob
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-from config import TRANSRIPT_PATH
-from processing.config import MODEL, YELP_REVIEWS_PATH, FEATURE_OUTPUT_PATH
-from processing import Word2VecHelper
-from processing import BertEmbeddingsHelper
+from src.config import TRANSRIPT_PATH
+from src.processing.config import MODEL, YELP_REVIEWS_PATH, FEATURE_OUTPUT_PATH
+from src.processing import Word2VecHelper
+from src.processing import BertEmbeddingsHelper
 
 class FeatureEngine:
 
