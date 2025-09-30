@@ -21,11 +21,10 @@ from src.processing import BertEmbeddingsHelper
 
 class FeatureEngine:
 
-    def __init__(self, transcript_input = TRANSRIPT_PATH, custom_embeddings_path = YELP_REVIEWS_PATH, output_path = FEATURE_OUTPUT_PATH):
+    def __init__(self, transcript_input = TRANSRIPT_PATH, custom_embeddings_path = YELP_REVIEWS_PATH):
         # Store either the path or the DataFrame directly
         self.transcript_input = transcript_input
         self.custom_embeddings_path = custom_embeddings_path
-        self.output_path = output_path
         
         # Check if the input is a DataFrame, store it separately for easy access
         self.transcript_df_initial = transcript_input if isinstance(transcript_input, pd.DataFrame) else None
@@ -125,7 +124,7 @@ class FeatureEngine:
         return raw_corpus
     
 
-    def create_features(self, transcript_df_input: pd.DataFrame = None, output_path = FEATURE_OUTPUT_PATH):
+    def create_features(self, transcript_df_input: pd.DataFrame = None, output_path = None):
             """
             Creates features from the transcript. Can take a DataFrame directly or use the path 
             stored during initialization.
@@ -165,11 +164,12 @@ class FeatureEngine:
             transcript_df = bert.create_bert_embeddings(transcript_df, 'Sentence')
 
             # 4. Output the result
-            final_output_path = output_path if output_path is not None else self.output_path
+            final_output_path = output_path if output_path is not None else None
 
             if final_output_path:
                 # Using head(10) as in the original code, but typically you'd save the whole thing
-                transcript_df.head(10).to_csv(final_output_path, index=False, sep= ';') 
+                transcript_df.head(10).to_csv(final_output_path, index=False, sep= ';')
+                print(f"The NLP Features were saved at {final_output_path}")
             else:
                 pass
 
