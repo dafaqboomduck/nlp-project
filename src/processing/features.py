@@ -14,18 +14,21 @@ import pandas as pd
 from textblob import TextBlob
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-from config import TRANSRIPT_PATH
-from processing.config import MODEL, YELP_REVIEWS_PATH, FEATURE_OUTPUT_PATH
-from processing import Word2VecHelper
-from processing import BertEmbeddingsHelper
+from src.config import TRANSRIPT_PATH
+from src.processing.config import MODEL, YELP_REVIEWS_PATH, FEATURE_OUTPUT_PATH
+from src.processing import Word2VecHelper
+from src.processing import BertEmbeddingsHelper
 
 class FeatureEngine:
 
-    def __init__(self, transcript_path = TRANSRIPT_PATH, custom_embeddings_path = YELP_REVIEWS_PATH, output_path = FEATURE_OUTPUT_PATH):
-        self.transcript_path = transcript_path
+    def __init__(self, transcript_input = TRANSRIPT_PATH, custom_embeddings_path = YELP_REVIEWS_PATH):
+        # Store either the path or the DataFrame directly
+        self.transcript_input = transcript_input
         self.custom_embeddings_path = custom_embeddings_path
-        self.output_path = output_path
-    
+        
+        # Check if the input is a DataFrame, store it separately for easy access
+        self.transcript_df_initial = transcript_input if isinstance(transcript_input, pd.DataFrame) else None
+
     def _read_csv(self, path):
         df = pd.read_csv(path)
         return df
@@ -121,31 +124,58 @@ class FeatureEngine:
         return raw_corpus
     
 
-    def create_features(self, output_path = FEATURE_OUTPUT_PATH):
+    def create_features(self, transcript_df_input: pd.DataFrame = None, output_path = None):
+            """
+            Creates features from the transcript. Can take a DataFrame directly or use the path 
+            stored during initialization.
+            """
+            w2v = Word2VecHelper(vector_size=300, window=5, min_count=5, sg=1, epochs=30, alpha=0.025, negative=20)
+            bert = BertEmbeddingsHelper()
 
-        w2v = Word2VecHelper(vector_size=300, window=5, min_count=5, sg=1, epochs=30, alpha=0.025, negative=20)
-        bert = BertEmbeddingsHelper()
-
-        transcript_df = self._read_csv(self.transcript_path)
-        transcript_df = self._POS_tagging(transcript_df)
-        transcript_df = self._sentiment_score(transcript_df)
-        transcript_df = self._tfidf_vectorization(transcript_df)
-        transcript_df, _ = self._word2vec_embedding(transcript_df, MODEL)
-
-        reviews_df = self._read_csv(self.custom_embeddings_path)
-        raw_corpus = self._get_yelp_corpus(reviews_df)
-        processed_sentences = self._tokenize_corpus(raw_corpus, )
-
-        w2v.train_model(processed_sentences)
-
-        transcript_df, _,  = w2v.create_sentence_embeddings(sentences=transcript_df, text_column="Sentence")
-
-        transcript_df = bert.create_bert_embeddings(transcript_df, 'Sentence')
-
-        transcript_df.head(10).to_csv(output_path, index=False, sep= ';')
-
-    
+            # 1. Determine the source of the transcript data
+            if transcript_df_input is not None and isinstance(transcript_df_input, pd.DataFrame):
+                transcript_df = transcript_df_input.copy()
+            elif self.transcript_df_initial is not None:
+                # Use the DataFrame passed during __init__
+                transcript_df = self.transcript_df_initial.copy()
+            elif isinstance(self.transcript_input, str):
+                # Read from the file path stored during __init__
+                transcript_df = self._read_csv(self.transcript_input)
+            else:
+                raise ValueError("No valid transcript path or DataFrame provided.")
 
 
-    
+            # 2. Apply feature transformations
+            transcript_df = self._POS_tagging(transcript_df)
+            transcript_df = self._sentiment_score(transcript_df)
+            transcript_df = self._tfidf_vectorization(transcript_df)
+            transcript_df, _ = self._word2vec_embedding(transcript_df, MODEL) 
+
+            # 3. Handle custom embeddings (Yelp corpus)
+            reviews_df = self._read_csv(self.custom_embeddings_path)
+            raw_corpus = self._get_yelp_corpus(reviews_df)
+            processed_sentences = self._tokenize_corpus(raw_corpus)
+
+            w2v.train_model(processed_sentences)
+
+            # Assuming Word2VecHelper.create_sentence_embeddings adds the new column inplace or returns it
+            transcript_df, _,  = w2v.create_sentence_embeddings(sentences=transcript_df, text_column="Sentence") 
+
+            transcript_df = bert.create_bert_embeddings(transcript_df, 'Sentence')
+
+            # 4. Output the result
+            final_output_path = output_path if output_path is not None else None
+
+            if final_output_path:
+                # Using head(10) as in the original code, but typically you'd save the whole thing
+                transcript_df.head(10).to_csv(final_output_path, index=False, sep= ';')
+                print(f"The NLP Features were saved at {final_output_path}")
+            else:
+                pass
+
+            return transcript_df
+        
+
+
+        
 

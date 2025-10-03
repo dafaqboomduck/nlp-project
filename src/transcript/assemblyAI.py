@@ -10,8 +10,8 @@ import requests
 import assemblyai as aai
 from typing import Literal
 
-from transcript.config import BASE_URL, HEADERS
-from transcript.post_process import TranscriptionPostProcessor
+from src.transcript.config import BASE_URL, HEADERS
+from src.transcript.post_process import TranscriptionPostProcessor
 
 
 class TranscriptEngine:
