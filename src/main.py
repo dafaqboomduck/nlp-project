@@ -1,8 +1,8 @@
-from processing import FeatureEngine
-from transcript import TranscriptEngine
+from src.processing import FeatureEngine
+from src.transcript import TranscriptEngine
 
-from config import AUDIO_PATH, TRANSRIPT_PATH
-from processing.config import FEATURE_OUTPUT_PATH as FEATURES
+from src.config import AUDIO_PATH, TRANSRIPT_PATH
+from src.processing.config import FEATURE_OUTPUT_PATH as FEATURES
 
 def main():
 

@@ -1,2 +1,5 @@
-__pycache__
+__pycache__/
 Data/Translation/
+Notebooks/logs/
+Notebooks/transformer-outputs/
+Notebooks/transformer-models/
