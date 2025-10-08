@@ -20,6 +20,7 @@ from src.config import TRANSRIPT_PATH
 from src.processing.config import MODEL, YELP_REVIEWS_PATH
 from src.processing import Word2VecHelper  
 from src.processing import BertEmbeddingsHelper
+from src.helpers import CSVHandler
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -29,22 +30,6 @@ class FeatureEngine:
         self.transcript_input = transcript_input
         self.custom_embeddings_path = custom_embeddings_path
         self.transcript_df_initial = transcript_input if isinstance(transcript_input, pd.DataFrame) else None
-
-    def _read_csv(self, path):
-        if not isinstance(path, str):
-            raise TypeError("path must be a string to CSV file.")
-        try:
-            df = pd.read_csv(path)
-            return df
-        except FileNotFoundError as e:
-            logger.exception("CSV file not found: %s", path)
-            raise
-        except pd.errors.EmptyDataError as e:
-            logger.exception("CSV file is empty: %s", path)
-            raise
-        except Exception as e:
-            logger.exception("Failed to read CSV at %s", path)
-            raise
 
     def _preprocess_text(self, text):
         if not isinstance(text, str):
@@ -157,14 +142,14 @@ class FeatureEngine:
         # Instantiate helpers
         w2v = Word2VecHelper(vector_size=300, window=5, min_count=5, sg=1, epochs=30, alpha=0.025, negative=20)
         bert = BertEmbeddingsHelper()
-
+        csv_handler = CSVHandler()
         # Resolve transcript input
         if transcript_df_input is not None and isinstance(transcript_df_input, pd.DataFrame):
             transcript_df = transcript_df_input.copy()
         elif self.transcript_df_initial is not None:
             transcript_df = self.transcript_df_initial.copy()
         elif isinstance(self.transcript_input, str):
-            transcript_df = self._read_csv(self.transcript_input)
+            transcript_df = csv_handler.read_csv(self.transcript_input)
         else:
             raise ValueError("No valid transcript path or DataFrame provided.")
 
@@ -188,7 +173,7 @@ class FeatureEngine:
 
         # 3. Custom embeddings using Yelp corpus
         try:
-            reviews_df = self._read_csv(self.custom_embeddings_path)
+            reviews_df = csv_handler.read_csv(self.custom_embeddings_path)
             raw_corpus = self._get_yelp_corpus(reviews_df)
             processed_sentences = self._tokenize_corpus(raw_corpus)
             if not processed_sentences:

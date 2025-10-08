@@ -4,7 +4,6 @@ Speech to Text Converter using AssemblyAI
 Converts MP3 audio files to sentences and saves to CSV
 """
 
-import csv
 import re
 import requests
 import assemblyai as aai
@@ -12,6 +11,7 @@ from typing import Literal
 
 from src.transcript.config import BASE_URL, HEADERS
 from src.transcript.post_process import TranscriptionPostProcessor
+from src.helpers import CSVHandler
 
 
 class TranscriptEngine:
@@ -79,16 +79,6 @@ class TranscriptEngine:
         return cleaned_sentences
 
 
-    def _save_to_csv(self, sentences, output_path):
-        """Save sentences to CSV file"""
-        with open(output_path, "w", newline="", encoding="utf-8") as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow(["Sentence"])  # Header
-
-            for sentence in sentences:
-                writer.writerow([sentence])
-
-
     def transcribe(self, mp3_file, output_path, post_process: Literal['simple', 'transformer_based', 'none'] = 'simple'):
         """
         Main function: convert MP3 to sentences CSV using AssemblyAI
@@ -124,7 +114,8 @@ class TranscriptEngine:
             # Otherwise use the raw transcript text as output 
             sentences = transcript_text
         # Save to CSV
-        self._save_to_csv(sentences, output_path)
+        csv_handler = CSVHandler(output_path=output_path)
+        csv_handler.save_to_csv(sentences)
 
         print(f"Transcribed {len(sentences)} sentences to {output_path}")
         return str(output_path)
