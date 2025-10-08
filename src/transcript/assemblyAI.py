@@ -4,14 +4,17 @@ Speech to Text Converter using AssemblyAI
 Converts MP3 audio files to sentences and saves to CSV
 """
 
-import csv
 import re
 import requests
 import assemblyai as aai
 from typing import Literal
+import logging
 
 from src.transcript.config import BASE_URL, HEADERS
 from src.transcript.post_process import TranscriptionPostProcessor
+from src.helpers import CSVHandler
+
+logger = logging.getLogger(__name__)
 
 
 class TranscriptEngine:
@@ -79,16 +82,6 @@ class TranscriptEngine:
         return cleaned_sentences
 
 
-    def _save_to_csv(self, sentences, output_path):
-        """Save sentences to CSV file"""
-        with open(output_path, "w", newline="", encoding="utf-8") as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow(["Sentence"])  # Header
-
-            for sentence in sentences:
-                writer.writerow([sentence])
-
-
     def transcribe(self, mp3_file, output_path, post_process: Literal['simple', 'transformer_based', 'none'] = 'simple'):
         """
         Main function: convert MP3 to sentences CSV using AssemblyAI
@@ -109,24 +102,25 @@ class TranscriptEngine:
 
         config = self._create_transcription_config()
 
-        print(f"Uploading {mp3_file}...")
+        logger.info(f"Uploading {mp3_file}...")
         audio_url = self._upload_audio(mp3_file)
 
-        print("Starting transcription...")
+        logger.info("Starting transcription...")
         transcript_text = self._transcribe_audio(audio_url, config)
 
-        if post_process == 'simple':
+        if post_process == 'simple': # If "simple" use the _split_into_sentences method to process the raw output
             sentences = self._split_into_sentences(transcript_text)
-        elif post_process == 'transformer_based':
+        elif post_process == 'transformer_based': # If "transformer_based" use the TranscriptionPostProcessor class to process the raw output
             processor = TranscriptionPostProcessor(punctuation_model_name='HuggingFaceH4/zephyr-7b-beta')
             sentences = processor.process(transcript_text)
         else:
             # Otherwise use the raw transcript text as output 
             sentences = transcript_text
         # Save to CSV
-        self._save_to_csv(sentences, output_path)
+        csv_handler = CSVHandler(output_path=output_path)
+        csv_handler.save_to_csv(sentences)
 
-        print(f"Transcribed {len(sentences)} sentences to {output_path}")
+        logger.info(f"Transcribed {len(sentences)} sentences to {output_path}")
         return str(output_path)
 
 

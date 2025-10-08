@@ -1,112 +1,157 @@
 import multiprocessing
 import numpy as np
-from gensim.models import Word2Vec
+import os
+from gensim.models import Word2Vec, KeyedVectors
+import logging
+import types
+
+logger = logging.getLogger(__name__)
 
 class Word2VecHelper:
     """
-    A helper class to train a Word2Vec model and create sentence embeddings
-    from a text corpus.
+    A helper class to train, load, and create sentence embeddings
+    from a text corpus using Word2Vec.
     """
-    def __init__(self, vector_size, window, min_count, sg, epochs, alpha, negative):
-        """
-        Initializes the Word2VecHelper with hyperparameters for model training.
 
-        Parameters:
-        -----------
-        vector_size : int, default 300
-            Dimensionality of the word vectors.
-        window : int, default 5
-            Maximum distance between the current and predicted word within a sentence.
-        min_count : int, default 5
-            Ignores all words with a total frequency lower than this.
-        sg : int, default 1
-            Training algorithm: 1 for skip-gram, 0 for CBOW.
-        epochs : int, default 30
-            Number of training iterations.
-        alpha : float, default 0.025
-            The initial learning rate.
-        negative : int, default 20
-            Number of negative samples to use for negative sampling.
-        """
-        self.vector_size = vector_size
-        self.window = window
-        self.min_count = min_count
-        self.workers = multiprocessing.cpu_count()
-        self.sg = sg
-        self.epochs = epochs
-        self.alpha = alpha
-        self.negative = negative
+    def __init__(self, vector_size: int, window: int, min_count: int, sg: int, epochs: int, alpha: float, negative: int, workers: int = None):
+        try:
+            self.vector_size = int(vector_size)
+            self.window = int(window)
+            self.min_count = int(min_count)
+            self.sg = int(sg)
+            self.epochs = int(epochs)
+            self.alpha = float(alpha)
+            self.negative = int(negative)
+        except (TypeError, ValueError):
+            raise ValueError("Invalid hyperparameter type passed to Word2VecHelper.")
+        
+        self.workers = multiprocessing.cpu_count() if workers is None else max(1, int(workers))
         self.model = None
 
+    # ----------------------------------------------------------------------
+    # NEW: Unified train-or-load logic
+    # ----------------------------------------------------------------------
+    def create_model(self, sentences, model_path: str):
+        """
+        Trains a Word2Vec model or loads it from disk if it already exists.
+
+        Parameters
+        ----------
+        sentences : list[list[str]]
+            Tokenized text corpus.
+        model_path : str
+            Path where the model should be saved or loaded from.
+
+        Returns
+        -------
+        gensim.models.Word2Vec
+            The trained or loaded model.
+        """
+        if not isinstance(model_path, str):
+            raise TypeError("model_path must be a valid string path.")
+
+        # Check for an existing saved model
+        if os.path.exists(model_path):
+            try:
+                logger.debug(f"Found existing Word2Vec model at {model_path}. Loading it...")
+                self.model = Word2Vec.load(model_path)
+                logger.info("Model successfully loaded from disk.")
+                return self.model
+            except Exception as e:
+                logger.warning(f"Failed to load existing model at {model_path}. Retraining. Reason: {e}")
+
+        # If no model found or load failed, train a new one
+        self.train_model(sentences)
+
+        # Attempt to save the trained model
+        try:
+            os.makedirs(os.path.dirname(model_path), exist_ok=True)
+            self.model.save(model_path)
+            logger.debug(f"Trained Word2Vec model saved to {model_path}")
+        except Exception as e:
+            logger.warning(f"Failed to save model to {model_path}. Reason: {e}")
+
+        return self.model
+
+    # ----------------------------------------------------------------------
     def train_model(self, sentences):
         """
-        Trains the Word2Vec model using the provided sentences.
-
-        Parameters:
-        -----------
-        sentences : list of list of str
-            A list of sentences, where each sentence is a list of words.
+        Trains a new Word2Vec model using the provided tokenized sentences.
         """
-        print("Training Word2Vec model...")
-        self.model = Word2Vec(
-            sentences=sentences,
-            vector_size=self.vector_size,
-            window=self.window,
-            min_count=self.min_count,
-            workers=self.workers,
-            sg=self.sg,
-            epochs=self.epochs,
-            alpha=self.alpha,
-            negative=self.negative
-        )
-        print("Training complete.")
-        # return self.model, self.vector_size 
+        if not isinstance(sentences, (list, tuple)):
+            raise TypeError("sentences must be a list of tokenized sentences.")
+        if len(sentences) == 0:
+            raise ValueError("sentences is empty; nothing to train on.")
+        if not all(isinstance(s, (list, tuple)) for s in sentences):
+            raise TypeError("Each element of sentences must be a list/tuple of tokens (strings).")
 
-    def create_sentence_embeddings(self, sentences, text_column):
+        logger.debug("Training Word2Vec model with %d sentences...", len(sentences))
+        try:
+            self.model = Word2Vec(
+                sentences=sentences,
+                vector_size=self.vector_size,
+                window=self.window,
+                min_count=self.min_count,
+                workers=self.workers,
+                sg=self.sg,
+                epochs=self.epochs,
+                alpha=self.alpha,
+                negative=self.negative
+            )
+            logger.info("Word2Vec training complete.")
+        except Exception as e:
+            logger.exception("Failed to train Word2Vec model.")
+            raise RuntimeError("Word2Vec training failed.") from e
+
+    # ----------------------------------------------------------------------
+    def load_pretrained(self, keyed_vectors_or_path):
+        """
+        Load pretrained keyed vectors or a model path. Accepts either:
+        - a gensim KeyedVectors object
+        - path to a KeyedVectors / .kv file
+        """
+        if isinstance(keyed_vectors_or_path, KeyedVectors):
+            self.model = types.SimpleNamespace(wv=keyed_vectors_or_path)
+            return
+
+        if not isinstance(keyed_vectors_or_path, str):
+            raise TypeError("keyed_vectors_or_path must be a KeyedVectors instance or a file path string.")
+
+        try:
+            kv = KeyedVectors.load(keyed_vectors_or_path, mmap='r')
+            self.model = types.SimpleNamespace(wv=kv)
+            logger.debug(f"Loaded pretrained keyed vectors from {keyed_vectors_or_path}")
+        except Exception as e:
+            logger.exception("Failed to load pretrained keyed vectors.")
+            raise RuntimeError(f"Could not load pretrained keyed vectors from {keyed_vectors_or_path}") from e
+
+    # ----------------------------------------------------------------------
+    def create_sentence_embeddings(self, sentences, text_column, embedding_column="custom_word2vec_embedding"):
         """
         Creates sentence embeddings by averaging the word vectors.
-
-        Parameters:
-        -----------
-        sentences : pandas.DataFrame
-            DataFrame containing the sentences to embed.
-        text_column : str, default 'translated_text'
-            Name of the column containing the text to embed.
-        embedding_column : str, default 'custom_word2vec_embedding'
-            Name of the column to store the embeddings.
-
-        Returns:
-        --------
-        tuple
-            A tuple containing:
-            - pandas.DataFrame: The original DataFrame with an added embedding column.
-            - list: A list of words that were not found in the model's vocabulary.
+        Returns (DataFrame with embeddings, list of missing words)
         """
-
+        import pandas as pd
 
         if self.model is None:
-            raise RuntimeError("Model has not been trained. Please call train_model() first.")
-        
-        custom_vectors = []
-        custom_missing_words = []
-        
-        for sentence in sentences[text_column]:
-            words = sentence.lower().split()
+            raise RuntimeError("Model not trained or loaded. Call train_or_load_model() or load_pretrained() first.")
+        if not isinstance(sentences, pd.DataFrame):
+            raise TypeError("sentences must be a pandas DataFrame.")
+        if text_column not in sentences.columns:
+            raise KeyError(f"text_column '{text_column}' not found in DataFrame.")
+
+        vectors, missing_words = [], []
+        for idx, text in enumerate(sentences[text_column].fillna("").astype(str)):
+            words = text.lower().split()
             word_vectors = []
-            
             for word in words:
-                if word in self.model.wv:
+                try:
                     word_vectors.append(self.model.wv[word])
-                else:
-                    custom_missing_words.append(word)
-            
-            if word_vectors:
-                sentence_vector = np.mean(word_vectors, axis=0)
-            else:
-                sentence_vector = np.zeros(self.vector_size)
-            
-            custom_vectors.append(sentence_vector)
-            
-        sentences["custom_word2vec_embedding"] = custom_vectors
-        
-        return sentences, list(set(custom_missing_words))
+                except KeyError:
+                    missing_words.append(word)
+
+            sentence_vector = np.mean(word_vectors, axis=0) if word_vectors else np.zeros(self.vector_size)
+            vectors.append(sentence_vector)
+
+        sentences[embedding_column] = vectors
+        return sentences, list(set(missing_words))

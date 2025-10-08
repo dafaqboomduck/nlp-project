@@ -1,91 +1,111 @@
 import torch
-from transformers import BertTokenizer, BertModel
+from transformers import AutoTokenizer, AutoModel
 import pandas as pd
+import logging
+
+logger = logging.getLogger(__name__)
 
 class BertEmbeddingsHelper:
     """
-    A helper class to generate BERT embeddings for text data.
-    
-    This class loads the BERT model and tokenizer once and provides methods
-    to create sentence embeddings using different pooling strategies.
+    Helper to generate BERT embeddings for text data with error handling.
     """
-    
-    def __init__(self, model_name='bert-base-uncased'):
-        """
-        Initializes the BERT tokenizer and model.
-        
-        Parameters:
-        model_name (str): The name of the pre-trained BERT model to use.
-        """
-        self.tokenizer = BertTokenizer.from_pretrained(model_name)
-        self.model = BertModel.from_pretrained(model_name)
-        self.model.eval()
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.model.to(self.device)
+    def __init__(self, model_name='bert-base-uncased', device=None):
+        # Validate model_name
+        if not isinstance(model_name, str) or not model_name:
+            raise ValueError("model_name must be a non-empty string.")
+
+        self.device = torch.device(device) if device else (torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu"))
+
+        try:
+            # Use AutoTokenizer/AutoModel for broader compatibility
+            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+            self.model = AutoModel.from_pretrained(model_name)
+            self.model.eval()
+            self.model.to(self.device)
+        except Exception as e:
+            logger.exception("Failed to load tokenizer/model '%s'.", model_name)
+            raise RuntimeError(f"Failed to load model/tokenizer for '{model_name}'. Ensure the name is correct and internet is available.") from e
 
     def _get_embeddings_batch(self, sentences, pooling_method='cls', max_length=512):
         """
-        Generates BERT embeddings for a list of sentences in a single batch.
-        
-        Parameters:
-        sentences (list): A list of strings to be embedded.
-        pooling_method (str): 'cls' for CLS token or 'mean' for mean pooling.
-        max_length (int): Maximum sequence length for BERT.
-        
-        Returns:
-        np.ndarray: A NumPy array of embeddings.
+        Get embeddings for a small batch. Returns numpy array.
         """
-        encoded = self.tokenizer(
-            sentences,
-            padding=True,
-            truncation=True,
-            max_length=max_length,
-            return_tensors='pt'
-        ).to(self.device)
-        
-        with torch.no_grad():
-            outputs = self.model(**encoded)
-        
-        if pooling_method == 'cls':
-            # Use the CLS token embedding (the first token)
-            embeddings = outputs.last_hidden_state[:, 0, :].cpu().numpy()
-        else:  # mean pooling
-            # Calculate mean of all token embeddings, masked by attention mask
-            attention_mask = encoded['attention_mask'].unsqueeze(-1).expand(outputs.last_hidden_state.size()).float()
-            sum_embeddings = torch.sum(outputs.last_hidden_state * attention_mask, 1)
-            sum_mask = torch.clamp(attention_mask.sum(1), min=1e-9)
-            embeddings = (sum_embeddings / sum_mask).cpu().numpy()
-        
-        return embeddings
+        if not isinstance(sentences, (list, tuple)):
+            raise TypeError("sentences must be a list or tuple of strings.")
 
-    def create_bert_embeddings(self, df: pd.DataFrame, text_column: str, pooling_method='cls', max_length=512, batch_size=8):
-        """
-        Creates and adds BERT embeddings as a new column to a DataFrame.
-        
-        This method processes the DataFrame in batches for efficiency.
-        
-        Parameters:
-        df (pd.DataFrame): DataFrame containing the text data.
-        text_column (str): Name of the column containing sentences.
-        pooling_method (str): 'cls' for CLS token or 'mean' for mean pooling.
-        max_length (int): Maximum sequence length for BERT.
-        batch_size (int): Batch size for processing.
-        
-        Returns:
-        pd.DataFrame: The original DataFrame with a new 'bert_embedding' column.
-        """
-        sentences_list = df[text_column].tolist()
-        all_embeddings = []
-        
-        for i in range(0, len(sentences_list), batch_size):
-            batch_sentences = sentences_list[i:i+batch_size]
-            batch_embeddings = self._get_embeddings_batch(
-                batch_sentences,
-                pooling_method=pooling_method,
-                max_length=max_length
+        if pooling_method not in ('cls', 'mean'):
+            raise ValueError("pooling_method must be either 'cls' or 'mean'.")
+
+        try:
+            encoded = self.tokenizer(
+                sentences,
+                padding=True,
+                truncation=True,
+                max_length=max_length,
+                return_tensors='pt'
             )
-            all_embeddings.extend(batch_embeddings)
-            
-        df['bert_embedding'] = [emb for emb in all_embeddings]
-        
+            # Move tensors to device safely
+            encoded = {k: v.to(self.device) for k, v in encoded.items()}
+
+            with torch.no_grad():
+                outputs = self.model(**encoded)
+
+            if pooling_method == 'cls':
+                embeddings = outputs.last_hidden_state[:, 0, :].cpu().numpy()
+            else:
+                attention_mask = encoded.get('attention_mask')
+                if attention_mask is None:
+                    # fallback to simple mean
+                    embeddings = outputs.last_hidden_state.mean(dim=1).cpu().numpy()
+                else:
+                    # mean pooling with mask
+                    mask_expanded = attention_mask.unsqueeze(-1).expand(outputs.last_hidden_state.size()).float()
+                    sum_embeddings = torch.sum(outputs.last_hidden_state * mask_expanded, dim=1)
+                    sum_mask = torch.clamp(mask_expanded.sum(1), min=1e-9)
+                    embeddings = (sum_embeddings / sum_mask).cpu().numpy()
+
+            return embeddings
+
+        except RuntimeError as e:
+            # Typical PyTorch OOM or CUDA errors
+            logger.exception("Runtime error while generating BERT embeddings (possible OOM).")
+            raise RuntimeError("Error generating BERT embeddings. This may be due to GPU/CPU memory limits.") from e
+        except Exception as e:
+            logger.exception("Unexpected error during BERT embedding generation.")
+            raise
+
+    def create_bert_embeddings(self, df: pd.DataFrame, text_column: str, pooling_method='cls', max_length=512, batch_size=8, embedding_column='bert_embedding'):
+        """
+        Processes DataFrame in batches and appends embeddings.
+        """
+        if not isinstance(df, pd.DataFrame):
+            raise TypeError("df must be a pandas DataFrame.")
+
+        if text_column not in df.columns:
+            raise KeyError(f"text_column '{text_column}' not present in DataFrame. Available columns: {list(df.columns)}")
+
+        if batch_size <= 0:
+            raise ValueError("batch_size must be > 0")
+
+        sentences_list = df[text_column].fillna("").astype(str).tolist()
+        all_embeddings = []
+
+        try:
+            for i in range(0, len(sentences_list), batch_size):
+                batch_sentences = sentences_list[i:i + batch_size]
+                batch_embeddings = self._get_embeddings_batch(
+                    batch_sentences,
+                    pooling_method=pooling_method,
+                    max_length=max_length
+                )
+                all_embeddings.extend(batch_embeddings)
+        except Exception:
+            logger.exception("BERT embedding generation failed during batch processing.")
+            raise
+
+        # sanity check length
+        if len(all_embeddings) != len(df):
+            raise RuntimeError("Number of embeddings generated does not match number of input rows.")
+
+        df[embedding_column] = [emb for emb in all_embeddings]
         return df
