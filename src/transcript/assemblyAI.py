@@ -115,9 +115,9 @@ class TranscriptEngine:
         print("Starting transcription...")
         transcript_text = self._transcribe_audio(audio_url, config)
 
-        if post_process == 'simple':
+        if post_process == 'simple': # If "simple" use the _split_into_sentences method to process the raw output
             sentences = self._split_into_sentences(transcript_text)
-        elif post_process == 'transformer_based':
+        elif post_process == 'transformer_based': # If "transformer_based" use the TranscriptionPostProcessor class to process the raw output
             processor = TranscriptionPostProcessor(punctuation_model_name='HuggingFaceH4/zephyr-7b-beta')
             sentences = processor.process(transcript_text)
         else:

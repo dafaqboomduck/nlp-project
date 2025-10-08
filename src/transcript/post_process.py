@@ -23,9 +23,8 @@ class TranscriptionPostProcessor:
         if not self.punc_model:
             return text
         
-        
         messages = [
-            {"role": "user", "content": f"Add punctuation and capitalization to the following sentence without changing its content: '{text}'"},
+            {"role": "user", "content": f"Add punctuation and capitalization to the following text sequence without changing its content. Decide where a sentence should end and where another should begin based on the flow of speech. The text is: '{text}'"},
         ]
         
         outputs = self.punc_model(
