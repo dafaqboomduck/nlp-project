@@ -1,6 +1,7 @@
 import pandas as pd
 from datasets import Dataset
 from transformers import AutoTokenizer, DataCollatorWithPadding
+from src.helpers import CSVHandler
 
 
 class InferencePreprocessor:
@@ -38,15 +39,15 @@ class InferencePreprocessor:
             max_length=self.max_length
         )
 
-    def preprocess(self, csv_path: str):
+    def preprocess(self, data_source: str):
         """
         Load and preprocess a CSV file containing sentences for model inference.
 
         Parameters
         ----------
-        csv_path : str
-            Path to the CSV file. The file must contain a column named 'Sentence'.
-
+        data_source : str
+            Either a path to a CSV file. The file must contain a column named 'Sentence', or a dataframe. 
+            
         Returns
         -------
         tokenized_dataset : datasets.Dataset
@@ -54,11 +55,27 @@ class InferencePreprocessor:
         data_collator : transformers.DataCollatorWithPadding
             Data collator suitable for batching.
         """
-        # Load CSV
-        df = pd.read_csv(csv_path)
+        if isinstance(data_source, pd.DataFrame):
+            # If dataframe use it  
+            df = data_source
+        elif isinstance(data_source, str):
+            # If string, assume it is a path and try loadding it 
+            # Load CSV
+            csv_path = data_source
+            csv_handler = CSVHandler
+            df = csv_handler.read_csv(csv_path)
+        
+        if df.empty:
+            raise ValueError(f"The CSV file '{csv_path}' is empty.")
 
         if 'Sentence' not in df.columns:
             raise ValueError("The CSV file must contain a column named 'Sentence'.")
+        
+        if df['Sentence'].isnull().all():
+            raise ValueError("The 'Sentence' column contains only null or empty values.")
+
+        if not df['Sentence'].apply(lambda x: isinstance(x, str)).all():
+            raise ValueError("All entries in the 'Sentence' column must be strings.")
 
         # Convert DataFrame to Hugging Face Dataset
         dataset = Dataset.from_pandas(df[['Sentence']].rename(columns={'Sentence': 'text'}))
