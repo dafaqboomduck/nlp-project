@@ -8,10 +8,13 @@ import re
 import requests
 import assemblyai as aai
 from typing import Literal
+import logging
 
 from src.transcript.config import BASE_URL, HEADERS
 from src.transcript.post_process import TranscriptionPostProcessor
 from src.helpers import CSVHandler
+
+logger = logging.getLogger(__name__)
 
 
 class TranscriptEngine:
@@ -99,10 +102,10 @@ class TranscriptEngine:
 
         config = self._create_transcription_config()
 
-        print(f"Uploading {mp3_file}...")
+        logger.info(f"Uploading {mp3_file}...")
         audio_url = self._upload_audio(mp3_file)
 
-        print("Starting transcription...")
+        logger.info("Starting transcription...")
         transcript_text = self._transcribe_audio(audio_url, config)
 
         if post_process == 'simple': # If "simple" use the _split_into_sentences method to process the raw output
@@ -117,7 +120,7 @@ class TranscriptEngine:
         csv_handler = CSVHandler(output_path=output_path)
         csv_handler.save_to_csv(sentences)
 
-        print(f"Transcribed {len(sentences)} sentences to {output_path}")
+        logger.info(f"Transcribed {len(sentences)} sentences to {output_path}")
         return str(output_path)
 
 
