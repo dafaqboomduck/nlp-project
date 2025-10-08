@@ -5,7 +5,6 @@ from gensim.models import Word2Vec, KeyedVectors
 import logging
 import types
 
-logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class Word2VecHelper:

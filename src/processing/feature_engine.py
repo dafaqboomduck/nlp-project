@@ -22,7 +22,6 @@ from src.processing import Word2VecHelper
 from src.processing import BertEmbeddingsHelper
 from src.helpers import CSVHandler
 
-logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class FeatureEngine:

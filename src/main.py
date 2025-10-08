@@ -1,3 +1,11 @@
+import logging
+
+# Central configuration
+# This configures the root logger and creates a default StreamHandler (to console)
+# Set the level for all loggers UNLESS a specific logger overrides it.
+logging.basicConfig(level=logging.INFO) 
+logger = logging.getLogger(__name__) 
+
 from src.processing import FeatureEngine
 from src.transcript import TranscriptEngine
 
