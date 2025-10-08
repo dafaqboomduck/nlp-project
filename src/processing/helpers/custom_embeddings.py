@@ -31,7 +31,7 @@ class Word2VecHelper:
     # ----------------------------------------------------------------------
     # NEW: Unified train-or-load logic
     # ----------------------------------------------------------------------
-    def fit(self, sentences, model_path: str):
+    def create_model(self, sentences, model_path: str):
         """
         Trains a Word2Vec model or loads it from disk if it already exists.
 
@@ -53,7 +53,7 @@ class Word2VecHelper:
         # Check for an existing saved model
         if os.path.exists(model_path):
             try:
-                logger.info(f"Found existing Word2Vec model at {model_path}. Loading it...")
+                logger.debug(f"Found existing Word2Vec model at {model_path}. Loading it...")
                 self.model = Word2Vec.load(model_path)
                 logger.info("Model successfully loaded from disk.")
                 return self.model
@@ -67,7 +67,7 @@ class Word2VecHelper:
         try:
             os.makedirs(os.path.dirname(model_path), exist_ok=True)
             self.model.save(model_path)
-            logger.info(f"Trained Word2Vec model saved to {model_path}")
+            logger.debug(f"Trained Word2Vec model saved to {model_path}")
         except Exception as e:
             logger.warning(f"Failed to save model to {model_path}. Reason: {e}")
 
@@ -85,7 +85,7 @@ class Word2VecHelper:
         if not all(isinstance(s, (list, tuple)) for s in sentences):
             raise TypeError("Each element of sentences must be a list/tuple of tokens (strings).")
 
-        logger.info("Training Word2Vec model with %d sentences...", len(sentences))
+        logger.debug("Training Word2Vec model with %d sentences...", len(sentences))
         try:
             self.model = Word2Vec(
                 sentences=sentences,
@@ -120,7 +120,7 @@ class Word2VecHelper:
         try:
             kv = KeyedVectors.load(keyed_vectors_or_path, mmap='r')
             self.model = types.SimpleNamespace(wv=kv)
-            logger.info(f"Loaded pretrained keyed vectors from {keyed_vectors_or_path}")
+            logger.debug(f"Loaded pretrained keyed vectors from {keyed_vectors_or_path}")
         except Exception as e:
             logger.exception("Failed to load pretrained keyed vectors.")
             raise RuntimeError(f"Could not load pretrained keyed vectors from {keyed_vectors_or_path}") from e

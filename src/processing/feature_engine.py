@@ -3,21 +3,21 @@ import nltk
 nltk.download('universal_tagset', quiet=True)
 nltk.download('punkt', quiet=True)
 nltk.download('stopwords', quiet=True)
-# note: some of your original downloads (punkt_tab, averaged_perceptron_tagger_eng) are not standard in nltk.
-# Keep only necessary downloads above or handle them gracefully if missing.
 
 from nltk.tag import pos_tag
 from nltk.tokenize import sent_tokenize, word_tokenize
 
 import re
+import os
 import numpy as np
 import pandas as pd
 from textblob import TextBlob
 from sklearn.feature_extraction.text import TfidfVectorizer
 import logging
 
-from src.config import TRANSRIPT_PATH
-from src.processing.config import MODEL, YELP_REVIEWS_PATH
+from src.config import TRANSRIPT_PATH, ARTIFACTS_DIR
+from src.processing.config import (GENSIM_MODEL, YELP_REVIEWS_PATH,
+                                   MODEL_DIR, MODEL_PATH)
 from src.processing import Word2VecHelper  
 from src.processing import BertEmbeddingsHelper
 from src.helpers import CSVHandler
@@ -90,7 +90,7 @@ class FeatureEngine:
             logger.exception("TF-IDF vectorization failed.")
             raise
 
-    def _word2vec_embedding(self, transcript_df, model=MODEL, embedding_column='word2vec_embedding', vector_size=300):
+    def _word2vec_embedding(self, transcript_df, model=GENSIM_MODEL, embedding_column='word2vec_embedding', vector_size=300):
         if not isinstance(transcript_df, pd.DataFrame):
             raise TypeError("transcript_df must be a pandas DataFrame.")
         if 'Sentence' not in transcript_df.columns:
@@ -142,6 +142,8 @@ class FeatureEngine:
         w2v = Word2VecHelper(vector_size=300, window=5, min_count=5, sg=1, epochs=30, alpha=0.025, negative=20)
         bert = BertEmbeddingsHelper()
         csv_handler = CSVHandler()
+        custom_w2v_path = os.path.join(ARTIFACTS_DIR, MODEL_DIR, MODEL_PATH)
+
         # Resolve transcript input
         if transcript_df_input is not None and isinstance(transcript_df_input, pd.DataFrame):
             transcript_df = transcript_df_input.copy()
@@ -163,7 +165,7 @@ class FeatureEngine:
 
         # Word2Vec using a global MODEL (from config). If MODEL is missing, handle gracefully
         try:
-            transcript_df, missing_words = self._word2vec_embedding(transcript_df, model=MODEL)
+            transcript_df, missing_words = self._word2vec_embedding(transcript_df, model=GENSIM_MODEL)
             if missing_words:
                 logger.info("Word2Vec missing words (sample): %s", list(set(missing_words))[:10])
         except Exception:
@@ -178,7 +180,7 @@ class FeatureEngine:
             if not processed_sentences:
                 logger.warning("Processed sentences for Word2Vec training are empty; skipping training.")
             else:
-                w2v.train_model(processed_sentences)
+                w2v.create_model(processed_sentences, model_path=custom_w2v_path)
                 # create_sentence_embeddings returns df, missing_words
                 transcript_df, missing_custom_words = w2v.create_sentence_embeddings(sentences=transcript_df, text_column="Sentence")
                 if missing_custom_words:
