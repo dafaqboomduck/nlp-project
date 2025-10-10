@@ -1,10 +1,17 @@
+# main.py (or your original script)
+
 import logging
 import os
 
-# Central configuration
-# This configures the root logger and creates a default StreamHandler (to console)
-# Set the level for all loggers UNLESS a specific logger overrides it.
-logging.basicConfig(level=logging.INFO) 
+# Import the configuration function
+from src.logging_config import configure_logging
+
+# --- CALL THE CONFIGURATION FUNCTION FIRST ---
+configure_logging() 
+# ---------------------------------------------
+
+# Once the configuration is set, you can get loggers anywhere
+# and they will inherit the root logger's handlers.
 logger = logging.getLogger(__name__) 
 
 from src.processing import FeatureEngine

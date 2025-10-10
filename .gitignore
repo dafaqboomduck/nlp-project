@@ -4,3 +4,4 @@ Notebooks/logs/
 Notebooks/transformer-outputs/
 Notebooks/transformer-models/
 artifacts/bert-base/
+application.log
