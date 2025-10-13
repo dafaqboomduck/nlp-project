@@ -8,6 +8,7 @@
     "MarianMTModel"
   ],
   "attention_dropout": 0.0,
+  "bos_token_id": 0,
   "classif_dropout": 0.0,
   "classifier_dropout": 0.0,
   "d_model": 512,
