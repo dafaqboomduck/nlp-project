@@ -202,7 +202,7 @@ class TranslationEngine:
             logger.info(f"Loaded the transcript_df variable successfully from the argument 'transcript_df_initial' provided in the class's initialization.")
         elif isinstance(self.transcript_input, str):
             transcript_df = csv_handler.read_csv(self.transcript_input)
-            logger.info(f"Loaded the transcript_df variable successfully {self.transcript_input} using the CSVHandler.")
+            logger.info(f"Loaded the transcript_df variable successfully from {self.transcript_input} using the CSVHandler.")
         else:
             msg = "No valid transcript path or DataFrame provided."
             logger.error(msg)
