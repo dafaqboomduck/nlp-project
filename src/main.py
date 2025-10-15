@@ -1,17 +1,17 @@
-# main.py (or your original script)
+# main.py
 
 import logging
 import os
 
 # Import the configuration function
-from src.logging_config import configure_logging
+from helpers.logging_config import configure_logging
 
 # --- CALL THE CONFIGURATION FUNCTION FIRST ---
 configure_logging() 
 # ---------------------------------------------
 
-# Once the configuration is set, you can get loggers anywhere
-# and they will inherit the root logger's handlers.
+# Once the configuration is set, all the loggers 
+# will inherit the root logger's handlers.
 logger = logging.getLogger(__name__) 
 
 from src.processing import FeatureEngine

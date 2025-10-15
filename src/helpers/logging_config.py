@@ -1,4 +1,4 @@
-# logging_config.py
+# helpers/logging_config.py
 
 import logging
 
