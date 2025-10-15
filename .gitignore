@@ -5,5 +5,5 @@ Notebooks/machine-translation/finetuned_en_nl/model.safetensors
 Notebooks/machine-translation/finetuned_nl_en/model.safetensors
 Notebooks/transformer-outputs/
 Notebooks/transformer-models/
-artifacts/bert-base/
+artifacts/
 application.log
