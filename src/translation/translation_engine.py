@@ -21,6 +21,9 @@ class TranslationEngine:
     using pretrained MarianMT models.
     """
     
+    # Supported languages for this engine
+    SUPPORTED_LANGS = {'en', 'nl'}
+    
     def __init__(self,
                  transcript_input: str | pd.DataFrame = TRANSRIPT_PATH, 
                  model_en_nl_path: str = MODEL_EN_NL_PATH, 
@@ -30,16 +33,19 @@ class TranslationEngine:
         Initializes the translation engine with necessary paths.
         
         Args:
-            transcript_input_path: Path to the transcript CSV to be translated.
+            transcript_input: Path to the transcript CSV or a ready-to-use DataFrame.
             model_en_nl_path: Path to the saved EN→NL model.
             model_nl_en_path: Path to the saved NL→EN model.
+            output_path: Path where the final translated CSV will be saved.
         """
-        self.transcript_input = transcript_input
-        self.transcript_df_initial = transcript_input if isinstance(transcript_input, pd.DataFrame) else None
+        self.transcript_input: str | pd.DataFrame = transcript_input
+        # Use an explicit variable for the initial DataFrame if one was provided
+        self.transcript_df_initial: Optional[pd.DataFrame] = transcript_input if isinstance(transcript_input, pd.DataFrame) else None
+        
         self.model_paths = {'en-nl': model_en_nl_path, 'nl-en': model_nl_en_path}
-        self.output_path = output_path
-        self.models = {}  # Cache for loaded models
-        self.tokenizers = {}  # Cache for loaded tokenizers
+        self.output_path: str = output_path
+        self.models: dict = {}  # Cache for loaded models
+        self.tokenizers: dict = {}  # Cache for loaded tokenizers
         
         self.device: str = "cuda" if torch.cuda.is_available() else "cpu"
         logger.info(f"TranslationEngine initialized - using device: {self.device}")
@@ -66,21 +72,33 @@ class TranslationEngine:
             logger.exception(f"Failed to load model for direction '{direction}' from {path}.")
             raise
             
-    def _validate_languages(self, input_language: str, output_language: str, is_round_trip: bool = False):
-        """Validates that the provided language codes are supported."""
-        supported_langs = {'en', 'nl'}
-        if input_language not in supported_langs or output_language not in supported_langs:
-            raise ValueError(f"Language not available. Supported languages are: {list(supported_langs)}")
+    def _validate_languages(self, input_lang: str, output_lang: str, intermediate_lang: Optional[str] = None):
+        """
+        Validates that the provided language codes are supported and checks for
+        logical consistency based on translation type.
+        """
         
-        if is_round_trip:
-            if input_language != output_language:
-                raise ValueError("For round-translation, input and output languages must be the same (e.g., 'en' to 'en').")
-        else:
-            if input_language == output_language:
+        all_langs = {input_lang, output_lang}
+        if intermediate_lang:
+            all_langs.add(intermediate_lang)
+            
+        if not all_langs.issubset(self.SUPPORTED_LANGS):
+            unsupported = all_langs.difference(self.SUPPORTED_LANGS)
+            raise ValueError(f"Unsupported language(s) {unsupported}. Supported languages are: {list(self.SUPPORTED_LANGS)}")
+        
+        if intermediate_lang: # Round-trip validation
+            # REDUNDANT if input_lang != output_lang:
+            # REDUNDANT    raise ValueError("For round-translation, the starting (input) and ending (output) languages must be the same.")
+            if input_lang == intermediate_lang or output_lang == intermediate_lang:
+                raise ValueError("The intermediate language must be different from the input/output language.")
+        else: # Simple translation validation
+            if input_lang == output_lang:
                 raise ValueError("Input and output languages cannot be the same for a direct translation.")
 
     def _translate_batch(self, texts: List[str], model: MarianMTModel, tokenizer: MarianTokenizer) -> List[str]:
         """Translates a list of texts using a specified model efficiently."""
+        
+        # Ensure all texts are strings for tokenization
         text_inputs = [str(t) if t is not None else "" for t in texts]
         
         try:
@@ -88,10 +106,12 @@ class TranslationEngine:
             inputs = {k: v.to(self.device) for k, v in inputs.items()}
             
             with torch.no_grad():
+                # Use greedy decoding for translation, adjust parameters for quality if needed
                 translated_ids = model.generate(**inputs, max_length=128, num_beams=5, early_stopping=True)
             
             return tokenizer.batch_decode(translated_ids, skip_special_tokens=True)
         except Exception:
+            # Revert to a safe failure, returning empty strings for the entire batch
             logger.warning(f"Batch translation failed for a batch of size {len(texts)}.", exc_info=True)
             return [""] * len(texts)
 
@@ -102,8 +122,8 @@ class TranslationEngine:
         Args:
             transcript_df: DataFrame containing the text to translate.
             text_column: The name of the column with the text.
-            input_language: The source language ('en' or 'nl').
-            output_language: The target language ('en' or 'nl').
+            input_lang: The source language ('en' or 'nl').
+            output_lang: The target language ('en' or 'nl').
             batch_size: Number of sentences to process at once.
 
         Returns:
@@ -131,24 +151,24 @@ class TranslationEngine:
         logger.info(f"✓ Direct translation complete.")
         return result_df
 
-    def round_translate(self, transcript_df: pd.DataFrame, text_column: str, input_lang: Literal['en', 'nl'], output_lang: Literal['en', 'nl'], batch_size: int = 32) -> pd.DataFrame:
+    def round_translate(self, transcript_df: pd.DataFrame, text_column: str, input_lang: Literal['en', 'nl'], intermediate_lang: Literal['en', 'nl'], batch_size: int = 32) -> pd.DataFrame:
         """
         Performs a round-trip translation (e.g., EN -> NL -> EN) on a DataFrame column.
 
         Args:
             transcript_df: DataFrame containing the text to translate.
             text_column: The name of the column with the text.
-            input_language: The starting language ('en' or 'nl').
-            output_language: The ending language (must be same as input_language).
+            input_lang: The starting and ending language ('en' or 'nl').
+            intermediate_lang: The language used for the intermediate step (e.g., 'nl' if input is 'en').
             batch_size: Number of sentences to process at once.
 
         Returns:
             A new DataFrame with columns for the intermediate and final translations.
         """
-        self._validate_languages(input_lang, output_lang, is_round_trip=True)
+        output_lang = input_lang # For round trip, output must equal input
+        self._validate_languages(input_lang, output_lang, intermediate_lang)
         
         # Determine directions
-        intermediate_lang = 'nl' if input_lang == 'en' else 'en'
         direction1 = f"{input_lang}-{intermediate_lang}"
         direction2 = f"{intermediate_lang}-{output_lang}"
         
@@ -181,10 +201,10 @@ class TranslationEngine:
         logger.info("✓ Round-trip translation complete.")
         return result_df
     
-    def run_pipeline(self, translation_type: Literal['simple', 'round'], input_lang: Literal['en', 'nl'], output_lang: Literal['en', 'nl'], transcript_df_input: pd.DataFrame = None, output_path: str = None) -> pd.DataFrame:
+    def run_pipeline(self, translation_type: Literal['simple', 'round'], input_lang: Literal['en', 'nl'], output_lang: Literal['en', 'nl'], transcript_df_input: Optional[pd.DataFrame] = None, output_path: Optional[str] = None) -> pd.DataFrame:
         """
         Orchestrates the entire translation pipeline: loads data, loads models,
-        performs round-translation, formats the output, and saves the result.
+        performs translation, formats the output, and saves the result.
         """
 
         csv_handler = CSVHandler()
@@ -207,12 +227,21 @@ class TranslationEngine:
         if 'Sentence' not in transcript_df.columns:
             raise KeyError("'Sentence' column is required in the transcript DataFrame.")
 
+        # 2. Determine intermediate language for round-trip (if applicable)
+        intermediate_lang = None
+        if translation_type == 'round':
+            # Determine the intermediate language: if input is 'en', intermediate is 'nl', else 'en'
+            intermediate_lang = 'nl' if input_lang == 'en' else 'en'
+            if input_lang != output_lang:
+                 raise ValueError("For round-trip translation, the `input_lang` and `output_lang` must be the same.")
+
+
         # 3. Perform Translation
         try:
             if translation_type == 'simple':
                 translated_df = self.translate(transcript_df, text_column = 'Sentence', input_lang = input_lang, output_lang = output_lang)
             elif translation_type == 'round':
-                translated_df = self.round_translate(transcript_df, text_column = 'Sentence', input_lang = input_lang, output_lang = output_lang)
+                translated_df = self.round_translate(transcript_df, text_column = 'Sentence', input_lang = input_lang, intermediate_lang = intermediate_lang)
             logger.info(f"The {translation_type} translation was completed successfully.")
         except Exception as e:
             logger.exception(f"Failed to complete the {translation_type} translation. Reason: {e}")
@@ -223,8 +252,6 @@ class TranslationEngine:
             translation_col = f'Translation_{output_lang.upper()}'
             final_df = translated_df[['Sentence', translation_col]].copy()
         elif translation_type == 'round':
-            # Assuming input_lang is 'en' and output_lang is 'en' (round-trip)
-            intermediate_lang = 'nl' if input_lang == 'en' else 'en'
             intermediate_col = f'Intermediate_Translation_{intermediate_lang.upper()}'
             round_trip_col = f'Round_Trip_Translation_{output_lang.upper()}'
             final_df = translated_df[['Sentence', intermediate_col, round_trip_col]].copy()
