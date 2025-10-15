@@ -4,7 +4,7 @@ import logging
 import os
 
 # Import the configuration function
-from helpers.logging_config import configure_logging
+from src.helpers.logging_config import configure_logging
 
 # --- CALL THE CONFIGURATION FUNCTION FIRST ---
 configure_logging() 
@@ -16,9 +16,11 @@ logger = logging.getLogger(__name__)
 
 from src.processing import FeatureEngine
 from src.transcript import TranscriptEngine
+from src.translation import TranslationEngine
 
 from src.config import AUDIO_PATH, TRANSRIPT_PATH, ARTIFACTS_DIR
 from src.processing.config import FEATURE_OUTPUT_PATH as FEATURES
+from src.translation.config import TRANSLATED_OUTPUT_PATH as TRANSLATIONS
 
 os.makedirs(ARTIFACTS_DIR, exist_ok=True)
 
@@ -30,9 +32,15 @@ def main():
     transcript_engine.transcribe(mp3_file=AUDIO_PATH, output_path=TRANSRIPT_PATH, post_process='simple')
 
     # Create an instance of the class
-    feature_engine = FeatureEngine()
+    translation_engine = TranslationEngine()
     # Call the create_features method on the instance
-    feature_engine.create_features(output_path=FEATURES)
+    translation_engine.run_pipeline(translation_type='round', input_lang='en', interm_lang='nl', output_path=TRANSLATIONS)
+
+    # TEMPORARILY DISABLED
+    # # Create an instance of the class
+    # feature_engine = FeatureEngine()
+    # # Call the create_features method on the instance
+    # feature_engine.create_features(output_path=FEATURES) 
 
 if __name__ == '__main__':
     main()
