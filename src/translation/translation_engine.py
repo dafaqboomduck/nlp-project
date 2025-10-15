@@ -178,7 +178,13 @@ class TranslationEngine:
         logger.info("✓ Round-trip translation complete.")
         return result_df
     
-    def run_pipeline(self, translation_type: Literal['simple', 'round'], input_lang: Literal['en', 'nl'], output_lang: Literal['en', 'nl'], transcript_df_input: Optional[pd.DataFrame] = None, output_path: Optional[str] = None) -> pd.DataFrame:
+    def run_pipeline(self, 
+                    translation_type: Literal['simple', 'round'], 
+                    input_lang: Literal['en', 'nl'], 
+                    output_lang: Optional[Literal['en', 'nl']] = None,
+                    interm_lang: Optional[Literal['en', 'nl']] = None,
+                    transcript_df_input: Optional[pd.DataFrame] = None, 
+                    output_path: Optional[str] = None) -> pd.DataFrame:
         """
         Orchestrates the entire translation pipeline: loads data, loads models,
         performs translation, formats the output, and saves the result.
@@ -208,36 +214,61 @@ class TranslationEngine:
             logger.error(msg)
             raise KeyError(msg) # Added logging before raise
 
-        # 2. Determine intermediate language for round-trip (if applicable)
-        intermediate_lang = None
-        if translation_type == 'round':
-            intermediate_lang = 'nl' if input_lang == 'en' else 'en'
-            if input_lang != output_lang:
-                 msg = "For round-trip translation, the `input_lang` and `output_lang` must be the same."
-                 logger.error(msg)
-                 raise ValueError(msg) # Added logging before raise
+        # 2. Validate Language Parameters based on Translation Type
+        if translation_type == 'simple':
+            if output_lang is None:
+                msg = "For 'simple' translation, 'output_lang' must be provided."
+                logger.error(msg)
+                raise ValueError(msg)
+            if interm_lang is not None:
+                msg = "For 'simple' translation, 'interm_lang' must be None."
+                logger.error(msg)
+                raise ValueError(msg)
+                
+            # The translate method already validates input_lang != output_lang
+            
+        elif translation_type == 'round':
+            if interm_lang is None:
+                msg = "For 'round' translation, 'interm_lang' must be provided."
+                logger.error(msg)
+                raise ValueError(msg)
+            if output_lang is not None and output_lang != input_lang:
+                msg = "For 'round' translation, 'output_lang' must be None or equal to 'input_lang'."
+                logger.error(msg)
+                raise ValueError(msg)
+                
+            # Set output_lang for internal consistency and later formatting
+            output_lang = input_lang
+            
+        else:
+            # Should be caught by Literal typing, but kept for safety
+            msg = f"Invalid translation_type: {translation_type}"
+            logger.error(msg)
+            raise ValueError(msg)
 
         # 3. Perform Translation
         try:
             if translation_type == 'simple':
-                translated_df = self.translate(transcript_df, text_column = 'Sentence', input_lang = input_lang, output_lang = output_lang)
+                # output_lang is guaranteed to be set here
+                translated_df = self.translate(transcript_df, text_column='Sentence', input_lang=input_lang, output_lang=output_lang)
             elif translation_type == 'round':
-                translated_df = self.round_translate(transcript_df, text_column = 'Sentence', input_lang = input_lang, intermediate_lang = intermediate_lang)
+                # output_lang and interm_lang are guaranteed to be set here
+                translated_df = self.round_translate(transcript_df, text_column='Sentence', input_lang=input_lang, intermediate_lang=interm_lang)
             logger.info(f"The {translation_type} translation was completed successfully.")
-        except Exception as e:
-            # Note: The original code already included an exception log here, which is correct.
+        except Exception:
             logger.exception(f"Failed to complete the {translation_type} translation.")
             raise
         
-        # 4. Format Final Output
+        # 4. Format Final Output (Logic remains the same, using guaranteed output_lang/interm_lang)
         if translation_type == 'simple':
             translation_col = f'Translation_{output_lang.upper()}'
             final_df = translated_df[['Sentence', translation_col]].copy()
         elif translation_type == 'round':
-            intermediate_col = f'Intermediate_Translation_{intermediate_lang.upper()}'
+            # Now uses the guaranteed and validated interm_lang
+            intermediate_col = f'Intermediate_Translation_{interm_lang.upper()}'
             round_trip_col = f'Round_Trip_Translation_{output_lang.upper()}'
             final_df = translated_df[['Sentence', intermediate_col, round_trip_col]].copy()
-
+        
         final_df.rename(columns={'Sentence': 'Original_Sentence'}, inplace=True)
         
         # 5. Save Output to CSV
