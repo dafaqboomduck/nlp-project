@@ -4,6 +4,7 @@ import logging
 import pandas as pd
 from transformers import MarianMTModel, MarianTokenizer
 import torch
+from typing import List, Tuple, Optional
 
 from src.translation.config import MODEL_EN_NL_PATH, MODEL_NL_EN_PATH
 
@@ -15,7 +16,7 @@ class TranslationEngine:
     Handles round-translation (EN→NL→EN) using saved pretrained MarianMT models.
     """
     
-    def __init__(self, model_en_nl_path=MODEL_EN_NL_PATH, model_nl_en_path=MODEL_NL_EN_PATH):
+    def __init__(self, model_en_nl_path: str = MODEL_EN_NL_PATH, model_nl_en_path: str = MODEL_NL_EN_PATH):
         """
         Initialize translation engine.
         
@@ -26,16 +27,16 @@ class TranslationEngine:
         self.model_en_nl_path = model_en_nl_path
         self.model_nl_en_path = model_nl_en_path
         
-        self.model_en_nl = None
-        self.tokenizer_en_nl = None
-        self.model_nl_en = None
-        self.tokenizer_nl_en = None
+        self.model_en_nl: Optional[MarianMTModel] = None
+        self.tokenizer_en_nl: Optional[MarianTokenizer] = None
+        self.model_nl_en: Optional[MarianMTModel] = None
+        self.tokenizer_nl_en: Optional[MarianTokenizer] = None
         
         # Check device
-        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.device: str = "cuda" if torch.cuda.is_available() else "cpu"
         logger.info(f"TranslationEngine initialized - using device: {self.device}")
     
-    def _load_single_model(self, path, direction_name):
+    def _load_single_model(self, path: str, direction_name: str) -> Tuple[MarianTokenizer, MarianMTModel]:
         logger.info(f"Loading {direction_name} model from {path}...")
         tokenizer = MarianTokenizer.from_pretrained(path)
         model = MarianMTModel.from_pretrained(path)
@@ -43,7 +44,7 @@ class TranslationEngine:
         model.eval()
         return tokenizer, model
 
-    def load_models(self):
+    def load_models(self) -> None:
         """Load saved pretrained models and tokenizers"""
         try:
             # Load EN->NL
@@ -70,8 +71,63 @@ class TranslationEngine:
             logger.exception("Failed to load translation models")
             raise
 
+    def _check_models_loaded(self):
+        """Helper to ensure models are loaded before translation is attempted."""
+        if self.model_en_nl is None or self.tokenizer_en_nl is None or \
+           self.model_nl_en is None or self.tokenizer_nl_en is None:
+            raise RuntimeError("Translation models not loaded. Call load_models() first.")
             
-    def _translate(self, text, model, tokenizer, max_length=128, num_beams=5):
+    def _translate_batch(self, texts: List[str], model: MarianMTModel, tokenizer: MarianTokenizer, max_length: int = 128, num_beams: int = 5) -> List[str]:
+        """
+        Translate a list of texts using the specified model efficiently.
+        
+        Args:
+            texts: List of strings to translate.
+            model: MarianMT model.
+            tokenizer: Corresponding tokenizer.
+            max_length: Maximum output length.
+            num_beams: Beam search width.
+        
+        Returns:
+            List of translated texts. Returns empty string for input that failed/was empty.
+        """
+        if model is None or tokenizer is None:
+             raise RuntimeError("Model or Tokenizer not provided for batch translation.")
+        
+        # Ensure all texts are strings and handle non-string/None inputs safely
+        text_inputs = [str(t) if t is not None else "" for t in texts]
+        
+        try:
+            # Tokenize input (handles batching naturally)
+            inputs = tokenizer(
+                text_inputs, 
+                return_tensors="pt", 
+                padding=True, 
+                truncation=True,
+                max_length=max_length
+            )
+            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+            
+            with torch.no_grad():
+                translated_ids = model.generate(
+                    **inputs,
+                    max_length=max_length,
+                    num_beams=num_beams,
+                    early_stopping=True
+                )
+            
+            # Decode output
+            results = tokenizer.batch_decode(translated_ids, skip_special_tokens=True)
+            return results
+            
+        except Exception as e:
+            logger.warning(f"Batch translation failed for a batch of size {len(texts)}. Error: {e}")
+            # Return a list of empty strings for the entire batch upon failure
+            return [""] * len(texts)
+
+    # NOTE: The _translate method is no longer used by round_translate but is kept for single-text convenience/legacy.
+    # It has been modified to use the batch translation logic internally for consistency/safety.
+    def _translate(self, text: str, model: Optional[MarianMTModel], tokenizer: Optional[MarianTokenizer], max_length: int = 128, num_beams: int = 5) -> str:
         """
         Translate a single text using the specified model.
         
@@ -85,60 +141,46 @@ class TranslationEngine:
         Returns:
             Translated text
         """
+        if model is None or tokenizer is None:
+             logger.warning("Attempted single translation with unloaded models.")
+             return ""
+
         if not isinstance(text, str):
             text = str(text)
         
         if not text.strip():
             return ""
         
-        try:
-            # Tokenize input
-            inputs = tokenizer(
-                text, 
-                return_tensors="pt", 
-                padding=True, 
-                truncation=True,
-                max_length=max_length
-            )
-            inputs = {k: v.to(self.device) for k, v in inputs.items()}
-            
-            # Generate translation with beam search
-            with torch.no_grad():
-                translated = model.generate(
-                    **inputs,
-                    max_length=max_length,
-                    num_beams=num_beams,
-                    early_stopping=True
-                )
-            
-            # Decode output
-            result = tokenizer.decode(translated[0], skip_special_tokens=True)
-            return result
-            
-        except Exception as e:
-            logger.warning(f"Translation failed for text: '{text[:50]}...' Error: {e}")
-            return ""
+        # Use the batch function for the single input for consistency
+        result_list = self._translate_batch(
+            [text], model, tokenizer, max_length=max_length, num_beams=num_beams
+        )
+        return result_list[0] if result_list else ""
     
-    def translate_en_to_nl(self, text):
+    def translate_en_to_nl(self, text: str) -> str:
         """Translate English to Dutch"""
+        self._check_models_loaded()
         return self._translate(text, self.model_en_nl, self.tokenizer_en_nl)
     
-    def translate_nl_to_en(self, text):
+    def translate_nl_to_en(self, text: str) -> str:
         """Translate Dutch to English"""
+        self._check_models_loaded()
         return self._translate(text, self.model_nl_en, self.tokenizer_nl_en)
     
-    def round_translate(self, transcript_df, text_column='Sentence', batch_size=32):
+    def round_translate(self, transcript_df: pd.DataFrame, text_column: str = 'Sentence', batch_size: int = 32) -> pd.DataFrame:
         """
         Apply round-translation to transcript DataFrame.
         
         Args:
             transcript_df: DataFrame with transcribed text
             text_column: Column containing text to translate
-            batch_size: Number of sentences to process at once (for progress tracking)
+            batch_size: Number of sentences to process at once
         
         Returns:
             DataFrame with added 'Translation' and 'English_Translation' columns
         """
+        self._check_models_loaded() # Ensure models are ready
+        
         if not isinstance(transcript_df, pd.DataFrame):
             raise TypeError("transcript_df must be a pandas DataFrame")
         
@@ -150,26 +192,29 @@ class TranslationEngine:
         
         logger.info(f"Starting round-translation on {len(result_df)} sentences")
         
-        translations_nl = []
-        translations_en = []
-        
+        translations_nl: List[str] = []
+        translations_en: List[str] = []
         total = len(result_df)
         
-        # Process sentences
+        # Process sentences efficiently in batches using _translate_batch
         for i in range(0, total, batch_size):
             batch_end = min(i + batch_size, total)
             batch_texts = result_df[text_column].iloc[i:batch_end].tolist()
             
-            # EN → NL
-            batch_nl = [self.translate_en_to_nl(text) for text in batch_texts]
+            # EN → NL (Efficient batch call)
+            batch_nl = self._translate_batch(
+                batch_texts, self.model_en_nl, self.tokenizer_en_nl
+            )
             
-            # NL → EN
-            batch_en = [self.translate_nl_to_en(nl_text) for nl_text in batch_nl]
+            # NL → EN (Efficient batch call)
+            batch_en = self._translate_batch(
+                batch_nl, self.model_nl_en, self.tokenizer_nl_en
+            )
             
             translations_nl.extend(batch_nl)
             translations_en.extend(batch_en)
             
-            # Progress logging
+            # Progress logging: Log every 100 sentences or when finished
             if batch_end % 100 == 0 or batch_end >= total:
                 logger.info(f"Progress: {batch_end}/{total} sentences translated")
         
