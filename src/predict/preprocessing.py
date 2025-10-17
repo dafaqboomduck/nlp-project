@@ -39,14 +39,19 @@ class InferencePreprocessor:
             max_length=self.max_length
         )
 
-    def preprocess(self, data_source: str):
+    def preprocess(self, data_source: str | pd.DataFrame, column: str = 'Sentence'):
         """
         Load and preprocess a CSV file containing sentences for model inference.
 
         Parameters
         ----------
-        data_source : str
-            Either a path to a CSV file. The file must contain a column named 'Sentence', or a dataframe. 
+        data_source : str | pandas.DataFrame
+            The input data for prediction. This can be either:
+            - A path to a file (e.g., CSV).
+            - A pandas DataFrame.
+        column : str, optional
+            The name of the column in the dataset containing the input text.
+            Defaults to 'Sentence'.
             
         Returns
         -------
@@ -68,17 +73,17 @@ class InferencePreprocessor:
         if df.empty:
             raise ValueError(f"The CSV file '{csv_path}' is empty.")
 
-        if 'Sentence' not in df.columns:
-            raise ValueError("The CSV file must contain a column named 'Sentence'.")
+        if column not in df.columns:
+            raise ValueError(f"The CSV file must contain a column named {column}.")
         
-        if df['Sentence'].isnull().all():
-            raise ValueError("The 'Sentence' column contains only null or empty values.")
+        if df[column].isnull().all():
+            raise ValueError(f"The {column} column contains only null or empty values.")
 
-        if not df['Sentence'].apply(lambda x: isinstance(x, str)).all():
-            raise ValueError("All entries in the 'Sentence' column must be strings.")
+        if not df[column].apply(lambda x: isinstance(x, str)).all():
+            raise ValueError(f"All entries in the {column} column must be strings.")
 
         # Convert DataFrame to Hugging Face Dataset
-        dataset = Dataset.from_pandas(df[['Sentence']].rename(columns={'Sentence': 'text'}))
+        dataset = Dataset.from_pandas(df[[column]].rename(columns={column: 'text'}))
 
         # Apply tokenization
         tokenized_dataset = dataset.map(self._tokenize_function, batched=True)
