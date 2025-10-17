@@ -34,7 +34,7 @@ def main():
     # Create an instance of the class
     translation_engine = TranslationEngine()
     # Call the create_features method on the instance
-    translation_engine.run_pipeline(translation_type='round', input_lang='en', interm_lang='nl', output_path=TRANSLATIONS)
+    translation_engine.translate(translation_type='round', input_lang='en', interm_lang='nl', output_path=TRANSLATIONS)
 
     # TEMPORARILY DISABLED
     # # Create an instance of the class
