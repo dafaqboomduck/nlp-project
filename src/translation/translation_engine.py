@@ -274,12 +274,12 @@ class TranslationEngine:
         # 5. Save Output to CSV
         if output_path is None:
             output_path = self.output_path
-            
-        try:
-            final_df.to_csv(output_path, index=False, sep=';')
-            logger.info(f"✓ Translation results saved successfully to {output_path}")
-        except Exception:
-            logger.exception(f"Failed to save translation results to {output_path}")
-            raise
+        if output_path: 
+            try:
+                final_df.to_csv(output_path, index=False, sep=';')
+                logger.info(f"✓ Translation results saved successfully to {output_path}")
+            except Exception:
+                logger.exception(f"Failed to save translation results to {output_path}")
+                raise
             
         return final_df
