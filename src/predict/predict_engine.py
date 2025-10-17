@@ -118,7 +118,7 @@ class PredictEngine:
                 logger.error(msg)
                 raise TypeError(msg)
 
-            data = self.preprocessor.preprocess(self.data_source, self.column)
+            data, data_collator = self.preprocessor.preprocess(self.data_source, self.column)
             logger.info("Data successfully preprocessed.")
 
             return data
