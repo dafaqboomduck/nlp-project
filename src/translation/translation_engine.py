@@ -112,7 +112,7 @@ class TranslationEngine:
             logger.warning(f"Batch translation failed for a batch of size {len(texts)}.", exc_info=True)
             return [""] * len(texts)
 
-    def translate(self, transcript_df: pd.DataFrame, text_column: str, input_lang: Literal['en', 'nl'], output_lang: Literal['en', 'nl'], batch_size: int = 32) -> pd.DataFrame:
+    def simple_translate(self, transcript_df: pd.DataFrame, text_column: str, input_lang: Literal['en', 'nl'], output_lang: Literal['en', 'nl'], batch_size: int = 32) -> pd.DataFrame:
         """
         Performs a direct translation on a DataFrame column from an input language to an output language.
         """
@@ -178,7 +178,7 @@ class TranslationEngine:
         logger.info("✓ Round-trip translation complete.")
         return result_df
     
-    def run_pipeline(self, 
+    def translate(self, 
                     translation_type: Literal['simple', 'round'], 
                     input_lang: Literal['en', 'nl'], 
                     output_lang: Optional[Literal['en', 'nl']] = None,
@@ -250,7 +250,7 @@ class TranslationEngine:
         try:
             if translation_type == 'simple':
                 # output_lang is guaranteed to be set here
-                translated_df = self.translate(transcript_df, text_column='Sentence', input_lang=input_lang, output_lang=output_lang)
+                translated_df = self.simple_translate(transcript_df, text_column='Sentence', input_lang=input_lang, output_lang=output_lang)
             elif translation_type == 'round':
                 # output_lang and interm_lang are guaranteed to be set here
                 translated_df = self.round_translate(transcript_df, text_column='Sentence', input_lang=input_lang, intermediate_lang=interm_lang)
