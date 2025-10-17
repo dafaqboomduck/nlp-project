@@ -5,6 +5,7 @@ import pandas as pd
 from transformers import MarianMTModel, MarianTokenizer
 import torch
 from typing import List, Tuple, Optional, Literal
+import csv
 import os
 
 # Internal project imports to align with project structure
@@ -276,7 +277,13 @@ class TranslationEngine:
             output_path = self.output_path
         if output_path: 
             try:
-                final_df.to_csv(output_path, index=False, sep=';')
+                final_df.to_csv(
+                output_path,
+                index=False,
+                sep=';',  # or ';' if you still want to use semicolon
+                quotechar='"',
+                quoting=csv.QUOTE_ALL
+            )
                 logger.info(f"✓ Translation results saved successfully to {output_path}")
             except Exception:
                 logger.exception(f"Failed to save translation results to {output_path}")
