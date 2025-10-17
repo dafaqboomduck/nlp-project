@@ -172,13 +172,6 @@ class PredictEngine:
         numpy.ndarray
             A NumPy array containing the predicted class indices for each input sample.
 
-        Examples
-        --------
-        >>> engine = PredictEngine("bert-base-uncased", "data.csv", column="text")
-        >>> preds = engine.predict()
-        >>> print(preds)
-        [0, 1, 1, 0, ...]
-
         Notes
         -----
         This method does not return model confidence scores or probabilities.
