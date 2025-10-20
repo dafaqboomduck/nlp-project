@@ -1,4 +1,3 @@
-# feature_engine.py
 import nltk
 nltk.download('universal_tagset', quiet=True)
 nltk.download('punkt', quiet=True)
@@ -59,30 +58,34 @@ class FeatureEngine:
             logger.warning("Tokenization produced zero sentences from the provided corpus.")
         return sentences
 
-    def _POS_tagging(self, transcript_df):
+    def _POS_tagging(self, transcript_df, text_col='Sentence'):
         if not isinstance(transcript_df, pd.DataFrame):
             raise TypeError("transcript_df must be a pandas DataFrame.")
-        if 'Sentence' not in transcript_df.columns:
-            raise KeyError("'Sentence' column is required for POS tagging.")
-        transcript_df['POS_tags'] = transcript_df['Sentence'].apply(lambda x: pos_tag(word_tokenize(str(x)), tagset='universal'))
+        if text_col not in transcript_df.columns:
+            raise KeyError(f"'{text_col}' column is required for POS tagging.")
+        transcript_df['POS_tags'] = transcript_df[text_col].apply(
+            lambda x: pos_tag(word_tokenize(str(x)), tagset='universal')
+        )
         return transcript_df
 
-    def _sentiment_score(self, transcript_df):
+    def _sentiment_score(self, transcript_df, text_col='Sentence'):
         if not isinstance(transcript_df, pd.DataFrame):
             raise TypeError("transcript_df must be a pandas DataFrame.")
-        if 'Sentence' not in transcript_df.columns:
-            raise KeyError("'Sentence' column is required for sentiment scoring.")
-        transcript_df['Sentiment'] = transcript_df['Sentence'].apply(lambda x: TextBlob(str(x)).sentiment.polarity)
+        if text_col not in transcript_df.columns:
+            raise KeyError(f"'{text_col}' column is required for sentiment scoring.")
+        transcript_df['Sentiment'] = transcript_df[text_col].apply(
+            lambda x: TextBlob(str(x)).sentiment.polarity
+        )
         return transcript_df
 
-    def _tfidf_vectorization(self, transcript_df, text_column='Sentence', embedding_column='TF-IDF'):
+    def _tfidf_vectorization(self, transcript_df, text_col='Sentence', embedding_column='TF-IDF'):
         if not isinstance(transcript_df, pd.DataFrame):
             raise TypeError("transcript_df must be a pandas DataFrame.")
-        if text_column not in transcript_df.columns:
-            raise KeyError(f"'{text_column}' column is required for TF-IDF vectorization.")
+        if text_col not in transcript_df.columns:
+            raise KeyError(f"'{text_col}' column is required for TF-IDF vectorization.")
         try:
             vectorizer = TfidfVectorizer()
-            tfidf_matrix = vectorizer.fit_transform(transcript_df[text_column].fillna("").astype(str))
+            tfidf_matrix = vectorizer.fit_transform(transcript_df[text_col].fillna("").astype(str))
             tfidf_dense = tfidf_matrix.toarray()
             transcript_df[embedding_column] = [row for row in tfidf_dense]
             return transcript_df
@@ -90,16 +93,16 @@ class FeatureEngine:
             logger.exception("TF-IDF vectorization failed.")
             raise
 
-    def _word2vec_embedding(self, transcript_df, model=GENSIM_MODEL, embedding_column='word2vec_embedding', vector_size=300):
+    def _word2vec_embedding(self, transcript_df, model=GENSIM_MODEL, text_col='Sentence',
+                            embedding_column='word2vec_embedding', vector_size=300):
         if not isinstance(transcript_df, pd.DataFrame):
             raise TypeError("transcript_df must be a pandas DataFrame.")
-        if 'Sentence' not in transcript_df.columns:
-            raise KeyError("'Sentence' column is required for word2vec embedding.")
+        if text_col not in transcript_df.columns:
+            raise KeyError(f"'{text_col}' column is required for word2vec embedding.")
         vectors = []
         all_missing_words = []
 
-        # MODEL here is expected to support keyed access (gensim KeyedVectors or dict-like)
-        for sentence in transcript_df['Sentence'].fillna("").astype(str):
+        for sentence in transcript_df[text_col].fillna("").astype(str):
             words = sentence.lower().split()
             word_vectors = []
             missing_words = []
@@ -127,18 +130,16 @@ class FeatureEngine:
         expected_cols = {'Review Text'}
         if not expected_cols.issubset(set(reviews.columns)):
             raise KeyError(f"Expected columns {expected_cols} in reviews DataFrame. Found {list(reviews.columns)}")
-        # drop optional columns if exist
         to_drop = [c for c in ['Yelp URL', 'Rating', 'Date'] if c in reviews.columns]
         if to_drop:
             reviews = reviews.drop(columns=to_drop)
         raw_corpus = reviews['Review Text'].astype(str).tolist()
         return raw_corpus
 
-    def create_features(self, transcript_df_input: pd.DataFrame = None, output_path: str = None):
+    def create_features(self, transcript_df_input: pd.DataFrame = None, output_path: str = None, text_col: str = 'Sentence'):
         """
         Main pipeline orchestration. Returns DataFrame with appended features.
         """
-        # Instantiate helpers
         w2v = Word2VecHelper(vector_size=300, window=5, min_count=5, sg=1, epochs=30, alpha=0.025, negative=20)
         bert = BertEmbeddingsHelper()
         csv_handler = CSVHandler()
@@ -154,25 +155,25 @@ class FeatureEngine:
         else:
             raise ValueError("No valid transcript path or DataFrame provided.")
 
-        # Validate that 'Sentence' column exists
-        if 'Sentence' not in transcript_df.columns:
-            raise KeyError("'Sentence' column is required in the transcript DataFrame.")
+        # Validate that text_col exists
+        if text_col not in transcript_df.columns:
+            raise KeyError(f"'{text_col}' column is required in the transcript DataFrame.")
 
-        # 2. Apply feature transformations with error handling
-        transcript_df = self._POS_tagging(transcript_df)
-        transcript_df = self._sentiment_score(transcript_df)
-        transcript_df = self._tfidf_vectorization(transcript_df)
+        # 2. Apply feature transformations
+        transcript_df = self._POS_tagging(transcript_df, text_col=text_col)
+        transcript_df = self._sentiment_score(transcript_df, text_col=text_col)
+        transcript_df = self._tfidf_vectorization(transcript_df, text_col=text_col)
 
-        # Word2Vec using a global MODEL (from config). If MODEL is missing, handle gracefully
+        # Word2Vec (global)
         try:
-            transcript_df, missing_words = self._word2vec_embedding(transcript_df, model=GENSIM_MODEL)
+            transcript_df, missing_words = self._word2vec_embedding(transcript_df, model=GENSIM_MODEL, text_col=text_col)
             if missing_words:
                 logger.info("Word2Vec missing words (sample): %s", list(set(missing_words))[:10])
         except Exception:
             logger.exception("Word2Vec embedding step failed.")
             raise
 
-        # 3. Custom embeddings using Yelp corpus
+        # Custom embeddings (Yelp)
         try:
             reviews_df = csv_handler.read_csv(self.custom_embeddings_path)
             raw_corpus = self._get_yelp_corpus(reviews_df)
@@ -181,30 +182,29 @@ class FeatureEngine:
                 logger.warning("Processed sentences for Word2Vec training are empty; skipping training.")
             else:
                 w2v.create_model(processed_sentences, model_path=custom_w2v_path)
-                # create_sentence_embeddings returns df, missing_words
-                transcript_df, missing_custom_words = w2v.create_sentence_embeddings(sentences=transcript_df, text_column="Sentence")
+                transcript_df, missing_custom_words = w2v.create_sentence_embeddings(
+                    sentences=transcript_df, text_column=text_col
+                )
                 if missing_custom_words:
                     logger.info("Custom Word2Vec missing words (sample): %s", missing_custom_words[:10])
         except Exception:
             logger.exception("Failed during custom (Yelp) embeddings handling.")
             raise
 
-        # 4. BERT embeddings
+        # BERT embeddings
         try:
-            transcript_df = bert.create_bert_embeddings(transcript_df, 'Sentence')
+            transcript_df = bert.create_bert_embeddings(transcript_df, text_col)
         except Exception:
             logger.exception("Failed to create BERT embeddings.")
             raise
 
-        # 5. Output (optional)
-        final_output_path = output_path if output_path is not None else None
-        if final_output_path:
+        # Optional output
+        if output_path:
             try:
-                # Write entire dataset (not just head) unless you intentionally want head
-                transcript_df.to_csv(final_output_path, index=False, sep=';')
-                logger.info("The NLP Features were saved at %s", final_output_path)
+                transcript_df.to_csv(output_path, index=False, sep=';')
+                logger.info("The NLP Features were saved at %s", output_path)
             except Exception:
-                logger.exception("Failed to save features to %s", final_output_path)
+                logger.exception("Failed to save features to %s", output_path)
                 raise
 
         return transcript_df
