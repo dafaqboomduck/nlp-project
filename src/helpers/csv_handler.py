@@ -31,7 +31,7 @@ class CSVHandler:
             raise ValueError("Path must point to a .csv file.")
         return path
 
-    def read_csv(self, path: str = None) -> pd.DataFrame:
+    def read_csv(self, path: str = None, delimiter: str = ',') -> pd.DataFrame:
         """
         Reads the input CSV into a pandas DataFrame.
         Args:
@@ -48,7 +48,7 @@ class CSVHandler:
         self._validate_input_path(path_to_read)
 
         try:
-            df = pd.read_csv(path_to_read)
+            df = pd.read_csv(path_to_read, delimiter=delimiter)
             return df
         except FileNotFoundError:
             # logger.exception logs the full traceback
