@@ -14,9 +14,9 @@ from textblob import TextBlob
 from sklearn.feature_extraction.text import TfidfVectorizer
 import logging
 
-from src.config import TRANSRIPT_PATH, ARTIFACTS_DIR
+from src.config import ARTIFACTS_DIR, TRANSCRIPT_PATH
 from src.processing.config import (GENSIM_MODEL, YELP_REVIEWS_PATH,
-                                   MODEL_DIR, MODEL_PATH)
+                                   MODEL_PATH)
 from src.processing import Word2VecHelper  
 from src.processing import BertEmbeddingsHelper
 from src.helpers import CSVHandler
@@ -31,7 +31,7 @@ class FeatureEngine:
     Word2Vec embeddings (pretrained and custom), and BERT embeddings.
     """
 
-    def __init__(self, transcript_input=TRANSRIPT_PATH, custom_embeddings_path=YELP_REVIEWS_PATH):
+    def __init__(self, transcript_input=TRANSCRIPT_PATH, custom_embeddings_path=YELP_REVIEWS_PATH):
         """
         Initialize the FeatureEngine.
 
@@ -247,7 +247,7 @@ class FeatureEngine:
         w2v = Word2VecHelper(vector_size=300, window=5, min_count=5, sg=1, epochs=30, alpha=0.025, negative=20)
         bert = BertEmbeddingsHelper()
         csv_handler = CSVHandler()
-        custom_w2v_path = os.path.join(ARTIFACTS_DIR, MODEL_DIR, MODEL_PATH)
+        custom_w2v_path = MODEL_PATH
 
         # Resolve transcript input
         if transcript_df_input is not None and isinstance(transcript_df_input, pd.DataFrame):
