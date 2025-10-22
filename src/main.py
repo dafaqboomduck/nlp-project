@@ -3,21 +3,28 @@
 import logging
 import os
 from typing import Dict
-import tqdm
+from tqdm import tqdm # FIXED: Correctly import the tqdm function
+import numpy as np 
 
 # Import the configuration function
 from src.helpers.logging_config import configure_logging
 
+# --- CALL THE CONFIGURATION FUNCTION FIRST ---
 configure_logging() 
+# ---------------------------------------------
+
+# Once the configuration is set, all the loggers 
+# will inherit the root logger's handlers.
 logger = logging.getLogger(__name__) 
 
 from src.processing import FeatureEngine
 from src.transcript import TranscriptEngine
 from src.translation import TranslationEngine
-from src.predict.predict_engine import PredictEngine
+from src.predict.predict_engine import PredictEngine 
+import pandas as pd 
+# NEW IMPORTS
 from src.predict.emotion_fine import EmotionFinePredictor 
 from src.predict.emotion_intensity import EmotionIntensityPredictor
-import pandas as pd
 
 from src.config import AUDIO_PATH, TRANSRIPT_PATH, ARTIFACTS_DIR, PREDS_PATH
 from src.processing.config import FEATURE_OUTPUT_PATH as FEATURES
@@ -30,10 +37,14 @@ EMOTION_MAP: Dict[int, str] = {
     4: "happiness", 5: "sadness", 6: "surprise"
 }
 
-os.makedirs(ARTIFACTS_DIR, exist_ok=True)
-
 # Define the zero-shot model checkpoint used for fine-grained classification
 ZERO_SHOT_CHECKPOINT = 'facebook/bart-large-mnli'
+# Define the device (0 for GPU, -1 for CPU)
+DEVICE_ID = 0 
+BATCH_SIZE = 128
+
+
+os.makedirs(ARTIFACTS_DIR, exist_ok=True)
 
 def main():
 
@@ -49,16 +60,15 @@ def main():
     # Call the create_features method on the instance
     translation_engine.translate(translation_type='round', input_lang='en', interm_lang='nl', output_path=TRANSLATIONS)
 
-    # 3. Core Prediction Step   
+    # 3. Prediction Step   
+    # Define paths and columns
     checkpoint = r"artifacts/bert-base" 
     data_path = TRANSLATIONS
     INPUT_COLUMN = "Round_Trip_Translation_EN"
 
     # Read the translated data
     try:
-        # Assuming you've already run transcription and translation steps
-        # For a full run, ensure TRANSLATIONS path exists.
-        df = pd.read_csv(data_path, quotechar='\"', sep=';')
+        df = pd.read_csv(data_path, quotechar='"', sep=';')
     except Exception as e:
         logger.error(f"Failed to read translated data from {data_path}. Details: {e}")
         return
@@ -77,44 +87,40 @@ def main():
     df['Core Emotion'] = emotions
     logger.info("Core Emotion prediction complete.")
 
-    # --- Step 3b: Fine-Grained Emotion and Intensity Prediction ---
-    logger.info("Starting Fine-Grained Emotion and Intensity prediction...")
+    # --- Step 3b: Fine-Grained Emotion and Intensity Prediction (Batch Processing) ---
+    logger.info("Starting Fine-Grained Emotion and Intensity prediction (Batch Mode)...")
 
-    # Initialize the new predictors (using a zero-shot model)
-    # Note: Setting device=0 for GPU, change to device=-1 for CPU
-    FINE_PREDICTOR = EmotionFinePredictor(model_name=ZERO_SHOT_CHECKPOINT, device=0)
-    INTENSITY_PREDICTOR = EmotionIntensityPredictor(model_name=ZERO_SHOT_CHECKPOINT, device=0)
+    # Initialize the new predictors (using zero-shot model and GPU if available)
+    FINE_PREDICTOR = EmotionFinePredictor(
+        model_name=ZERO_SHOT_CHECKPOINT, 
+        device=DEVICE_ID, 
+        batch_size=BATCH_SIZE
+    )
+    INTENSITY_PREDICTOR = EmotionIntensityPredictor(
+        model_name=ZERO_SHOT_CHECKPOINT, 
+        device=DEVICE_ID, 
+        batch_size=BATCH_SIZE
+    )
     
-    # Prepare lists for new columns
-    fine_emotions = []
-    intensities = []
-
-    # Iterate through the DataFrame to apply classification
-    # This loop processes row-by-row, which is simpler but less performant than batching.
-    # The dedicated batch methods in the predictor classes are better for large datasets.
-    for index, row in tqdm(df.iterrows(), total=len(df), desc="Predicting Fine Emotion & Intensity"):
-        sentence = row[INPUT_COLUMN]
-        core_emotion = row['Core Emotion']
-        
-        # 1. Predict Intensity (Independent of Core Emotion)
-        intensity = INTENSITY_PREDICTOR.predict_intensity(sentence)
-        intensities.append(intensity)
-        
-        # 2. Predict Fine Emotion (Dependent on Core Emotion)
-        # We only predict fine emotion if a known core emotion is present
-        if core_emotion.lower() in FINE_PREDICTOR.fine_emotion_map:
-            fine_emotion = FINE_PREDICTOR.predict_fine_emotion(sentence, core_emotion)
-        else:
-            fine_emotion = 'N/A' # Or other placeholder if Core Emotion is 'unknown'
-            
-        fine_emotions.append(fine_emotion)
-
-    # Assign new predictions to the DataFrame
+    sentences = df[INPUT_COLUMN].tolist()
+    core_emotions = df['Core Emotion'].tolist()
+    
+    # 1. Predict Intensity (Efficient Batch Call)
+    logger.info("Predicting Intensity in batch...")
+    intensities = INTENSITY_PREDICTOR.predict_intensity_batch(sentences)
     df['Intensity'] = intensities
+    
+    # 2. Predict Fine Emotion (Efficient Batch Call)
+    # This predictor groups sentences by core emotion internally for optimization
+    logger.info("Predicting Fine Emotion in batch...")
+    fine_emotions = FINE_PREDICTOR.predict_fine_emotion_batch(sentences, core_emotions)
     df['Fine_Emotion'] = fine_emotions
+    
     logger.info("Fine-Grained Emotion and Intensity prediction complete.")
 
+
     # 4. Post-processing and Saving Results
+    
     df.to_csv(PREDS_PATH, index=False)
     logger.info(f"Results saved to: {PREDS_PATH}")
 

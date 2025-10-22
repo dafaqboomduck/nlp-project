@@ -9,19 +9,20 @@ logger = logging.getLogger(__name__)
 class EmotionFinePredictor:
     """
     A class for fine-grained emotion classification using a zero-shot model.
+    The predict_fine_emotion_batch method handles internal grouping by core emotion
+    to efficiently batch predictions for the same set of candidate labels.
     """
     def __init__(self, model_name: str = 'facebook/bart-large-mnli', device: int = 0, batch_size: int = 128):
         """
         Initializes the Zero-Shot Classifier for fine-grained emotions.
-
-        Args:
-            model_name (str): The name of the zero-shot classification model.
-            device (int): The device to run the model on (-1 for CPU, >=0 for GPU).
-            batch_size (int): The batch size for classification.
         """
         self.model_name = model_name
         self.device = device
         self.batch_size = batch_size
+        
+        device_str = f"cuda:{device}" if device >= 0 else "cpu"
+        logger.info(f"Initializing Fine Emotion Zero-Shot Pipeline on {device_str} using {model_name}.")
+
         self.classifier = pipeline(
             'zero-shot-classification',
             model=model_name,
@@ -40,71 +41,58 @@ class EmotionFinePredictor:
             'neutral': ['curiosity', 'neutrality', 'acceptance', 'uncertainty']
         }
 
-    def predict_fine_emotion(self, sentence: str, general_emotion: str) -> Optional[str]:
+    def predict_fine_emotion_batch(self, sentences: List[str], general_emotions: List[str]) -> List[Optional[str]]:
         """
-        Classifies the fine-grained emotion for a single sentence given its general emotion.
-
-        Args:
-            sentence (str): The text to classify.
-            general_emotion (str): The general emotion category (e.g., 'fear', 'sadness').
-
-        Returns:
-            Optional[str]: The predicted fine-grained emotion, or None if labels are missing.
+        Classifies the fine-grained emotion for a batch of sentences.
         """
-        try:
-            emotion_lower = general_emotion.lower()
-            fine_labels = self.fine_emotion_map.get(emotion_lower, [])
-            
+        if len(sentences) != len(general_emotions):
+            raise ValueError("Sentences and general_emotions lists must have the same length.")
+
+        results = [None] * len(sentences)
+        grouped_data = {}
+        
+        # 1. Group sentences by their Core Emotion
+        for i, (sentence, emotion) in enumerate(zip(sentences, general_emotions)):
+            emotion_lower = emotion.lower()
+            if emotion_lower in self.fine_emotion_map:
+                if emotion_lower not in grouped_data:
+                    grouped_data[emotion_lower] = []
+                
+                # Store (sentence, original_index) tuple
+                grouped_data[emotion_lower].append((sentence, i))
+            else:
+                results[i] = 'N/A'
+        
+        # 2. Process each group in batches
+        for emotion, items in grouped_data.items():
+            texts = [item[0] for item in items]
+            original_indices = [item[1] for item in items]
+            fine_labels = self.fine_emotion_map.get(emotion, [])
+
             if not fine_labels:
-                return None
+                continue
+
+            try:
+                # Classify the batch of sentences for this emotion group
+                fine_results = self.classifier(
+                    texts,
+                    fine_labels,
+                    multi_label=False
+                )
+
+                # Ensure results is a list
+                if not isinstance(fine_results, list):
+                    fine_results = [fine_results]
+                
+                # Fill the results list in the correct original position
+                for i, res in enumerate(fine_results):
+                    original_pos = original_indices[i]
+                    results[original_pos] = res['labels'][0]
+
+            except Exception as e:
+                logger.error(f'Error processing fine-emotion batch for {emotion}: {str(e)}')
+                # If a batch fails, mark all in that batch as None
+                for original_pos in original_indices:
+                    results[original_pos] = None
             
-            # The classifier naturally handles single sentence input
-            fine_result = self.classifier(
-                sentence, 
-                fine_labels,
-                multi_label=False
-            )
-            
-            return fine_result['labels'][0]
-        
-        except Exception as e:
-            logger.error(f'Error processing fine-emotion for: {sentence[:50]}... - {str(e)}')
-            return None
-
-    def predict_fine_emotion_batch(self, sentences: List[str], general_emotion: str) -> List[Optional[str]]:
-        """
-        Classifies the fine-grained emotion for a batch of sentences given a single general emotion.
-
-        Args:
-            sentences (List[str]): The texts to classify.
-            general_emotion (str): The general emotion category (e.g., 'fear', 'sadness').
-
-        Returns:
-            List[Optional[str]]: A list of predicted fine-grained emotions.
-        """
-        emotion_lower = general_emotion.lower()
-        fine_labels = self.fine_emotion_map.get(emotion_lower, [])
-        
-        if not fine_labels:
-            return [None] * len(sentences)
-
-        results = []
-        try:
-            # Pass all sentences as a batch
-            fine_results = self.classifier(
-                sentences,
-                fine_labels,
-                multi_label=False
-            )
-
-            # Ensure the output is a list of results
-            if isinstance(fine_results, dict):
-                fine_results = [fine_results]
-            
-            results = [res['labels'][0] for res in fine_results]
-
-        except Exception as e:
-            logger.error(f'Error processing fine-emotion batch for {general_emotion}: {str(e)}')
-            results = [None] * len(sentences)
-
         return results

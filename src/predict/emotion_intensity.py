@@ -8,20 +8,20 @@ logger = logging.getLogger(__name__)
 
 class EmotionIntensityPredictor:
     """
-    A class for emotion intensity classification using a zero-shot model.
+    A class for emotion intensity classification using a zero-shot model,
+    designed for efficient batch prediction.
     """
     def __init__(self, model_name: str = 'facebook/bart-large-mnli', device: int = 0, batch_size: int = 128):
         """
         Initializes the Zero-Shot Classifier for intensity.
-
-        Args:
-            model_name (str): The name of the zero-shot classification model.
-            device (int): The device to run the model on (-1 for CPU, >=0 for GPU).
-            batch_size (int): The batch size for classification.
         """
         self.model_name = model_name
         self.device = device
         self.batch_size = batch_size
+        
+        device_str = f"cuda:{device}" if device >= 0 else "cpu"
+        logger.info(f"Initializing Intensity Zero-Shot Pipeline on {device_str} using {model_name}.")
+
         self.classifier = pipeline(
             'zero-shot-classification',
             model=model_name,
@@ -32,40 +32,10 @@ class EmotionIntensityPredictor:
         # Intensity labels from the notebook
         self.intensity_labels = ['weak', 'moderate', 'intense']
 
-    def predict_intensity(self, sentence: str) -> Optional[str]:
-        """
-        Classifies the intensity (weak, moderate, intense) for a single sentence.
-
-        Args:
-            sentence (str): The text to classify.
-
-        Returns:
-            Optional[str]: The predicted intensity, or None on error.
-        """
-        try:
-            # The classifier naturally handles single sentence input
-            intensity_result = self.classifier(
-                sentence,
-                self.intensity_labels,
-                multi_label=False
-            )
-            
-            # The notebook output showed a .replace(' emotion', '') might be needed,
-            # but standard zero-shot output should just be the label name if no template is used.
-            # Assuming the output is one of the labels directly for simplicity, but keeping the cleanup in mind.
-            intensity = intensity_result['labels'][0]
-            if ' emotion' in intensity:
-                intensity = intensity.replace(' emotion', '')
-
-            return intensity
-        
-        except Exception as e:
-            logger.error(f'Error processing intensity for: {sentence[:50]}... - {str(e)}')
-            return None
-
     def predict_intensity_batch(self, sentences: List[str]) -> List[Optional[str]]:
         """
-        Classifies the intensity for a batch of sentences.
+        Classifies the intensity for a batch of sentences using the underlying
+        Hugging Face pipeline's batch functionality.
 
         Args:
             sentences (List[str]): The texts to classify.
@@ -86,7 +56,7 @@ class EmotionIntensityPredictor:
             if isinstance(intensity_results, dict):
                 intensity_results = [intensity_results]
             
-            # Note: The notebook example had a `.replace(' emotion', '')` which is included here.
+            # Extract the top label and clean it up (as done in the notebook's approach)
             results = [res['labels'][0].replace(' emotion', '') for res in intensity_results]
 
         except Exception as e:
