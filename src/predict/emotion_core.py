@@ -2,7 +2,7 @@ from src.predict.preprocessing import InferencePreprocessor
 from transformers import AutoModelForSequenceClassification, Trainer, TrainingArguments
 import numpy as np
 import pandas as pd
-import torch  # For device handling
+import torch
 import logging
 
 logger = logging.getLogger(__name__)
@@ -10,49 +10,31 @@ logger = logging.getLogger(__name__)
 
 class PredictEngine:
     """
-    A class responsible for handling model loading, data preprocessing,
-    and performing inference using Hugging Face's `Trainer` API.
+    A class responsible for handling model loading, preprocessing orchestration,
+    and performing inference using Hugging Face's :class:`~transformers.Trainer` API.
 
     This engine is designed for efficient batch inference with transformer-based
-    sequence classification models. It supports automatic device selection,
-    customizable preprocessing, and returns class predictions as NumPy arrays.
+    sequence classification models. It requires a model checkpoint and
+    a pre-loaded :class:`pandas.DataFrame` for prediction.
     """
 
     def __init__(self, 
                  checkpoint: str, 
-                 data_source: str | pd.DataFrame, 
-                 column: str = 'Sentence', 
-                 device: str = None,
-                 output_path: str = None):
+                 device: str = None):
         """
-        Initializes the prediction engine.
+        Initializes the prediction engine by loading the model and tokenizer.
 
-        Parameters
-        ----------
-        checkpoint : str
-            The path or Hugging Face model hub identifier of the pretrained model checkpoint.
-        data_source : str | pandas.DataFrame
-            The input data for prediction. This can be either:
-            - A path to a file (e.g., CSV) supported by the preprocessor.
-            - A pandas DataFrame containing the data directly.
-        column : str, optional
-            The name of the column in the dataset containing the input text.
-            Defaults to 'Sentence'.
-        device : str, optional
-            The device to run inference on (e.g., 'cuda', 'cuda:0', 'cpu').
-            If not provided, automatically selects GPU if available, otherwise CPU.
-
-        Notes
-        -----
-        - The `InferencePreprocessor` is expected to handle tokenizer initialization.
-        - The Hugging Face `Trainer` is configured for efficient batch inference.
+        :param checkpoint: The path or Hugging Face model hub identifier of the pretrained model checkpoint.
+        :type checkpoint: str
+        :param device: The device to run inference on (e.g., 'cuda', 'cuda:0', 'cpu').
+                       If None, automatically selects GPU if available, otherwise CPU.
+        :type device: str, optional
+        :raises RuntimeError: If model loading or Trainer initialization fails.
         """
         self.checkpoint = checkpoint
-        self.data_source = data_source
-        self.column = column
 
         try:
-            # Determine device
+            # Determine device: Use provided device, or auto-select
             if device is None:
                 self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
             else:
@@ -61,25 +43,32 @@ class PredictEngine:
             logger.info(f"Initializing PredictEngine with model: {self.checkpoint}")
             logger.info(f"Device selected for inference: {self.device}")
 
-            # Initialize Preprocessor
+            # Initialize Preprocessor: Handles tokenization logic
             self.preprocessor = InferencePreprocessor(self.checkpoint, max_length=128)
 
-            # Load Model
+            # Load Model and move it to the selected device
             logger.info("Loading model from checkpoint...")
             self.model = AutoModelForSequenceClassification.from_pretrained(self.checkpoint).to(self.device)
+            self.model.eval() # Set model to evaluation mode
             logger.info("Model successfully loaded.")
 
-            # Initialize Trainer
+            # Configure TrainingArguments for inference only
+            training_args = TrainingArguments(
+                output_dir="./tmp_trainer_output",
+                per_device_eval_batch_size=32,
+                dataloader_drop_last=False,
+                no_cuda=self.device == 'cpu',
+                logging_dir="./logs",
+                report_to="none",
+                disable_tqdm=True # Disable TQDM for clean log output
+            )
+            
+            # Initialize Trainer: The main batch prediction utility
             self.trainer = Trainer(
                 model=self.model,
-                args=TrainingArguments(
-                    output_dir="./tmp_trainer_output",
-                    per_device_eval_batch_size=32,
-                    dataloader_drop_last=False,
-                    no_cuda=self.device == 'cpu',
-                    logging_dir="./logs",
-                    report_to="none",
-                ),
+                args=training_args,
+                tokenizer=self.preprocessor.get_tokenizer(),
+                data_collator=self.preprocessor.data_collator,
             )
             logger.info("Trainer initialized successfully.")
 
@@ -88,69 +77,19 @@ class PredictEngine:
             logger.error(msg)
             raise RuntimeError(msg) from e
         
-    def _get_data(self):
-        """
-        Preprocesses the input data into a format suitable for the Trainer.
-
-        Returns
-        -------
-        datasets.Dataset
-            A Hugging Face `Dataset` object containing tokenized and preprocessed inputs.
-
-        Notes
-        -----
-        This method delegates preprocessing to the `InferencePreprocessor`,
-        which handles tokenization, truncation, and dataset conversion.
-        """
-        try:
-            logger.info("Starting data preprocessing...")
-
-            # Validate data source
-            if isinstance(self.data_source, pd.DataFrame):
-                if self.column not in self.data_source.columns:
-                    msg = f"'{self.column}' column is required in the input DataFrame."
-                    logger.error(msg)
-                    raise KeyError(msg)
-            elif isinstance(self.data_source, str):
-                logger.info(f"Data source provided as file path: {self.data_source}")
-            else:
-                msg = f"Unsupported data source type: {type(self.data_source)}. Must be str or pandas.DataFrame."
-                logger.error(msg)
-                raise TypeError(msg)
-
-            data, data_collator = self.preprocessor.preprocess(self.data_source, self.column)
-            logger.info("Data successfully preprocessed.")
-
-            return data
-
-        except Exception as e:
-            msg = f"Error during data preprocessing: {str(e)}"
-            logger.error(msg)
-            raise RuntimeError(msg) from e
-
-
     def _postprocess(self, predictions):
         """
-        Converts raw model output logits into discrete class predictions.
+        Internal method to convert raw model output logits into discrete class predictions
+        using argmax.
 
-        Parameters
-        ----------
-        predictions : transformers.trainer_utils.PredictionOutput
-            The prediction output from the Hugging Face `Trainer.predict()` method.
-            Contains `predictions` (logits), `label_ids`, and optionally `metrics`.
-
-        Returns
-        -------
-        numpy.ndarray
-            An array of predicted class indices corresponding to each input example.
-
-        Notes
-        -----
-        The method applies an argmax operation along the last axis to convert logits
-        into integer class labels.
+        :param predictions: The output object from :meth:`~transformers.Trainer.predict`.
+        :type predictions: :class:`~transformers.PredictionOutput`
+        :return: A NumPy array containing the predicted class indices.
+        :rtype: :class:`numpy.ndarray`
         """
         try:
             logger.info("Postprocessing predictions...")
+            # Apply argmax across the last dimension (the logits for each class)
             preprocessed_preds = np.argmax(predictions.predictions, axis=-1)
             logger.info("Predictions successfully postprocessed.")
             return preprocessed_preds
@@ -160,33 +99,36 @@ class PredictEngine:
             logger.error(msg)
             raise RuntimeError(msg) from e
 
-    def predict(self):
+    def predict(self, df: pd.DataFrame, column: str = 'Sentence'):
         """
-        Executes the full inference pipeline:
-        - Preprocesses the input data.
-        - Performs batched prediction using the `Trainer`.
-        - Postprocesses the logits into final class predictions.
+        Executes the full inference pipeline for a given DataFrame.
 
-        Returns
-        -------
-        numpy.ndarray
-            A NumPy array containing the predicted class indices for each input sample.
+        Steps:
+        1. Preprocesses the input data (DataFrame) using :class:`InferencePreprocessor`.
+        2. Performs batched prediction using the internal :class:`~transformers.Trainer`.
+        3. Postprocesses the logits into final class predictions.
 
-        Notes
-        -----
-        This method does not return model confidence scores or probabilities.
-        To obtain probabilities, modify `_postprocess()` to apply a softmax
-        transformation instead of `argmax`.
+        :param df: The input data for prediction.
+        :type df: :class:`pandas.DataFrame`
+        :param column: The name of the column in the DataFrame containing the input text, defaults to 'Sentence'.
+        :type column: str, optional
+        :raises RuntimeError: If any step of the prediction pipeline fails.
+        :return: A NumPy array containing the predicted class indices for each input sample.
+        :rtype: :class:`numpy.ndarray`
         """
         try:
             logger.info("Starting prediction pipeline...")
 
             # Step 1: Preprocess data
-            data = self._get_data()
+            # The preprocessor handles conversion and tokenization from DataFrame to Dataset.
+            logger.info("Starting data preprocessing...")
+            tokenized_data, data_collator = self.preprocessor.preprocess(df, column) 
+            logger.info("Data successfully preprocessed.")
 
             # Step 2: Run prediction
             logger.info("Performing batch inference using Trainer...")
-            predictions = self.trainer.predict(data)
+            # Prediction uses the configured Trainer, which handles batching and device placement.
+            predictions = self.trainer.predict(tokenized_data)
             logger.info("Model inference completed successfully.")
 
             # Step 3: Postprocess results
