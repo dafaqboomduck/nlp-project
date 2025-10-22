@@ -1,15 +1,16 @@
 import pandas as pd
 from datasets import Dataset
 from transformers import AutoTokenizer, DataCollatorWithPadding
-from src.helpers import CSVHandler
-
+# from src.helpers import CSVHandler  # Removed non-local dependency
 
 class InferencePreprocessor:
     """
     Helper class for preprocessing text data for Transformer model inference.
 
-    This class handles loading a CSV of sentences, tokenizing them using a specified
-    pretrained checkpoint, and returning a ready-to-use Hugging Face Dataset and DataCollator.
+    This class handles tokenizing text using a specified pretrained checkpoint, 
+    and returning a ready-to-use Hugging Face Dataset and DataCollator.
+    It is designed to take a pandas DataFrame directly for cleaner separation
+    of concerns from data loading.
     """
 
     def __init__(self, checkpoint: str, max_length: int = 128):
@@ -26,7 +27,8 @@ class InferencePreprocessor:
         self.checkpoint = checkpoint
         self.max_length = max_length
         self.tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-        self.data_collator = DataCollatorWithPadding(tokenizer=self.tokenizer)
+        # Use return_tensors='pt' (PyTorch) for compatibility with Trainer/DataLoader
+        self.data_collator = DataCollatorWithPadding(tokenizer=self.tokenizer, return_tensors='pt')
 
     def _tokenize_function(self, example):
         """
@@ -39,16 +41,14 @@ class InferencePreprocessor:
             max_length=self.max_length
         )
 
-    def preprocess(self, data_source: str | pd.DataFrame, column: str = 'Sentence'):
+    def preprocess(self, df: pd.DataFrame, column: str = 'Sentence'):
         """
-        Load and preprocess a CSV file containing sentences for model inference.
+        Preprocess a DataFrame containing sentences for model inference.
 
         Parameters
         ----------
-        data_source : str | pandas.DataFrame
-            The input data for prediction. This can be either:
-            - A path to a file (e.g., CSV).
-            - A pandas DataFrame.
+        df : pandas.DataFrame
+            The input DataFrame. The data loading logic should be external.
         column : str, optional
             The name of the column in the dataset containing the input text.
             Defaults to 'Sentence'.
@@ -59,37 +59,46 @@ class InferencePreprocessor:
             Tokenized dataset ready for inference.
         data_collator : transformers.DataCollatorWithPadding
             Data collator suitable for batching.
+
+        Raises
+        ------
+        ValueError
+            If the DataFrame is empty, the column is missing, contains only nulls, 
+            or non-string values.
         """
-        if isinstance(data_source, pd.DataFrame):
-            # If dataframe use it  
-            df = data_source
-        elif isinstance(data_source, str):
-            # If string, assume it is a path and try loadding it 
-            # Load CSV
-            csv_path = data_source
-            csv_handler = CSVHandler
-            df = csv_handler.read_csv(csv_path)
-        
+        # Validate data source
         if df.empty:
-            raise ValueError(f"The CSV file '{csv_path}' is empty.")
+            raise ValueError("The input DataFrame is empty.")
 
         if column not in df.columns:
-            raise ValueError(f"The CSV file must contain a column named {column}.")
+            raise ValueError(f"The DataFrame must contain a column named {column}.")
         
+        # Check for non-string or null values only in the target column
         if df[column].isnull().all():
             raise ValueError(f"The {column} column contains only null or empty values.")
+        
+        # Filter out rows where the text is not a string (or is null) before conversion
+        df_clean = df.dropna(subset=[column])
+        if not df_clean[column].apply(lambda x: isinstance(x, str)).all():
+            raise ValueError(f"All non-null entries in the {column} column must be strings.")
 
-        if not df[column].apply(lambda x: isinstance(x, str)).all():
-            raise ValueError(f"All entries in the {column} column must be strings.")
-
-        # Convert DataFrame to Hugging Face Dataset
-        dataset = Dataset.from_pandas(df[[column]].rename(columns={column: 'text'}))
+        # Convert clean DataFrame to Hugging Face Dataset
+        # The Trainer expects the input features for sequence classification to be named 'input_ids', 'attention_mask', etc.,
+        # which are produced by the tokenizer from the 'text' column.
+        dataset = Dataset.from_pandas(df_clean[[column]].rename(columns={column: 'text'}))
 
         # Apply tokenization
-        tokenized_dataset = dataset.map(self._tokenize_function, batched=True)
+        # Only keep necessary columns for the model ('input_ids', 'attention_mask', etc.)
+        tokenized_dataset = dataset.map(
+            self._tokenize_function, 
+            batched=True,
+            remove_columns=[col for col in dataset.column_names if col != 'text']
+        )
+        # The 'text' column is also not needed for the Trainer
+        tokenized_dataset = tokenized_dataset.remove_columns(['text'])
 
         return tokenized_dataset, self.data_collator
-
+    
     def get_tokenizer(self):
         """
         Returns the tokenizer instance used by this preprocessor.
