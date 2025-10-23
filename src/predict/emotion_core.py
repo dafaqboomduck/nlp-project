@@ -1,4 +1,5 @@
 from src.predict.preprocessing import InferencePreprocessor
+from src.predict.config import EMOTION_MAP
 from transformers import AutoModelForSequenceClassification, Trainer, TrainingArguments
 import numpy as np
 import pandas as pd
@@ -20,7 +21,9 @@ class EmotionCorePredictor:
 
     def __init__(self, 
                  checkpoint: str, 
-                 device: str = None):
+                 device: str = None,
+                 batch_size: int = 128,
+                 labels_map: dict | list = EMOTION_MAP):
         """
         Initializes the prediction engine by loading the model and tokenizer.
 
@@ -32,6 +35,8 @@ class EmotionCorePredictor:
         :raises RuntimeError: If model loading or Trainer initialization fails.
         """
         self.checkpoint = checkpoint
+        self.batch_size = batch_size
+        self.labels_map = labels_map
 
         try:
             # --- Device Setup ---
@@ -46,7 +51,7 @@ class EmotionCorePredictor:
             else:
                 self.device = device
 
-            logger.info(f"Initializing PredictEngine with model: {self.checkpoint}")
+            logger.info(f"Initializing {self.__class__.__name__} with model: {self.checkpoint}")
             logger.info(f"Device selected for inference: {self.device}")
 
             # Initialize Preprocessor (Handles its own exceptions)
@@ -62,13 +67,17 @@ class EmotionCorePredictor:
                 logger.error(msg)
                 raise ImportError(msg)
             
+            # Define the fixed candidate labels for core emotions
+            self.core_emotions = self.labels_map
+            logger.debug(f"Core emotions candidate labels: {self.core_emotions}")
+
             # Set model to evaluation mode
             self.model.eval() 
 
             # --- Trainer Setup ---
             training_args = TrainingArguments(
                 output_dir="./tmp_trainer_output",
-                per_device_eval_batch_size=32,
+                per_device_eval_batch_size=batch_size,
                 dataloader_drop_last=False,
                 no_cuda=self.device == 'cpu',
                 report_to="none",
@@ -86,7 +95,7 @@ class EmotionCorePredictor:
         except RuntimeError:
             raise
         except Exception as e:
-            msg = f"Failed to initialize PredictEngine due to model/library error. Details: {str(e)}"
+            msg = f"Failed to initialize {self.__class__.__name__} due to model/library error. Details: {str(e)}"
             logger.error(msg, exc_info=True)
             raise RuntimeError(msg) from e
         
@@ -130,27 +139,26 @@ class EmotionCorePredictor:
         :rtype: :class:`numpy.ndarray`
         """
         try:
-            logger.info("Starting prediction pipeline...")
+            logger.info(f"Starting {self.__class__.__name__} Inference...")
 
             # Step 1: Preprocess data
             # The preprocessor handles conversion and tokenization from DataFrame to Dataset.
-            logger.info("Starting data preprocessing...")
-            tokenized_data, data_collator = self.preprocessor.preprocess(df, column) 
-            logger.info("Data successfully preprocessed.")
+            logger.debug("Starting data preprocessing...")
+            tokenized_data, _ = self.preprocessor.preprocess(df, column) 
+            logger.debug("Data successfully preprocessed.")
 
             # Step 2: Run prediction
-            logger.info("Performing batch inference using Trainer...")
+            logger.debug("Performing batch inference using Trainer...")
             # Prediction uses the configured Trainer, which handles batching and device placement.
             predictions = self.trainer.predict(tokenized_data)
-            logger.info("Model inference completed successfully.")
 
             # Step 3: Postprocess results
             final_predictions = self._postprocess(predictions)
-            logger.info("Prediction pipeline completed successfully.")
+            logger.info(f"{self.__class__.__name__} Inference completed successfully.")
 
             return final_predictions
 
         except Exception as e:
-            msg = f"Prediction pipeline failed: {str(e)}"
+            msg = f"{self.__class__.__name__} Inference failed: {str(e)}"
             logger.error(msg)
             raise RuntimeError(msg) from e
