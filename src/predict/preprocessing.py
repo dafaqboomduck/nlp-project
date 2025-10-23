@@ -2,6 +2,10 @@ import pandas as pd
 from datasets import Dataset
 from transformers import AutoTokenizer, DataCollatorWithPadding
 # from src.helpers import CSVHandler  # Removed dependency on CSVHandler
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 class InferencePreprocessor:
     """
@@ -27,12 +31,25 @@ class InferencePreprocessor:
         """
         self.checkpoint = checkpoint
         self.max_length = max_length
-        # Initialize the tokenizer from the specified checkpoint
-        self.tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-        # Initialize the DataCollator, which dynamically pads batches to the max length in that batch.
-        # Use return_tensors='pt' (PyTorch) for compatibility with Trainer/DataLoader
-        self.data_collator = DataCollatorWithPadding(tokenizer=self.tokenizer, return_tensors='pt')
-
+        
+        try:
+            # Initialize the tokenizer from the specified checkpoint
+            logger.info(f"Loading tokenizer for checkpoint: {checkpoint}")
+            self.tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+            logger.info("Tokenizer loaded successfully.")
+        except Exception as e:
+            msg = f"Failed to load the tokenizer from checkpoint '{checkpoint}'. Check model path or network connection."
+            logger.error(msg, exc_info=True)
+            raise RuntimeError(msg) from e
+        try:
+            # Initialize the DataCollator, which dynamically pads batches to the max length in that batch.
+            # Use return_tensors='pt' (PyTorch) for compatibility with Trainer/DataLoader
+            self.data_collator = DataCollatorWithPadding(tokenizer=self.tokenizer, return_tensors='pt')
+        except Exception as e:
+            msg = f"Failed to load the DataCollator with the tokenizer '{self.tokenizer}'. Details: {e}"
+            logger.error(msg, exc_info=True)
+            raise RuntimeError(msg) from e
+        
     def _tokenize_function(self, example):
         """
         Internal method for tokenizing a batch of examples via map().
@@ -65,33 +82,49 @@ class InferencePreprocessor:
         :return: A tuple containing the tokenized dataset and the data collator.
         :rtype: tuple[:class:`datasets.Dataset`, :class:`transformers.DataCollatorWithPadding`]
         """
+        logger.info(f"Starting preprocessing for column '{column}'. Initial rows: {len(df)}")
+        
         # --- Data Validation ---
         if df.empty:
+            logger.error("Input DataFrame is empty.")
             raise ValueError("The input DataFrame is empty.")
 
         if column not in df.columns:
+            logger.error(f"Missing required column: '{column}'")
             raise ValueError(f"The DataFrame must contain a column named {column}.")
         
-        # Check for non-string or null values in the target column
-        df_clean = df.dropna(subset=[column])
+        # Clean: Drop NaN/Nulls in the text column
+        df_clean = df.dropna(subset=[column]).copy()
+        
         if df_clean.empty:
+            logger.error(f"The '{column}' column contansi only null or empty values.")
             raise ValueError(f"The {column} column contains only null or empty values after dropna.")
             
-        if not df_clean[column].apply(lambda x: isinstance(x, str)).all():
-            raise ValueError(f"All non-null entries in the {column} column must be strings.")
+        # Clean: Filter out non-string entries
+        original_count = len(df_clean)
+        df_clean = df_clean[df_clean[column].apply(lambda x: isinstance(x, str))]
+        
+        if len(df_clean) < original_count:
+            logger.warning(f"{original_count - len(df_clean)} non-string rows removed. Proceeding with {len(df_clean)} rows.")
+            if df_clean.empty:
+                 raise ValueError("All entries in the cleaned DataFrame were non-strings and were dropped.")
+
+        logger.info(f"Cleaned data rows: {len(df_clean)}. Converting to Hugging Face Dataset.")
 
         # --- Dataset Conversion and Tokenization ---
-        # 1. Convert clean DataFrame to Hugging Face Dataset.
-        # The tokenizer expects the input text feature to be named 'text'.
-        dataset = Dataset.from_pandas(df_clean[[column]].rename(columns={column: 'text'}))
+        try:
+            dataset = Dataset.from_pandas(df_clean[[column]].rename(columns={column: 'text'}))
 
-        # 2. Apply tokenization in a batched manner.
-        tokenized_dataset = dataset.map(
-            self._tokenize_function, 
-            batched=True,
-            # Remove all original columns except the tokenized ones
-            remove_columns=[col for col in dataset.column_names]
-        )
+            tokenized_dataset = dataset.map(
+                self._tokenize_function, 
+                batched=True,
+                remove_columns=[col for col in dataset.column_names]
+            )
+            logger.info("Data tokenization complete.")
+        except Exception as e:
+            msg = f"Error during Dataset conversion or tokenization: {str(e)}"
+            logger.error(msg, exc_info=True)
+            raise RuntimeError(msg) from e
         
         return tokenized_dataset, self.data_collator
     
