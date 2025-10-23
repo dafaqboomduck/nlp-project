@@ -8,7 +8,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class PredictEngine:
+class EmotionCorePredictor:
     """
     A class responsible for handling model loading, preprocessing orchestration,
     and performing inference using Hugging Face's :class:`~transformers.Trainer` API.
@@ -34,47 +34,60 @@ class PredictEngine:
         self.checkpoint = checkpoint
 
         try:
-            # Determine device: Use provided device, or auto-select
+            # --- Device Setup ---
             if device is None:
-                self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
+                is_cuda = torch.cuda.is_available()
+                self.device = 'cuda' if is_cuda else 'cpu'
+                if not is_cuda:
+                    logger.warning("No CUDA device found. Falling back to CPU.")
+            elif 'cuda' in device.lower() and not torch.cuda.is_available():
+                logger.error(f"Requested device '{device}', but no CUDA device is available.")
+                raise RuntimeError("CUDA device requested but not available.")
             else:
                 self.device = device
 
             logger.info(f"Initializing PredictEngine with model: {self.checkpoint}")
             logger.info(f"Device selected for inference: {self.device}")
 
-            # Initialize Preprocessor: Handles tokenization logic
-            self.preprocessor = InferencePreprocessor(self.checkpoint, max_length=128)
+            # Initialize Preprocessor (Handles its own exceptions)
+            self.preprocessor = InferencePreprocessor(self.checkpoint, max_length=128) 
 
-            # Load Model and move it to the selected device
-            logger.info("Loading model from checkpoint...")
-            self.model = AutoModelForSequenceClassification.from_pretrained(self.checkpoint).to(self.device)
-            self.model.eval() # Set model to evaluation mode
-            logger.info("Model successfully loaded.")
+            # --- Model Loading ---
+            logger.info(f"Loading model from checkpoint '{self.checkpoint}'...")
+            try:
+                self.model = AutoModelForSequenceClassification.from_pretrained(self.checkpoint).to(self.device)
+                logger.info("Model successfully loaded.")
+            except Exception as e:
+                msg = f"Failed to load model from checkpoint {self.checkpoint}. See details: {e}"
+                logger.error(msg)
+                raise ImportError(msg)
+            
+            # Set model to evaluation mode
+            self.model.eval() 
 
-            # Configure TrainingArguments for inference only
+            # --- Trainer Setup ---
             training_args = TrainingArguments(
                 output_dir="./tmp_trainer_output",
                 per_device_eval_batch_size=32,
                 dataloader_drop_last=False,
                 no_cuda=self.device == 'cpu',
-                logging_dir="./logs",
                 report_to="none",
-                disable_tqdm=True # Disable TQDM for clean log output
+                disable_tqdm=True 
             )
             
-            # Initialize Trainer: The main batch prediction utility
             self.trainer = Trainer(
                 model=self.model,
                 args=training_args,
-                tokenizer=self.preprocessor.get_tokenizer(),
-                data_collator=self.preprocessor.data_collator,
+                tokenizer=self.preprocessor.get_tokenizer(), 
+                data_collator=self.preprocessor.data_collator, 
             )
-            logger.info("Trainer initialized successfully.")
+            logger.info("Hugging Face Trainer initialized successfully.")
 
+        except RuntimeError:
+            raise
         except Exception as e:
-            msg = f"Failed to initialize PredictEngine. Details: {str(e)}"
-            logger.error(msg)
+            msg = f"Failed to initialize PredictEngine due to model/library error. Details: {str(e)}"
+            logger.error(msg, exc_info=True)
             raise RuntimeError(msg) from e
         
     def _postprocess(self, predictions):

@@ -2,7 +2,7 @@ from tqdm import tqdm
 import pandas as pd
 from typing import Dict, Any
 
-from src.predict.emotion_core import PredictEngine
+from src.predict.emotion_core import EmotionCorePredictor
 from src.predict.emotion_fine import EmotionFinePredictor 
 from src.predict.emotion_intensity import EmotionIntensityPredictor
 from src.predict.config import CORE_CHECKPOINT, FINE_CHECKPOINT, DATA_PATH, INPUT_COLUMN, EMOTION_MAP 
@@ -81,7 +81,7 @@ class EmotionAnalysisManager:
         logger.info(f"Starting Core Emotion prediction with checkpoint: {checkpoint}")
         
         # 1. Initialize the PredictEngine
-        engine = PredictEngine(
+        engine = EmotionCorePredictor(
             checkpoint=checkpoint,
             # Pass device_id from manager, using -1 to signify CPU if needed
             device=f"cuda:{self.device_id}" if self.device_id >= 0 else 'cpu' 
