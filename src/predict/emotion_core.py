@@ -87,7 +87,7 @@ class EmotionCorePredictor:
             self.trainer = Trainer(
                 model=self.model,
                 args=training_args,
-                tokenizer=self.preprocessor.get_tokenizer(), 
+                processing_class=self.preprocessor.get_tokenizer(), 
                 data_collator=self.preprocessor.data_collator, 
             )
             logger.info("Hugging Face Trainer initialized successfully.")
