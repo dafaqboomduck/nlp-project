@@ -117,7 +117,7 @@ class EmotionFinePredictor:
         # Group by core emotion
         grouped = {}
         for i, (text, core) in enumerate(zip(sentences, core_emotions)):
-            if core in self.fine_emotion_map:
+            if core in self.fine_emotions:
                 grouped.setdefault(core, []).append((text, i))
             else:
                 results[i] = 'N/A'
@@ -125,7 +125,7 @@ class EmotionFinePredictor:
         # Batch classify per emotion
         for emotion, items in grouped.items():
             texts, idxs = zip(*items)
-            labels = self.fine_emotion_map[emotion]
+            labels = self.fine_emotions[emotion]
 
             try:
                 preds = self.classifier(list(texts), labels, multi_label=False)
