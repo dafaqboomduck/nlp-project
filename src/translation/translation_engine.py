@@ -6,11 +6,12 @@ from transformers import MarianMTModel, MarianTokenizer
 import torch
 from typing import List, Tuple, Optional, Literal
 import csv
+from pathlib import Path
 import os
 
 # Internal project imports to align with project structure
 from src.helpers import CSVHandler
-from src.config import TRANSRIPT_PATH
+from src.config import TRANSCRIPT_PATH
 from src.translation.config import MODEL_EN_NL_PATH, MODEL_NL_EN_PATH, TRANSLATED_OUTPUT_PATH
 
 logger = logging.getLogger(__name__)
@@ -26,7 +27,7 @@ class TranslationEngine:
     SUPPORTED_LANGS = {'en', 'nl'}
     
     def __init__(self,
-                 transcript_input: str | pd.DataFrame = TRANSRIPT_PATH, 
+                 transcript_input: str | Path | pd.DataFrame = TRANSCRIPT_PATH, 
                  model_en_nl_path: str = MODEL_EN_NL_PATH, 
                  model_nl_en_path: str = MODEL_NL_EN_PATH,
                  output_path: str = TRANSLATED_OUTPUT_PATH):
@@ -201,7 +202,7 @@ class TranslationEngine:
         elif self.transcript_df_initial is not None:
             transcript_df = self.transcript_df_initial.copy()
             logger.info(f"Loaded the transcript_df variable successfully from the argument 'transcript_df_initial' provided in the class's initialization.")
-        elif isinstance(self.transcript_input, str):
+        elif isinstance(self.transcript_input, (str, Path)):
             transcript_df = csv_handler.read_csv(self.transcript_input)
             logger.info(f"Loaded the transcript_df variable successfully from {self.transcript_input} using the CSVHandler.")
         else:
