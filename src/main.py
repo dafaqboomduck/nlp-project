@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 from src.processing import FeatureEngine
 from src.transcript import TranscriptEngine
 from src.translation import TranslationEngine
-from src.predict import EmotionAnalysisManager
+from src.predict import PredictEngine
 
 from src.config import AUDIO_PATH, TRANSCRIPT_PATH, PREDS_PATH
 from src.processing.config import FEATURE_OUTPUT_PATH as FEATURES
@@ -42,9 +42,9 @@ def main():
 
     # 2. Emotion Analysis Step
     # Create an instance of the class
-    emotion_manager = EmotionAnalysisManager()
+    predict_engine = PredictEngine()
     # Call the create_features method on the instance
-    emotion_manager.run_emotion_classification()
+    predict_engine.run_emotion_classification(input_path=TRANSLATIONS, output_path=PREDS_PATH)
 
 
     # TEMPORARILY DISABLED

@@ -1,2 +1,2 @@
 from .emotion_core import EmotionCorePredictor
-from .emotion_analysis import EmotionAnalysisManager
+from .predict_engine import PredictEngine

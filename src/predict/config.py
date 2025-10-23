@@ -24,4 +24,3 @@ INTENSITY_LABELS = ['weak', 'moderate', 'intense']
 CORE_CHECKPOINT = ARTIFACTS_DIR / 'bert-base'
 FINE_CHECKPOINT = 'facebook/bart-large-mnli'
 DATA_PATH = TRANSLATIONS
-INPUT_COLUMN = "Round_Trip_Translation_EN"
