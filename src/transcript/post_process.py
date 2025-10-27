@@ -59,7 +59,7 @@ class TranscriptionPostProcessor:
         
         return final_text
 
-class TranscriptionPostProcessorLLM:
+class TranscriptionGrammarPostProcessor:
     def __init__(self, device=None):
         """ 
         Initializes the post-processor with a specialized grammar correction model.
