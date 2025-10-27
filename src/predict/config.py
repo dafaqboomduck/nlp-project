@@ -21,6 +21,6 @@ FINE_EMOTION_MAP = {
 
 INTENSITY_LABELS = ['weak', 'moderate', 'intense']
 
-CORE_CHECKPOINT = ARTIFACTS_DIR / 'distilbert-base'
+CORE_CHECKPOINT = ARTIFACTS_DIR / 'roberta-finer'
 FINE_CHECKPOINT = 'facebook/bart-large-mnli'
 DATA_PATH = TRANSLATIONS
