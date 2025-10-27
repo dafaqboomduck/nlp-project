@@ -11,7 +11,7 @@ from typing import Literal
 import logging
 
 from src.transcript.config import BASE_URL, HEADERS
-from src.transcript.post_process import TranscriptionPostProcessor
+from src.transcript.post_process import TranscriptionGrammarPostProcessor
 from src.helpers import CSVHandler
 
 logger = logging.getLogger(__name__)
@@ -111,7 +111,7 @@ class TranscriptEngine:
         if post_process == 'simple': # If "simple" use the _split_into_sentences method to process the raw output
             sentences = self._split_into_sentences(transcript_text)
         elif post_process == 'transformer_based': # If "transformer_based" use the TranscriptionPostProcessor class to process the raw output
-            processor = TranscriptionPostProcessor(punctuation_model_name='HuggingFaceH4/zephyr-7b-beta')
+            processor = TranscriptionGrammarPostProcessor()
             sentences = processor.process(transcript_text)
         else:
             # Otherwise use the raw transcript text as output 
