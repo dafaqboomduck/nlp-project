@@ -6,7 +6,7 @@
 **Date Created: 28/10/2025**  
 **Last Updated:28/10/2025**  
 **Author(s):Razvan Nica & Filip Šarík**  
-**Institution / Organization: BUas ADS&AI Students**  
+**Institution / Organization: BUas ADS&AI**  
 
 **Short Description:**  
 This model is a fine-tuned checkpoint of the **[distilbert/distilbert-base-uncased-finetuned-sst-2-english](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english)** model.
@@ -23,7 +23,7 @@ It's designed to **classify emotions** in English text, predicting one of **seve
 
 ---
 
-## 🎯 Intended Use
+## Intended Use
 
 ### **Primary Intended Use**
 
@@ -47,7 +47,7 @@ The model is intended for users who possess a basic working knowledge of the **P
 
 ---
 
-## 🧠 Model Details
+## Model Details
 ### **Model Architecture:**  
 This model utilizes a **Transformer architecture**, leveraging the base of the **DistilBERT** model family.
 
@@ -55,7 +55,7 @@ Specifically, it is a fine-tuned checkpoint of the **[distilbert/distilbert-base
 
 For detailed information on the base architecture, please refer to the link above.
 
-### **Framework / Libraries Used:**  
+**Framework / Libraries Used:**  
 The model was developed, trained, and is intended to be used primarily with the following Python-based libraries:
 
 * **PyTorch:** Used as the underlying deep learning framework for defining and running the model.
@@ -81,6 +81,8 @@ The model was trained on a composite dataset formed by combining three distinct 
     * Source: [https://huggingface.co/datasets/google-research-datasets/go_emotions](https://huggingface.co/datasets/google-research-datasets/go_emotions)
 
 The emotions in these datasets were either remapped or removed when they didn't match our 7 class distribution. 
+
+The final dataset can be found [here](/Data/CSV/sentiment_data/combined_emotion_dataset.csv)
   
 
 ### **Validation / Test Data:**  
@@ -100,7 +102,7 @@ A custom test set was created to better align with the model's primary use case 
 
 
 ## 📊 Performance Metrics and Evaluation
-See details at: /deliverables/Task 9/Error analysis.docx
+See details at: **[ERROR ANALYSIS DOCUMENT](/deliverables/Task%209/Error%20analysis.pdf)**
 
 ---
 
@@ -112,18 +114,33 @@ See details at: /deliverables/Task 9/Error analysis.docx
 
 ## 📦 Deployment and Usage
 **Dependencies:**  
-_List required libraries, frameworks, and versions._
+See details at: **[requirements.txt](requirements.txt)**
 
 **Hardware Requirements:**  
-_Describe compute requirements for inference._
+We recommend using a device equipped with a GPU to enable faster and more efficient inference. While inference can also be performed on a CPU, it will generally be less efficient.
 
-**Example Usage:**  
+**Example Usage (EmotionCorePredictor):**  
 ```python
 # Example inference code snippet
+from src.predict import EmotionCorePredictor
+import pandas as pd
 
+df = pd.read_csv(r"path/to/your/data.csv")
+
+checkpoint = "dafaqboomduck/distilbert-sentiment-fine"
+
+# Initialize and Run EmotionCorePredictor
+engine = EmotionCorePredictor(checkpoint)
+
+# Save the predictions inside the preds variable
+preds = engine.predict(df, column='Sentence')
+
+df['Core Emotion'] = preds
+
+print(df[['Sentence', 'Core Emotion']])
 ```
 
-## 🚀 Recommendations for Use
+## Recommendations for Use
 
 ### **Model Inputs**
 
@@ -136,6 +153,8 @@ This preprocessing step is mandatory and ensures the text is:
 
 > **Warning:** Failure to apply this exact preprocessing step will result in incorrect or unreliable predictions.
 
+> **NOTE:** When using the EmotionCorePredictor class from [src.predict](/src/predict/emotion_core.py), it will handle the necessary steps for you automatically. 
+
 ---
 
 ### **Model Outputs**
@@ -144,7 +163,9 @@ The model returns a tensor containing **raw logits** or **probabilities** for ea
 
 To obtain the single, most probable emotion prediction for a given input sentence, we recommend applying the **argmax** function over the output tensor.
 
-The resulting integer ID can be mapped back to its corresponding emotion label using the following dictionary:
+> **NOTE:** When using the `.predict()` method of the EmotionCorePredictor class from [src.predict](/src/predict/emotion_core.py), it automatically post processes the raw output of the model by applying the **argmax** function over it. 
+
+The resulting integer IDs can be mapped back to their corresponding emotion labels using the following dictionary:
 
 ```python
 EMOTION_MAP: Dict[int, str] = {
