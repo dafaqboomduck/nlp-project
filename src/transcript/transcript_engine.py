@@ -92,41 +92,43 @@ class TranscriptEngine:
         # Determine the file path/URL that will be passed to transcription
         temp_audio_file = None # To track files created for cleanup
         transcription_source = None
+        input_source = str(input_source)
 
         # 2. Handle YouTube URL - FORCE LOCAL DOWNLOAD AND CONVERSION
-        if self.youtube_downloader._is_youtube_url(input_source):
-            logger.info(f"Input is a YouTube URL. Downloading and converting to local audio file...")
+        try:
+            if self.youtube_downloader._is_youtube_url(input_source):
+                logger.info(f"Input is a YouTube URL. Downloading and converting to local audio file...")
+                
+                # Use a temporary filename base for the downloaded file
+                temp_base_filename = "temp_youtube_audio"
+                
+                # The downloader returns the final path to the MP3 file
+                local_mp3_path = self.youtube_downloader.download_audio_from_youtube(
+                    url=input_source, 
+                    output_path=temp_base_filename
+                )
+                
+                # Update the source to the local file path and set the cleanup file
+                transcription_source = local_mp3_path
+                temp_audio_file = local_mp3_path
             
-            # Use a temporary filename base for the downloaded file
-            temp_base_filename = "temp_youtube_audio"
-            
-            # The downloader returns the final path to the MP3 file
-            local_mp3_path = self.youtube_downloader.download_audio_from_youtube(
-                url=input_source, 
-                output_path=temp_base_filename
-            )
-            
-            # Update the source to the local file path and set the cleanup file
-            transcription_source = local_mp3_path
-            temp_audio_file = local_mp3_path
-        
-        # 3. Handle Local Video File (check common video extensions)
-        elif os.path.exists(input_source) and input_source.lower().endswith(('.mp4', '.mov', '.avi', '.mkv')):
-            logger.info(f"Input is a local video file. Converting to audio...")
-            # Use a temporary filename that the conversion utility saves to
-            temp_audio_file_base = "temp_converted_audio.mp3"
-            
-            local_mp3_path = self.media_converter.convert_video_to_audio(
-                video_path=input_source, 
-                output_audio_path=temp_audio_file_base
-            )
-            
-            # Update the source to the local file path and set the cleanup file
-            transcription_source = local_mp3_path
-            temp_audio_file = local_mp3_path
-        elif os.path.exists(input_source) and input_source.lower().endswith(('.mp3', 'wav')):
-            transcription_source = input_source
-        else:
+            # 3. Handle Local Video File (check common video extensions)
+            elif os.path.exists(input_source) and input_source.lower().endswith(('.mp4', '.mov', '.avi', '.mkv')):
+                logger.info(f"Input is a local video file. Converting to audio...")
+                # Use a temporary filename that the conversion utility saves to
+                temp_audio_file_base = "temp_converted_audio.mp3"
+                
+                local_mp3_path = self.media_converter.convert_video_to_audio(
+                    video_path=input_source, 
+                    output_audio_path=temp_audio_file_base
+                )
+                
+                # Update the source to the local file path and set the cleanup file
+                transcription_source = local_mp3_path
+                temp_audio_file = local_mp3_path
+            elif os.path.exists(input_source) and input_source.lower().endswith(('.mp3', 'wav')):
+                transcription_source = input_source
+        except:
             msg = f"Cannot use {input_source} as an input for the pipeline. Please provide an audio file, a video file, or a YouTube Video link."
             logger.error(msg)
             raise ValueError(msg)
