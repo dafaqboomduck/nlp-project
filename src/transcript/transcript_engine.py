@@ -12,7 +12,7 @@ import logging
 
 # Assuming MediaConverter and YouTubeDownloader are available
 from src.transcript.config import BASE_URL, HEADERS
-from src.transcript.post_process import TranscriptionPostProcessor
+from src.transcript.post_process import TranscriptionGrammarPostProcessor
 from src.helpers import CSVHandler
 
 # Importing the new utility classes
@@ -143,7 +143,7 @@ class TranscriptEngine:
                 sentences = self._split_into_sentences(transcript_text)
             elif post_process == 'transformer_based':
                 # Note: The punctuation_model_name might need to be configurable
-                processor = TranscriptionPostProcessor(punctuation_model_name='HuggingFaceH4/zephyr-7b-beta')
+                processor = TranscriptionGrammarPostProcessor()
                 sentences = processor.process(transcript_text)
             else:
                 sentences = [transcript_text] # Ensure it's iterable for CSVHandler

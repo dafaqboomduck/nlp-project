@@ -27,7 +27,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:01:05,1900-01-01 00:01:07,"I mean, I could sit here all day",ik kan hier niet zitten,i can't sit down,1,The whole sentence is different.
 1900-01-01 00:01:07,1900-01-01 00:01:09,and have maybe 4 tables at the most.,en misschien bij de [UNK] .,and maybe with the [UNK] .,1,The whole sentence is different.
 1900-01-01 00:01:09,1900-01-01 00:01:11,"How many tables did you have, Jen?","hoeveel [UNK] heb je [UNK] , jen ?","how many [UNK] you got , jen ?",2,"It couldn't translate ""tables"" and ""got"" should be ""have."""
-1900-01-01 00:01:11,1900-01-01 00:01:12,I only had one.,ik heb er maar één gehad .,i've only had one .,2,"Missed the word ""have""."
+1900-01-01 00:01:11,1900-01-01 00:01:12,I only had one.,ik heb er maar ï¿½ï¿½n gehad .,i've only had one .,2,"Missed the word ""have""."
 1900-01-01 00:01:12,1900-01-01 00:01:15,That doesn't even pay for the costs,dat betaalt niet eens voor het [UNK],that doesn't pay for the [UNK],2,"The word ""even"" is missing and it couldn't translate ""costs."""
 1900-01-01 00:01:15,1900-01-01 00:01:17,of just running electricity.,voor [UNK] .,for [UNK] .,1,The whole sentence is different.
 1900-01-01 00:01:17,1900-01-01 00:01:19,Who's going to bring the people in?,wie gaat de mensen binnen brengen ?,who's going into the people inside ?,1,"""into"" should be ""to bring"" and ""inside"" should be ""in."""
@@ -50,7 +50,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:02:00,1900-01-01 00:02:03,"When Tatiana manages the restaurant,","als [UNK] het restaurant [UNK] ,","as [UNK] the restaurant , [UNK] ,",1,The whole sentence is different.
 1900-01-01 00:02:03,1900-01-01 00:02:05,usually that consists of standing around,meestal dat [UNK] de [UNK] rond,usually that [UNK] around the [UNK],2,Many [UNK] present. Couldn't translate some rare words.
 1900-01-01 00:02:05,1900-01-01 00:02:07,with a glass of wine in her hand.,met een glas van haar hand .,with a glass of her hand .,2,"Missed ""of wine"" and instead of ""of"" there should be ""in."""
-1900-01-01 00:02:07,1900-01-01 00:02:08,All right.,oké .,okay .,1,"Lost in translation from dutch, the phrase is different but has the same meaning."
+1900-01-01 00:02:07,1900-01-01 00:02:08,All right.,okï¿½ .,okay .,1,"Lost in translation from dutch, the phrase is different but has the same meaning."
 1900-01-01 00:02:08,1900-01-01 00:02:09,She's very disrespectful.,ze is erg [UNK] .,she's very [UNK] .,2,"Couldn't translate the word ""disrespectful."""
 1900-01-01 00:02:09,1900-01-01 00:02:11,You're talking out of your ass.,je praat met je kont .,you talk to your ass .,1,The whole sentence is different.
 1900-01-01 00:02:11,1900-01-01 00:02:12,Rude.,grof .,[UNK] .,2,"Couldn't trasnlate ""rude."""
@@ -60,7 +60,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:02:15,1900-01-01 00:02:17,Don't you dare.,waag het niet .,don't you dare .,3,
 1900-01-01 00:02:18,1900-01-01 00:02:20,I need a drink.,ik heb een drankje nodig .,i need a drink .,3,
 1900-01-01 00:02:20,1900-01-01 00:02:23,Tatiana doesn't know how to handle being an owner.,[UNK] weet niet hoe het een eigenaar is .,[UNK] don't know how the owner is .,1,The whole sentence is different.
-1900-01-01 00:02:23,1900-01-01 00:02:25,"Don't drink so much, okay?","drink niet zoveel , oké ?","don't drink so much , okay ?",3,
+1900-01-01 00:02:23,1900-01-01 00:02:25,"Don't drink so much, okay?","drink niet zoveel , okï¿½ ?","don't drink so much , okay ?",3,
 1900-01-01 00:02:25,1900-01-01 00:02:27,My mom and my sister already resent me,mijn moeder en mijn zus heeft me al [UNK] .,my mom and my sister has already [UNK] me .,2,"Couldn't translate the word ""resent."""
 1900-01-01 00:02:27,1900-01-01 00:02:29,for asking them to put their houses on the line.,om hun [UNK] in de rij te zetten .,to put them in the row .,1,The whole sentence is different.
 1900-01-01 00:02:29,1900-01-01 00:02:31,I don't know how we're gonna make it this month.,ik weet niet hoe we het moeten maken .,i don't know how to do it .,1,The whole sentence is different.
@@ -75,7 +75,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:02:48,1900-01-01 00:02:51,I really need Chef Ramsay's help.,ik heb [UNK] hulp nodig .,i need [UNK] help .,2,It couldn't translate the name.
 1900-01-01 00:02:51,1900-01-01 00:02:53,"Oh, I'm scared what's going to happen.","oh , ik ben bang wat er gaande is .","oh , i'm afraid what's going on .",1,"The word ""afraid"" should be ""scared"" and ""on"" should be ""to happen."""
 1900-01-01 00:02:53,1900-01-01 00:02:56,"I just don't understand, like, what else I can do.","ik begrijp het gewoon niet , zoals ik kan .","i just don't understand , like i can .",1,"It missed the phrase ""what else"" and the word ""do."""
-1900-01-01 00:03:04,1900-01-01 00:03:07,A rare rainy day in California.,een zeldzaam [UNK] dag in californië .,a rare day in california .,2,"It missed the word ""rainy."""
+1900-01-01 00:03:04,1900-01-01 00:03:07,A rare rainy day in California.,een zeldzaam [UNK] dag in californiï¿½ .,a rare day in california .,2,"It missed the word ""rainy."""
 1900-01-01 00:03:07,1900-01-01 00:03:10,What better way to pick you up than a nice lunch?,hoe kun je je liever [UNK] ophalen ?,how can you pick up [UNK] [UNK] ?,1,Many [UNK] present and the beginning of the sentence is wrong.
 1900-01-01 00:03:10,1900-01-01 00:03:12,"Right, Charlie's Italian food.","ja , [UNK] eten .","yeah , [UNK] food .",1,"It couldn't translate ""Charlie's Italian"" and instead of ""yeah"" there should be ""right."""
 1900-01-01 00:03:13,1900-01-01 00:03:15,Hi.,hoi .,hi .,3,
@@ -98,7 +98,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:03:37,1900-01-01 00:03:38,So there's no Charlie?,dus er is geen charlie ?,so there's no charlie ?,3,
 1900-01-01 00:03:38,1900-01-01 00:03:39,"No, no.","nee , nee .","no , no .",3,
 1900-01-01 00:03:39,1900-01-01 00:03:40,I used to work here as a waitress.,ik werk hier als een [UNK] .,i work here like a [UNK] .,1,"It missed the words ""used to"" and couldn't translate ""waitress."""
-1900-01-01 00:03:40,1900-01-01 00:03:41,"Oh, okay.",oké .,okay .,2,"Missed the filler word ""oh."""
+1900-01-01 00:03:40,1900-01-01 00:03:41,"Oh, okay.",okï¿½ .,okay .,2,"Missed the filler word ""oh."""
 1900-01-01 00:03:41,1900-01-01 00:03:42,When Charlie owned it.,toen charlie het [UNK] .,when charlie died .,1,"""died"" should be ""owned it."""
 1900-01-01 00:03:42,1900-01-01 00:03:44,And then he sold it to another person named Simon.,en toen verkocht hij de andere persoon op simon .,and then he sold the other person on simon .,1,"""the other"" should be ""to another"" and ""on"" should be ""named."""
 1900-01-01 00:03:44,1900-01-01 00:03:45,"Okay, great.",prima .,fine .,1,Used different word due to the dutch translation.
@@ -139,7 +139,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:04:35,1900-01-01 00:04:37,Whenever working in a business to running a business,wanneer werkt in een zaak,when works in a business,1,The whole sentence is different.
 1900-01-01 00:04:37,1900-01-01 00:04:38,is completely different scenario.,[UNK] .,[UNK] .,1,It couldn't translate anything.
 1900-01-01 00:04:38,1900-01-01 00:04:39,"Yeah, it's completely different.","ja , het is helemaal anders .","yeah , it's totally different .",2,"""totally"" should be ""completely."""
-1900-01-01 00:04:39,1900-01-01 00:04:41,OK.,oké .,okay .,3,
+1900-01-01 00:04:39,1900-01-01 00:04:41,OK.,okï¿½ .,okay .,3,
 1900-01-01 00:04:41,1900-01-01 00:04:43,How much money did you need to get on the table,hoeveel geld heb je nodig .,how many money you need .,1,The whole sentence is different.
 1900-01-01 00:04:43,1900-01-01 00:04:44,before you took over?,voor u [UNK] ?,for you [UNK] ?,1,The whole sentence is different.
 1900-01-01 00:04:44,1900-01-01 00:04:47,Mom put all her retirement money into it.,mama heeft haar [UNK] in het [UNK] .,mom [UNK] her in the [UNK] .,1,Too many [UNK] present in the sentence.
@@ -151,7 +151,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:04:56,1900-01-01 00:04:57,Wow.,wauw .,wow .,3,
 1900-01-01 00:04:57,1900-01-01 00:04:59,And how much money did you put in?,hoeveel geld heb je gedaan ?,how many money did you do ?,,
 1900-01-01 00:04:59,1900-01-01 00:05:02,"Probably like $1,000.",waarschijnlijk [UNK] dollar .,probably [UNK] dollars .,,
-1900-01-01 00:05:02,1900-01-01 00:05:03,OK.,oké .,okay .,,
+1900-01-01 00:05:02,1900-01-01 00:05:03,OK.,okï¿½ .,okay .,,
 1900-01-01 00:05:03,1900-01-01 00:05:04,"Financially, where are we?","[UNK] , waar zijn we ?","[UNK] , where are we ?",,
 1900-01-01 00:05:04,1900-01-01 00:05:06,The restaurant's in debt at this point.,de [UNK] ligt op dit moment .,the [UNK] is at this time .,,
 1900-01-01 00:05:06,1900-01-01 00:05:07,That's not good.,dat is niet goed .,that's not good .,,
@@ -168,7 +168,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:05:20,1900-01-01 00:05:21,Wow.,wauw .,wow .,,
 1900-01-01 00:05:21,1900-01-01 00:05:24,So then what's the changes you made when you bought it?,wat heb jij veranderd ?,what did you change ?,,
 1900-01-01 00:05:24,1900-01-01 00:05:26,Nothing changed.,niets verandert .,nothing changes .,,
-1900-01-01 00:05:26,1900-01-01 00:05:27,OK.,oké .,okay .,,
+1900-01-01 00:05:26,1900-01-01 00:05:27,OK.,okï¿½ .,okay .,,
 1900-01-01 00:05:27,1900-01-01 00:05:29,"So Simon ran it in a bad way, didn't",simon maakte het in een slechte manier .,simon made it in a poor way .,,
 1900-01-01 00:05:29,1900-01-01 00:05:32,"give a shit about the customers, and it was appallingly led.",geef een shit over de klanten en het werd [UNK] .,give me a shit about the customers .,,
 1900-01-01 00:05:32,1900-01-01 00:05:34,But you haven't changed anything.,maar je bent niet veranderd .,but you haven't changed .,,
@@ -194,7 +194,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:06:15,1900-01-01 00:06:17,"She gets paid that much, but she also gets a car.",ze heeft ook een auto betaald .,she paid a car too .,,
 1900-01-01 00:06:17,1900-01-01 00:06:20,"She gets her cell phone paid for, her gas.",ze krijgt haar mobiel .,she'll have her phone .,,
 1900-01-01 00:06:20,1900-01-01 00:06:23,Wow.,wauw .,wow .,,
-1900-01-01 00:06:23,1900-01-01 00:06:24,OK.,oké .,okay .,,
+1900-01-01 00:06:23,1900-01-01 00:06:24,OK.,okï¿½ .,okay .,,
 1900-01-01 00:06:24,1900-01-01 00:06:27,"So if you could get out of this, would you do it?","dus als je dit zou kunnen halen , zou je het dan doen ?","so if you could bring this , would you do it ?",,
 1900-01-01 00:06:27,1900-01-01 00:06:30,"Looking back, we did make a very, you know,","kijk terug , we hebben een zeer [UNK] .","look back , we have a very [UNK] [UNK] .",,
 1900-01-01 00:06:30,1900-01-01 00:06:32,risky and stupid decision.,te bang en dom .,too scared and dom .,,
@@ -212,13 +212,13 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:07:02,1900-01-01 00:07:04,Here's some water for you.,hier is het water voor je .,here's the water for you .,,
 1900-01-01 00:07:04,1900-01-01 00:07:05,Thank you very much.,bedankt .,thanks .,,
 1900-01-01 00:07:05,1900-01-01 00:07:07,"My name is Genevieve, and I'm going to be your server.","ik heet [UNK] , en ik ga je server [UNK] .","my name is [UNK] , and i'm gonna [UNK] you .",,
-1900-01-01 00:07:07,1900-01-01 00:07:08,OK.,oké .,okay .,,
+1900-01-01 00:07:07,1900-01-01 00:07:08,OK.,okï¿½ .,okay .,,
 1900-01-01 00:07:08,1900-01-01 00:07:09,Can I get you started with anything?,mag ik je met iets beginnen ?,may i start with you something ?,,
 1900-01-01 00:07:09,1900-01-01 00:07:10,Let's go.,laten we gaan .,let's go .,,
 1900-01-01 00:07:10,1900-01-01 00:07:12,"Right, let's start off with the toasted ravioli.",we beginnen met de [UNK] .,let's start with the [UNK] .,,
-1900-01-01 00:07:12,1900-01-01 00:07:13,OK.,oké .,okay .,,
+1900-01-01 00:07:12,1900-01-01 00:07:13,OK.,okï¿½ .,okay .,,
 1900-01-01 00:07:13,1900-01-01 00:07:14,The frutta di mame.,de [UNK] [UNK] [UNK] .,the [UNK] [UNK] [UNK] .,,
-1900-01-01 00:07:14,1900-01-01 00:07:15,OK.,oké .,okay .,,
+1900-01-01 00:07:14,1900-01-01 00:07:15,OK.,okï¿½ .,okay .,,
 1900-01-01 00:07:15,1900-01-01 00:07:16,The lasagna.,de [UNK] .,the [UNK] .,,
 1900-01-01 00:07:16,1900-01-01 00:07:18,"It's not your typical lasagna, so be",het is niet typisch [UNK] .,it's not like [UNK] .,,
 1900-01-01 00:07:18,1900-01-01 00:07:22,prepared for something different.,voorbereid voor iets anders .,- something else .,,
@@ -228,7 +228,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:07:26,1900-01-01 00:07:27,Are you sure?,weet je het zeker ?,are you sure ?,,
 1900-01-01 00:07:27,1900-01-01 00:07:28,Absolutely.,absoluut .,absolutely .,,
 1900-01-01 00:07:28,1900-01-01 00:07:31,"We're in California, so why not chicken pizza?","we zijn in california , waarom pizza niet ?","we're in california , why aren't we ?",,
-1900-01-01 00:07:31,1900-01-01 00:07:32,OK.,oké .,okay .,,
+1900-01-01 00:07:31,1900-01-01 00:07:32,OK.,okï¿½ .,okay .,,
 1900-01-01 00:07:32,1900-01-01 00:07:34,Excellent.,uitstekend .,excellent .,,
 1900-01-01 00:07:34,1900-01-01 00:07:35,And who makes the bread?,en wie maakt het brood ?,and who [UNK] the bread ?,,
 1900-01-01 00:07:35,1900-01-01 00:07:37,"Casimiro, our head chef.","[UNK] , onze [UNK] .","[UNK] , our [UNK] .",,
@@ -257,9 +257,9 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:08:26.603991,1900-01-01 00:08:28.303991,"Tatiana, does she eat that dish?","[UNK] , eet ze die [UNK] ?","[UNK] , are they eating that [UNK] ?",,
 1900-01-01 00:08:28.303991,1900-01-01 00:08:29.603991,No.,nee .,no .,,
 1900-01-01 00:08:29.603991,1900-01-01 00:08:30.803991,"No, will you ask her to taste one for me?","nee , wil je haar smaak vragen voor me ?","no , you wanna ask her taste her ?",,
-1900-01-01 00:08:30.803991,1900-01-01 00:08:31.903991,OK.,oké .,okay .,,
+1900-01-01 00:08:30.803991,1900-01-01 00:08:31.903991,OK.,okï¿½ .,okay .,,
 1900-01-01 00:08:31.903991,1900-01-01 00:08:32.803991,And then I think she'll 86 them.,ik denk dat ze hen [UNK] .,i think they [UNK] them .,,
-1900-01-01 00:08:32.803991,1900-01-01 00:08:33.703991,All right.,oké .,okay .,,
+1900-01-01 00:08:32.803991,1900-01-01 00:08:33.703991,All right.,okï¿½ .,okay .,,
 1900-01-01 00:08:33.703991,1900-01-01 00:08:34.803991,Toasted ravioli?,[UNK] [UNK] ?,[UNK] [UNK] ?,,
 1900-01-01 00:08:34.803991,1900-01-01 00:08:35.703991,Really?,echt ?,really ?,,
 1900-01-01 00:08:35.703991,1900-01-01 00:08:36.603991,Yeah.,ja .,yeah .,,
@@ -312,7 +312,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:09:59.103991,1900-01-01 00:10:00.603991,It's the lasagna.,het is de [UNK] .,it's the [UNK] .,,
 1900-01-01 00:10:00.603991,1900-01-01 00:10:03.103991,That's the lasagna?,is dat de [UNK] ?,is that the [UNK] ?,,
 1900-01-01 00:10:03.103991,1900-01-01 00:10:05.623991,The lasagna is vile.,de [UNK] is [UNK] .,the [UNK] is [UNK] .,,
-1900-01-01 00:10:05.623991,1900-01-01 00:10:08.123991,It's embarrassing to serve that to Chef Ramsay.,het is gênant voor die [UNK] .,it's embarrassing for that [UNK] .,,
+1900-01-01 00:10:05.623991,1900-01-01 00:10:08.123991,It's embarrassing to serve that to Chef Ramsay.,het is gï¿½nant voor die [UNK] .,it's embarrassing for that [UNK] .,,
 1900-01-01 00:10:08.123991,1900-01-01 00:10:09.123991,What's in the sauce?,wat zit er in de [UNK] ?,what's in the [UNK] ?,,
 1900-01-01 00:10:09.123991,1900-01-01 00:10:10.123991,Why is it that color?,waarom is het kleur van kleur ?,why is the color of color ?,,
 1900-01-01 00:10:10.123991,1900-01-01 00:10:11.123991,It's pink sauce.,het is pink [UNK] .,it's pink [UNK] .,,
@@ -339,7 +339,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:10:45.662991,1900-01-01 00:10:48.162991,Let me answer these questions.,laat me deze vragen beantwoorden .,let me answer this questions .,,
 1900-01-01 00:10:48.162991,1900-01-01 00:10:49.662991,"Still, there's always hope for the pizza.","nog , er is altijd hoop voor de pizza .",there's always hope for the pizza .,,
 1900-01-01 00:10:49.662991,1900-01-01 00:10:51.662991,Especially looking at it like that.,vooral zo .,especially about it .,,
-1900-01-01 00:10:51.662991,1900-01-01 00:10:52.662991,All right.,oké .,okay .,,
+1900-01-01 00:10:51.662991,1900-01-01 00:10:52.662991,All right.,okï¿½ .,okay .,,
 1900-01-01 00:10:52.662991,1900-01-01 00:10:54.162991,Maybe we can win him over with the pizza.,misschien kunnen we hem winnen over de pizza .,maybe we can win him over the pizza .,,
 1900-01-01 00:10:54.162991,1900-01-01 00:10:55.662991,"It's crispy, right?","het is [UNK] , toch ?","it's [UNK] , isn't it ?",,
 1900-01-01 00:10:55.662991,1900-01-01 00:10:56.662991,No.,nee .,no .,,
@@ -369,7 +369,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:11:42.703991,1900-01-01 00:11:44.203991,"Yeah, it's not funny.","ja , het is niet grappig .","yeah , it's not funny .",,
 1900-01-01 00:11:44.203991,1900-01-01 00:11:46.203991,"I don't know what the giggles and the laughing is about,",ik weet niet wat de [UNK] en het lachen gaat over .,i don't know what the [UNK] and it's laughing at .,,
 1900-01-01 00:11:46.203991,1900-01-01 00:11:48.703991,but the dishes have been dreadful.,maar de [UNK] zijn [UNK] .,but the [UNK] are [UNK] .,,
-1900-01-01 00:11:48.703991,1900-01-01 00:11:50.203991,OK.,oké .,okay .,,
+1900-01-01 00:11:48.703991,1900-01-01 00:11:50.203991,OK.,okï¿½ .,okay .,,
 1900-01-01 00:11:50.203991,1900-01-01 00:11:52.703991,"I'm trying not to cry, but he's going to come after me.","ik probeer niet te huilen , maar hij gaat achter me mee .","i'm not trying to cry , but he's going after me .",,
 1900-01-01 00:11:52.703991,1900-01-01 00:11:54.203991,I can feel it.,ik kan het voelen .,i can feel it .,,
 1900-01-01 00:11:54.203991,1900-01-01 00:11:57.203991,"Oh, my god.",mijn god .,"oh , my god .",,
@@ -403,7 +403,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:12:47.783991,1900-01-01 00:12:50.783991,"It's soaking wet, it's bland, and it's",het is nat . . .,it's wet . . .,,
 1900-01-01 00:12:50.783991,1900-01-01 00:12:52.783991,"1,000 miles away from anything called focaccia,","1 , 000 [UNK] van alles . . .","one , 000 [UNK] of all . . .",,
 1900-01-01 00:12:52.783991,1900-01-01 00:12:54.783991,let me tell you.,laat me je zeggen .,let me tell you .,,
-1900-01-01 00:12:54.783991,1900-01-01 00:12:55.783991,It's embarrassing.,het is gênant .,it's embarrassing .,,
+1900-01-01 00:12:54.783991,1900-01-01 00:12:55.783991,It's embarrassing.,het is gï¿½nant .,it's embarrassing .,,
 1900-01-01 00:12:55.783991,1900-01-01 00:12:58.783991,"Pink lasagna, stone cold in the center, piping","pink [UNK] , stone koud in het midden in het midden , [UNK]","pink [UNK] , stone cold in the middle of the middle , [UNK]",,
 1900-01-01 00:12:58.783991,1900-01-01 00:12:59.783991,hot on the right hand side.,[UNK] aan de hand .,turn on the hand .,,
 1900-01-01 00:12:59.783991,1900-01-01 00:13:00.783991,Disgusting.,walgelijk .,disgusting !,,
@@ -537,7 +537,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:17:44.706982,1900-01-01 00:17:46.126982,night for Chef Ramsay.,[UNK] voor [UNK] .,[UNK] for [UNK] .,,
 1900-01-01 00:17:46.126982,1900-01-01 00:17:48.607982,But things are so bad here at Charlie's.,maar dingen zijn hier zo slecht bij [UNK] .,but things are so bad at [UNK] .,,
 1900-01-01 00:17:48.607982,1900-01-01 00:17:49.507982,Chef.,chef .,chief .,,
-1900-01-01 00:17:49.507982,1900-01-01 00:17:50.706982,"I'll be two seconds, OK?","ik zal twee seconden zijn , oké ?","i'll be two seconds , okay ?",,
+1900-01-01 00:17:49.507982,1900-01-01 00:17:50.706982,"I'll be two seconds, OK?","ik zal twee seconden zijn , okï¿½ ?","i'll be two seconds , okay ?",,
 1900-01-01 00:17:50.706982,1900-01-01 00:17:53.166982,He decides to make one change right away.,hij besluit om een andere manier te veranderen .,he decides to change another way .,,
 1900-01-01 00:17:53.166982,1900-01-01 00:17:54.067982,Casamiro.,[UNK] .,[UNK] .,,
 1900-01-01 00:17:54.067982,1900-01-01 00:17:54.967982,Daniela.,[UNK] .,[UNK] .,,
@@ -573,7 +573,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:18:58.967982,1900-01-01 00:19:00.806982,They're like cat food.,ze zijn [UNK] .,they're [UNK] .,,
 1900-01-01 00:19:00.806982,1900-01-01 00:19:02.006982,How are you cooking yours?,hoe kun je de jouwe koken ?,how can you deal with yours ?,,
 1900-01-01 00:19:02.006982,1900-01-01 00:19:02.907982,I was searching.,ik was op zoek .,i was looking for .,,
-1900-01-01 00:19:02.907982,1900-01-01 00:19:04.107982,"OK, good.","oké , goed .","okay , good .",,
+1900-01-01 00:19:02.907982,1900-01-01 00:19:04.107982,"OK, good.","okï¿½ , goed .","okay , good .",,
 1900-01-01 00:19:04.107982,1900-01-01 00:19:05.006982,"Let me have a little taste of that, bring it out.",laat me daar een beetje smaak maken .,leave me a taste there .,,
 1900-01-01 00:19:10.707982,1900-01-01 00:19:12.586982,"Oh, that's nice.",wat leuk .,nice .,,
 1900-01-01 00:19:12.586982,1900-01-01 00:19:13.487982,Nothing.,niets .,nothing .,,
@@ -589,7 +589,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:19:30.067982,1900-01-01 00:19:31.526982,is 10 times greater.,10 keer [UNK] .,10 times [UNK] .,,
 1900-01-01 00:19:31.526982,1900-01-01 00:19:33.707982,Kasimiro couldn't make a meatball correctly.,[UNK] kon geen [UNK] maken .,[UNK] couldn't make any [UNK] .,,
 1900-01-01 00:19:33.707982,1900-01-01 00:19:36.006982,But I don't think he's a bad cook.,maar ik denk dat hij geen slecht koken .,but i think he's not [UNK] .,,
-1900-01-01 00:19:36.006982,1900-01-01 00:19:37.806982,Necesitamos enseñarlo en este.,[UNK] [UNK] en [UNK] .,[UNK] [UNK] and [UNK] .,,
+1900-01-01 00:19:36.006982,1900-01-01 00:19:37.806982,Necesitamos enseï¿½arlo en este.,[UNK] [UNK] en [UNK] .,[UNK] [UNK] and [UNK] .,,
 1900-01-01 00:19:37.806982,1900-01-01 00:19:39.107982,"Tu eres bueno, Kasimiro.","[UNK] [UNK] , [UNK] .","[UNK] [UNK] , [UNK] .",,
 1900-01-01 00:19:39.107982,1900-01-01 00:19:41.006982,You're bueno.,je bent [UNK] .,you're [UNK] .,,
 1900-01-01 00:19:41.006982,1900-01-01 00:19:41.907982,Be strong.,wees sterk .,be strong .,,
@@ -601,17 +601,17 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:19:57.187982,1900-01-01 00:19:58.687982,in an Italian restaurant.,in [UNK] restaurant .,in [UNK] restaurant .,,
 1900-01-01 00:19:58.687982,1900-01-01 00:20:01.127982,We've got to have a color on there that adds,we moeten kleur daar op die [UNK] .,we need to work out there .,,
 1900-01-01 00:20:01.127982,1900-01-01 00:20:02.886982,"richness and a nice, deep flavor.",[UNK] en een mooi [UNK] .,[UNK] and a nice [UNK] .,,
-1900-01-01 00:20:02.886982,1900-01-01 00:20:03.786982,OK.,oké .,okay .,,
+1900-01-01 00:20:02.886982,1900-01-01 00:20:03.786982,OK.,okï¿½ .,okay .,,
 1900-01-01 00:20:03.786982,1900-01-01 00:20:04.886982,And are we ready to order?,en zijn we klaar om te bestellen ?,and are we ready to order ?,,
 1900-01-01 00:20:04.886982,1900-01-01 00:20:06.187982,Or do we need a minute?,of hebben we even nodig ?,or do we need a minute ?,,
 1900-01-01 00:20:06.187982,1900-01-01 00:20:07.086982,Shrimp pilaf.,[UNK] [UNK] .,[UNK] [UNK] .,,
-1900-01-01 00:20:07.086982,1900-01-01 00:20:07.987982,OK.,oké .,okay .,,
+1900-01-01 00:20:07.086982,1900-01-01 00:20:07.987982,OK.,okï¿½ .,okay .,,
 1900-01-01 00:20:07.987982,1900-01-01 00:20:09.067982,Shrimp pilaf.,[UNK] [UNK] .,[UNK] [UNK] .,,
 1900-01-01 00:20:09.067982,1900-01-01 00:20:09.967982,Shrimp pilaf.,[UNK] [UNK] .,[UNK] [UNK] .,,
 1900-01-01 00:20:18.907982,1900-01-01 00:20:19.806982,"Oh, god.","oh , god .","oh , god .",,
-1900-01-01 00:20:19.806982,1900-01-01 00:20:21.407982,"OK, we have three spaghetti meatballs,","oké , we hebben drie [UNK] .","okay , we have three [UNK] .",,
+1900-01-01 00:20:19.806982,1900-01-01 00:20:21.407982,"OK, we have three spaghetti meatballs,","okï¿½ , we hebben drie [UNK] .","okay , we have three [UNK] .",,
 1900-01-01 00:20:21.407982,1900-01-01 00:20:22.306982,spinach ravioli.,[UNK] [UNK] .,[UNK] [UNK] .,,
-1900-01-01 00:20:25.146982,1900-01-01 00:20:27.547982,OK.,oké .,okay .,,
+1900-01-01 00:20:25.146982,1900-01-01 00:20:27.547982,OK.,okï¿½ .,okay .,,
 1900-01-01 00:20:27.547982,1900-01-01 00:20:28.646982,"You all right, darling?",gaat het ?,you okay ?,,
 1900-01-01 00:20:28.646982,1900-01-01 00:20:31.146982,"Yeah, he just says he wants to work slowly.",hij wil langzaam werken .,he wants to work slowly .,,
 1900-01-01 00:20:31.146982,1900-01-01 00:20:32.286982,He wants to work slowly?,wil hij langzaam werken ?,does he want to work slowly ?,,
@@ -623,11 +623,11 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:20:47.806982,1900-01-01 00:20:49.467982,He will just ignore me.,hij [UNK] me gewoon .,he just [UNK] me .,,
 1900-01-01 00:20:49.467982,1900-01-01 00:20:50.366982,Kasimiro?,[UNK] ?,[UNK] ?,,
 1900-01-01 00:20:50.366982,1900-01-01 00:20:51.267982,"Yeah, yeah, yeah.","ja , ja , ja .","yeah , yeah , yeah .",,
-1900-01-01 00:20:51.267982,1900-01-01 00:20:52.447982,OK.,oké .,okay .,,
+1900-01-01 00:20:51.267982,1900-01-01 00:20:52.447982,OK.,okï¿½ .,okay .,,
 1900-01-01 00:20:52.447982,1900-01-01 00:20:53.407982,"What ticket is he working on now, darling?",wat voor [UNK] werkt hij nu ?,what kind of [UNK] does he work now ?,,
 1900-01-01 00:20:53.426982,1900-01-01 00:20:54.387982,He's working on the what?,werkt hij op wat ?,does he work on what ?,,
 1900-01-01 00:20:54.387982,1900-01-01 00:20:55.287982,He's working on this one.,hij werkt aan deze .,he's working on this one .,,
-1900-01-01 00:20:55.287982,1900-01-01 00:20:56.187982,"Oh, OK.",oké .,okay .,,
+1900-01-01 00:20:55.287982,1900-01-01 00:20:56.187982,"Oh, OK.",okï¿½ .,okay .,,
 1900-01-01 00:20:56.187982,1900-01-01 00:20:57.727982,I haven't even gotten to those.,ik heb er niet eens mee gekregen .,i didn't even get involved .,,
 1900-01-01 00:20:57.727982,1900-01-01 00:20:58.727982,Are you kidding me?,meen je dat ?,are you serious ?,,
 1900-01-01 00:20:58.727982,1900-01-01 00:20:59.627982,"No, no, no.","nee , nee , nee .","no , no , no .",,
@@ -681,7 +681,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:22:33.146982,1900-01-01 00:22:34.326982,I can't watch my meatballs.,ik kan me niet zien .,i can't see me .,,
 1900-01-01 00:22:34.326982,1900-01-01 00:22:35.646982,That's what I'm going to work for.,daar ga ik voor werken .,i'm gonna work for that .,,
 1900-01-01 00:22:35.646982,1900-01-01 00:22:37.026982,What's your complaint on the meatball?,wat staat je aan de [UNK] ?,what are you talking about ?,,
-1900-01-01 00:22:37.026982,1900-01-01 00:22:38.627982,"They said it was, like, toasted on one side,","ze zeiden dat het was , zoals [UNK] aan één kant ,","they said it was , like [UNK] on one side .",,
+1900-01-01 00:22:37.026982,1900-01-01 00:22:38.627982,"They said it was, like, toasted on one side,","ze zeiden dat het was , zoals [UNK] aan ï¿½ï¿½n kant ,","they said it was , like [UNK] on one side .",,
 1900-01-01 00:22:38.627982,1900-01-01 00:22:39.526982,but not toasted on the other.,maar niet [UNK] op de andere kant .,but don't [UNK] on the other side .,,
 1900-01-01 00:22:39.526982,1900-01-01 00:22:40.586982,Really?,echt ?,really ?,,
 1900-01-01 00:22:40.586982,1900-01-01 00:22:42.787982,How about telling your fucking chef?,hoe zit het met je [UNK] ?,what about your [UNK] ?,,
@@ -743,7 +743,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:24:46.866982,1900-01-01 00:24:49.067982,It's your fucking business.,het is jouw [UNK] .,it's your [UNK] .,,
 1900-01-01 00:24:49.067982,1900-01-01 00:24:50.847982,Come on.,kom op .,come on .,,
 1900-01-01 00:24:50.847982,1900-01-01 00:24:52.247982,Honestly.,eerlijk .,fair .,,
-1900-01-01 00:24:52.247982,1900-01-01 00:24:54.146982,Italian cafe.,[UNK] café .,[UNK] café .,,
+1900-01-01 00:24:52.247982,1900-01-01 00:24:54.146982,Italian cafe.,[UNK] cafï¿½ .,[UNK] cafï¿½ .,,
 1900-01-01 00:24:54.146982,1900-01-01 00:24:55.706982,Wow.,wauw .,wow .,,
 1900-01-01 00:24:54.371995,1900-01-01 00:24:55.631995,what's going on now?,wat is er aan de hand ?,what's the matter ?,,
 1900-01-01 00:24:55.631995,1900-01-01 00:24:56.471995,I don't know.,ik weet het niet .,i don't know .,,
@@ -763,7 +763,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:25:22.631995,1900-01-01 00:25:23.631995,It's none of my business.,het gaat mijn zaak niet .,it's not my business .,,
 1900-01-01 00:25:23.631995,1900-01-01 00:25:25.430995,Come on.,kom op .,come on .,,
 1900-01-01 00:25:25.430995,1900-01-01 00:25:26.790995,Honestly.,eerlijk .,fair .,,
-1900-01-01 00:25:26.790995,1900-01-01 00:25:28.490995,Italian cafe?,[UNK] café ?,[UNK] café ?,,
+1900-01-01 00:25:26.790995,1900-01-01 00:25:28.490995,Italian cafe?,[UNK] cafï¿½ ?,[UNK] cafï¿½ ?,,
 1900-01-01 00:25:28.490995,1900-01-01 00:25:29.391995,Wow.,wauw .,wow .,,
 1900-01-01 00:25:29.391995,1900-01-01 00:25:30.290995,What a joke.,wat een grap .,what a joke .,,
 1900-01-01 00:25:30.290995,1900-01-01 00:25:33.271995,Ha ha ha.,hallo .,hello .,,
@@ -818,11 +818,11 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:27:15.171995,1900-01-01 00:27:16.570995,that are so easy to see.,dat zijn zo makkelijk om te zien .,those are so easy to see .,,
 1900-01-01 00:27:16.611995,1900-01-01 00:27:18.350995,"Val, Mom, I need to talk to you now.","val , mam , ik moet je nu spreken .","val , mom , i have to talk to you now .",,
 1900-01-01 00:27:18.350995,1900-01-01 00:27:19.251995,You need to go outside.,je moet buiten gaan .,you have to go outside .,,
-1900-01-01 00:27:19.251995,1900-01-01 00:27:20.050995,OK.,oké .,okay .,,
+1900-01-01 00:27:19.251995,1900-01-01 00:27:20.050995,OK.,okï¿½ .,okay .,,
 1900-01-01 00:27:20.050995,1900-01-01 00:27:21.290995,I'm mad at myself.,ik ben boos op mezelf .,i'm mad at myself .,,
 1900-01-01 00:27:21.290995,1900-01-01 00:27:25.290995,I need to be the owner of this restaurant.,ik moet de eigenaar zijn van dit restaurant .,i have to be the owner of this restaurant .,,
 1900-01-01 00:27:25.290995,1900-01-01 00:27:27.691995,We have to fire Casimir.,we moeten [UNK] [UNK] .,we need to [UNK] [UNK] .,,
-1900-01-01 00:27:27.691995,1900-01-01 00:27:29.630995,OK.,oké .,okay .,,
+1900-01-01 00:27:27.691995,1900-01-01 00:27:29.630995,OK.,okï¿½ .,okay .,,
 1900-01-01 00:27:29.630995,1900-01-01 00:27:32.130995,"All the mistakes that he's made tonight,","al de fouten die hij vanavond heeft gemaakt ,","all the mistakes that he made tonight ,",,
 1900-01-01 00:27:32.130995,1900-01-01 00:27:33.531995,he doesn't take any direction.,hij neemt geen richting aan .,he's not taking a direction .,,
 1900-01-01 00:27:33.531995,1900-01-01 00:27:34.831995,He's giving chef attitude.,hij geeft [UNK] .,he gives [UNK] .,,
@@ -830,7 +830,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:27:38.971995,1900-01-01 00:27:40.210995,Can't even make a meatball.,kan geen [UNK] maken .,can't make any [UNK] .,,
 1900-01-01 00:27:41.210995,1900-01-01 00:27:45.451995,That's the only thing that I think is right.,dat is het enige wat ik denk .,that's the only thing i think .,,
 1900-01-01 00:27:45.451995,1900-01-01 00:27:46.350995,This hot.,dit is sexy .,this is sexy .,,
-1900-01-01 00:27:46.350995,1900-01-01 00:27:47.251995,OK.,oké .,okay .,,
+1900-01-01 00:27:46.350995,1900-01-01 00:27:47.251995,OK.,okï¿½ .,okay .,,
 1900-01-01 00:27:47.251995,1900-01-01 00:27:49.091995,"And I need time, too.",ik heb ook tijd nodig .,i need time .,,
 1900-01-01 00:27:49.091995,1900-01-01 00:27:50.591995,"Oh, then you need time.",je hebt tijd nodig .,you need time .,,
 1900-01-01 00:27:50.591995,1900-01-01 00:27:51.391995,I need to do it.,ik moet het doen .,i have to do it .,,
@@ -839,13 +839,13 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:28:04.671995,1900-01-01 00:28:05.671995,"Amber, get out of the kitchen.","amber , ga uit de keuken .","amber , get out of the kitchen !",,
 1900-01-01 00:28:11.210995,1900-01-01 00:28:12.111995,Casimiro.,[UNK] .,[UNK] .,,
 1900-01-01 00:28:12.111995,1900-01-01 00:28:12.910995,Marvel.,[UNK] .,[UNK] .,,
-1900-01-01 00:28:31.231995,1900-01-01 00:28:32.930995,"Este me duele mucho, OK?","[UNK] me [UNK] , oké ?","[UNK] me , okay ?",,
+1900-01-01 00:28:31.231995,1900-01-01 00:28:32.930995,"Este me duele mucho, OK?","[UNK] me [UNK] , okï¿½ ?","[UNK] me , okay ?",,
 1900-01-01 00:28:37.731995,1900-01-01 00:28:39.010995,Lo siento mucho.,[UNK] lo [UNK] .,[UNK] lo [UNK] .,,
 1900-01-01 00:28:39.010995,1900-01-01 00:28:40.210995,"Lo siento mucho, Casimiro.","[UNK] lo [UNK] , [UNK] .","[UNK] lo [UNK] , [UNK] .",,
 1900-01-01 00:28:44.111995,1900-01-01 00:28:45.010995,Sorry.,sorry .,sorry .,,
 1900-01-01 00:28:45.010995,1900-01-01 00:28:45.910995,Sorry.,sorry .,sorry .,,
-1900-01-01 00:28:45.910995,1900-01-01 00:28:46.811995,"No, yo sabía.","nee , [UNK] .","no , [UNK] .",,
-1900-01-01 00:28:46.811995,1900-01-01 00:28:47.710995,Yo sabía yo.,[UNK] .,[UNK] .,,
+1900-01-01 00:28:45.910995,1900-01-01 00:28:46.811995,"No, yo sabï¿½a.","nee , [UNK] .","no , [UNK] .",,
+1900-01-01 00:28:46.811995,1900-01-01 00:28:47.710995,Yo sabï¿½a yo.,[UNK] .,[UNK] .,,
 1900-01-01 00:29:09.010995,1900-01-01 00:29:09.910995,"Oh, my god.",mijn god .,"oh , my god .",,
 1900-01-01 00:29:15.450995,1900-01-01 00:29:17.811995,After finally understanding what her chef was,na het eindelijk waar haar [UNK] was .,after finally her was her [UNK] .,,
 1900-01-01 00:29:17.811995,1900-01-01 00:29:19.390995,really doing to her restaurant.,echt naar haar restaurant .,it's really her restaurant .,,
@@ -856,17 +856,17 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:29:57.390995,1900-01-01 00:29:58.930995,Where's Tatiana?,waar is [UNK] ?,where's [UNK] ?,,
 1900-01-01 00:29:58.930995,1900-01-01 00:30:00.730995,I think she's crying in the bathroom.,volgens mij [UNK] ze in de badkamer .,i think they got in the bathroom .,,
 1900-01-01 00:30:00.730995,1900-01-01 00:30:03.031995,Tatiana let Casimiro go.,[UNK] liet [UNK] gaan .,[UNK] left .,,
-1900-01-01 00:30:03.031995,1900-01-01 00:30:03.830995,OK.,oké .,okay .,,
+1900-01-01 00:30:03.031995,1900-01-01 00:30:03.830995,OK.,okï¿½ .,okay .,,
 1900-01-01 00:30:03.830995,1900-01-01 00:30:04.631995,I'm sorry.,het spijt me .,i'm sorry .,,
-1900-01-01 00:30:09.131995,1900-01-01 00:30:10.131995,OK.,oké .,okay .,,
+1900-01-01 00:30:09.131995,1900-01-01 00:30:10.131995,OK.,okï¿½ .,okay .,,
 1900-01-01 00:30:10.131995,1900-01-01 00:30:12.031995,"Listen, I know it's hard.","luister , ik weet dat het moeilijk is .","listen , i know it's hard .",,
 1900-01-01 00:30:12.031995,1900-01-01 00:30:15.110995,"Yeah, but I'm here.","ja , maar ik ben hier .","yeah , but i'm here .",,
 1900-01-01 00:30:15.110995,1900-01-01 00:30:17.110995,I'm here to support you.,ik ben hier om jou te [UNK] .,i'm here to [UNK] you .,,
-1900-01-01 00:30:17.110995,1900-01-01 00:30:17.911995,OK.,oké .,okay .,,
+1900-01-01 00:30:17.110995,1900-01-01 00:30:17.911995,OK.,okï¿½ .,okay .,,
 1900-01-01 00:30:19.911995,1900-01-01 00:30:20.911995,Good night.,welterusten .,good night .,,
-1900-01-01 00:30:20.911995,1900-01-01 00:30:21.911995,"OK, we've got two seconds.","oké , we hebben twee seconden .","okay , we have two seconds .",,
+1900-01-01 00:30:20.911995,1900-01-01 00:30:21.911995,"OK, we've got two seconds.","okï¿½ , we hebben twee seconden .","okay , we have two seconds .",,
 1900-01-01 00:30:21.911995,1900-01-01 00:30:22.911995,Let's have a quick word.,laten we snel beginnen .,let's get started .,,
-1900-01-01 00:30:22.911995,1900-01-01 00:30:23.811995,OK.,oké .,okay .,,
+1900-01-01 00:30:22.911995,1900-01-01 00:30:23.811995,OK.,okï¿½ .,okay .,,
 1900-01-01 00:30:23.811995,1900-01-01 00:30:24.811995,Please.,alsjeblieft .,please .,,
 1900-01-01 00:30:24.811995,1900-01-01 00:30:25.710995,Val.,val dood .,fuck you !,,
 1900-01-01 00:30:25.710995,1900-01-01 00:30:26.610995,"Thanks, Chef.","bedankt , chef .","thanks , boss .",,
@@ -875,7 +875,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:30:37.131995,1900-01-01 00:30:38.230995,I don't think you've ever done that since you,je hebt dat nooit meer gedaan .,you never did that again .,,
 1900-01-01 00:30:38.230995,1900-01-01 00:30:39.691995,bought this place.,deze plek .,this place .,,
 1900-01-01 00:30:39.691995,1900-01-01 00:30:40.730995,Tomorrow's a new day.,een nieuwe dag .,a new day .,,
-1900-01-01 00:30:40.730995,1900-01-01 00:30:43.371995,"And I've got ideas, let me tell you.","en ik heb ideeën , laat het je zeggen .",and i have ideas . . . let it say .,,
+1900-01-01 00:30:40.730995,1900-01-01 00:30:43.371995,"And I've got ideas, let me tell you.","en ik heb ideeï¿½n , laat het je zeggen .",and i have ideas . . . let it say .,,
 1900-01-01 00:30:43.371995,1900-01-01 00:30:44.270995,"OK, good night.",welterusten .,good night .,,
 1900-01-01 00:30:49.270995,1900-01-01 00:30:51.251995,After one of the most difficult days,na de meeste [UNK] dagen,after most [UNK] days .,,
 1900-01-01 00:30:51.251995,1900-01-01 00:30:53.710995,"he has ever had on Kitchen Nightmares,",hij heeft ooit in keuken [UNK] .,he's ever [UNK] in kitchen .,,
@@ -941,7 +941,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:32:39.871995,1900-01-01 00:32:43.311995,I want to take the baby steps and get better.,ik wil de baby nemen en beter .,i wanna take the baby and better .,,
 1900-01-01 00:32:43.311995,1900-01-01 00:32:44.210995,Pretty much neck and neck.,mooie nek en nek .,nice neck and neck .,,
 1900-01-01 00:32:44.210995,1900-01-01 00:32:45.110995,Well done.,goed gedaan .,good job .,,
-1900-01-01 00:32:45.110995,1900-01-01 00:32:46.011995,OK.,oké .,okay .,,
+1900-01-01 00:32:45.110995,1900-01-01 00:32:46.011995,OK.,okï¿½ .,okay .,,
 1900-01-01 00:32:46.011995,1900-01-01 00:32:47.210995,"In the oven, 25 minutes.","in de oven , 12 minuten .","in the oven , 12 minutes .",,
 1900-01-01 00:32:47.210995,1900-01-01 00:32:48.650995,I don't know why I thought I couldn't do it.,ik weet niet waarom ik het kon doen .,i don't know why i could do it .,,
 1900-01-01 00:32:48.650995,1900-01-01 00:32:50.490995,"It is not difficult, I'm telling you.",het is niet moeilijk .,it's not hard .,,
@@ -1048,7 +1048,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:35:43.215986,1900-01-01 00:35:44.114986,I know.,ik weet het .,i know .,,
 1900-01-01 00:35:44.114986,1900-01-01 00:35:45.815986,"I'm done eating, and they don't have no food.",ik eet klaar en ze hebben geen eten .,i'll eat and they don't eat .,,
 1900-01-01 00:35:45.815986,1900-01-01 00:35:47.254986,I'm going to go ask the kitchen right now?,ik ga de keuken vragen .,i'll ask the kitchen .,,
-1900-01-01 00:35:47.254986,1900-01-01 00:35:48.155986,All right.,oké .,okay .,,
+1900-01-01 00:35:47.254986,1900-01-01 00:35:48.155986,All right.,okï¿½ .,okay .,,
 1900-01-01 00:35:48.155986,1900-01-01 00:35:49.995986,Thank you.,bedankt .,thanks .,,
 1900-01-01 00:35:49.995986,1900-01-01 00:35:51.295986,Pizza came out.,pizza is buiten .,pizza is outside .,,
 1900-01-01 00:35:51.295986,1900-01-01 00:35:53.894986,The entrees haven't come out.,de [UNK] komt niet meer .,the [UNK] won't come again .,,
@@ -1097,7 +1097,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:37:08.155986,1900-01-01 00:37:09.655986,fucking shithole in the Verne.,[UNK] in de [UNK] .,[UNK] in the [UNK] .,,
 1900-01-01 00:37:09.655986,1900-01-01 00:37:11.054986,You need to step up.,je moet naar buiten .,you need to go outside .,,
 1900-01-01 00:37:11.054986,1900-01-01 00:37:12.054986,"I am stepping up, Chef.","ik ga [UNK] , chef .","i'm going , [UNK] .",,
-1900-01-01 00:37:12.054986,1900-01-01 00:37:12.955986,And I'm only one person.,en ik ben maar één persoon .,and i'm only one person .,,
+1900-01-01 00:37:12.054986,1900-01-01 00:37:12.955986,And I'm only one person.,en ik ben maar ï¿½ï¿½n persoon .,and i'm only one person .,,
 1900-01-01 00:37:12.955986,1900-01-01 00:37:14.095986,Nobody listens to me.,niemand [UNK] me .,nobody [UNK] me .,,
 1900-01-01 00:37:14.095986,1900-01-01 00:37:15.754986,"Tomorrow, we're going to be fucking",morgen gaan we [UNK],tomorrow . . .,,
 1900-01-01 00:37:15.754986,1900-01-01 00:37:17.355986,closed at this rate.,gesloten bij deze prijs .,closed at this price .,,
@@ -1115,7 +1115,7 @@ Start Time,End Time,Original,Translation,English Translation,Score,Comment
 1900-01-01 00:37:35.274986,1900-01-01 00:37:36.574986,Talk to him.,praat met hem .,talk to him .,,
 1900-01-01 00:37:36.574986,1900-01-01 00:37:38.035986,"If you don't know what's going on, talk to me.","als je niet weet wat er gaande is , praat dan met me .","if you don't know what's going on , talk to me .",,
 1900-01-01 00:37:38.035986,1900-01-01 00:37:39.975986,"If you need help, ask somebody.","als je hulp nodig hebt , vraag iemand .","if you need help , somebody ask .",,
-1900-01-01 00:37:39.975986,1900-01-01 00:37:40.975986,OK? All right?,oké ?,okay ?,,
+1900-01-01 00:37:39.975986,1900-01-01 00:37:40.975986,OK? All right?,okï¿½ ?,okay ?,,
 1900-01-01 00:37:40.975986,1900-01-01 00:37:41.875986,Get it?,snap je ?,you know what i mean ?,,
 1900-01-01 00:37:41.875986,1900-01-01 00:37:42.975986,Get back to your tables.,[UNK] .,[UNK] .,,
 1900-01-01 00:37:42.975986,1900-01-01 00:37:45.054986,I can't do this alone.,ik kan dit niet alleen doen .,i can't do this alone .,,
