@@ -1,83 +1,43 @@
-# src/transcript/assemblyAI
+# src/transcript/transcript_engine.py
 """
-Speech to Text Converter using AssemblyAI
-Converts various media (YouTube links, video files, audio files) to sentences and saves to CSV
+Speech to Text Converter Engine
+Orchestrates media conversion, transcription (via AssemblyAITranscriber), and post-processing.
 """
 
 import re
-import requests
-import assemblyai as aai
-import os # Added for path manipulation and cleanup
+# Removed requests and assemblyai imports as they are now in the client
+import os
 from typing import Literal
 import logging
 
-# Assuming MediaConverter and YouTubeDownloader are available at this path level
+# Assuming MediaConverter and YouTubeDownloader are available
 from src.transcript.config import BASE_URL, HEADERS
 from src.transcript.post_process import TranscriptionPostProcessor
 from src.helpers import CSVHandler
+
 # Importing the new utility classes
 from .media_converter import MediaConverter
 from .youtube_downloader import YouTubeDownloader
+# IMPORTANT: Import the new decoupled client
+from .assemblyAI_client import AssemblyAITranscriber 
 
 logger = logging.getLogger(__name__)
 
 
 class TranscriptEngine:
     def __init__(self, base_url = BASE_URL, headers = HEADERS):
-        self.base_url = base_url,
+        self.base_url = base_url
         self.headers = headers
         self.media_converter = MediaConverter()
         self.youtube_downloader = YouTubeDownloader()
+        
+        # Initialize the decoupled AssemblyAI Transcriber Client
+        self.transcriber_client = AssemblyAITranscriber()
 
 
-    def _create_transcription_config(self):
-        """Create transcription configuration with optimal settings"""
-        config = aai.TranscriptionConfig(
-            speaker_labels=True,
-            format_text=True,
-            punctuate=True,
-            speech_model=aai.SpeechModel.slam_1,
-            language_code="en_us",
-        )
-        config.keyterms_prompt = [
-            "Restaurant",
-            "Cooking",
-            "Chef",
-            "Cook",
-            "Food",
-            "British",
-            "Bad",
-            "Decisions",
-        ]
-        return config
-
-
-    def _upload_audio(self, file_path):
-        """Upload audio file to AssemblyAI and return the upload URL"""
-        with open(file_path, "rb") as f:
-            # Note: The original code was using a requests call to /v2/upload.
-            # While the SDK can handle local files directly, keeping the requests call for upload 
-            # as it was defined in the original `assemblyAI.py` structure.
-            response = requests.post(BASE_URL + "/v2/upload", headers=HEADERS, data=f)
-
-        if response.status_code != 200:
-            raise RuntimeError(f"Upload failed: {response.text}")
-
-        return response.json()["upload_url"]
-
-
-    def _transcribe_audio(self, file_path, config):
-        """Transcribe audio file using AssemblyAI SDK"""
-        # The transcriber expects an accessible path or a URL
-        transcriber = aai.Transcriber(config=config)
-        # Note: If file_path is a URL, this works. If it's a local file, it also works 
-        # (the SDK handles local file upload internally if a local path is provided).
-        transcript = transcriber.transcribe(file_path)
-
-        if transcript.status == aai.TranscriptStatus.error:
-            raise RuntimeError(f"Transcription failed: {transcript.error}")
-
-        return transcript.text
+    # Removed: _create_transcription_config (moved to client)
+    # Removed: _upload_audio (was vestigial/not SDK standard)
+    # Removed: _transcribe_audio (moved to client as transcribe_audio)
 
 
     def _split_into_sentences(self, text):
@@ -110,16 +70,13 @@ class TranscriptEngine:
         Returns:
             str: Path to saved CSV file
         """
-        # 1. Setup and Pre-check
-        if not HEADERS["authorization"]:
-            raise ValueError("Please set your AssemblyAI API key in the HEADERS variable")
-
-        aai.settings.api_key = HEADERS["authorization"]
+        # 1. Setup and Pre-check (API key check is now handled in client initialization)
         
         # Determine the file path/URL that will be passed to transcription
         temp_audio_file = None # To track files created for cleanup
+        transcription_source = None
 
-        # 2. Handle YouTube URL - FORCE LOCAL DOWNLOAD AND CONVERSION (FIX for text/html error)
+        # 2. Handle YouTube URL - FORCE LOCAL DOWNLOAD AND CONVERSION
         if self.youtube_downloader._is_youtube_url(input_source):
             logger.info(f"Input is a YouTube URL. Downloading and converting to local audio file...")
             
@@ -140,11 +97,11 @@ class TranscriptEngine:
         elif os.path.exists(input_source) and input_source.lower().endswith(('.mp4', '.mov', '.avi', '.mkv')):
             logger.info(f"Input is a local video file. Converting to audio...")
             # Use a temporary filename that the conversion utility saves to
-            temp_audio_file = "temp_converted_audio.mp3"
+            temp_audio_file_base = "temp_converted_audio.mp3"
             
             local_mp3_path = self.media_converter.convert_video_to_audio(
                 video_path=input_source, 
-                output_audio_path=temp_audio_file
+                output_audio_path=temp_audio_file_base
             )
             
             # Update the source to the local file path and set the cleanup file
@@ -157,23 +114,20 @@ class TranscriptEngine:
             logger.error(msg)
             raise ValueError(msg)
 
-        # 4. Transcription Process (works for local audio file, converted local video file, or public URL)
+        # 4. Transcription Process (uses the decoupled client)
         try:
-            config = self._create_transcription_config()
-
-            # Now, `transcription_source` is either a local file path (audio/converted video) or a public media URL
-            logger.info(f"Starting transcription for source: {transcription_source}...")
-            # We call _transcribe_audio, which uses the AAI SDK and handles local files/URLs appropriately.
-            transcript_text = self._transcribe_audio(transcription_source, config)
+            # Call the decoupled transcriber client method
+            transcript_text = self.transcriber_client.transcribe_audio(transcription_source)
 
             # 5. Post-Processing
             if post_process == 'simple':
                 sentences = self._split_into_sentences(transcript_text)
             elif post_process == 'transformer_based':
+                # Note: The punctuation_model_name might need to be configurable
                 processor = TranscriptionPostProcessor(punctuation_model_name='HuggingFaceH4/zephyr-7b-beta')
                 sentences = processor.process(transcript_text)
             else:
-                sentences = transcript_text
+                sentences = [transcript_text] # Ensure it's iterable for CSVHandler
             
             # 6. Save to CSV
             csv_handler = CSVHandler(output_path=output_path)
