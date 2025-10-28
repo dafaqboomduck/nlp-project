@@ -32,7 +32,7 @@ def main():
     # Create an instance of the class
     transcript_engine = TranscriptEngine()
     # Call the transcribe method on the instance
-    transcript_engine.transcribe(mp3_file=AUDIO_PATH, output_path=TRANSCRIPT_PATH, post_process='transformer_based')
+    transcript_engine.transcribe(input_source=AUDIO_PATH, output_path=TRANSCRIPT_PATH, post_process='transformer_based')
 
     # 2. Translation Step
     # Create an instance of the class
