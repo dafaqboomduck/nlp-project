@@ -11,8 +11,9 @@
 | 7 | LSTM-v1 | keras | final_dataset.csv – 1000 samples per class | features.py (baseline) + tf.keras.preprocessing.text.Tokenizer and tf.keras.preprocessing.sequence.pad_sequences | 80/0/20 | Sentence_Tok | None | Two recurrent layers, lr=5e-3, kernel_regularizer="l2" for dense layers, batch_size=64 | 0.764 | 0.778 | 0.764 | 0.767 | – | – | [View Notes](#lstm-v1) |
 | 8 | LSTM-v2 | keras | final_dataset.csv – 1000 samples per class | features.py (baseline) + tf.keras.preprocessing.text.Tokenizer and tf.keras.preprocessing.sequence.pad_sequences | 80/0/20 | Sentence_Tok, word2vec_embedding, bert_embedding | None | Two recurrent layers, lr=5e-3, kernel_regularizer="l2" for dense layers, batch_size=64, 0.4 dropout before dense layers | 0.791 | 0.803 | 0.791 | 0.793 | – | – | [View Notes](#lstm-v2) |
 | 9 | LSTM-v3 | keras | final_dataset.csv – 1000 samples per class | features.py (baseline) + tf.keras.preprocessing.text.Tokenizer and tf.keras.preprocessing.sequence.pad_sequences | 80/0/20 | Sentence_Tok, bert_embedding | None | Two recurrent layers, lr=5e-3, kernel_regularizer="l2" for dense layers, batch_size=64, 0.4 dropout before dense layers | 0.796 | 0.806 | 0.796 | 0.799 | – | – | [View Notes](#lstm-v3) |
-| 10 | DistilBERT | transformers | final_dataset.csv | Tokenization using transformers tokenizer | 80/0/20 | Pretrained embeddings | None | Classification head modified, fine-tuned 3–5 epochs | 0.889 | – | – | 0.889 | 0.51 | 0.44 | [View Notes](#distilbert) |
-| 11 | BERT-base-uncased | transformers | final_dataset.csv | Tokenization using transformers tokenizer | 80/0/20 | Pretrained embeddings | None | Classification head modified, fine-tuned 5 epochs | 0.895 | – | – | 0.895 | 0.481 | 0.382 | [View Notes](#bert-base-uncased) |
+| 10 | DistilBERT | transformers | final_dataset.csv | Tokenization using transformers tokenizer | 80/0/20 | Pretrained embeddings | None | Classification head modified, fine-tuned 3–5 epochs | 0.889 | 0.891 | 0.889 | 0.889 | 0.51 | 0.44 | [View Notes](#distilbert) |
+| 11 | BERT-base-uncased | transformers | final_dataset.csv | Tokenization using transformers tokenizer | 80/0/20 | Pretrained embeddings | None | Classification head modified, fine-tuned 5 epochs | 0.895 | 0.897 | 0.895 | 0.895 | 0.481 | 0.382 | [View Notes](#bert-base-uncased) |
+| 12 | DistilRoBERTa base | transformers | final_dataset.csv | Tokenization using transformers tokenizer | 80/0/20 | Pretrained embeddings | None | Classification head modified, fine-tuned 5 epochs | 0.901 | 0.904 | 0.901 | 0.901 | 0.482 | 0.435 | [View Notes](#distilroberta-base) |
 
 ---
 
@@ -171,6 +172,22 @@ The model took a significant amount of time to fine-tune. We only trained it for
 
 **Other Notes:**  
 - Both DistilBERT and BERT fail to generalize, highlighting overfitting to validation data.  
+
+---
+
+### DistilROBERTA base
+<a name="distilroberta-base"></a>
+
+**Strengths:**  
+The third model we tried was the DistilROBERTA base model. We tried this model because we wanted to leverage the power of the RoBERTa model family without having to deal with the computational requirements of a large model like the RoBERTa base or large versions. The model's training didn't take substantially more time than the two previously tried models which was good for us. The model achieved the best performance of all tested models so far, achieving scores of 90.1% for both accuracy and the F1 score. 
+ 
+**Weaknesses:**  
+When we tested the model's performance on the show data, annotated by the company's pipeline, the results were far from our expectations. Although this model performed better during training and on the validation set compared to the two previous models, it performed even worse on the test data. Its accuracy dropped to 48.2%, and the weighted F1 score decreased further, reaching 43.5%. 
+
+**Other Notes:**  
+- Having reached these resuls we decided to settle with this model and beging working on other tasks. 
+- However, after seeing the resuls on the test set, it was quickly obvious this model is not what we though it was and we needed to train new, more capable models. 
+- All three models, despite performing well on the evaluation set, did not truly learn relevant linguistic patterns or significant, emotion-filled words during training and were only overfitting to that specific dataset. We need to find a method of training models that generalizes well across different datasets. 
 
 ---
 
