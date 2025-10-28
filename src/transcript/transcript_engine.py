@@ -25,6 +25,18 @@ logger = logging.getLogger(__name__)
 
 
 class TranscriptEngine:
+    """
+    The TranscriptEngine class provides a high-level interface for performing speech-to-text
+    transcription from various input sources, including local media files and YouTube URLs.
+
+    Attributes:
+        base_url (str): The API base URL for AssemblyAI.
+        headers (dict): HTTP headers used for API communication.
+        media_converter (MediaConverter): Utility for converting videos to audio.
+        youtube_downloader (YouTubeDownloader): Utility for downloading YouTube videos.
+        transcriber_client (AssemblyAITranscriber): Client for handling transcription tasks.
+    """
+
     def __init__(self, base_url = BASE_URL, headers = HEADERS):
         self.base_url = base_url
         self.headers = headers
@@ -33,12 +45,6 @@ class TranscriptEngine:
         
         # Initialize the decoupled AssemblyAI Transcriber Client
         self.transcriber_client = AssemblyAITranscriber()
-
-
-    # Removed: _create_transcription_config (moved to client)
-    # Removed: _upload_audio (was vestigial/not SDK standard)
-    # Removed: _transcribe_audio (moved to client as transcribe_audio)
-
 
     def _split_into_sentences(self, text):
         """Split text into sentences using simple regex"""
@@ -54,21 +60,32 @@ class TranscriptEngine:
 
         return cleaned_sentences
 
-
     def transcribe(self, input_source: str, output_path: str, post_process: Literal['simple', 'transformer_based', 'none'] = 'simple'):
         """
-        Main function: convert various media to sentences CSV using AssemblyAI.
-        Handles local files (audio/video) and publicly accessible URLs (like YouTube).
+        Main transcription pipeline. Converts the provided media (local or online) into text and saves
+        it as a CSV file of sentences.
+
+        Steps:
+            1. Identify and prepare the input media (local file or YouTube URL)
+            2. Convert to audio format if required
+            3. Send audio to the transcription client (AssemblyAI)
+            4. Optionally post-process the text
+            5. Save the final sentences into a CSV file
+            6. Clean up temporary files
 
         Args:
-            input_source (str): Path to local file (MP3, MP4, etc.) OR a YouTube URL.
-            output_path (CSV file): An output path where the pipeline will save the 
-                                    final processed sentences as a CSV.
-            post_process (Literal['simple', 'transformer_based', 'none']): The type of 
-                                                                          post-processing to apply.
+            input_source (str): Path to a local file (audio/video) or a YouTube URL.
+            output_path (str): Path where the CSV output will be saved.
+            post_process (Literal): Type of post-processing to apply:
+                - 'simple': Rule-based sentence splitting.
+                - 'transformer_based': Transformer model for punctuation and segmentation.
+                - 'none': No post-processing; saves the raw transcription as a single entry.
 
         Returns:
-            str: Path to saved CSV file
+            str: The absolute path to the generated CSV file.
+
+        Raises:
+            ValueError: If the input source is not a valid file path or YouTube link.
         """
         # 1. Setup and Pre-check (API key check is now handled in client initialization)
         
