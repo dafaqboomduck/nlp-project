@@ -6,7 +6,7 @@
 **Date Created: 28/10/2025**  
 **Last Updated:28/10/2025**  
 **Author(s):Razvan Nica & Filip Šarík**  
-**Institution / Organization: BUas ADS&AI Students**  
+**Institution / Organization: BUas ADS&AI**  
 
 **Short Description:**  
 This model is a fine-tuned checkpoint of the **[distilbert/distilbert-base-uncased-finetuned-sst-2-english](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english)** model.
@@ -55,7 +55,7 @@ Specifically, it is a fine-tuned checkpoint of the **[distilbert/distilbert-base
 
 For detailed information on the base architecture, please refer to the link above.
 
-### **Framework / Libraries Used:**  
+**Framework / Libraries Used:**  
 The model was developed, trained, and is intended to be used primarily with the following Python-based libraries:
 
 * **PyTorch:** Used as the underlying deep learning framework for defining and running the model.
@@ -100,7 +100,7 @@ A custom test set was created to better align with the model's primary use case 
 
 
 ## 📊 Performance Metrics and Evaluation
-See details at: /deliverables/Task 9/Error analysis.docx
+See details at: **[ERROR ANALYSIS DOCUMENT](/deliverables/Task%209/Error%20analysis.pdf)**
 
 ---
 
