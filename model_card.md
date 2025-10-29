@@ -41,6 +41,8 @@ The model is intended for users who possess a basic working knowledge of the **P
 
 ## 🛑 Out-of-Scope Use
 
+This model was trained and fine-tuned to classify six emotions and a neutral state in English text data transcribed from television shows. Its performance has not been evaluated on other languages or text types. Users should independently assess the model’s performance and suitability for their specific use cases before deployment.
+
 **Prohibited Uses:** This model **must not** be used to intentionally create **hostile, alienating, or discriminatory environments** or content against individuals or groups.
 
 **Factual Content:** The model was trained for emotion classification, **not for generating factual or true representations** of people or events. Using this model to create or present content as factually accurate is **out-of-scope** and could lead to misrepresentation.
@@ -102,12 +104,18 @@ A custom test set was created to better align with the model's primary use case 
 
 
 ## 📊 Performance Metrics and Evaluation
-See details at: **[ERROR ANALYSIS DOCUMENT](/deliverables/Task%209/Error%20analysis.pdf)**
+
+The model achieved an **accuracy of 64.1%** and a **weighted F1 score of 61.7%** on the test set. It performs reasonably well in recognizing dominant emotions such as neutral and happiness, but its performance declines notably for less frequent or more nuanced emotions like fear, disgust, and sadness.
+
+See more details at: **[ERROR ANALYSIS DOCUMENT](/deliverables/Task%209/Error%20analysis.pdf)**
 
 ---
 
 ## ⚖️ Ethical Considerations and Bias
-See details at: /deliverables/Task 9/Error analysis.docx
+
+If the emotion of the sentence is clear, the model is very confident in the prediction, even when multiple tokens are removed from the sentence. However, when the sentences are reliant on context and their emotion is not clear, the confidence of the model can be very volatile or even drop below the 50% threshold after just a few tokens are removed. This is especially the case with sadness. 
+
+See more details at: **[EXPLAINABLE AI DOCUMENT](/deliverables/Task%2010/XAI.pdf)**
 
 ---
 
@@ -125,7 +133,7 @@ We recommend using a device equipped with a GPU to enable faster and more effici
 from src.predict import EmotionCorePredictor
 import pandas as pd
 
-df = pd.read_csv(r"path/to/your/data.csv")
+df = pd.read_csv(r"path/to/your/data.csv") 
 
 checkpoint = "dafaqboomduck/distilbert-sentiment-fine"
 
@@ -133,6 +141,8 @@ checkpoint = "dafaqboomduck/distilbert-sentiment-fine"
 engine = EmotionCorePredictor(checkpoint)
 
 # Save the predictions inside the preds variable
+# Ensure the column containing the sentences is named "Sentence"
+# else, change the `column` parameter accordingly to the name of your column
 preds = engine.predict(df, column='Sentence')
 
 df['Core Emotion'] = preds
@@ -182,3 +192,7 @@ EMOTION_MAP: Dict[int, str] = {
 ---
 
 ## 🌿Sustainibility Considerations
+
+This model was fine-tuned from a checkpoint of the DistilBERT model, a lightweight and energy-efficient variant of BERT. Training was performed on a single NVIDIA RTX A6000 Ada GPU (48 GB VRAM) for 10–12 epochs using ~12,000 samples across the 7 classes. Only the last two encoder blocks were unfrozen, reducing computational load and energy use.
+
+Given its limited training duration and partial fine-tuning, the environmental impact is relatively low compared to full-scale model training. Users are encouraged to adopt efficient inference and mixed-precision techniques to further minimize energy consumption.
