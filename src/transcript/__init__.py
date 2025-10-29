@@ -1,3 +1,3 @@
 # src/transcript/__init__.py
 
-from .assemblyAI import TranscriptEngine
+from .transcript_engine import TranscriptEngine
