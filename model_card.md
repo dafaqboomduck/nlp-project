@@ -11,7 +11,7 @@
 **Short Description:**  
 This model is a fine-tuned checkpoint of the **[distilbert/distilbert-base-uncased-finetuned-sst-2-english](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english)** model.
 
-It's designed to **classify emotions** in English text, predicting one of **seven classes**: Ekman's six basic emotions plus a neutral category:
+It's designed to **classify emotions** in English text, predicting one of **seven classes**: six core emotions plus a neutral category:
 
 * **0:** "neutral"
 * **1:** "anger"
@@ -27,7 +27,7 @@ It's designed to **classify emotions** in English text, predicting one of **seve
 
 ### **Primary Intended Use**
 
-This model was specifically developed and fine-tuned for **emotion analysis in video transcripts**. Its primary intended use is to accurately classify English text into one of the seven defined emotion categories (Ekman's six basic emotions plus a neutral class) extracted from video or audio data.
+This model was specifically developed and fine-tuned for **emotion analysis in video transcripts**. Its primary intended use is to accurately classify English text into one of the seven defined emotion categories (six core emotions plus a neutral class) extracted from video or audio data.
 
 The model is suitable for general **English text emotion classification**, but its performance is optimized for the conversational and language style found in transcribed speech.
 
@@ -64,7 +64,7 @@ The model was developed, trained, and is intended to be used primarily with the 
 * **Hugging Face Transformers:** Essential for loading the pre-trained checkpoint, managing the tokenizer, and facilitating the fine-tuning process.
 
 ### **Purpose & Development Context:**
-This model was specifically developed and fine-tuned for **emotion analysis in video transcripts**. Its primary purpose is to accurately classify English text into one of the seven defined emotion categories: Ekman's six basic emotions (*anger, disgust, fear, happiness, sadness, surprise*) plus a neutral class. The fine-tuning process optimized its performance for the conversational language extracted from video and audio data.
+This model was specifically developed and fine-tuned for **emotion analysis in video transcripts**. Its primary purpose is to accurately classify English text into one of the seven defined emotion categories: six core emotions (*anger, disgust, fear, happiness, sadness, surprise*) plus a neutral class. The fine-tuning process optimized its performance for the conversational language extracted from video and audio data.
 
 This model was commissioned and developed for the **Content Intelligence Agency**. It serves as a crucial component within a larger, automated data pipeline. Its role is to process transcribed show content, extracting **emotional metadata** that is subsequently utilized to perform **show-specific media analysis**. This analysis helps inform content strategy and audience engagement insights.
 
