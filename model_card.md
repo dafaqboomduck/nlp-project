@@ -11,7 +11,7 @@
 **Short Description:**  
 This model is a fine-tuned checkpoint of the **[distilbert/distilbert-base-uncased-finetuned-sst-2-english](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english)** model.
 
-It's designed to **classify emotions** in English text, predicting one of **seven classes**: Ekman's six basic emotions plus a neutral category:
+It's designed to **classify emotions** in English text, predicting one of **seven classes**: six core emotions plus a neutral category:
 
 * **0:** "neutral"
 * **1:** "anger"
@@ -27,7 +27,7 @@ It's designed to **classify emotions** in English text, predicting one of **seve
 
 ### **Primary Intended Use**
 
-This model was specifically developed and fine-tuned for **emotion analysis in video transcripts**. Its primary intended use is to accurately classify English text into one of the seven defined emotion categories (Ekman's six basic emotions plus a neutral class) extracted from video or audio data.
+This model was specifically developed and fine-tuned for **emotion analysis in video transcripts**. Its primary intended use is to accurately classify English text into one of the seven defined emotion categories (six core emotions plus a neutral class) extracted from video or audio data.
 
 The model is suitable for general **English text emotion classification**, but its performance is optimized for the conversational and language style found in transcribed speech.
 
@@ -40,6 +40,8 @@ The model is intended for users who possess a basic working knowledge of the **P
 ---
 
 ## 🛑 Out-of-Scope Use
+
+This model was trained and fine-tuned to classify six emotions and a neutral state in English text data transcribed from television shows. Its performance has not been evaluated on other languages or text types. Users should independently assess the model’s performance and suitability for their specific use cases before deployment.
 
 **Prohibited Uses:** This model **must not** be used to intentionally create **hostile, alienating, or discriminatory environments** or content against individuals or groups.
 
@@ -62,7 +64,7 @@ The model was developed, trained, and is intended to be used primarily with the 
 * **Hugging Face Transformers:** Essential for loading the pre-trained checkpoint, managing the tokenizer, and facilitating the fine-tuning process.
 
 ### **Purpose & Development Context:**
-This model was specifically developed and fine-tuned for **emotion analysis in video transcripts**. Its primary purpose is to accurately classify English text into one of the seven defined emotion categories: Ekman's six basic emotions (*anger, disgust, fear, happiness, sadness, surprise*) plus a neutral class. The fine-tuning process optimized its performance for the conversational language extracted from video and audio data.
+This model was specifically developed and fine-tuned for **emotion analysis in video transcripts**. Its primary purpose is to accurately classify English text into one of the seven defined emotion categories: six core emotions (*anger, disgust, fear, happiness, sadness, surprise*) plus a neutral class. The fine-tuning process optimized its performance for the conversational language extracted from video and audio data.
 
 This model was commissioned and developed for the **Content Intelligence Agency**. It serves as a crucial component within a larger, automated data pipeline. Its role is to process transcribed show content, extracting **emotional metadata** that is subsequently utilized to perform **show-specific media analysis**. This analysis helps inform content strategy and audience engagement insights.
 
@@ -102,12 +104,18 @@ A custom test set was created to better align with the model's primary use case 
 
 
 ## 📊 Performance Metrics and Evaluation
-See details at: **[ERROR ANALYSIS DOCUMENT](/deliverables/Task%209/Error%20analysis.pdf)**
+
+The model achieved an **accuracy of 64.1%** and a **weighted F1 score of 61.7%** on the test set. It performs reasonably well in recognizing dominant emotions such as neutral and happiness, but its performance declines notably for less frequent or more nuanced emotions like fear, disgust, and sadness.
+
+See more details at: **[ERROR ANALYSIS DOCUMENT](/deliverables/Task%209/Error%20analysis.pdf)**
 
 ---
 
 ## ⚖️ Ethical Considerations and Bias
-See details at: /deliverables/Task 9/Error analysis.docx
+
+If the emotion of the sentence is clear, the model is very confident in the prediction, even when multiple tokens are removed from the sentence. However, when the sentences are reliant on context and their emotion is not clear, the confidence of the model can be very volatile or even drop below the 50% threshold after just a few tokens are removed. This is especially the case with sadness. 
+
+See more details at: **[EXPLAINABLE AI DOCUMENT](/deliverables/Task%2010/XAI.pdf)**
 
 ---
 
@@ -125,7 +133,7 @@ We recommend using a device equipped with a GPU to enable faster and more effici
 from src.predict import EmotionCorePredictor
 import pandas as pd
 
-df = pd.read_csv(r"path/to/your/data.csv")
+df = pd.read_csv(r"path/to/your/data.csv") 
 
 checkpoint = "dafaqboomduck/distilbert-sentiment-fine"
 
@@ -133,6 +141,8 @@ checkpoint = "dafaqboomduck/distilbert-sentiment-fine"
 engine = EmotionCorePredictor(checkpoint)
 
 # Save the predictions inside the preds variable
+# Ensure the column containing the sentences is named "Sentence"
+# else, change the `column` parameter accordingly to the name of your column
 preds = engine.predict(df, column='Sentence')
 
 df['Core Emotion'] = preds
@@ -182,3 +192,16 @@ EMOTION_MAP: Dict[int, str] = {
 ---
 
 ## 🌿Sustainibility Considerations
+
+This model was fine-tuned from a checkpoint of the DistilBERT model, a lightweight and energy-efficient variant of BERT. Training was performed on a single NVIDIA RTX A6000 Ada GPU (48 GB VRAM) for 10–12 epochs using ~12,000 samples across the 7 classes. Only the last two encoder blocks were unfrozen, reducing computational load and energy use.
+
+Given its limited training duration and partial fine-tuning, the environmental impact is relatively low compared to full-scale model training. Users are encouraged to adopt efficient inference and mixed-precision techniques to further minimize energy consumption.
+
+Compared to the stakeholder’s current setup, which relies on **GPT-5** for emotion classification, our model offers a **substantially smaller environmental footprint**.
+
+While GPT-5 is a large-scale general-purpose model with **hundreds of billions of parameters**, **DistilBERT** is a lightweight transformer with only **66 million parameters**. This results in:
+* **>95% reduction in computational energy** use during inference. (See general analysis of model size vs energy use: [Watt for What: Rethinking Deep Learning’s Energy](https://arxiv.org/html/2310.06522v2))
+* **>95% lower CO₂ emissions per prediction**, as smaller models require far less GPU memory and processing time. (See study showing large reasoning models can emit **up to 50 × more CO₂** than smaller ones. ([english.elpais.com](https://english.elpais.com/technology/2025-06-19/the-most-powerful-ai-models-emit-up-to-50-times-more-carbon-than-smaller-ones.html))
+* A fine-tuning and deployment process that can be executed efficiently on a **single consumer-grade GPU**, unlike GPT-5, which depends on **large distributed infrastructure**.
+
+In short, our model delivers **domain-specific accuracy** while being **significantly more sustainable**, providing a greener alternative to GPT-5 for emotion classification tasks.
